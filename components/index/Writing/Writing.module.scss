@@ -1,0 +1,20 @@
+.headingFlexContainer {
+  display: flex;
+  justify-content: space-between;
+}
+
+.title {
+  font-size: 3.6rem;
+  margin-top: 3.2rem;
+
+  &__dark {
+    color: #fff;
+  }
+  &__light {
+    color: black;
+  }
+}
+
+.flexItem__svgs {
+  
+}

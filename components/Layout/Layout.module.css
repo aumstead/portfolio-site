@@ -1,0 +1,14 @@
+.layoutDark {
+  background-color: var(--dark-background);
+  color: var(--dark-text);
+}
+
+.layoutLight {
+  background-color: var(--light-background);
+  color: var(--light-text);
+}
+
+.content {
+  width: 700px;
+  margin: 0 auto;
+}

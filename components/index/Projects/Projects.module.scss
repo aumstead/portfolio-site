@@ -1,0 +1,26 @@
+.section {
+  position: relative;
+}
+
+.headingFlexContainer {
+  display: flex;
+  justify-content: space-between;
+}
+
+.headingFlexItem__svgs {
+  margin-top: 3.2rem;
+  display: flex;
+  align-items: center;
+}
+
+.title {
+  font-size: 3.6rem;
+  margin-top: 3.2rem;
+
+  &__dark {
+    color: #fff;
+  }
+  &__light {
+    color: black;
+  }
+}

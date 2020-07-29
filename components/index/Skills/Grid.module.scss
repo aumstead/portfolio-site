@@ -1,0 +1,24 @@
+.grid {
+  display: grid;
+  grid-template-columns: 12rem 1fr 12rem;
+}
+
+.gridItem__core {
+  justify-self: center;
+  align-self: center;
+}
+.gridItem__secondary {
+  justify-self: center;
+  align-self: center;
+}
+
+.listHeading {
+  font-size: 2rem;
+}
+
+.ul {
+}
+
+.li {
+  font-size: 1.6rem;
+}

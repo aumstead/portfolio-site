@@ -1,0 +1,39 @@
+.header {
+  width: 840px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  /* position: fixed; */
+  height: 12rem;
+  font-size: 1.6rem;
+  align-items: center;
+}
+
+.toggleDarkBtn {
+  height: 5rem;
+  width: 5rem;
+  border-radius: 3px;
+  border: none;
+  background-color: transparent;
+}
+
+.toggleDarkBtn:hover {
+  cursor: pointer;
+  background-color: #eee;
+}
+
+.darkBtn {
+  padding: 1rem;
+  color: var(--dark-text);
+}
+
+.lightBtn {
+  padding: 1rem;
+  color: var(--light-text);
+
+}
+
+.yoda {
+  height: 80%;
+  
+}
