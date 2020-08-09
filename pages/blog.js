@@ -1,45 +1,28 @@
-import Layout from '../components/Layout'
+import Layout from '../components/Layout/Layout'
 import PostList from '../components/PostList'
-import matter from 'gray-matter'
+import Link from 'next/link'
+import styles from './blog.module.scss'
+import DarkModeContext from "../contexts/darkMode/DarkModeContext";
+import { useContext } from 'react'
 
-function Blog({ posts, title, description, ...props }) {
+function Blog({ ...props }) {
+  const darkModeContext = useContext(DarkModeContext);
+  const { isDarkMode } = darkModeContext;
+  
   return (
     <Layout>
-      <h1>blog page</h1>
+      <h1 className={
+            isDarkMode
+              ? `${styles.heroTitle__dark} ${styles.heroTitle}`
+              : `${styles.heroTitle} ${styles.heroTitle__light}`
+          }>Blog</h1>
       <main>
-      <PostList posts={posts} />
+      blog page main
+      <Link href='/post/gsap-tweens-in-react'><a>Tweens</a></Link>
+      <Link href='/post/gsap-timelines-in-react'><a>Timelines</a></Link>
       </main>
     </Layout>
   )
 }
 
 export default Blog;
-
-export async function getStaticProps() {
-  const configData = await import(`../siteconfig.json`)
-
-  const posts = ((context) => {
-    const keys = context.keys()
-    const values = keys.map(context)
-
-    const data = keys.map((key, index) => {
-      let slug = key.replace(/^.*[\\\/]/, '').slice(0, -3)
-      const value = values[index]
-      const document = matter(value.default)
-      return {
-        frontmatter: document.data,
-        markdownBody: document.content,
-        slug,
-      }
-    })
-    return data
-  })(require.context('../posts', true, /\.md$/))
-
-  return {
-    props: {
-      posts,
-      title: configData.default.title,
-      description: configData.default.description,
-    },
-  }
-}

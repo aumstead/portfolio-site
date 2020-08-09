@@ -8,7 +8,7 @@ function Grid({ mouseEnteredKnife }) {
         <h3 className={styles.listHeading}>Core:</h3>
         <ul className={styles.ul}>
           <li className={styles.li}>HTML</li>
-          <li className={styles.li}>CSS</li>
+          <li className={styles.li}>CSS/Sass</li>
           <li className={styles.li}>Javascript</li>
           <li className={styles.li}>React</li>
           <li className={styles.li}>Next.js</li>

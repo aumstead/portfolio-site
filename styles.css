@@ -1,10 +1,15 @@
 :root {
+  --transition: .3s;
   --dark-background: #292929;
   --dark-text: #fff;
+  --dark-hover-background: #373737;
+  --dark-link-blue: #70d7ff;
 
   --light-background: #fff;
   --light-text: #212121;
   --light-link-blue: #3b3bee;
+  --light-link-blue-hover: #efefff;
+  --light-hover-background: #f1f1f1;
 }
 
 *,
@@ -23,6 +28,8 @@ html {
   line-height: 1.5;
 }
 
-a {
+a,
+a:visited {
   text-decoration: none;
+  /* color: var(--light-text); */
 }

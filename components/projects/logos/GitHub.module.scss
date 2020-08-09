@@ -1,0 +1,11 @@
+.github {
+  height: 1.6rem;
+  width: 3rem;
+
+  &__light {
+    fill: var(--light-text);
+  }
+  &__dark {
+    fill: var(--dark-text);
+  }
+}

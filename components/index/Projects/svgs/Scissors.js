@@ -4,20 +4,25 @@ import { useEffect, useRef, useState } from 'react'
 function Scissors({ setMouseEnteredScissors }) {
   const [animateHint, setAnimateHint] = useState(false)
   const [timerFunc, setTimerFunc] = useState(false)
+  const [cancelAnimation, setCancelAnimation] = useState(false)
 
   const scissors = useRef(null)
 
+  let firstTimeout;
+  let secondTimeout;
+
   useEffect(() => {
-    const firstTimeout = setTimeout(() => {
-      setAnimateHint(true)
-    }, 6000)
+    if (!cancelAnimation) {
+      firstTimeout = setTimeout(() => {
+        setAnimateHint(true)
+      }, 4000)
+    }
 
     return () => clearTimeout(firstTimeout)
   }, [timerFunc])
 
   useEffect(() => {
-    let secondTimeout;
-    if (animateHint) {
+    if (animateHint && !cancelAnimation) {
       scissors.current.classList.add(`${styles.vibrate}`)
       secondTimeout = setTimeout(() => {
         scissors.current.classList.remove(`${styles.vibrate}`)
@@ -31,6 +36,9 @@ function Scissors({ setMouseEnteredScissors }) {
   function handleMouseEnter() {
     // this state triggers useEffect func which restarts gsap timeline
     setMouseEnteredScissors((prevState) => !prevState);
+    clearTimeout(firstTimeout)
+    clearTimeout(secondTimeout)
+    setCancelAnimation(true)
   }
   return (
     <svg

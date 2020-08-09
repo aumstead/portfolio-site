@@ -4,32 +4,40 @@ import { useEffect, useRef, useState } from "react";
 function Knife({ setMouseEnteredKnife }) {
   const [animateHint, setAnimateHint] = useState(false)
   const [timerFunc, setTimerFunc] = useState(false)
+  const [cancelAnimation, setCancelAnimation] = useState(false)
 
   const knife = useRef(null)
 
+  let firstTimeout;
+  let secondTimeout;
+
   useEffect(() => {
-    const firstTimeout = setTimeout(() => {
-      setAnimateHint(true)
-    }, 6000)
+    if (!cancelAnimation) {
+      firstTimeout = setTimeout(() => {
+        setAnimateHint(true)
+      }, 10000)
+    }
 
     return () => clearTimeout(firstTimeout)
   }, [timerFunc])
 
   useEffect(() => {
-    let secondTimeout;
-    if (animateHint) {
+    if (animateHint && !cancelAnimation) {
       knife.current.classList.add(`${styles.vibrate}`)
       secondTimeout = setTimeout(() => {
         knife.current.classList.remove(`${styles.vibrate}`)
         setTimerFunc(prevState => !prevState)
         setAnimateHint(false)
-      }, 12000)
+      }, 6000)
     }
     return () => clearTimeout(secondTimeout)
   }, [animateHint])
 
   function handleMouseEnter() {
     setMouseEnteredKnife((prevState) => !prevState);
+    clearTimeout(firstTimeout)
+    clearTimeout(secondTimeout)
+    setCancelAnimation(true)
   }
   return (
     <svg

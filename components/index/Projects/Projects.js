@@ -28,9 +28,9 @@ function Projects() {
           Projects
         </h2>
         <div className={styles.headingFlexItem__svgs}>
-          <Stapler
+          {/* <Stapler
             setMouseEnteredStapler={setMouseEnteredStapler}
-          />
+          /> */}
           <Scissors
             setMouseEnteredScissors={setMouseEnteredScissors}
             paperclipsRunning={paperclipsRunning}
@@ -48,7 +48,7 @@ function Projects() {
         mouseEnteredStapler={mouseEnteredStapler}
         setMouseEnteredStapler={setMouseEnteredStapler}
       />
-      <Grid />
+      <Grid isDarkMode={isDarkMode}/>
     </section>
   );
 }

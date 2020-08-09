@@ -21,7 +21,7 @@ function Writing() {
               : `${styles.title} ${styles.title__light}`
           }
         >
-          Writing
+          Blog
         </h2>
         <div className={styles.flexItem__svgs}>
           <Text

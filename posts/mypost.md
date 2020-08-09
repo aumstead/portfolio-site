@@ -3,8 +3,28 @@ title: 'Hello, world!'
 author: 'Cassidy'
 ---
 
-Humblebrag sartorial man braid ad vice, wolf ramps in cronut proident cold-pressed occupy organic normcore. Four loko tbh tousled reprehenderit ex enim qui banjo organic aute gentrify church-key. Man braid ramps in, 3 wolf moon laborum iPhone venmo sunt yr elit laboris poke succulents intelligentsia activated charcoal. Gentrify messenger bag hot chicken brooklyn. Seitan four loko art party, ut 8-bit live-edge heirloom. Cornhole post-ironic glossier officia, man braid raclette est organic knausgaard chillwave.
+```js
+    function makeCodeBlock() {
+      return (
+        <div>
+        </div>
+      )
+    }
+    export default makeCodeBlock;
+```
 
-- Look at me
-- I am in a list
-- Woo hoo
+a sentence with breaks around it.
+```css
+{ color: red }
+```
+
+```html
+<html>
+  <h1>Title</h1>
+</html>
+```
+
+<a href="https://andrewumstead.com">link yo</a>
+
+<p class='red'>red text</p>
+

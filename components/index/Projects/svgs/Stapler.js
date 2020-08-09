@@ -1,12 +1,47 @@
 import styles from "./Stapler.module.scss";
+import { useEffect, useRef, useState } from 'react'
 
 function Stapler({ setMouseEnteredStapler }) {
+  const [animateHint, setAnimateHint] = useState(false)
+  const [timerFunc, setTimerFunc] = useState(false)
+  const [cancelAnimation, setCancelAnimation] = useState(false)
+
+  const stapler = useRef(null)
+
+  let firstTimeout;
+  let secondTimeout;
+
+  useEffect(() => {
+    if (!cancelAnimation) {
+      firstTimeout = setTimeout(() => {
+        setAnimateHint(true)
+      }, 8000)
+    }
+
+    return () => clearTimeout(firstTimeout)
+  }, [timerFunc])
+
+  useEffect(() => {
+    if (animateHint && !cancelAnimation) {
+      stapler.current.classList.add(`${styles.vibrate}`)
+      secondTimeout = setTimeout(() => {
+        stapler.current.classList.remove(`${styles.vibrate}`)
+        setTimerFunc(prevState => !prevState)
+        setAnimateHint(false)
+      }, 8000)
+    }
+    return () => clearTimeout(secondTimeout)
+  }, [animateHint])
+
   function handleMouseEnter() {
-    // this state triggers useEffect func which restarts gsap timeline
     setMouseEnteredStapler((prevState) => !prevState);
+    clearTimeout(firstTimeout)
+    clearTimeout(secondTimeout)
+    setCancelAnimation(true)
   }
   return (
     <svg
+      ref={stapler}
       onMouseEnter={handleMouseEnter}
       className={styles.stapler}
       id="stapler"

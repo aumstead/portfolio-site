@@ -1,0 +1,88 @@
+.heroTitle {
+  font-size: 4.8rem;
+  text-align: center;
+  margin-bottom: 1rem;
+  margin-top: 2rem;
+
+  &__dark {
+    color: #fff;
+  }
+
+  &__light {
+    color: black;
+  }
+}
+
+.text {
+  font-size: 1.8rem;
+  margin-bottom: 3rem;
+}
+
+.project {
+  width: 100%;
+  margin-bottom: 9rem;
+}
+
+.thumbnail {
+  width: 50rem;
+  margin: 0 auto;
+  display: block;
+
+  &__light {
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
+  }
+
+  &__dark {
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.92);
+  }
+}
+
+.title {
+  font-size: 3.6rem;
+  margin-top: 1rem;
+}
+.subTitle {
+  font-size: 2rem;
+}
+.stack {
+  font-size: 1.8rem;
+}
+
+.linkAnchor {
+  font-size: 1.8rem;
+  text-decoration: underline;
+  &:hover {
+    cursor: pointer;
+  }
+
+  &__light {
+    color: var(--light-text);
+    &:hover {
+      background-color: var(--light-text);
+      color: var(--dark-text);
+    }
+  }
+
+  &__dark {
+    color: var(--dark-text);
+    &:hover {
+      background-color: var(--dark-text);
+      color: var(--light-text);
+    }
+  }
+}
+
+.description {
+  font-size: 1.8rem;
+}
+
+.login {
+  font-size: 1.4rem;
+  margin-left: 1rem;
+}
+
+.portfolioLogo {
+  height: 1.8rem;
+  width: 3rem;
+  object-fit: contain;
+}

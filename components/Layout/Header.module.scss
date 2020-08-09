@@ -1,0 +1,63 @@
+.header {
+  width: 840px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  // position: fixed;
+  height: 12rem;
+  font-size: 1.8rem;
+  align-items: center;
+}
+
+.lightToggle {
+  height: 5rem;
+  width: 5rem;
+  border-radius: 3px;
+  border: none;
+  background-color: transparent;
+  &:hover {
+    background-color: var(--light-hover-background);
+    cursor: pointer;
+  }
+  &:focus {
+    outline-style: none;
+  }
+}
+
+.darkToggle {
+  height: 5rem;
+  width: 5rem;
+  border-radius: 3px;
+  border: none;
+  background-color: transparent;
+  &:hover {
+    background-color: var(--dark-hover-background);
+    cursor: pointer;
+  }
+  &:focus {
+    outline-style: none;
+  }
+}
+
+.darkBtn {
+  padding: 1rem;
+  color: var(--dark-text);
+
+  &:hover {
+    background-color: var(--dark-hover-background);
+  }
+}
+
+.lightBtn {
+  padding: 1rem;
+  color: var(--light-text);
+  transition: background-color var(--transition);
+
+  &:hover {
+    background-color: var(--light-hover-background)
+  }
+}
+
+.yoda {
+  height: 80%;
+}

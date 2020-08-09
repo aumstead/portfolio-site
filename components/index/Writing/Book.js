@@ -5,21 +5,25 @@ function Book({ setMouseEnteredBook }) {
   
   const [animateHint, setAnimateHint] = useState(false)
   const [timerFunc, setTimerFunc] = useState(false)
+  const [cancelAnimation, setCancelAnimation] = useState(false)
   
   const book = useRef(null)
-  
+
+  let firstTimeout;
+  let secondTimeout;
+
   useEffect(() => {
-    const firstTimeout = setTimeout(() => {
-      setAnimateHint(true)
-    }, 9000)
+    if (!cancelAnimation) {
+      firstTimeout = setTimeout(() => {
+        setAnimateHint(true)
+      }, 7000)
+    }
 
     return () => clearTimeout(firstTimeout)
   }, [timerFunc])
   
   useEffect(() => {
-    let secondTimeout;
-
-    if (animateHint) {
+    if (animateHint && !cancelAnimation) {
       book.current.classList.add(`${styles.vibrate}`)
       secondTimeout = setTimeout(() => {
         book.current.classList.remove(`${styles.vibrate}`)
@@ -33,6 +37,9 @@ function Book({ setMouseEnteredBook }) {
 
   function handleMouseEnter() {
     setMouseEnteredBook((prevState) => !prevState);
+    clearTimeout(firstTimeout)
+    clearTimeout(secondTimeout)
+    setCancelAnimation(true)
   }
 
   return (
