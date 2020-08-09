@@ -4,13 +4,15 @@ import Link from 'next/link'
 import styles from './blog.module.scss'
 import DarkModeContext from "../contexts/darkMode/DarkModeContext";
 import { useContext } from 'react'
+import Power from '../components/blog/Power'
 
 function Blog({ ...props }) {
   const darkModeContext = useContext(DarkModeContext);
   const { isDarkMode } = darkModeContext;
-  
+
   return (
     <Layout>
+      <Power />
       <h1 className={
             isDarkMode
               ? `${styles.heroTitle__dark} ${styles.heroTitle}`

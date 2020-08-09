@@ -15,9 +15,6 @@ export default function Layout({ children, ...props }) {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         {/* <title>{pageTitle}</title> */}
 
-        
-        <script src="/MotionPathPlugin.min.js"></script>
-
         {/* <script src="prism.js"></script>
         <link href="/prism.css" rel="stylesheet" /> */}
         <link
@@ -52,6 +49,7 @@ export default function Layout({ children, ...props }) {
 
         <Footer />
         <script src="/gsap.min.js"></script>
+        <script src="/MotionPathPlugin.min.js"></script>
       </div>
     </>
   );
