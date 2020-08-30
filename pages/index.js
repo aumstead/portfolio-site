@@ -18,7 +18,7 @@ function Index() {
   return (
     <Layout>
       <section className={styles.section}>
-        <CleanCodeSvg/>
+        <CleanCodeSvg onMobile={onMobile}/>
         <h1
           className={
             isDarkMode
@@ -50,7 +50,7 @@ function Index() {
         </p>
       </section>
 
-      <Projects />
+      <Projects onMobile={onMobile} />
       <Writing onMobile={onMobile}/>
       <About onMobile={onMobile} />
       <Skills onMobile={onMobile}/>

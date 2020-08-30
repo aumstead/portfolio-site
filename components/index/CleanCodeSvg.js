@@ -1,7 +1,7 @@
 import styles from "./CleanCodeSvg.module.scss";
 import { useEffect, useRef } from "react";
 
-function CleanCodeSvg(props) {
+function CleanCodeSvg({ onMobile }) {
   const explosionTl = useRef(null);
   const clientTl = useRef(null);
 
@@ -346,8 +346,8 @@ function CleanCodeSvg(props) {
       height={242}
       viewBox="0 0 482 242"
       fill="none"
-      onMouseEnter={handleMouseEnter}
-      {...props}
+      onMouseEnter={onMobile ? null : handleMouseEnter}
+      onClick={onMobile ? handleMouseEnter : null}
     >
       <path
         opacity={0.1}

@@ -1,7 +1,7 @@
 import styles from "./Cards.module.scss";
 import { useEffect, useRef, useState } from "react";
 
-function Cards({ setMouseEnteredCards }) {
+function Cards({ setMouseEnteredCards, onMobile }) {
   const [animateHint, setAnimateHint] = useState(false);
   const [timerFunc, setTimerFunc] = useState(false);
   const [cancelAnimation, setCancelAnimation] = useState(false);
@@ -101,8 +101,8 @@ function Cards({ setMouseEnteredCards }) {
     <svg
       className={styles.cards}
       ref={cards}
-      onMouseEnter={disabled ? null : handleMouseEnter}
-      onClick={disabled ? null : handleMouseEnter}
+      onMouseEnter={disabled || onMobile ? null : handleMouseEnter}
+      onClick={!disabled && onMobile ? handleMouseEnter : null}
       width="112"
       height="320"
       viewBox="0 0 112 320"

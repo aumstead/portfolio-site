@@ -6,7 +6,7 @@ import MassageFluke from "../../projects/logos/MassageFluke";
 import WhiteSands from "../../projects/logos/WhiteSands";
 import GitHub from "../../projects/logos/GitHub";
 
-function Carousel({ mouseEnteredCards, isDarkMode }) {
+function Carousel({ mouseEnteredCards, isDarkMode, onMobile }) {
   // ref to know if it's the initial render
   const firstUpdate = useRef(true);
   const slideRef = useRef(null);
@@ -58,12 +58,12 @@ function Carousel({ mouseEnteredCards, isDarkMode }) {
   return (
     <div className={styles.carouselContainer}>
       <div
-        className={styles.carousel}
+        className={onMobile ? styles.carouselMobile : styles.carousel}
         ref={slideRef}
         onTransitionEnd={handleTransitionEnd}
       >
 
-        <div className={styles.slide}>
+        <div className={onMobile ? styles.slideMobile : styles.slide}>
           <div className={styles.mockupContainer}>
             <img
               className={
@@ -129,7 +129,7 @@ function Carousel({ mouseEnteredCards, isDarkMode }) {
           </div>
         </div>
 
-        <div className={styles.slide}>
+        <div className={onMobile ? styles.slideMobile : styles.slide}>
           <div className={styles.mockupContainer}>
             <img
               className={
@@ -194,7 +194,7 @@ function Carousel({ mouseEnteredCards, isDarkMode }) {
           </div>
         </div>
 
-        <div className={styles.slide}>
+        <div className={onMobile ? styles.slideMobile : styles.slide}>
           <div className={styles.mockupContainer}>
             <img
               className={
@@ -257,7 +257,7 @@ function Carousel({ mouseEnteredCards, isDarkMode }) {
           </div>
         </div>
 
-        <div className={styles.slide}>
+        <div className={onMobile ? styles.slideMobile : styles.slide}>
           <div className={styles.mockupContainer}>
             <img
               className={
@@ -323,7 +323,7 @@ function Carousel({ mouseEnteredCards, isDarkMode }) {
           </div>
         </div>
 
-        <div id="first-clone" className={styles.slide}>
+        <div id="first-clone" className={onMobile ? styles.slideMobile : styles.slide}>
           <div className={styles.mockupContainer}>
             <img
               className={

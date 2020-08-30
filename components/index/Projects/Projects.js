@@ -1,11 +1,10 @@
 import styles from "./Projects.module.scss";
-import { useContext, useState, useEffect } from "react";
+import { useContext, useState } from "react";
 import DarkModeContext from "../../../contexts/darkMode/DarkModeContext";
 import Cards from "./svgs/Cards";
 import Carousel from "./Carousel";
-import Link from "next/link";
 
-function Projects() {
+function Projects({ onMobile }) {
   const darkModeContext = useContext(DarkModeContext);
   const { isDarkMode } = darkModeContext;
 
@@ -24,11 +23,13 @@ function Projects() {
           Featured Project
         </h2>
         <div className={styles.headingFlexItem__svgs}>
-          <Cards setMouseEnteredCards={setMouseEnteredCards} />
+          <span className={styles.hint}>hover me!</span>
+          <img className={isDarkMode ? `${styles.arrow__dark} ${styles.arrow}` : styles.arrow} src="/images/arrow.png" alt="Arrow pointing to graphic."/>
+          <Cards onMobile={onMobile} setMouseEnteredCards={setMouseEnteredCards} />
         </div>
       </div>
 
-      <Carousel isDarkMode={isDarkMode} mouseEnteredCards={mouseEnteredCards} />
+      <Carousel onMobile={onMobile} isDarkMode={isDarkMode} mouseEnteredCards={mouseEnteredCards} />
 
     </section>
   );

@@ -1,15 +1,14 @@
 .header {
   width: 840px;
   margin: 0 auto;
-  display: flex;
-  justify-content: space-between;
+  // display: flex;
+  // justify-content: space-between;
   position: fixed;
   left: 50%;
   transform: translateX(-50%);
   height: 10rem;
   font-size: var(--text-font-size);
-  align-items: center;
-  
+  // align-items: center;
   z-index: 100;
   &__light {
     background-color: rgb(255, 255, 255, .7);
@@ -19,6 +18,30 @@
     background-color: rgb(41, 41, 41, .7);
     backdrop-filter: saturate(180%) blur(20px);
   }
+}
+.topHalf {
+  display: flex;
+  justify-content: space-between;
+  position: absolute;
+  height: 10rem;
+  width: 100%;
+  align-items: center;
+  left: 0;
+  top: 0;
+}
+.bottomHalf {
+  display: none;
+  justify-content: space-evenly;
+  position: absolute;
+  height: 5rem;
+  width: 100%;
+  align-items: center;
+  left: 0;
+  top: 0;
+  z-index: -20;
+}
+.mobileNav {
+  opacity: 0;
 }
 .flexItem__left {
   display: flex;
@@ -48,7 +71,6 @@
 .toggle {
   margin-left: 1rem;
 }
-
 .lightToggle {
   height: 5rem;
   width: 5rem;
@@ -63,7 +85,6 @@
     outline-style: none;
   }
 }
-
 .darkToggle {
   height: 5rem;
   width: 5rem;
@@ -78,63 +99,46 @@
     outline-style: none;
   }
 }
-
 .darkBtn {
   margin: 0 1rem;
   padding: .4rem .2rem;
   color: var(--dark-text);
 }
-
 .lightBtn {
   margin: 0 1rem;
   padding: .4rem .2rem;
   color: var(--light-text);
 }
-
 .projects {
   &:hover {
     color: #FC3A4D;
     border-bottom: 2px solid #FC3A4D;
   }
 }
-
 .blog {
   &:hover {
     color: #FCA417;
     border-bottom: 2px solid #FCA417;
-    // color: #50B56F;
-    // border-bottom: 2px solid #50B56F;
   }
 }
-
-.photos {
-  &:hover {
-    color: #9B51E0;
-    border-bottom: 2px solid #9B51E0;
-  }
-}
-
-.about {
-  &:hover {
-    color: #2AA1FF;
-    border-bottom: 2px solid #2AA1FF;
-  }
-}
-
 .home {
   &:hover {
     color: #2AA1FF;
     border-bottom: 2px solid #2AA1FF;
   }
 }
-
+.mobileBtn {
+  border-bottom: 2px solid currentColor;
+}
 .yoda {
   height: 80%;
 }
 .hamburgerContainer {
   display: none;
 }
-
+.sideDrawer {
+  display: none;
+}
 @media only screen and (max-width: 500px) {
   .header {
     width: 100%;
@@ -146,7 +150,9 @@
   }
   .hamburgerContainer {
     display: block;
-    height: 100%;
+    margin-top: 5px;
+    margin-right: 1rem;
+    margin-left: 1rem;
   }
   .flexItem__left {
     margin-left: 1.5rem;
