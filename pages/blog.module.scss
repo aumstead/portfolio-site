@@ -24,3 +24,15 @@
 .text {
   font-size: var(--text-font-size);
 }
+
+@media only screen and (max-width: 700px) {
+  .heroSection {
+    margin-right: 1.5rem;
+    margin-left: 1.5rem;
+  }
+  .postsSection {
+    margin-right: 1.5rem;
+    margin-left: 1.5rem;
+    margin-bottom: 6rem;
+  }
+}

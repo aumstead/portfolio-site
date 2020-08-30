@@ -22,10 +22,10 @@ export default function Header() {
   useEffect(() => {
     mobileHeaderTl.current = gsap.timeline();
     mobileHeaderTl.current
-      .to("#header", 1, { height: "15rem" })
-      .to("#bottomHalf", 1, { top: "8rem" }, "<")
-      .to("#bottomHalf", 1, { display: "flex" }, "<")
-      .to("#mobileNav", 1, { opacity: 1 }, "<.5");
+      .to("#header", .5, { height: "15rem" })
+      .to("#bottomHalf", .5, { top: "8rem" }, "<")
+      .to("#bottomHalf", .5, { display: "flex" }, "<")
+      .to("#mobileNav", .5, { opacity: 1 }, "<.25");
     mobileHeaderTl.current.pause();
   }, []);
 
@@ -42,6 +42,11 @@ export default function Header() {
       mobileHeaderTl.current.reverse();
     }
   }, [hamburgerClicked]);
+
+  useEffect(() => {
+    // close mobile menu if not in mobile
+    setHamburgerClicked(false)
+  }, [onMobile])
 
   function handleClick() {
     setIsDarkMode(() => !isDarkMode);
@@ -164,6 +169,17 @@ export default function Header() {
               }
             >
               Blog
+            </a>
+          </Link>
+          <Link href="/#contact">
+            <a
+              className={
+                isDarkMode
+                  ? `${styles.darkBtn} ${styles.mobileBtn}`
+                  : `${styles.lightBtn} ${styles.mobileBtn}`
+              }
+            >
+              Contact
             </a>
           </Link>
           <Link href="/">

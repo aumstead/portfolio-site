@@ -1,5 +1,5 @@
 import styles from "./Footer.module.scss";
-import { useEffect, useState, useContext } from "react";
+import { useState, useContext } from "react";
 import Pc from "./Pc";
 import Disk from "../Footer/Disk";
 import Screen from "../Footer/Screen";
@@ -12,8 +12,10 @@ function Footer() {
   const [mouseEnteredDisk, setMouseEnteredDisk] = useState(false);
 
   return (
-    <footer className={styles.footer}>
+    <footer id="contact" className={styles.footer}>
       <div className={styles.headingFlexContainer}>
+      <span className={styles.hint}>Contact!</span>
+          <img className={isDarkMode ? `${styles.arrow__dark} ${styles.arrow}` : styles.arrow} src="/images/arrow.png" alt="Arrow pointing to graphic."/>
         <Disk setMouseEnteredDisk={setMouseEnteredDisk} />
       </div>
       <Pc mouseEnteredDisk={mouseEnteredDisk} isDarkMode={isDarkMode} />

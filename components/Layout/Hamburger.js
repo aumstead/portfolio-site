@@ -5,18 +5,13 @@ function Hamburger({ setHamburgerClicked, hamburgerClicked, isDarkMode }) {
   const firstUpdate = useRef(true);
 
   useEffect(() => {
-    const orange = "#FCA417"
-    const red = "#FC3A4D"
-    const blue = "#12B0FF"
-    const black = "#000"
-
     tl.current = gsap.timeline()
     tl.current
-      .to("#top", 1, { y: 10})
-      .to("#bottom", 1, { y: -10}, "<")
-      .to("#top", 1, { rotate: 135, transformOrigin: "50% 50%" })
-      .to("#bottom", 1, { rotate: 135, transformOrigin: "50% 50%" }, "<")
-      .to("#middle", 1, { rotate: 225, transformOrigin: "50% 50%" }, "<")
+      .to("#top", .5, { y: 10})
+      .to("#bottom", .5, { y: -10}, "<")
+      .to("#top", .5, { rotate: 135, transformOrigin: "50% 50%" })
+      .to("#bottom", .5, { rotate: 135, transformOrigin: "50% 50%" }, "<")
+      .to("#middle", .5, { rotate: 225, transformOrigin: "50% 50%" }, "<")
 
     tl.current.pause()
   }, [])

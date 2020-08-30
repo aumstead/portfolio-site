@@ -64,8 +64,8 @@
     border-bottom: 1px solid #0F9A7A;
   }
   &__massageFluke {
-    color: #F75F00;
-    border-bottom: 1px solid #F75F00;
+    color: #0F9A7A;
+    border-bottom: 1px solid #0F9A7A;
   }
   &__recallChek {
     color: #8AB53B;
@@ -129,7 +129,12 @@
 .login {
   font-size: 1.4rem;
   margin-left: 1rem;
-  color: var(--light-text);
+  &__light {
+    color: var(--light-text);
+  }
+  &__dark {
+    color: var(--dark-text);
+  }
 }
 
 @media only screen and (max-width: 700px) {

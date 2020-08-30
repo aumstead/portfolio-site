@@ -2,6 +2,7 @@ import Layout from "../components/Layout/Layout";
 import styles from "./projects.module.scss";
 import { useContext } from "react";
 import DarkModeContext from "../contexts/darkMode/DarkModeContext";
+import MobileContext from '../contexts/mobile/MobileContext'
 import GitHub from "../components/projects/logos/GitHub";
 import DgiFoliosSvg from "../components/projects/logos/DgiFoliosSvg";
 import RecallChek from "../components/projects/logos/RecallChek";
@@ -12,11 +13,13 @@ import HeroSvg from "../components/projects/HeroSvg";
 function Projects() {
   const darkModeContext = useContext(DarkModeContext);
   const { isDarkMode } = darkModeContext;
+  const mobileContext = useContext(MobileContext);
+  const { onMobile } = mobileContext;
 
   return (
     <Layout>
       <section className={styles.heroSection}>
-        <HeroSvg />
+        <HeroSvg onMobile={onMobile}/>
         <h1
           className={
             isDarkMode
@@ -41,7 +44,7 @@ function Projects() {
               ? `${styles.thumbnail} ${styles.thumbnail__dark}`
               : `${styles.thumbnail} ${styles.thumbnail__light}`
           }
-          src="/images/dgifolios1.png"
+          src="/images/projects-dgifolios.png"
           alt="dgifolios project"
         />
         <h2 className={styles.title}>dgifolios</h2>
@@ -109,7 +112,7 @@ function Projects() {
               ? `${styles.thumbnail} ${styles.thumbnail__dark}`
               : `${styles.thumbnail} ${styles.thumbnail__light}`
           }
-          src="/images/massageBowen.png"
+          src="/images/projects-massage-fluke.png"
           alt="Massage Fluke project"
         />
         <h2 className={styles.title}>Massage Fluke</h2>
@@ -173,7 +176,7 @@ function Projects() {
               ? `${styles.thumbnail} ${styles.thumbnail__dark}`
               : `${styles.thumbnail} ${styles.thumbnail__light}`
           }
-          src="/images/recallchek1.png"
+          src="/images/projects-recall-chek.png"
           alt="RecallChek project"
         />
         <h2 className={styles.title}>RecallChek</h2>
@@ -235,7 +238,7 @@ function Projects() {
               ? `${styles.thumbnail} ${styles.thumbnail__dark}`
               : `${styles.thumbnail} ${styles.thumbnail__light}`
           }
-          src="/images/whiteSands.jpg"
+          src="/images/projects-white-sands.png"
           alt="White Sands Resort project"
         />
         <h2 className={styles.title}>White Sands Resort</h2>
@@ -307,7 +310,7 @@ function Projects() {
               ? `${styles.thumbnail} ${styles.thumbnail__dark}`
               : `${styles.thumbnail} ${styles.thumbnail__light}`
           }
-          src="/images/portfoliov1.png"
+          src="/images/projects-portfolio-v1.png"
           alt="Portfolio v1.0 project"
         />
         <h2 className={styles.title}>Portfolio 1.0</h2>
@@ -317,7 +320,7 @@ function Projects() {
         <br />
         <h3 className={styles.subTitle}>Description:</h3>
         <p className={styles.description}>
-          My first portfolio site, done only months before this current one. I suppose it's satisfactory, but there a few things about it that rubbed me the wrong way, and I wanted to be 100% confident with my portfolio site.
+          My first portfolio site, done only months before this current one. I suppose it's satisfactory, but there a few things about it that rubbed me the wrong way, and I wanted to be as confident as I could be with my portfolio site.
         </p>
         <br />
         <h3 className={styles.subTitle}>How I improved as a developer:</h3>

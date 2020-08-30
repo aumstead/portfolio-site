@@ -109,7 +109,7 @@ function Carousel({ mouseEnteredCards, isDarkMode, onMobile }) {
               >
                 dgifolios.com
               </a>
-              <span className={styles.login}>
+              <span className={isDarkMode ? `${styles.login} ${styles.login__dark}` : `${styles.login} ${styles.login__light}`}>
                 (Demo login: dgifolios@gmail.com / Password1)
               </span>
               <br />
@@ -162,7 +162,7 @@ function Carousel({ mouseEnteredCards, isDarkMode, onMobile }) {
               </a>
             </p>
             <div className={styles.visitSiteContainer}>
-              <MassageFluke fill="#F75F00" />
+              <MassageFluke fill="#0F9A7A" />
               <a
                 className={
                   isDarkMode
@@ -174,7 +174,7 @@ function Carousel({ mouseEnteredCards, isDarkMode, onMobile }) {
               >
                 massagefluke.now.sh
               </a>
-              <span className={styles.login}>
+              <span className={isDarkMode ? `${styles.login} ${styles.login__dark}` : `${styles.login} ${styles.login__light}`}>
                 (Demo login: demo@gmail.com / 123456)
               </span>
               <br />

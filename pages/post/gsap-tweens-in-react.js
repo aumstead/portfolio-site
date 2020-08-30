@@ -125,22 +125,24 @@ function ExampleTweenComponent() {
 
   return (
     <Layout>
-      <h1 className={styles.h1}>
-        GSAP in React - Part 1:
-        <br />
-        Basic Tweens
-      </h1>
-      <div className={styles.infoFlexContainer}>
-        <div className={styles.infoFlexItem__author}>
-          <img
-            className={styles.profilePhoto}
-            src="/static/images/profilePhoto.jpg"
-            alt="Andrew Umstead"
-          />
-          <span className={styles.byLine}>Andrew Umstead</span>
+      <section className={styles.heroSection}>
+        <h1 className={styles.h1}>
+          GSAP in React - Part 1:
+          <br />
+          Basic Tweens
+        </h1>
+        <div className={styles.infoFlexContainer}>
+          <div className={styles.infoFlexItem__author}>
+            <img
+              className={styles.profilePhoto}
+              src="/images/profilePhoto.jpg"
+              alt="Andrew Umstead"
+            />
+            <span className={styles.byLine}>Andrew Umstead</span>
+          </div>
+          <span className={styles.date}>August 4th, 2020</span>
         </div>
-        <span className={styles.date}>August 4th, 2020</span>
-      </div>
+      </section>
 
       <article className={styles.article}>
         <p className={styles.p}>
@@ -167,7 +169,8 @@ function ExampleTweenComponent() {
           </code>{" "}
           hooks to create animations that start on events like click or hover.
           As an example for us to walk through together, I'll use this animation
-          I made for my portfolio site. Hover over it to trigger the <code
+          I made for my portfolio site. Hover over it to trigger the{" "}
+          <code
             className={
               isDarkMode
                 ? `${styles.code} ${styles.code__dark}`
@@ -175,7 +178,8 @@ function ExampleTweenComponent() {
             }
           >
             onMouseEnter
-          </code> event.
+          </code>{" "}
+          event.
         </p>
 
         <Final />
@@ -193,7 +197,8 @@ function ExampleTweenComponent() {
           >
             part 2
           </a>{" "}
-          in the series we will have covered everything needed to make this animation.
+          in the series we will have covered everything needed to make this
+          animation.
         </p>
 
         <p className={styles.p}>
@@ -220,8 +225,8 @@ function ExampleTweenComponent() {
           >
             &lt;Head&gt;
           </code>{" "}
-          component, but I've since opted to download the library and place
-          it at the bottom, near my closing{" "}
+          component, but I've since opted to download the library and place it
+          at the bottom, near my closing{" "}
           <code
             className={
               isDarkMode
@@ -231,8 +236,8 @@ function ExampleTweenComponent() {
           >
             &lt;/body&gt;
           </code>{" "}
-          tag. Before, I'd occassionally have issues with the library not loading
-          when using the CDN.
+          tag. Before, I'd occassionally have issues with the library not
+          loading when using the CDN.
         </p>
 
         <p className={styles.note}>
@@ -529,7 +534,8 @@ function ExampleTweenComponent() {
         <p className={styles.p}>Hover to see the small animation.</p>
         <AppFigure1 />
         <p className={styles.p}>
-          If you need to learn about the basics of GSAP more in-depth, the docs page on {" "}
+          If you need to learn about the basics of GSAP more in-depth, the docs
+          page on{" "}
           <a
             className={
               isDarkMode
@@ -541,8 +547,8 @@ function ExampleTweenComponent() {
           >
             tweens
           </a>{" "}
-          is the best place to go. But, in summary, there are a few
-          methods you can call, such as{" "}
+          is the best place to go. But, in summary, there are a few methods you
+          can call, such as{" "}
           <code
             className={
               isDarkMode
@@ -562,7 +568,7 @@ function ExampleTweenComponent() {
           >
             gsap.from()
           </code>
-          .{" "}The
+          . The
           <code
             className={
               isDarkMode
@@ -571,9 +577,9 @@ function ExampleTweenComponent() {
             }
           >
             .to()
-          </code>{" "}method 
-          takes your image <em>to</em> the animation settings you provide in the
-          "vars" object (which we'll discuss below), and{" "}
+          </code>{" "}
+          method takes your image <em>to</em> the animation settings you provide
+          in the "vars" object (which we'll discuss below), and{" "}
           <code
             className={
               isDarkMode
@@ -631,9 +637,8 @@ function ExampleTweenComponent() {
           happens. Here, you set key-value pairs to do things like animate CSS
           properties and set the animation's duration. I often use "onComplete",
           which you set to a callback function that will run when your animation
-          finishes. It's worth knowing there's a lot of cool things you
-          can do in the "vars" object, and that they're detailed in the
-          documentation.
+          finishes. It's worth knowing there's a lot of cool things you can do
+          in the "vars" object, and that they're detailed in the documentation.
         </p>
         <h2 className={styles.h2}>
           Using the{" "}
@@ -845,7 +850,7 @@ function ExampleTweenComponent() {
           >
             .play()
           </code>
-          ,
+          ,{" "}
           <code
             className={
               isDarkMode
@@ -855,7 +860,7 @@ function ExampleTweenComponent() {
           >
             .pause()
           </code>
-          ,
+          ,{" "}
           <code
             className={
               isDarkMode
@@ -865,7 +870,7 @@ function ExampleTweenComponent() {
           >
             .resume()
           </code>
-          ,
+          ,{" "}
           <code
             className={
               isDarkMode
@@ -875,7 +880,7 @@ function ExampleTweenComponent() {
           >
             .reverse()
           </code>
-          ,
+          ,{" "}
           <code
             className={
               isDarkMode

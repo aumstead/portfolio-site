@@ -1,14 +1,26 @@
 import { useEffect, useRef } from "react";
 import styles from "./Power.module.scss";
 
-function Power() {
+function Power({ onMobile }) {
   const popUp = useRef(null);
   useEffect(() => {
     popUp.current = gsap.to("#hand", 1, {
       y: "0rem",
       ease: "elastic.out(0.5, 0.4)",
     });
+
+    const timeout = function () {
+      setTimeout(() => {
+        popUp.current.restart();
+      }, 1000);
+    };
+
     popUp.current.pause();
+    timeout();
+
+    return () => {
+      clearTimeout(timeout);
+    };
   }, []);
 
   function handleMouseEnter() {
@@ -17,7 +29,8 @@ function Power() {
   return (
     <svg
       className={styles.svg}
-      onMouseEnter={handleMouseEnter}
+      onMouseEnter={onMobile ? null : handleMouseEnter}
+      onClick={onMobile ? handleMouseEnter : null}
       xmlns="http://www.w3.org/2000/svg"
       width="398"
       height="373"
@@ -431,7 +444,6 @@ function Power() {
         </filter>
       </defs>
     </svg>
-
   );
 }
 

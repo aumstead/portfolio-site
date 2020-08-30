@@ -1,13 +1,17 @@
 import styles from "./HeroSvg.module.scss";
 import { useEffect, useRef } from "react";
 
-function HeroSvg() {
+function HeroSvg({ onMobile }) {
   const tl = useRef(null);
 
   useEffect(() => {
     tl.current = gsap.timeline();
 
-    tl.current.pause();
+    const timeout = function() {
+      setTimeout(() => {
+        tl.current.restart();
+      }, 2000)
+    }
 
     tl.current
       .to("#gear-group", 8, {
@@ -47,6 +51,17 @@ function HeroSvg() {
       .to("#blue-icon-group", 0.6, { x: -45 }, "<")
       .to("#red-icon-group", 0.8, { y: 96 }, "<.6")
       .to("#green-icon-group", 1, { y: 0 }, "<.8");
+    
+    if (onMobile) {
+      tl.current.pause();
+      timeout()
+    } else {
+      tl.current.pause();
+    }
+
+    return () => {
+      clearTimeout(timeout)
+    }
   }, []);
 
   function handleMouseEnter() {
@@ -55,7 +70,8 @@ function HeroSvg() {
   return (
     <svg
       className={styles.heroSvg}
-      onMouseEnter={handleMouseEnter}
+      onMouseEnter={onMobile ? null : handleMouseEnter}
+      onClick={onMobile ? handleMouseEnter : null}
       xmlns="http://www.w3.org/2000/svg"
       width="587"
       height="305"
