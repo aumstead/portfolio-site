@@ -3,7 +3,7 @@ import Header from "./Header";
 import styles from "./Layout.module.scss";
 import DarkModeContext from "../../contexts/darkMode/DarkModeContext";
 import { useContext } from "react";
-import Footer from "./Footer";
+import Footer from "./Footer/Footer";
 
 export default function Layout({ children, ...props }) {
   const darkModeContext = useContext(DarkModeContext);
@@ -15,8 +15,6 @@ export default function Layout({ children, ...props }) {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         {/* <title>{pageTitle}</title> */}
 
-        {/* <script src="prism.js"></script>
-        <link href="/prism.css" rel="stylesheet" /> */}
         <link
           href="https://fonts.googleapis.com/css2?family=Source+Code+Pro&display=swap"
           rel="stylesheet"
@@ -50,6 +48,7 @@ export default function Layout({ children, ...props }) {
         <Footer />
         <script src="/gsap.min.js"></script>
         <script src="/MotionPathPlugin.min.js"></script>
+        <script src="/TextPlugin.min.js"></script>
       </div>
     </>
   );

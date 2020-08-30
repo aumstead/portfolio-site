@@ -4,15 +4,14 @@ import DarkModeContext from "../../../contexts/darkMode/DarkModeContext";
 import Grid from "./Grid";
 import Knife from './Knife'
 
-function Skills() {
+function Skills({ onMobile }) {
   const darkModeContext = useContext(DarkModeContext);
   const { isDarkMode } = darkModeContext;
 
-  // const [myStackRunning, setMyStackRunning] = useState(false);
   const [mouseEnteredKnife, setMouseEnteredKnife] = useState(false);
 
   return (
-    <section>
+    <section className={styles.section}>
       <div className={styles.headingFlexContainer}>
         <h2
           className={
@@ -24,7 +23,7 @@ function Skills() {
           Skills
         </h2>
 
-        <Knife setMouseEnteredKnife={setMouseEnteredKnife}/>
+        <Knife onMobile={onMobile} setMouseEnteredKnife={setMouseEnteredKnife}/>
       </div>
       <Grid
         mouseEnteredKnife={mouseEnteredKnife}

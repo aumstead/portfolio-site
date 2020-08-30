@@ -1,0 +1,45 @@
+.post {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  padding: 1rem 0;
+}
+.titleFlexContainer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.postAnchor {
+  &:hover {
+    color: var(--hover-blue);
+  }
+  &__light {
+    color: var(--light-text);
+  }
+  &__dark {
+    color: var(--dark-text);
+  }
+}
+
+.title {
+  font-size: 2rem;
+}
+.date {
+  font-size: 1.6rem;
+  margin-left: 3rem;
+  &__light {
+    color: #b8b7b7;
+  }
+  &__dark {
+    color: #969696;
+  }
+}
+.description {
+  font-size: var(--text-font-size);
+  &__light {
+    color: #635f5f;
+  }
+  &__dark {
+    color: #efefef;
+  }
+}

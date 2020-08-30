@@ -1,0 +1,73 @@
+.section {
+  margin-top: 3rem;
+}
+.anchor {
+  position: relative;
+  top: -10rem;
+}
+.headingFlexContainer {
+  display: flex;
+  justify-content: space-between;
+}
+
+.title {
+  font-size: 3.6rem;
+  margin-top: 3.2rem;
+
+  &__dark {
+    color: #fff;
+  }
+  &__light {
+    color: black;
+  }
+}
+
+.aboutFlexContainer {
+  display: flex;
+  margin-top: 2rem;
+  position: relative;
+}
+.textContainer {
+  width: 70rem;
+}
+.listHeading {
+  font-size: 2rem;
+}
+.li {
+  font-size: 1.8rem;
+}
+.text {
+  font-size: 1.8rem;
+}
+.polaroid {
+  float: right;
+  height: 19rem;
+  width: 16rem;
+  transform: rotate(5deg) translateX(-1rem);
+  margin-left: 1.5rem;
+  background-color: #fff;
+  box-shadow: 0 2px 8px rgba(0,0,0,.26);
+}
+.emptyPolaroid {
+  margin-top: 1rem;
+  height: 14rem;
+  width: 14rem;
+  background-color: #000;
+  position: absolute;
+  left: 1rem;
+}
+.photo {
+  margin-top: 1rem;
+  height: 14rem;
+  width: 14rem;
+  object-fit: cover;
+  position: absolute;
+  left: 1rem;
+  opacity: 0;
+}
+
+@media only screen and (max-width: 500px) {
+  .section {
+    margin: 0rem 1.5rem;
+  }
+}

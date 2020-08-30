@@ -9,13 +9,13 @@ import MassageFluke from "../components/projects/logos/MassageFluke";
 import WhiteSands from "../components/projects/logos/WhiteSands";
 import HeroSvg from "../components/projects/HeroSvg";
 
-function Projects({ ...props }) {
+function Projects() {
   const darkModeContext = useContext(DarkModeContext);
   const { isDarkMode } = darkModeContext;
 
   return (
     <Layout>
-      <section>
+      <section className={styles.heroSection}>
         <HeroSvg />
         <h1
           className={
@@ -27,21 +27,21 @@ function Projects({ ...props }) {
           Projects
         </h1>
         <p className={styles.text}>
-          See all the nifty things I can do with code here. Feel free to skip
-          the blocks of text — they'll probably bore you. It is worth
+          See all the things I've learned to do with code here. Feel free to
+          skip the blocks of text — they'll probably bore you. It is worth
           noting, however, that dgifolios is my best work.
         </p>
       </section>
 
       <section className={styles.project}>
+        <a className={styles.anchor} id="dgifolios" />
         <img
-          id="dgifolios"
           className={
             isDarkMode
               ? `${styles.thumbnail} ${styles.thumbnail__dark}`
               : `${styles.thumbnail} ${styles.thumbnail__light}`
           }
-          src="/static/images/dgifolios.png"
+          src="/images/dgifolios1.png"
           alt="dgifolios project"
         />
         <h2 className={styles.title}>dgifolios</h2>
@@ -51,9 +51,8 @@ function Projects({ ...props }) {
         <br />
         <h3 className={styles.subTitle}>Description:</h3>
         <p className={styles.description}>
-          This was my quarantine project, and is by far my most complex. It
-          takes user-entered data about their stock portfolio and dividends
-          received to provide a number of features. A few of them are:
+          This full-stack app takes user-entered data about their stock
+          portfolio to provide a number of features. A few of them are:
           statistics about the user's portfolio and dividends, a number of
           charts, and a public profile page about their investments that can be
           shared and followed by other users of the site.
@@ -61,17 +60,14 @@ function Projects({ ...props }) {
         <br />
         <h3 className={styles.subTitle}>How I improved as a developer:</h3>
         <p className={styles.description}>
-          I fully embraced the "learn as you need it" philosophy for this
-          project, from creating pagination to setting up AWS SNS for password
-          reset emails. In general, this project just gave me a lot of
-          confidence in my ability to create a full-stack application. The
-          pieces started to really solidify in my head, and then into the code
-          and on the page. In the end, I had a REST API for the frontend to
-          connect with that basically handled CRUD operations and
-          authentication. I spent many hours inside documentation of things like
-          MongoDB, the Fuse.js search library, Nivo charts, and others. I also
-          wrote some algorithms to calculate certain statistics on the stocks
-          and dividends, which is really a core feature of the app.
+          In general, this project gave me a lot of confidence in
+          my ability to create a full-stack application. In the end, I had a
+          frontend that connects to a Node.js backend that essentially handles CRUD
+          operations and authentication. I spent many hours inside the documentation
+          of things like MongoDB, the Fuse.js search library, Nivo charts, and
+          others. I also wrote some algorithms to calculate certain statistics
+          on the stocks and dividends, which is really a core feature of the
+          app.
         </p>
         <br />
         <h3 className={styles.subTitle}>Visit:</h3>
@@ -106,14 +102,14 @@ function Projects({ ...props }) {
       </section>
 
       <section className={styles.project}>
+        <a className={styles.anchor} id="massage-fluke" />
         <img
-          id="massage-fluke"
           className={
             isDarkMode
               ? `${styles.thumbnail} ${styles.thumbnail__dark}`
               : `${styles.thumbnail} ${styles.thumbnail__light}`
           }
-          src="/static/images/massageTherapies.jpg"
+          src="/images/massageBowen.png"
           alt="Massage Fluke project"
         />
         <h2 className={styles.title}>Massage Fluke</h2>
@@ -123,10 +119,10 @@ function Projects({ ...props }) {
         <br />
         <h3 className={styles.subTitle}>Description:</h3>
         <p className={styles.description}>
-          This is a site I made for a colleague for when she returns to the UK.
-          She wanted a few brochure-type pages plus a blog where she could write
-          articles, customers could share their experiences, etc. Users can
-          create an account and login to contribute blog articles.
+          This is a site I made for a colleague. She wanted a few brochure-type
+          pages, plus a blog where she could write articles, customers could
+          share their experiences, etc. Users can create an account and login to
+          contribute blog articles.
         </p>
         <br />
         <h3 className={styles.subTitle}>How I improved as a developer:</h3>
@@ -134,8 +130,8 @@ function Projects({ ...props }) {
           This project gave me a taste of the full-stack as I used Firebase to
           handle authentication, authorization, and storing blog post text and
           images. It served as a nice stepping-stone before trying to write a
-          backend myself. I also learned to use the Google Maps API to embed a
-          nice map.
+          backend myself. I also used the Google Maps API to embed a
+          nice-looking map.
         </p>
         <br />
         <h3 className={styles.subTitle}>Visit:</h3>
@@ -170,14 +166,14 @@ function Projects({ ...props }) {
       </section>
 
       <section className={styles.project}>
+        <a className={styles.anchor} id="recall-chek" />
         <img
-          id="recall-chek"
           className={
             isDarkMode
               ? `${styles.thumbnail} ${styles.thumbnail__dark}`
               : `${styles.thumbnail} ${styles.thumbnail__light}`
           }
-          src="/static/images/recallchek.png"
+          src="/images/recallchek1.png"
           alt="RecallChek project"
         />
         <h2 className={styles.title}>RecallChek</h2>
@@ -189,11 +185,9 @@ function Projects({ ...props }) {
         <p className={styles.description}>
           RecallChek is a real product offered by Residential Warranty Services,
           an Indianapolis-based business which offers home warranties.
-          RecallChek is a service home inspectors can sell that checks to see if
+          It's a service home inspectors can sell that checks to see if
           any home appliances have been recalled over the years. An old friend
-          of mine is CTO at the company and offered me this project. The current
-          design for the RecallChek site is very outdated, so hopefully they'll
-          be able to use the redesign I created in the future. (As a sidenote, I
+          is CTO at the company and offered me this project. (As a sidenote, I
           did the layout design, but not the site's routing structure, which is
           unusual and can be confusing.)
         </p>
@@ -234,14 +228,14 @@ function Projects({ ...props }) {
       </section>
 
       <section className={styles.project}>
+        <a className={styles.anchor} id="white-sands" />
         <img
-          id="white-sands"
           className={
             isDarkMode
               ? `${styles.thumbnail} ${styles.thumbnail__dark}`
               : `${styles.thumbnail} ${styles.thumbnail__light}`
           }
-          src="/static/images/whiteSands.jpg"
+          src="/images/whiteSands.jpg"
           alt="White Sands Resort project"
         />
         <h2 className={styles.title}>White Sands Resort</h2>
@@ -253,7 +247,7 @@ function Projects({ ...props }) {
         <p className={styles.description}>
           This was one of my very first projects, and I still think it's good
           enough to put in my portfolio. It's simply a landing page for a fake
-          hotel. Most of the design was taken from (or inspired by😏) the{" "}
+          hotel. Most of the design was taken from (or inspired by😎) the{" "}
           <a
             className={
               isDarkMode
@@ -270,15 +264,12 @@ function Projects({ ...props }) {
         <br />
         <h3 className={styles.subTitle}>How I improved as a developer:</h3>
         <p className={styles.description}>
-          This was the first time I used Sass, and now I almost always use it.
-          The page is image heavy, so I had to learn about image optimization.
-          For many of the images, a smaller one is loaded for mobile. The entire
-          page was made with flexbox, and since then, it has really become my
+          This was the first time I used Sass, and now it's my preference.
+          The page is image heavy, so I had to learn about image optimization. All of the layouts were made with flexbox, and since then, it has really become my
           "go-to" tool in CSS. I felt a lot of satisfaction when I completed
           this project back in the first-half of 2019. Even though I'm a
-          mediocre designer, I realized I can make something look the way I want
-          it to look using CSS, and I still feel that that underlying confidence
-          is pretty powerful as a motivator.
+          mediocre designer, I realized I can make something look exactly how I want
+          it using CSS.
         </p>
         <br />
         <h3 className={styles.subTitle}>Visit:</h3>
@@ -316,7 +307,7 @@ function Projects({ ...props }) {
               ? `${styles.thumbnail} ${styles.thumbnail__dark}`
               : `${styles.thumbnail} ${styles.thumbnail__light}`
           }
-          src="/static/images/portfoliov1.png"
+          src="/images/portfoliov1.png"
           alt="Portfolio v1.0 project"
         />
         <h2 className={styles.title}>Portfolio 1.0</h2>
@@ -326,32 +317,18 @@ function Projects({ ...props }) {
         <br />
         <h3 className={styles.subTitle}>Description:</h3>
         <p className={styles.description}>
-          My first portfolio site, finished only four months or so before
-          starting this current one. I suppose it's satisfactory, but I'd rather
-          have something I feel more confident with presenting. The layout was a
-          bit non-intuitive, particularly on mobile, so that's something I
-          wanted to change.
+          My first portfolio site, done only months before this current one. I suppose it's satisfactory, but there a few things about it that rubbed me the wrong way, and I wanted to be 100% confident with my portfolio site.
         </p>
         <br />
         <h3 className={styles.subTitle}>How I improved as a developer:</h3>
         <p className={styles.description}>
-          This was my first project using Next.js, and the time when I chose to
-          focus on Next rather than Gatsby. I'm still happy with this choice. I
-          learned about clean-up functions for the useEffect hook, as I kept
-          getting memory-leak errors in the console. The card animations in the
-          projects section, which was my attempt at a "wow-factor", took forever
-          to get anywhere near presentable, but the time spent taught me a lot
-          about animating in CSS, which is something I've brought to this
-          portfolio. Later, I saw React Spring developed functionality for
-          almost the exact type of animation I was going for. Lastly, I used
-          Framer Motion to do page transitions and to animate some other content
-          on entrance.
+          This was my first project using Next.js, which you may have noticed, is my framework of choice. Like many of my projects, this one was just more React practice, more CSS practice, and maybe a new library or two (this time it was Framer Motion). If you're still reading down here, I'll assume you just scrolled and randomly started skimming the text. Since I still have you here, I might as well make my plea. Look, I can learn to do the job — whatever it may be. After all the studying I've done over the past two years, if I can get paid to learn a certain technology, I'll be thrilled. I'm motivated, I think I'm pretty mature and easy to get along with, and I'm ready to hunker down and work a ton to make it in this industry. I'll sweep floors if I have to! Contact me!
         </p>
         <br />
         <h3 className={styles.subTitle}>Visit:</h3>
         <img
           className={styles.portfolioLogo}
-          src="/static/images/portfolio.png"
+          src="/images/portfolio.png"
           alt="Portfolio 1.0 icon"
         />
         <a

@@ -1,16 +1,316 @@
 import styles from "./CleanCodeSvg.module.scss";
-import { useState } from "react";
+import { useEffect, useRef } from "react";
 
 function CleanCodeSvg(props) {
-  // State to determine if mouse enter event should be triggerable
-  const [cleanCodeSvgRunning, setCleanCodeSvgRunning] = useState(false);
+  const explosionTl = useRef(null);
+  const clientTl = useRef(null);
 
-  const colorsArr = ['#219653', '#EB5757', '#9B51E0', '#fff48f', '#bbe1fa', '#fe91ca']
+  const colorsArr = [
+    // green
+    "#219653",
+    // red
+    "#EB5757",
+    // purple
+    "#9B51E0",
+    "#fff48f",
+    "#fe91ca",
+    "#2AA1FF"
+  ];
+
+  useEffect(() => {
+    clientTl.current = gsap.timeline();
+    explosionTl.current = gsap.timeline();
+
+    clientTl.current
+      .to(".clientBackground", { duration: 1, fill: "#fff" })
+      .to(".clientTop", { duration: 1, opacity: 0 }, "<")
+      .to(".clientMiddle", { duration: 1, opacity: 0 }, "<")
+      .to(".clientBottom", { duration: 1, opacity: 0 }, "<")
+      .to(".clientTop", { duration: 1, stroke: "#000", opacity: 0.34 }, "<3.5")
+      .to(
+        ".clientMiddle",
+        { duration: 1, stroke: "#000", opacity: 0.34 },
+        "<2.5"
+      )
+      .to(".clientBottom", { duration: 1, stroke: "#000", opacity: 1 }, "<3")
+      .to(
+        ".clientBackground",
+        {
+          duration: 1,
+          fill: colorsArr[Math.floor(Math.random() * 5)],
+          opacity: 1,
+        },
+        "<3.5"
+      );
+
+    clientTl.current.pause();
+
+    explosionTl.current
+      .addLabel("start", 0)
+      .to(
+        ".code1",
+        {
+          duration: 2,
+          motionPath: { path: "#pathCode1", align: "self" },
+          rotate: 300,
+        },
+        "<"
+      )
+      .to(
+        ".code2",
+        {
+          duration: 2,
+          motionPath: { path: "#pathCode2", align: "self" },
+          rotate: 600,
+        },
+        "<"
+      )
+      .to(
+        ".code3",
+        {
+          duration: 2,
+          motionPath: { path: "#pathCode3", align: "self" },
+          rotate: 300,
+        },
+        "<"
+      )
+      .to(
+        ".code4",
+        {
+          duration: 2,
+          motionPath: { path: "#pathCode4", align: "self" },
+          rotate: 90,
+        },
+        "<"
+      )
+      .to(
+        ".code5",
+        {
+          duration: 2,
+          motionPath: { path: "#pathCode5", align: "self" },
+        },
+        "<"
+      )
+      .to(
+        ".code6",
+        {
+          duration: 2,
+          motionPath: { path: "#pathCode6", align: "self" },
+          rotate: 1400,
+        },
+        "<"
+      )
+      .to(
+        ".code7",
+        {
+          duration: 2,
+          motionPath: { path: "#pathCode7", align: "self" },
+          rotate: 600,
+        },
+        "<"
+      )
+      .to(
+        ".code8",
+        {
+          duration: 2,
+          motionPath: { path: "#pathCode8", align: "self" },
+        },
+        "<"
+      )
+      .to(
+        ".code9",
+        {
+          duration: 2,
+          motionPath: { path: "#pathCode9", align: "self" },
+        },
+        "<"
+      )
+      .to(
+        ".code10",
+        {
+          duration: 2,
+          motionPath: { path: "#pathCode10", align: "self" },
+        },
+        "<"
+      )
+      .to(
+        ".code11",
+        {
+          duration: 2,
+          motionPath: { path: "#pathCode11", align: "self" },
+        },
+        "<"
+      )
+      .to(
+        ".code12",
+        {
+          duration: 2,
+          motionPath: { path: "#pathCode12", align: "self" },
+          rotate: 900,
+        },
+        "<"
+      )
+      .to(
+        ".code13",
+        {
+          duration: 2,
+          motionPath: { path: "#pathCode13", align: "self" },
+          rotate: 1200,
+        },
+        "<"
+      )
+      .to(
+        ".code14",
+        {
+          duration: 2,
+          motionPath: { path: "#pathCode14", align: "self" },
+          rotate: 1200,
+        },
+        "<"
+      )
+      .to(
+        ".code15",
+        {
+          duration: 2,
+          motionPath: { path: "#pathCode15", align: "self" },
+          rotate: 500,
+        },
+        "<"
+      )
+      .to(
+        ".code16",
+        {
+          duration: 2,
+          motionPath: { path: "#pathCode16", align: "self" },
+          rotate: 400,
+        },
+        "<"
+      )
+      .to(
+        ".code17",
+        {
+          duration: 2,
+          motionPath: { path: "#pathCode17", align: "self" },
+          rotate: 25,
+        },
+        "<"
+      )
+      .to(
+        ".code18",
+        {
+          duration: 2,
+          motionPath: { path: "#pathCode18", align: "self" },
+          rotate: 120,
+        },
+        "<"
+      )
+      .to(
+        ".code19",
+        {
+          duration: 2,
+          motionPath: { path: "#pathCode19", align: "self" },
+          rotate: 120,
+        },
+        "<"
+      )
+      .to(
+        ".code20",
+        {
+          duration: 2,
+          motionPath: { path: "#pathCode20", align: "self" },
+          rotate: 120,
+        },
+        "<"
+      )
+      .to(
+        ".code21",
+        {
+          duration: 2,
+          motionPath: { path: "#pathCode21", align: "self" },
+          rotate: 120,
+        },
+        "<"
+      )
+      .to(
+        ".code22",
+        {
+          duration: 2,
+          motionPath: { path: "#pathCode22", align: "self" },
+          rotate: 1200,
+        },
+        "<"
+      )
+      .to(
+        ".code23",
+        {
+          duration: 2,
+          motionPath: { path: "#pathCode23", align: "self" },
+          rotate: 1200,
+        },
+        "<"
+      )
+
+      // fade out the code blocks
+      .to(".code1", { duration: 1, opacity: 0 }, "<1")
+      .to(".code2", { duration: 1, opacity: 0 }, "<")
+      .to(".code3", { duration: 1, opacity: 0 }, "<")
+      .to(".code4", { duration: 1, opacity: 0 }, "<")
+      .to(".code5", { duration: 1, opacity: 0 }, "<")
+      .to(".code6", { duration: 1, opacity: 0 }, "<")
+      .to(".code7", { duration: 1, opacity: 0 }, "<")
+      .to(".code8", { duration: 1, opacity: 0 }, "<")
+      .to(".code9", { duration: 1, opacity: 0 }, "<")
+      .to(".code10", { duration: 1, opacity: 0 }, "<")
+      .to(".code11", { duration: 1, opacity: 0 }, "<")
+      .to(".code12", { duration: 1, opacity: 0 }, "<")
+      .to(".code13", { duration: 1, opacity: 0 }, "<")
+      .to(".code14", { duration: 1, opacity: 0 }, "<")
+      .to(".code15", { duration: 1, opacity: 0 }, "<")
+      .to(".code16", { duration: 1, opacity: 0 }, "<")
+      .to(".code17", { duration: 1, opacity: 0 }, "<")
+      .to(".code18", { duration: 1, opacity: 0 }, "<")
+      .to(".code19", { duration: 1, opacity: 0 }, "<")
+      .to(".code20", { duration: 1, opacity: 0 }, "<")
+      .to(".code21", { duration: 1, opacity: 0 }, "<")
+      .to(".code22", { duration: 1, opacity: 0 }, "<")
+      .to(".code23", { duration: 1, opacity: 0 }, "<")
+
+      // reverse the animation to start label. Add stroke animation classes.
+      .eventCallback("onComplete", () => {
+        explosionTl.current.reverse("start");
+
+        document.querySelector(".code1").classList.add(`${styles.code1}`);
+        document.querySelector(".code2").classList.add(`${styles.code2}`);
+        document.querySelector(".code3").classList.add(`${styles.code3}`);
+        document.querySelector(".code4").classList.add(`${styles.code4}`);
+        document.querySelector(".code5").classList.add(`${styles.code5}`);
+        document.querySelector(".code6").classList.add(`${styles.code6}`);
+        document.querySelector(".code7").classList.add(`${styles.code7}`);
+        document.querySelector(".code8").classList.add(`${styles.code8}`);
+        document.querySelector(".code9").classList.add(`${styles.code9}`);
+        document.querySelector(".code10").classList.add(`${styles.code10}`);
+        document.querySelector(".code11").classList.add(`${styles.code11}`);
+        document.querySelector(".code12").classList.add(`${styles.code12}`);
+        document.querySelector(".code13").classList.add(`${styles.code13}`);
+        document.querySelector(".code14").classList.add(`${styles.code14}`);
+        document.querySelector(".code15").classList.add(`${styles.code15}`);
+        document.querySelector(".code16").classList.add(`${styles.code16}`);
+        document.querySelector(".code17").classList.add(`${styles.code17}`);
+        document.querySelector(".code18").classList.add(`${styles.code18}`);
+        document.querySelector(".code19").classList.add(`${styles.code19}`);
+        document.querySelector(".code20").classList.add(`${styles.code20}`);
+        document.querySelector(".code21").classList.add(`${styles.code21}`);
+        document.querySelector(".code22").classList.add(`${styles.code22}`);
+        document.querySelector(".code23").classList.add(`${styles.code23}`);
+      });
+
+    explosionTl.current.pause();
+  }, []);
 
   function handleMouseEnter() {
-    setCleanCodeSvgRunning(true);
-    removeClassesForStrokeAnimation()
-    runAnimations()
+    removeClassesForStrokeAnimation();
+    explosionTl.current.restart();
+    clientTl.current.restart();
   }
 
   function removeClassesForStrokeAnimation() {
@@ -39,240 +339,6 @@ function CleanCodeSvg(props) {
     document.getElementById("code23").classList.remove(`${styles.code23}`);
   }
 
-  function runAnimations() {
-    // initial animations in client window
-    gsap.to('.clientBackground', { duration: 1, fill: '#fff' })
-    gsap.to('.clientTop', { duration: 1, opacity: 0 })
-    gsap.to('.clientMiddle', { duration: 1, opacity: 0 })
-    gsap.to('.clientBottom', { duration: 1, opacity: 0 })
-
-    const explode1 = gsap.to(".code1", {
-      duration: 2,
-      motionPath: { path: "#pathCode1", align: "self" },
-      rotate: 300,
-    });
-    const explode2 = gsap.to(".code2", {
-      duration: 2,
-      motionPath: { path: "#pathCode2", align: "self" },
-      rotate: 600,
-    });
-    const explode3 = gsap.to(".code3", {
-      duration: 2,
-      motionPath: { path: "#pathCode3", align: "self" },
-      rotate: 300,
-    });
-    const explode4 = gsap.to(".code4", {
-      duration: 2,
-      motionPath: { path: "#pathCode4", align: "self" },
-      rotate: 90,
-    });
-    const explode5 = gsap.to(".code5", {
-      duration: 2,
-      motionPath: { path: "#pathCode5", align: "self" },
-    });
-    const explode6 = gsap.to(".code6", {
-      duration: 2,
-      motionPath: { path: "#pathCode6", align: "self" },
-      rotate: 1400,
-    });
-    const explode7 = gsap.to(".code7", {
-      duration: 2,
-      motionPath: { path: "#pathCode7", align: "self" },
-      rotate: 600,
-    });
-    const explode8 = gsap.to(".code8", {
-      duration: 2,
-      motionPath: { path: "#pathCode8", align: "self" },
-    });
-    const explode9 = gsap.to(".code9", {
-      duration: 2,
-      motionPath: { path: "#pathCode9", align: "self" },
-    });
-    const explode10 = gsap.to(".code10", {
-      duration: 2,
-      motionPath: { path: "#pathCode10", align: "self" },
-    });
-    const explode11 = gsap.to(".code11", {
-      duration: 2,
-      motionPath: { path: "#pathCode11", align: "self" },
-    });
-    const explode12 = gsap.to(".code12", {
-      duration: 2,
-      motionPath: { path: "#pathCode12", align: "self" },
-      rotate: 900,
-    });
-    const explode13 = gsap.to(".code13", {
-      duration: 2,
-      motionPath: { path: "#pathCode13", align: "self" },
-      rotate: 1200,
-    });
-    const explode14 = gsap.to(".code14", {
-      duration: 2,
-      motionPath: { path: "#pathCode14", align: "self" },
-      rotate: 1200,
-    });
-    const explode15 = gsap.to(".code15", {
-      duration: 2,
-      motionPath: { path: "#pathCode15", align: "self" },
-      rotate: 500,
-    });
-    const explode16 = gsap.to(".code16", {
-      duration: 2,
-      motionPath: { path: "#pathCode16", align: "self" },
-      rotate: 400,
-    });
-    const explode17 = gsap.to(".code17", {
-      duration: 2,
-      motionPath: { path: "#pathCode17", align: "self" },
-      rotate: 25,
-    });
-    const explode18 = gsap.to(".code18", {
-      duration: 2,
-      motionPath: { path: "#pathCode18", align: "self" },
-      rotate: 120,
-    });
-    const explode19 = gsap.to(".code19", {
-      duration: 2,
-      motionPath: { path: "#pathCode19", align: "self" },
-      rotate: 120,
-    });
-    const explode20 = gsap.to(".code20", {
-      duration: 2,
-      motionPath: { path: "#pathCode20", align: "self" },
-      rotate: 120,
-    });
-    const explode21 = gsap.to(".code21", {
-      duration: 2,
-      motionPath: { path: "#pathCode21", align: "self" },
-      rotate: 120,
-    });
-    const explode22 = gsap.to(".code22", {
-      duration: 2,
-      motionPath: { path: "#pathCode22", align: "self" },
-      rotate: 1200,
-    });
-    const explode23 = gsap.to(".code23", {
-      duration: 2,
-      motionPath: { path: "#pathCode23", align: "self" },
-      rotate: 1200,
-    });
-
-    // fade out the code blocks
-    gsap.to(".code1", { duration: 1, opacity: 0, delay: 1 });
-    gsap.to(".code2", { duration: 1, opacity: 0, delay: 1 });
-    gsap.to(".code3", { duration: 1, opacity: 0, delay: 1 });
-    gsap.to(".code4", { duration: 1, opacity: 0, delay: 1 });
-    gsap.to(".code5", { duration: 1, opacity: 0, delay: 1 });
-    gsap.to(".code6", { duration: 1, opacity: 0, delay: 1 });
-    gsap.to(".code7", { duration: 1, opacity: 0, delay: 1 });
-    gsap.to(".code8", { duration: 1, opacity: 0, delay: 1 });
-    gsap.to(".code9", { duration: 1, opacity: 0, delay: 1 });
-    gsap.to(".code10", { duration: 1, opacity: 0, delay: 1 });
-    gsap.to(".code11", { duration: 1, opacity: 0, delay: 1 });
-    gsap.to(".code12", { duration: 1, opacity: 0, delay: 1 });
-    gsap.to(".code13", { duration: 1, opacity: 0, delay: 1 });
-    gsap.to(".code14", { duration: 1, opacity: 0, delay: 1 });
-    gsap.to(".code15", { duration: 1, opacity: 0, delay: 1 });
-    gsap.to(".code16", { duration: 1, opacity: 0, delay: 1 });
-    gsap.to(".code17", { duration: 1, opacity: 0, delay: 1 });
-    gsap.to(".code18", { duration: 1, opacity: 0, delay: 1 });
-    gsap.to(".code19", { duration: 1, opacity: 0, delay: 1 });
-    gsap.to(".code20", { duration: 1, opacity: 0, delay: 1 });
-    gsap.to(".code21", { duration: 1, opacity: 0, delay: 1 });
-    gsap.to(".code22", { duration: 1, opacity: 0, delay: 1 });
-    gsap.to(".code23", { duration: 1, opacity: 0, delay: 1 });
-
-    // reverse the animation to take code blocks back to original position
-    explode1.eventCallback("onComplete", () => {
-      explode1.reverse(0.2);
-      explode2.reverse(0.2);
-      explode3.reverse(0.2);
-      explode4.reverse(0.2);
-      explode5.reverse(0.2);
-      explode6.reverse(0.2);
-      explode7.reverse(0.2);
-      explode8.reverse(0.2);
-      explode9.reverse(0.2);
-      explode10.reverse(0.2);
-      explode11.reverse(0.2);
-      explode12.reverse(0.2);
-      explode13.reverse(0.2);
-      explode14.reverse(0.2);
-      explode15.reverse(0.2);
-      explode16.reverse(0.2);
-      explode17.reverse(0.2);
-      explode18.reverse(0.2);
-      explode19.reverse(0.2);
-      explode20.reverse(0.2);
-      explode21.reverse(0.2);
-      explode22.reverse(0.2);
-      explode23.reverse(0.2);
-    });
-
-    // when reverse is complete, add classes to begin second round of animations
-    explode1.eventCallback("onReverseComplete", () => {
-      document.querySelector(".code1").classList.add(`${styles.code1}`);
-      document.querySelector(".code2").classList.add(`${styles.code2}`);
-      document.querySelector(".code3").classList.add(`${styles.code3}`);
-      document.querySelector(".code4").classList.add(`${styles.code4}`);
-      document.querySelector(".code5").classList.add(`${styles.code5}`);
-      document.querySelector(".code6").classList.add(`${styles.code6}`);
-      document.querySelector(".code7").classList.add(`${styles.code7}`);
-      document.querySelector(".code8").classList.add(`${styles.code8}`);
-      document.querySelector(".code9").classList.add(`${styles.code9}`);
-      document.querySelector(".code10").classList.add(`${styles.code10}`);
-      document.querySelector(".code11").classList.add(`${styles.code11}`);
-      document.querySelector(".code12").classList.add(`${styles.code12}`);
-      document.querySelector(".code13").classList.add(`${styles.code13}`);
-      document.querySelector(".code14").classList.add(`${styles.code14}`);
-      document.querySelector(".code15").classList.add(`${styles.code15}`);
-      document.querySelector(".code16").classList.add(`${styles.code16}`);
-      document.querySelector(".code17").classList.add(`${styles.code17}`);
-      document.querySelector(".code18").classList.add(`${styles.code18}`);
-      document.querySelector(".code19").classList.add(`${styles.code19}`);
-      document.querySelector(".code20").classList.add(`${styles.code20}`);
-      document.querySelector(".code21").classList.add(`${styles.code21}`);
-      document.querySelector(".code22").classList.add(`${styles.code22}`);
-      document.querySelector(".code23").classList.add(`${styles.code23}`);
-
-      // client window animations
-      gsap.to('.clientTop', { duration: 1, stroke: '#000', opacity: .34, delay: 1.5 })
-      gsap.to('.clientMiddle', { duration: 1, stroke: '#000', opacity: .34, delay: 4 })
-      gsap.to('.clientBottom', { duration: 1, stroke: '#000', opacity: 1, delay: 7 })
-      gsap.to('.clientBackground', { duration: 1, fill: colorsArr[Math.floor(Math.random() * 5)], opacity: 1, delay: 10 })
-
-      // make all code blocks visible as they were faded out before
-      gsap.set(".code1", { opacity: 1, delay: 0 });
-      gsap.set(".code2", { opacity: 1, delay: 0 });
-      gsap.set(".code3", { opacity: 1, delay: 0 });
-      gsap.set(".code4", { opacity: 1, delay: 0 });
-      gsap.set(".code5", { opacity: 1, delay: 0 });
-      gsap.set(".code6", { opacity: 1, delay: 0 });
-      gsap.set(".code7", { opacity: 1, delay: 0 });
-      gsap.set(".code8", { opacity: 1, delay: 0 });
-      gsap.set(".code9", { opacity: 1, delay: 0 });
-      gsap.set(".code10", { opacity: 1, delay: 0 });
-      gsap.set(".code11", { opacity: 1, delay: 0 });
-      gsap.set(".code12", { opacity: 1, delay: 0 });
-      gsap.set(".code13", { opacity: 1, delay: 0 });
-      gsap.set(".code14", { opacity: 1, delay: 0 });
-      gsap.set(".code15", { opacity: 1, delay: 0 });
-      gsap.set(".code16", { opacity: 1, delay: 0 });
-      gsap.set(".code17", { opacity: 1, delay: 0 });
-      gsap.set(".code18", { opacity: 1, delay: 0 });
-      gsap.set(".code19", { opacity: 1, delay: 0 });
-      gsap.set(".code20", { opacity: 1, delay: 0 });
-      gsap.set(".code21", { opacity: 1, delay: 0 });
-      gsap.set(".code22", { opacity: 1, delay: 0 });
-      gsap.set(".code23", { opacity: 1, delay: 0 });
-
-      // change the state to make the onMouseEnter event possible
-      setTimeout(() => {
-        setCleanCodeSvgRunning(false);
-      }, 11100)
-    });
-  }
-
   return (
     <svg
       className={styles.cleanCodeSvg}
@@ -280,7 +346,7 @@ function CleanCodeSvg(props) {
       height={242}
       viewBox="0 0 482 242"
       fill="none"
-      onMouseEnter={cleanCodeSvgRunning ? null : handleMouseEnter}
+      onMouseEnter={handleMouseEnter}
       {...props}
     >
       <path
@@ -490,8 +556,8 @@ function CleanCodeSvg(props) {
         strokeLinejoin="round"
       />
       <path
-        className='clientBackground'
-        id='clientBackground'
+        className="clientBackground"
+        id="clientBackground"
         d="M404.058 146.14h-87.58c-3.322 0-6.04-2.693-6.04-5.984v-91.93c0-3.29 2.718-5.984 6.04-5.984h87.58c3.322 0 6.04 2.693 6.04 5.984v91.93c0 3.366-2.718 5.984-6.04 5.984z"
         fill="#2AA1FF"
       />
@@ -505,8 +571,8 @@ function CleanCodeSvg(props) {
         strokeLinejoin="round"
       />
       <path
-        className='clientTop'
-        id='clientTop'
+        className="clientTop"
+        id="clientTop"
         opacity={0.34}
         d="M390.996 70.741h-61.608c-2.19 0-3.926-1.72-3.926-3.89v-5.834c0-2.169 1.736-3.89 3.926-3.89h61.608c2.189 0 3.926 1.721 3.926 3.89v5.835c0 2.169-1.737 3.89-3.926 3.89z"
         stroke="#fff"
@@ -524,15 +590,15 @@ function CleanCodeSvg(props) {
         strokeLinejoin="round"
       >
         <path
-          className='clientMiddle'
-          id='clientMiddle'
-          opacity={.8}
+          className="clientMiddle"
+          id="clientMiddle"
+          opacity={0.8}
           d="M363.967 92.658h-34.428c-2.189 0-3.926-1.72-3.926-3.89v-5.834c0-2.17 1.737-3.89 3.926-3.89h34.428c2.189 0 3.926 1.72 3.926 3.89v5.834c-.075 2.17-1.812 3.89-3.926 3.89zM391.071 92.658h-13.363c-2.19 0-3.926-1.72-3.926-3.89v-5.834c0-2.17 1.736-3.89 3.926-3.89h13.363c2.19 0 3.926 1.72 3.926 3.89v5.834c0 2.17-1.736 3.89-3.926 3.89z"
         />
       </g>
       <path
-        className='clientBottom'
-        id='clientBottom'
+        className="clientBottom"
+        id="clientBottom"
         d="M325.537 115.397h69.385M325.537 123.475h69.385M325.537 131.554h42.28"
         stroke="#fff"
         strokeWidth={2}
@@ -546,7 +612,7 @@ function CleanCodeSvg(props) {
       />
       <path
         className={`code3`}
-        id='code3'
+        id="code3"
         d="M263.628 33.266h9.815"
         stroke="#FF5757"
         strokeWidth={4}
@@ -560,7 +626,7 @@ function CleanCodeSvg(props) {
       />
       <path
         className={`code2`}
-        id='code2'
+        id="code2"
         d="M213.873 33.266h42.507"
         stroke="#7BFFA0"
         strokeWidth={4}
@@ -571,7 +637,7 @@ function CleanCodeSvg(props) {
       <path id="pathCode2" d="M235 33C77.3308 95.7258 19.3045 189.136 10 228" />
       <path
         className="code1"
-        id='code1'
+        id="code1"
         d="M192.884 33.266h14.949"
         stroke="#9169FF"
         strokeWidth={4}
@@ -582,7 +648,7 @@ function CleanCodeSvg(props) {
       <path id="pathCode1" d="M0.5 1C261.7 47 329 68.8333 330 74" />
       <path
         className="code23"
-        id='code23'
+        id="code23"
         d="M212.363 106.944h32.465"
         stroke="#9169FF"
         strokeWidth={4}
@@ -590,10 +656,13 @@ function CleanCodeSvg(props) {
         strokeLinecap="round"
         strokeLinejoin="round"
       />
-      <path id="pathCode23" d="M132 0.999997C60.7897 98.582 14.9957 131.659 0.999996 136" />
+      <path
+        id="pathCode23"
+        d="M132 0.999997C60.7897 98.582 14.9957 131.659 0.999996 136"
+      />
       <path
         className="code22"
-        id='code22'
+        id="code22"
         d="M192.884 106.944h10.495"
         stroke="#7BFFA0"
         strokeWidth={4}
@@ -604,7 +673,7 @@ function CleanCodeSvg(props) {
       <path id="pathCode22" d="M1 0.5C232.6 102.9 334.833 123.833 357 121.5" />
       <path
         className="code6"
-        id='code6'
+        id="code6"
         d="M256.379 42.467h6.116"
         stroke="#FF5757"
         strokeWidth={4}
@@ -615,7 +684,7 @@ function CleanCodeSvg(props) {
       <path id="pathCode6" d="M259.5 56.5C244.7 20.1 95.3333 20 22.5 24.5" />
       <path
         className="code5"
-        id='code5'
+        id="code5"
         d="M228.595 42.467h20.536"
         stroke="#9169FF"
         strokeWidth={4}
@@ -629,7 +698,7 @@ function CleanCodeSvg(props) {
       />
       <path
         className="code4"
-        id='code4'
+        id="code4"
         d="M200.358 42.467h20.914"
         stroke="#FFC47D"
         strokeWidth={4}
@@ -640,7 +709,7 @@ function CleanCodeSvg(props) {
       <path id="pathCode4" d="M259.5 56.5C244.7 20.1 95.3333 20 22.5 24.5" />
       <path
         className="code8"
-        id='code8'
+        id="code8"
         d="M232.748 51.667h18.044"
         stroke="#7BFFA0"
         strokeWidth={4}
@@ -651,7 +720,7 @@ function CleanCodeSvg(props) {
       <path id="pathCode8" d="M218 51.5C48.4 44.7 28 144 39 194.5" />
       <path
         className="code7"
-        id='code7'
+        id="code7"
         d="M210.098 51.667h16.987"
         stroke="#FF5757"
         strokeWidth={4}
@@ -662,7 +731,7 @@ function CleanCodeSvg(props) {
       <path id="pathCode7" d="M241.5 52C388.3 103.6 447.667 48.8333 459 15" />
       <path
         className="code11"
-        id='code11'
+        id="code11"
         d="M235.164 60.868h3.699"
         stroke="#FFC47D"
         strokeWidth={4}
@@ -673,7 +742,7 @@ function CleanCodeSvg(props) {
       <path id="pathCode11" d="M225 61.5C415.4 86.3 464 57.5 464.5 40" />
       <path
         className="code10"
-        id='code10'
+        id="code10"
         d="M220.215 60.868h8.38"
         stroke="#9169FF"
         strokeWidth={4}
@@ -684,7 +753,7 @@ function CleanCodeSvg(props) {
       <path id="pathCode10" d="M237.5 60.5C392.3 169.3 413 217.167 404 227.5" />
       <path
         className="code9"
-        id='code9'
+        id="code9"
         d="M200.358 60.868h13.515"
         stroke="#7BFFA0"
         strokeWidth={4}
@@ -698,7 +767,7 @@ function CleanCodeSvg(props) {
       />
       <path
         className="code13"
-        id='code13'
+        id="code13"
         d="M229.35 70.143h24.085"
         stroke="#FFC47D"
         strokeWidth={4}
@@ -709,7 +778,7 @@ function CleanCodeSvg(props) {
       <path id="pathCode13" d="M241.5 70C431.1 60 483.167 43.1667 485.5 36" />
       <path
         className="code12"
-        id='code12'
+        id="code12"
         d="M200.358 70.143h21.593"
         stroke="#FF5757"
         strokeWidth={4}
@@ -720,7 +789,7 @@ function CleanCodeSvg(props) {
       <path id="pathCode12" d="M211.5 70C331.5 200 382.5 231.167 393 230.5" />
       <path
         className="code16"
-        id='code16'
+        id="code16"
         d="M257.21 79.343h13.061"
         stroke="#9169FF"
         strokeWidth={4}
@@ -734,7 +803,7 @@ function CleanCodeSvg(props) {
       />
       <path
         className="code15"
-        id='code15'
+        id="code15"
         d="M229.35 79.343h20.914"
         stroke="#FF5757"
         strokeWidth={4}
@@ -745,7 +814,7 @@ function CleanCodeSvg(props) {
       <path id="pathCode15" d="M230.5 72C46.5 34.8 0.5 8.83333 0.5 0.5" />
       <path
         className="code14"
-        id='code14'
+        id="code14"
         d="M210.098 79.343h11.853"
         stroke="#7BFFA0"
         strokeWidth={4}
@@ -759,7 +828,7 @@ function CleanCodeSvg(props) {
       />
       <path
         className="code18"
-        id='code18'
+        id="code18"
         d="M238.863 88.544h11.401"
         stroke="#FF5757"
         strokeWidth={4}
@@ -773,7 +842,7 @@ function CleanCodeSvg(props) {
       />
       <path
         className="code17"
-        id='code17'
+        id="code17"
         d="M210.098 88.544h20.913"
         stroke="#9169FF"
         strokeWidth={4}
@@ -787,7 +856,7 @@ function CleanCodeSvg(props) {
       />
       <path
         className="code21"
-        id='code21'
+        id="code21"
         d="M268.535 97.744h13.061"
         stroke="#fff"
         strokeWidth={4}
@@ -798,7 +867,7 @@ function CleanCodeSvg(props) {
       <path id="pathCode21" d="M0.5 1C109.3 125.8 216.167 144.333 256 138" />
       <path
         className="code20"
-        id='code20'
+        id="code20"
         d="M228.595 97.744h32.843"
         stroke="#FFC47D"
         strokeWidth={4}
@@ -809,7 +878,7 @@ function CleanCodeSvg(props) {
       <path id="pathCode20" d="M42.5 1C-18.3 114.6 1.5 173.333 19 188.5" />
       <path
         className="code19"
-        id='code19'
+        id="code19"
         d="M200.358 97.744h20.914"
         stroke="#FF5757"
         strokeWidth={4}

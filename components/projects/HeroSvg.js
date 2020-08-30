@@ -18,7 +18,7 @@ function HeroSvg() {
       .to("#blue-icon-group", 0.2, { y: 48 }, "<")
       .to("#yellow-icon-group", 0.2, { y: -48 }, "<")
       .to("#green-icon-group", 0.2, { y: -96 }, "<.2")
-      .to("#red-icon-group", 0.2, { y: -48 }, "<.")
+      .to("#red-icon-group", 0.2, { y: -48 }, "<")
       .to("#green-icon-group", 0.2, { x: 45 }, "<.2")
       .to("#blue-icon-group", 0.2, { x: -45 }, "<")
       .to("#red-icon-group", 0.2, { x: 45 }, "<.2")

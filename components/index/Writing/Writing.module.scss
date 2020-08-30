@@ -1,3 +1,7 @@
+.section {
+  margin-top: 3rem;
+}
+
 .headingFlexContainer {
   display: flex;
   justify-content: space-between;
@@ -15,6 +19,22 @@
   }
 }
 
-.flexItem__svgs {
-  
+// not in media query because only rendered under 500px width
+.headingGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  // justify-items: center;
+}
+.column__left {
+  text-align: left;
+}
+
+@media only screen and (max-width: 500px) {
+  .section {
+    margin: 0rem 1.5rem;
+    margin-top: 5rem;
+  }
+  .title {
+    margin-top: 0rem;
+  }
 }

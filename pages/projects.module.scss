@@ -12,9 +12,15 @@
     color: black;
   }
 }
-
+.heroSection {
+  margin-bottom: 6rem;
+}
+.anchor {
+  position: relative;
+  top: -10rem;
+}
 .text {
-  font-size: 1.8rem;
+  font-size: var(--text-font-size);
   margin-bottom: 3rem;
 }
 
@@ -45,11 +51,11 @@
   font-size: 2rem;
 }
 .stack {
-  font-size: 1.8rem;
+  font-size: var(--text-font-size);
 }
 
 .linkAnchor {
-  font-size: 1.8rem;
+  font-size: var(--text-font-size);
   text-decoration: underline;
   &:hover {
     cursor: pointer;
@@ -73,7 +79,7 @@
 }
 
 .description {
-  font-size: 1.8rem;
+  font-size: var(--text-font-size);
 }
 
 .login {

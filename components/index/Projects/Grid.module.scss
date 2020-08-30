@@ -16,7 +16,7 @@
 }
 
 .link {
-  font-size: 1.8rem;
+  font-size: var(--text-font-size);
   transition: background-color .2s;
   padding: 1rem;
   border-radius: 3px;
@@ -66,11 +66,11 @@
 }
 
 .text {
-  font-size: 1.8rem;
+  font-size: var(--text-font-size);
 }
 
 .readMore {
-  font-size: 1.8rem;
+  font-size: var(--text-font-size);
   text-align: center;
   margin: 0 auto;
   display: block;

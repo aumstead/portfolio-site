@@ -6,7 +6,6 @@ function MyStack({ mouseEnteredKnife }) {
   const darkModeContext = useContext(DarkModeContext);
   const { isDarkMode } = darkModeContext;
 
-  // gsap timeline
   const tl = useRef(null);
   // ref to know if it's the initial render
   const firstUpdate = useRef(true);
@@ -19,9 +18,6 @@ function MyStack({ mouseEnteredKnife }) {
     tl.current.to('#html-gear', { rotate: 360 * 5, duration: 12, ease: Linear.easeNone,
       transformOrigin: "50% 50%", })
       .set('#client', {opacity: 0}, '<')
-    // tl.current.to('#html-gear', { rotate: 360 * 5, duration: 8, ease: "power2.out",
-    //   transformOrigin: "50% 50%", })
-      // .to('#html-dash', 8, { strokeDashoffset: -800, ease: "power2.out"}, '<')
       .to('#html-dash', 12, { strokeDashoffset: -800, ease: Linear.easeNone}, '<')
       .to('#react-gear', { rotate: 360 * 4, duration: 11, ease: Linear.easeNone,
         transformOrigin: "50% 50%", }, '<1')
@@ -29,8 +25,6 @@ function MyStack({ mouseEnteredKnife }) {
           transformOrigin: "50% 50%", }, '<')
       .to('#react-dash', 11, { strokeDashoffset: -800, ease: Linear.easeNone}, '<')
       .to('#node-dash', 11, { strokeDashoffset: 800, ease: Linear.easeNone}, '<')
-      // .fromTo('#css-line', { strokeDashoffset: -200, strokeDasharray: 200 }, { strokeDashoffset: 0 }, '<.5')
-      // .fromTo('#js-line', { strokeDashoffset: -225, strokeDasharray: 225 }, { strokeDashoffset: 0 }, '<')
       .set('#html-logo', { opacity: 1 }, '<1')
       .set('#html-logo', { opacity: 0 }, '<1')
       .set('#css-logo', { opacity: 1 }, '<')

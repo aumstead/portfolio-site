@@ -1,5 +1,6 @@
 .section {
   position: relative;
+  margin-top: 3rem;
 }
 
 .headingFlexContainer {
@@ -22,5 +23,21 @@
   }
   &__light {
     color: black;
+  }
+}
+
+@media only screen and (max-width: 500px) {
+  .headingFlexContainer {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    margin: 0 1.5rem;
+  }
+  .headingFlexItem__svgs {
+    justify-content: flex-end;
+    margin-right: 4rem;
+  }
+  
+  .title {
+    text-align: left;
   }
 }

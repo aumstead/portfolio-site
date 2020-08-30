@@ -3,10 +3,50 @@
   margin: 0 auto;
   display: flex;
   justify-content: space-between;
-  // position: fixed;
-  height: 12rem;
-  font-size: 1.8rem;
+  position: fixed;
+  left: 50%;
+  transform: translateX(-50%);
+  height: 10rem;
+  font-size: var(--text-font-size);
   align-items: center;
+  
+  z-index: 100;
+  &__light {
+    background-color: rgb(255, 255, 255, .7);
+    backdrop-filter: saturate(180%) blur(20px);
+  }
+  &__dark {
+    background-color: rgb(41, 41, 41, .7);
+    backdrop-filter: saturate(180%) blur(20px);
+  }
+}
+.flexItem__left {
+  display: flex;
+  align-items: center;
+}
+.flexItem__right {
+  display: flex;
+  align-items: center;
+}
+.logoAnchor {
+  &:hover {
+    cursor: pointer;
+  }
+}
+.logoText {
+  font-size: 2.2rem;
+  margin-left: .5rem;
+  font-family: 'Nothing You Could Do', -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial,
+  sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  &__light {
+    color: var(--light-text);
+  }
+  &__dark {
+    color: var(--dark-text);
+  }
+}
+.toggle {
+  margin-left: 1rem;
 }
 
 .lightToggle {
@@ -40,24 +80,78 @@
 }
 
 .darkBtn {
-  padding: 1rem;
+  margin: 0 1rem;
+  padding: .4rem .2rem;
   color: var(--dark-text);
-
-  &:hover {
-    background-color: var(--dark-hover-background);
-  }
 }
 
 .lightBtn {
-  padding: 1rem;
+  margin: 0 1rem;
+  padding: .4rem .2rem;
   color: var(--light-text);
-  transition: background-color var(--transition);
+}
 
+.projects {
   &:hover {
-    background-color: var(--light-hover-background)
+    color: #FC3A4D;
+    border-bottom: 2px solid #FC3A4D;
+  }
+}
+
+.blog {
+  &:hover {
+    color: #FCA417;
+    border-bottom: 2px solid #FCA417;
+    // color: #50B56F;
+    // border-bottom: 2px solid #50B56F;
+  }
+}
+
+.photos {
+  &:hover {
+    color: #9B51E0;
+    border-bottom: 2px solid #9B51E0;
+  }
+}
+
+.about {
+  &:hover {
+    color: #2AA1FF;
+    border-bottom: 2px solid #2AA1FF;
+  }
+}
+
+.home {
+  &:hover {
+    color: #2AA1FF;
+    border-bottom: 2px solid #2AA1FF;
   }
 }
 
 .yoda {
   height: 80%;
+}
+.hamburgerContainer {
+  display: none;
+}
+
+@media only screen and (max-width: 500px) {
+  .header {
+    width: 100%;
+    left: 0;
+    transform: translateX(0%);
+  }
+  .nav {
+    display: none;
+  }
+  .hamburgerContainer {
+    display: block;
+    height: 100%;
+  }
+  .flexItem__left {
+    margin-left: 1.5rem;
+  }
+  .flexItem__right {
+    margin-right: 1.5rem;
+  }
 }

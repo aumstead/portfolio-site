@@ -1,12 +1,12 @@
 import styles from './WhiteSands.module.scss'
 
-function WhiteSands({ isDarkMode }){
+function WhiteSands({ isDarkMode, fill }){
   return (
     <svg className={styles.logo} version="1.0" xmlns="http://www.w3.org/2000/svg"
-     width="933.000000pt" height="1280.000000pt" viewBox="0 0 933.000000 1280.000000"
+     width="933.000000pt" height="1280.000000pt" viewBox="0 0 933.000000 1000"
      preserveAspectRatio="xMidYMid meet">
     <g transform="translate(0.000000,1280.000000) scale(0.100000,-0.100000)"
-    fill={isDarkMode ? "#fff" : "#000"} stroke="none">
+    fill={isDarkMode || fill ? "#fff" : "#000"} stroke="none">
     <path d="M5278 12632 c-165 -255 -277 -661 -332 -1207 -13 -122 -46 -557 -46
     -599 0 -6 -3 -6 -9 0 -14 13 -33 586 -26 749 17 361 76 655 196 974 21 58 37
     106 35 108 -1 2 -19 -21 -39 -50 -136 -206 -209 -485 -237 -912 -5 -82 -10

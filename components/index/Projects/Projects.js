@@ -1,19 +1,15 @@
 import styles from "./Projects.module.scss";
-import { useContext, useState } from "react";
+import { useContext, useState, useEffect } from "react";
 import DarkModeContext from "../../../contexts/darkMode/DarkModeContext";
-import Grid from "./Grid";
-import Stapler from "./svgs/Stapler";
-import Scissors from "./svgs/Scissors";
-import PaperclipAnimation from "./svgs/PaperclipAnimation";
-import Explosion from "./svgs/Explosion";
+import Cards from "./svgs/Cards";
+import Carousel from "./Carousel";
+import Link from "next/link";
 
 function Projects() {
   const darkModeContext = useContext(DarkModeContext);
   const { isDarkMode } = darkModeContext;
 
-  const [paperclipsRunning, setPaperclipsRunning] = useState(false);
-  const [mouseEnteredStapler, setMouseEnteredStapler] = useState(false);
-  const [mouseEnteredScissors, setMouseEnteredScissors] = useState(false);
+  const [mouseEnteredCards, setMouseEnteredCards] = useState(false);
 
   return (
     <section className={styles.section}>
@@ -25,30 +21,15 @@ function Projects() {
               : `${styles.title} ${styles.title__light}`
           }
         >
-          Projects
+          Featured Project
         </h2>
         <div className={styles.headingFlexItem__svgs}>
-          {/* <Stapler
-            setMouseEnteredStapler={setMouseEnteredStapler}
-          /> */}
-          <Scissors
-            setMouseEnteredScissors={setMouseEnteredScissors}
-            paperclipsRunning={paperclipsRunning}
-            setPaperclipsRunning={setPaperclipsRunning}
-          />
+          <Cards setMouseEnteredCards={setMouseEnteredCards} />
         </div>
       </div>
 
-      <PaperclipAnimation
-        mouseEnteredScissors={mouseEnteredScissors}
-        setMouseEnteredScissors={setMouseEnteredScissors}
-        setPaperclipsRunning={setPaperclipsRunning}
-      />
-      <Explosion
-        mouseEnteredStapler={mouseEnteredStapler}
-        setMouseEnteredStapler={setMouseEnteredStapler}
-      />
-      <Grid isDarkMode={isDarkMode}/>
+      <Carousel isDarkMode={isDarkMode} mouseEnteredCards={mouseEnteredCards} />
+
     </section>
   );
 }

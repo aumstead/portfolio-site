@@ -1,7 +1,7 @@
 import styles from "./Book.module.scss";
 import { useEffect, useRef, useState } from 'react'
 
-function Book({ setMouseEnteredBook }) {
+function Book({ setMouseEnteredBook, onMobile }) {
   
   const [animateHint, setAnimateHint] = useState(false)
   const [timerFunc, setTimerFunc] = useState(false)
@@ -45,7 +45,8 @@ function Book({ setMouseEnteredBook }) {
   return (
     <svg
       ref={book}
-      onMouseEnter={handleMouseEnter}
+      onMouseEnter={onMobile ? null : handleMouseEnter}
+      onClick={onMobile ? handleMouseEnter : null}
       className={styles.book}
       xmlns="http://www.w3.org/2000/svg"
       width="402"

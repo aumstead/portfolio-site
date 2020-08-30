@@ -1,0 +1,49 @@
+.container {
+  position: absolute;
+  z-index: 5;
+  left: 31%;
+  top: 24%;
+}
+
+.text {
+  font-family: 'Quantico', sans-serif;
+  color: #fff;
+  font-size: 2rem;
+}
+
+.underline {
+  text-decoration: underline;
+}
+
+.socialMediaContainer {
+  margin-top: 3rem;
+  margin-bottom: 2rem;
+}
+
+.linkedInAnchor {
+  opacity: 0;
+}
+
+.twitterAnchor {
+  opacity: 0;
+}
+
+.linkedin {
+  height: 4rem;
+  margin-right: 3rem;
+}
+
+.twitter {
+  height: 4rem;
+}
+
+@media only screen and (max-width: 500px) {
+  .container {
+    left: 50%;
+    transform: translateX(-50%);
+    margin: 0 auto;
+    display: block;
+    top: 24%;
+    width: 272.48px;
+  }
+}

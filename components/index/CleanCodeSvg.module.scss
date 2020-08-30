@@ -1,6 +1,6 @@
 .cleanCodeSvg  {
   height: 15rem;
-  width: 482px;
+  width: 30rem;
   display: block;
   margin: 0 auto;
   // margin-top: -5rem;
@@ -143,11 +143,16 @@
   animation-delay: 11.3s;
 }
 
-
-
-
 @keyframes dash {
   to {
     stroke-dashoffset: 0;
   }
+}
+
+@media only screen and (max-width: 500px) {
+  // .cleanCodeSvg {
+  //   margin-top: 4rem;
+  //   height: 20rem;
+  //   width: 40rem;
+  // }
 }

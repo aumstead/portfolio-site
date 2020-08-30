@@ -134,3 +134,9 @@
     stroke-dashoffset: 0;
   }
 }
+
+@media only screen and (max-width: 500px) {
+  .myStackSvg {
+    width: 85%;
+  }
+}

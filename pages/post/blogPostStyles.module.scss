@@ -5,6 +5,7 @@
 .h2 {
   font-size: 3.6rem;
   margin-bottom: -2rem;
+  margin-top: 3rem;
 }
 .infoFlexContainer {
   display: flex;
@@ -33,7 +34,6 @@
 .date {
   font-size: 1.6rem;
 }
-
 
 .article {
   font-size: 1.8rem;
@@ -71,9 +71,11 @@
   }
 }
 .code {
+  font-size: 1.7rem;
   border-radius: 2px;
-  padding: .1rem;
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
+  padding: 0.1rem;
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+    monospace;
   &__light {
     background-color: #ded1ff;
   }
@@ -109,8 +111,36 @@
   }
   &__light {
     color: var(--light-link-blue);
+    // color: var(--light-text);
     &:hover {
       background-color: var(--light-hover-background);
+    }
+  }
+}
+
+.navPostFlexContainer {
+  display: flex;
+  justify-content: space-between;
+
+  .navPost {
+    font-size: 1.8rem;
+    padding: 1rem 1.5rem;
+    transition: background-color var(--transition);
+    width: 20rem;
+    text-align: center;
+
+    &__dark {
+      color: var(--dark-link-blue);
+      &:hover {
+        background-color: var(--dark-hover-background);
+      }
+    }
+    &__light {
+      color: var(--light-link-blue);
+      // color: var(--light-text);
+      &:hover {
+        background-color: var(--light-hover-background);
+      }
     }
   }
 }

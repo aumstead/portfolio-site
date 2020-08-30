@@ -1,22 +1,24 @@
 import Layout from "../components/Layout/Layout";
-import PostList from "../components/PostList";
 import styles from "./index.module.scss";
 import DarkModeContext from "../contexts/darkMode/DarkModeContext";
+import MobileContext from '../contexts/mobile/MobileContext'
 import { useContext } from "react";
 import CleanCodeSvg from '../components/index/CleanCodeSvg'
 import Projects from '../components/index/Projects/Projects'
 import Writing from '../components/index/Writing/Writing'
 import Skills from '../components/index/Skills/Skills'
-import History from '../components/index/History/History'
+import About from '../components/index/About/About'
 
 function Index() {
   const darkModeContext = useContext(DarkModeContext);
   const { isDarkMode } = darkModeContext;
+  const mobileContext = useContext(MobileContext)
+  const { onMobile } = mobileContext
   
   return (
     <Layout>
-      <section>
-        <CleanCodeSvg />
+      <section className={styles.section}>
+        <CleanCodeSvg/>
         <h1
           className={
             isDarkMode
@@ -44,14 +46,14 @@ function Index() {
               : `${styles.heroText} ${styles.heroText__light}`
           }
         >
-          Have a look around — read, click, scroll, hover, and hopefully, enjoy!
+          Have a look around — skim, scroll, and try hovering over the little graphics (or tapping them) to see an animation!
         </p>
       </section>
 
       <Projects />
-      <Writing />
-      <Skills />
-      {/* <History /> */}
+      <Writing onMobile={onMobile}/>
+      <About onMobile={onMobile} />
+      <Skills onMobile={onMobile}/>
     </Layout>
   );
 }

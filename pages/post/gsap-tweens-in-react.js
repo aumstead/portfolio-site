@@ -4,12 +4,12 @@ import { useContext, useEffect } from "react";
 import Prism from "prismjs";
 import DarkModeContext from "../../contexts/darkMode/DarkModeContext";
 import Link from "next/link";
-import Final from "../../components/post/gsap-timelines-in-react.js/Final";
-import OwlFigure1 from "../../components/post/gsap-timelines-in-react.js/OwlFigure1";
-import OwlFigure2 from "../../components/post/gsap-timelines-in-react.js/OwlFigure2";
-import HTMLFigure1 from "../../components/post/gsap-timelines-in-react.js/HTMLFigure1";
-import AppFigure1 from "../../components/post/gsap-timelines-in-react.js/PhoneFigure1";
-import AppFigure2 from "../../components/post/gsap-timelines-in-react.js/PhoneFigure2";
+import Final from "../../components/post/gsap-tweens-in-react/Final";
+import OwlFigure1 from "../../components/post/gsap-tweens-in-react/OwlFigure1";
+import OwlFigure2 from "../../components/post/gsap-tweens-in-react/OwlFigure2";
+import HTMLFigure1 from "../../components/post/gsap-tweens-in-react/HTMLFigure1";
+import AppFigure1 from "../../components/post/gsap-tweens-in-react/PhoneFigure1";
+import AppFigure2 from "../../components/post/gsap-tweens-in-react/PhoneFigure2";
 
 export default () => {
   const darkModeContext = useContext(DarkModeContext);
@@ -84,7 +84,7 @@ export default ExampleSVG;
 
   const codePhoneFigure1 = `
   function handleMouseEnter() {
-    gsap.to("#red-icon-group", { x: 45, duration: 1 })
+    gsap.to("#red-icon-group", { duration: 1, x: 45 })
 }`.trim();
 
   const codePhoneFigure2 = `
@@ -108,7 +108,7 @@ function ExampleTweenComponent() {
   const myTween = useRef(null)
 
   useEffect(() => {
-    myTween.current = gsap.to("#red-icon-group2", 1, { x: 45 });
+    myTween.current = gsap.to("#red-icon-group", { duration: 1, x: 45 });
     myTween.current.pause()
   }, [])
 
@@ -126,7 +126,7 @@ function ExampleTweenComponent() {
   return (
     <Layout>
       <h1 className={styles.h1}>
-        Greensock in React Part 1:
+        GSAP in React - Part 1:
         <br />
         Basic Tweens
       </h1>
@@ -167,7 +167,15 @@ function ExampleTweenComponent() {
           </code>{" "}
           hooks to create animations that start on events like click or hover.
           As an example for us to walk through together, I'll use this animation
-          I made for my portfolio site (hover to animate).
+          I made for my portfolio site. Hover over it to trigger the <code
+            className={
+              isDarkMode
+                ? `${styles.code} ${styles.code__dark}`
+                : `${styles.code} ${styles.code__light}`
+            }
+          >
+            onMouseEnter
+          </code> event.
         </p>
 
         <Final />
@@ -185,8 +193,7 @@ function ExampleTweenComponent() {
           >
             part 2
           </a>{" "}
-          in the series, we will have covered everything to make the animation
-          above.
+          in the series we will have covered everything needed to make this animation.
         </p>
 
         <p className={styles.p}>
@@ -213,8 +220,8 @@ function ExampleTweenComponent() {
           >
             &lt;Head&gt;
           </code>{" "}
-          component, but I've since opted to just download the library and place
-          it at the bottom near my closing{" "}
+          component, but I've since opted to download the library and place
+          it at the bottom, near my closing{" "}
           <code
             className={
               isDarkMode
@@ -224,8 +231,8 @@ function ExampleTweenComponent() {
           >
             &lt;/body&gt;
           </code>{" "}
-          tag. Occassionally I'd have issues with the library not loading before
-          with the CDN.
+          tag. Before, I'd occassionally have issues with the library not loading
+          when using the CDN.
         </p>
 
         <p className={styles.note}>
@@ -522,7 +529,7 @@ function ExampleTweenComponent() {
         <p className={styles.p}>Hover to see the small animation.</p>
         <AppFigure1 />
         <p className={styles.p}>
-          If you need to learn the basics of GSAP, the docs explaining basic{" "}
+          If you need to learn about the basics of GSAP more in-depth, the docs page on {" "}
           <a
             className={
               isDarkMode
@@ -534,8 +541,8 @@ function ExampleTweenComponent() {
           >
             tweens
           </a>{" "}
-          are probably the best place to go. Essentially, there are a few
-          methods you can call, like{" "}
+          is the best place to go. But, in summary, there are a few
+          methods you can call, such as{" "}
           <code
             className={
               isDarkMode
@@ -555,7 +562,7 @@ function ExampleTweenComponent() {
           >
             gsap.from()
           </code>
-          .{" "}
+          .{" "}The
           <code
             className={
               isDarkMode
@@ -564,7 +571,7 @@ function ExampleTweenComponent() {
             }
           >
             .to()
-          </code>{" "}
+          </code>{" "}method 
           takes your image <em>to</em> the animation settings you provide in the
           "vars" object (which we'll discuss below), and{" "}
           <code
@@ -624,13 +631,14 @@ function ExampleTweenComponent() {
           happens. Here, you set key-value pairs to do things like animate CSS
           properties and set the animation's duration. I often use "onComplete",
           which you set to a callback function that will run when your animation
-          finishes. It's worth knowing that there are a lot of cool things you
+          finishes. It's worth knowing there's a lot of cool things you
           can do in the "vars" object, and that they're detailed in the
           documentation.
         </p>
         <h2 className={styles.h2}>
           Using the{" "}
           <code
+            style={{ fontSize: "3.6rem" }}
             className={
               isDarkMode
                 ? `${styles.code} ${styles.code__dark}`
@@ -884,7 +892,7 @@ function ExampleTweenComponent() {
         <p className={styles.p}>
           Lastly, before moving on to more complex animations with GSAP
           timelines, you may have noticed warnings in the console about "Invalid
-          DOM properties" such as 'stroke-width', accompanied with a question
+          DOM properties" such as 'stroke-width', accompanied by a question
           asking if you meant 'strokeWidth'? In fact, changing these attributes
           to the suggested, JSX syntax will remove the warnings.
         </p>
@@ -913,7 +921,7 @@ function ExampleTweenComponent() {
           >
             id
           </code>{" "}
-          attributes we named in Figma. In the menu bar at svg2jsx.com there's a
+          attributes we named in Figma. In the menu bar on the site there's a
           "Remove IDs" option you'll want to have switched off.
         </p>
 
@@ -954,7 +962,7 @@ function ExampleTweenComponent() {
                 : `${styles.nextPost} ${styles.nextPost__light}`
             }
           >
-            Next - GreenSock in React: Timelines &rarr;
+            Next - GSAP in React: Timelines &rarr;
           </a>
         </Link>
       </div>

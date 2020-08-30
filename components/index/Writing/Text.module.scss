@@ -91,3 +91,9 @@
   stroke-dasharray: 12;
   stroke-dashoffset: -12;
 }
+
+@media only screen and (max-width: 500px) {
+  .text {
+    margin-right: 0rem;
+  }
+}

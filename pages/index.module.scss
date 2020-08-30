@@ -14,7 +14,7 @@
 }
 
 .heroText {
-  font-size: 1.8rem;
+  font-size: var(--text-font-size);
 
   &__dark {
     color: #fff;
@@ -22,5 +22,14 @@
 
   &__light {
     color: var(--light-text);
+  }
+}
+
+@media only screen and (max-width: 500px) {
+  .section {
+    margin: 0rem 1.5rem;
+  }
+  .heroTitle {
+    line-height: 6.5rem;
   }
 }

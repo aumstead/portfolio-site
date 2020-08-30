@@ -1,7 +1,7 @@
 import styles from "./Knife.module.scss";
 import { useEffect, useRef, useState } from "react";
 
-function Knife({ setMouseEnteredKnife }) {
+function Knife({ setMouseEnteredKnife, onMobile }) {
   const [animateHint, setAnimateHint] = useState(false)
   const [timerFunc, setTimerFunc] = useState(false)
   const [cancelAnimation, setCancelAnimation] = useState(false)
@@ -42,7 +42,8 @@ function Knife({ setMouseEnteredKnife }) {
   return (
     <svg
       ref={knife}
-      onMouseEnter={handleMouseEnter}
+      onMouseEnter={onMobile ? null : handleMouseEnter}
+      onClick={onMobile ? handleMouseEnter : null}
       className={styles.knife}
       width="460"
       height="393"
