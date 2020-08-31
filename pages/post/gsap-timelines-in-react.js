@@ -2,8 +2,9 @@ import Layout from "../../components/Layout/Layout";
 import styles from "./blogPostStyles.module.scss";
 import { useContext, useEffect } from "react";
 import DarkModeContext from "../../contexts/darkMode/DarkModeContext";
+import MobileContext from '../../contexts/mobile/MobileContext'
 import Prism from "prismjs";
-import Link from 'next/link'
+import Link from "next/link";
 import Final from "../../components/post/gsap-tweens-in-react/Final";
 import TimelineFigure1 from "../../components/post/gsap-timelines-in-react/TimelineFigure1";
 import TimelineFigure2 from "../../components/post/gsap-timelines-in-react/TimelineFigure2";
@@ -11,11 +12,13 @@ import TimelineFigure3 from "../../components/post/gsap-timelines-in-react/Timel
 import TimelineFigure4 from "../../components/post/gsap-timelines-in-react/TimelineFigure4";
 import TimelineFigure5 from "../../components/post/gsap-timelines-in-react/TimelineFigure5";
 import TimelineFigure6 from "../../components/post/gsap-timelines-in-react/TimelineFigure6";
-import FinalFigure1 from '../../components/post/gsap-timelines-in-react/FinalFigure1'
+import FinalFigure1 from "../../components/post/gsap-timelines-in-react/FinalFigure1";
 
 export default () => {
   const darkModeContext = useContext(DarkModeContext);
   const { isDarkMode } = darkModeContext;
+  const mobileContext = useContext(MobileContext)
+  const { onMobile } = mobileContext
 
   useEffect(() => {
     Prism.highlightAll();
@@ -209,33 +212,30 @@ function Final() {
       fill="none"
       viewBox="0 0 587 305"
     >
-    ...`.trim()
-
+    ...`.trim();
 
   return (
     <Layout>
-      <h1 className={styles.h1}>GSAP in React - Part 2: Timelines</h1>
-      <div className={styles.infoFlexContainer}>
-        <div className={styles.infoFlexItem__author}>
-          <img
-            className={styles.profilePhoto}
-            src="/static/images/profilePhoto.jpg"
-            alt="Andrew Umstead"
-          />
-          <span className={styles.byLine}>Andrew Umstead</span>
+      <section className={styles.heroSection}>
+        <h1 className={styles.h1}>GSAP in React - Part 2: Timelines</h1>
+        <div className={styles.infoFlexContainer}>
+          <div className={styles.infoFlexItem__author}>
+            <img
+              className={styles.profilePhoto}
+              src="/images/profilePhoto.jpg"
+              alt="Andrew Umstead"
+            />
+            <span className={styles.byLine}>Andrew Umstead</span>
+          </div>
+          <span className={styles.date}>August 4th, 2020</span>
         </div>
-        <span className={styles.date}>August 4th, 2020</span>
-      </div>
+      </section>
 
       <article className={styles.article}>
         <p className={styles.note}>
           *Note: You may want to browse{" "}
           <a
-            className={
-              isDarkMode
-                ? `${styles.linkAnchor} ${styles.linkAnchor__dark}`
-                : `${styles.linkAnchor} ${styles.linkAnchor__light}`
-            }
+            className={styles.internalLinkAnchor}
             target="_blank"
             href="/post/gsap-tweens-in-react"
           >
@@ -277,7 +277,7 @@ function Final() {
             delay
           </code>{" "}
           for each individual tween, similar to what you might do in a sequenced
-          CSS animation, and you might think (like I did) that if you already
+          CSS animation. You might think, like I did, that if you already
           know how to write simple animations, then maybe it's easier to just
           use{" "}
           <code
@@ -297,7 +297,9 @@ function Final() {
           ugly rather quickly.
         </p>
 
-        <Final />
+        <Final onMobile={onMobile} marginBottom=".5rem"/>
+
+        <span className={isDarkMode ? `${styles.caption} ${styles.caption__dark}` : `${styles.caption} ${styles.caption__light}`}>Hover or tap to trigger animation.</span>
 
         <p className={styles.p}>
           With the icons sequence comprising of more than 30 tweens, any change
@@ -373,11 +375,7 @@ function Final() {
         <p className={styles.p}>
           In{" "}
           <a
-            className={
-              isDarkMode
-                ? `${styles.linkAnchor} ${styles.linkAnchor__dark}`
-                : `${styles.linkAnchor} ${styles.linkAnchor__light}`
-            }
+            className={styles.internalLinkAnchor}
             target="_blank"
             href="/post/gsap-tweens-in-react"
           >
@@ -424,10 +422,10 @@ function Final() {
 
         <p className={styles.p}>
           We can begin by simply looking at an example animation made with a
-          GSAP timeline. Hover and you'll see three tweens animate sequentially.
+          GSAP timeline. Hover or tap and you'll see three tweens animate sequentially.
         </p>
 
-        <TimelineFigure1 />
+        <TimelineFigure1 onMobile={onMobile} />
 
         <p className={styles.p}>
           To create this simple timeline, we'll first make a component that
@@ -487,7 +485,8 @@ function Final() {
         </p>
 
         <p className={styles.note}>
-          *Note: This particular SVG can be downloaded for free at <a
+          *Note: This particular SVG can be downloaded for free at{" "}
+          <a
             className={
               isDarkMode
                 ? `${styles.linkAnchor} ${styles.linkAnchor__dark}`
@@ -497,7 +496,9 @@ function Final() {
             href="https://illlustrations.co/"
           >
             illlustrations.co
-          </a>. In Figma, I deleted some of the graphics we won't be using for simplicity's sake.
+          </a>
+          . In Figma, I deleted some of the graphics we won't be using for
+          simplicity's sake.
         </p>
 
         <p className={styles.p}>
@@ -750,7 +751,7 @@ function Final() {
           timings.
         </p>
 
-        <TimelineFigure2 />
+        <TimelineFigure2 onMobile={onMobile}/>
 
         <p className={styles.p}>
           If these were all individual tweens, everything would animate together
@@ -846,7 +847,7 @@ function Final() {
           gear starts rotating.
         </p>
 
-        <TimelineFigure3 />
+        <TimelineFigure3 onMobile={onMobile} />
 
         <p className={styles.p}>
           Notice, the other icons fall in line with the sequence, and the
@@ -879,7 +880,7 @@ function Final() {
           — we get the following result.
         </p>
 
-        <TimelineFigure4 />
+        <TimelineFigure4 onMobile={onMobile}/>
 
         <p className={styles.p}>
           What's happening is the other tweens are waiting for the gear tween to
@@ -894,8 +895,8 @@ function Final() {
             duration
           </code>{" "}
           to 5 seconds, we'd have a five second delay before the green icon
-          started animating. Of course, this is because in a timeline everything runs
-          sequentially. GSAP can't know we want our gear to rotate
+          started animating. Of course, this is because in a timeline everything
+          runs sequentially. GSAP can't know we want our gear to rotate
           simultaneously with the icon animations running.
         </p>
 
@@ -945,7 +946,7 @@ function Final() {
           The result is a smooth animation from one tween to the next.
         </p>
 
-        <TimelineFigure5 />
+        <TimelineFigure5 onMobile={onMobile}/>
 
         <p className={styles.p}>
           The green, blue, and yellow icon tweens are each waiting .2 seconds
@@ -968,12 +969,12 @@ function Final() {
         </div>
 
         <p className={styles.p}>
-          What if we always want two icons to move at the same time together? This is what our final animation does. Well, knowing what we know about position parameters, this should be easy enough.
+          What if we always want two icons to move at the same time together?
+          This is what our final animation does. Well, knowing what we know
+          about position parameters, this should be easy enough.
         </p>
 
-        <p className={styles.p}>
-          If the red icon tween looks like this:
-        </p>
+        <p className={styles.p}>If the red icon tween looks like this:</p>
 
         <div
           className={
@@ -990,7 +991,8 @@ function Final() {
         </div>
 
         <p className={styles.p}>
-          ...then we'll want the green icon to animate with it, so it'll take <code
+          ...then we'll want the green icon to animate with it, so it'll take{" "}
+          <code
             className={
               isDarkMode
                 ? `${styles.code} ${styles.code__dark}`
@@ -998,7 +1000,8 @@ function Final() {
             }
           >
             "&lt;"
-          </code> as its position parameter.
+          </code>{" "}
+          as its position parameter.
         </p>
 
         <div
@@ -1016,7 +1019,11 @@ function Final() {
         </div>
 
         <p className={styles.p}>
-          Then, we'll want the blue icon to wait for .2 seconds before it starts. If we omitted the position parameter, the blue icon would wait for the gear to finish, which is not what we want. Instead, we want to control it relative to its immediate predecessor. So, we'll pass <code
+          Then, we'll want the blue icon to wait for .2 seconds before it
+          starts. If we omitted the position parameter, the blue icon would wait
+          for the gear to finish, which is not what we want. Instead, we want to
+          control it relative to its immediate predecessor. So, we'll pass{" "}
+          <code
             className={
               isDarkMode
                 ? `${styles.code} ${styles.code__dark}`
@@ -1024,7 +1031,8 @@ function Final() {
             }
           >
             "&lt;.2"
-          </code> to the position parameter.
+          </code>{" "}
+          to the position parameter.
         </p>
 
         <div
@@ -1042,7 +1050,9 @@ function Final() {
         </div>
 
         <p className={styles.p}>
-          Lastly, we're moving two icons together, so the yellow one will start with the blue. Therefore, it'll take <code
+          Lastly, we're moving two icons together, so the yellow one will start
+          with the blue. Therefore, it'll take{" "}
+          <code
             className={
               isDarkMode
                 ? `${styles.code} ${styles.code__dark}`
@@ -1050,7 +1060,8 @@ function Final() {
             }
           >
             "&lt;"
-          </code>.
+          </code>
+          .
         </p>
 
         <div
@@ -1071,16 +1082,21 @@ function Final() {
           And, voilà! Our icons are moving two at a time.
         </p>
 
-        <TimelineFigure6/>
+        <TimelineFigure6 onMobile={onMobile} />
 
         <h2 className={styles.h2}>Making the Final Animation</h2>
 
         <p className={styles.p}>
-          To put together the animation we originally set out to make really only requires a few minor additions and some adjustments to the tweens we've already made. For one, I'll bring back the graphics I removed earlier so I have the original SVG. And, then, to start, we can make the gear animation last for a good amount of time.
+          To put together the animation we originally set out to make really
+          only requires a few minor additions and some adjustments to the tweens
+          we've already made. For one, I'll bring back the graphics I removed
+          earlier so I have the original SVG. And, then, to start, we can make
+          the gear animation last for a good amount of time.
         </p>
 
         <p className={styles.p}>
-          To do that, we'll just increase the <code
+          To do that, we'll just increase the{" "}
+          <code
             className={
               isDarkMode
                 ? `${styles.code} ${styles.code__dark}`
@@ -1088,7 +1104,10 @@ function Final() {
             }
           >
             duration
-          </code>. Mine is set to 8 seconds. Now, 8 seconds to rotate 360 degrees makes the gear move quite slowly, so you'll want to increase the <code
+          </code>
+          . Mine is set to 8 seconds. Now, 8 seconds to rotate 360 degrees makes
+          the gear move quite slowly, so you'll want to increase the{" "}
+          <code
             className={
               isDarkMode
                 ? `${styles.code} ${styles.code__dark}`
@@ -1096,7 +1115,11 @@ function Final() {
             }
           >
             rotate
-          </code> value as well. I just multiplied mine by 4, which ensures a full revolution made by the gear. If you don't use a multiple of 360, the gear will finish in a different spot, and on <code
+          </code>{" "}
+          value as well. I just multiplied mine by 4, which ensures a full
+          revolution made by the gear. If you don't use a multiple of 360, the
+          gear will finish in a different spot, and on{" "}
+          <code
             className={
               isDarkMode
                 ? `${styles.code} ${styles.code__dark}`
@@ -1104,7 +1127,8 @@ function Final() {
             }
           >
             .restart()
-          </code> the animation will be jerky.
+          </code>{" "}
+          the animation will be jerky.
         </p>
 
         <div
@@ -1122,7 +1146,9 @@ function Final() {
         </div>
 
         <p className={styles.p}>
-          Lastly, with the gear, you may recall the animation has the effect of slowing down as the gear loses steam. This is achieved with the <code
+          Lastly, with the gear, you may recall the animation has the effect of
+          slowing down as the gear loses steam. This is achieved with the{" "}
+          <code
             className={
               isDarkMode
                 ? `${styles.code} ${styles.code__dark}`
@@ -1130,11 +1156,13 @@ function Final() {
             }
           >
             ease
-          </code> property seen in the vars object above.
+          </code>{" "}
+          property seen in the vars object above.
         </p>
 
         <p className={styles.p}>
-          The <code
+          The{" "}
+          <code
             className={
               isDarkMode
                 ? `${styles.code} ${styles.code__dark}`
@@ -1142,7 +1170,9 @@ function Final() {
             }
           >
             ease
-          </code> property does the same thing as the CSS <code
+          </code>{" "}
+          property does the same thing as the CSS{" "}
+          <code
             className={
               isDarkMode
                 ? `${styles.code} ${styles.code__dark}`
@@ -1150,7 +1180,9 @@ function Final() {
             }
           >
             transition-timing-function
-          </code> one. Whereas CSS has built-in bezier curves like <code
+          </code>{" "}
+          one. Whereas CSS has built-in bezier curves like{" "}
+          <code
             className={
               isDarkMode
                 ? `${styles.code} ${styles.code__dark}`
@@ -1158,7 +1190,9 @@ function Final() {
             }
           >
             linear
-          </code> and <code
+          </code>{" "}
+          and{" "}
+          <code
             className={
               isDarkMode
                 ? `${styles.code} ${styles.code__dark}`
@@ -1166,7 +1200,10 @@ function Final() {
             }
           >
             ease-in-out
-          </code>, GSAP has its own set of built-in eases. The docs has a great vizualizer <a
+          </code>
+          , GSAP has its own set of built-in eases. The docs has a great
+          vizualizer{" "}
+          <a
             className={
               isDarkMode
                 ? `${styles.linkAnchor} ${styles.linkAnchor__dark}`
@@ -1176,7 +1213,9 @@ function Final() {
             href="/post/gsap-tweens-in-react"
           >
             here
-          </a>, and you can play around with it and copy/paste the <code
+          </a>
+          , and you can play around with it and copy/paste the{" "}
+          <code
             className={
               isDarkMode
                 ? `${styles.code} ${styles.code__dark}`
@@ -1184,7 +1223,9 @@ function Final() {
             }
           >
             ease
-          </code> you prefer. I used <code
+          </code>{" "}
+          you prefer. I used{" "}
+          <code
             className={
               isDarkMode
                 ? `${styles.code} ${styles.code__dark}`
@@ -1192,23 +1233,33 @@ function Final() {
             }
           >
             power3.out
-          </code>.
+          </code>
+          .
         </p>
 
-
-
-        <FinalFigure1/>
+        <FinalFigure1 onMobile={onMobile} />
 
         <p className={styles.p}>
-          In terms of the icons, you should have everything you need to make the timeline yourself. When choosing the direction for the icons' movement, I just avoided overlapping them, and tried to keep it somewhat balanced on the screen, so not all four were in the bottom-right corner, for example.
+          In terms of the icons, you should have everything you need to make the
+          timeline yourself. When choosing the direction for the icons'
+          movement, I just avoided overlapping them, and tried to keep it
+          somewhat balanced on the screen, so not all four were in the
+          bottom-right corner, for example.
         </p>
 
         <p className={styles.p}>
-          However, at a certain point, you'll want to start adjusting the duration of the tweens to have them slow down in line with the ease, if you choose to use one. In my 32 tween timeline, I started my slow-down on the 8th from the end. I ended with my last tween lasting 1 full second. Of course, you'll also need to adjust your position parameters accordingly.
+          However, at a certain point, you'll want to start adjusting the
+          duration of the tweens to have them slow down in line with the ease,
+          if you choose to use one. In my 32 tween timeline, I started my
+          slow-down on the 8th from the end. I ended with my last tween lasting
+          1 full second. Of course, you'll also need to adjust your position
+          parameters accordingly.
         </p>
 
         <p className={styles.p}>
-          If you'd rather just use the animation I made, you can find my timeline code in the component below. You'll have to add the <code
+          If you'd rather just use the animation I made, you can find my
+          timeline code in the component below. You'll have to add the{" "}
+          <code
             className={
               isDarkMode
                 ? `${styles.code} ${styles.code__dark}`
@@ -1216,17 +1267,17 @@ function Final() {
             }
           >
             id
-          </code>'s to the SVG yourself, though. I use Figma, and I wrote about how I do it in <a
-            className={
-              isDarkMode
-                ? `${styles.linkAnchor} ${styles.linkAnchor__dark}`
-                : `${styles.linkAnchor} ${styles.linkAnchor__light}`
-            }
+          </code>
+          's to the SVG yourself, though. I use Figma, and I wrote about how I
+          do it in{" "}
+          <a
+            className={styles.internalLinkAnchor}
             target="_blank"
             href="/post/gsap-tweens-in-react"
           >
             part 1
-          </a>.
+          </a>
+          .
         </p>
 
         <div
@@ -1244,16 +1295,20 @@ function Final() {
         </div>
 
         <p className={styles.p}>
-          One thing that's different in my code is that I put the duration of each tween outside of the vars object. The second parameter can also be used to set a tween's duration. It's a little less typing, and a cleaner vars object.
+          One thing that's different in my code is that I put the duration of
+          each tween outside of the vars object. The second parameter can also
+          be used to set a tween's duration. It's a little less typing, and a
+          cleaner vars object.
         </p>
 
         <p className={styles.p}>
-          Other than that, everything should work fine! Be sure to check out my posts on GSAP's motion path and scroll trigger too.
+          Other than that, everything should work fine! Be sure to check out my
+          posts on GSAP's motion path and scroll trigger too.
         </p>
       </article>
 
       <div className={styles.navPostFlexContainer}>
-      <Link href="#">
+        <Link href="/post/gsap-tweens-in-react">
           <a
             className={
               isDarkMode
@@ -1261,21 +1316,21 @@ function Final() {
                 : `${styles.navPost} ${styles.navPost__light}`
             }
           >
-            &larr;<br/>
-            GSAP in React:<br/>Basic Tweens
+            &larr;
+            <br />
+            GSAP in React:
+            <br />
+            Basic Tweens
           </a>
         </Link>
 
         <Link href="/post/gsap-motion-path">
-          <a
-            className={
-              isDarkMode
-                ? `${styles.navPost} ${styles.navPost__dark}`
-                : `${styles.navPost} ${styles.navPost__light}`
-            }
-          >
-            &rarr;<br/>
-            GSAP in React:<br/>MotionPath Plugin 
+          <a className={styles.navPost}>
+            &rarr;
+            <br />
+            GSAP in React:
+            <br />
+            MotionPath Plugin
           </a>
         </Link>
       </div>

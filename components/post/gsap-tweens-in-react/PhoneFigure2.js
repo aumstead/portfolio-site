@@ -1,7 +1,7 @@
 import styles from "./PhoneFigure2.module.scss";
 import { useRef, useEffect } from 'react'
 
-function PhoneFigure2() {
+function PhoneFigure2({ onMobile }) {
   const myTween = useRef(null)
 
   useEffect(() => {
@@ -15,9 +15,9 @@ function PhoneFigure2() {
 
   return (
     <svg
-      // ref={myTween}
       className={styles.svg}
-      onMouseEnter={handleMouseEnter}
+      onMouseEnter={onMobile ? null : handleMouseEnter}
+      onClick={onMobile ? handleMouseEnter : null}
       xmlns="http://www.w3.org/2000/svg"
       width="217"
       height="304"

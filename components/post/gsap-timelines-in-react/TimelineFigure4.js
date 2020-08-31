@@ -1,7 +1,7 @@
 import styles from "./TimelineFigure1.module.scss";
 import { useRef, useEffect } from "react";
 
-function TimelineFigure4() {
+function TimelineFigure4({ onMobile }) {
   const myTimeline = useRef(null);
 
   useEffect(() => {
@@ -27,7 +27,8 @@ function TimelineFigure4() {
   return (
     <svg
       className={styles.svg}
-      onMouseEnter={handleMouseEnter}
+      onMouseEnter={onMobile ? null : handleMouseEnter}
+      onClick={onMobile ? handleMouseEnter : null}
       xmlns="http://www.w3.org/2000/svg"
       width="217"
       height="304"

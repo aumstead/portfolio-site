@@ -1,7 +1,7 @@
 import styles from "./FinalFigure1.module.scss";
 import { useEffect, useRef } from "react";
 
-function FinalFigure1() {
+function FinalFigure1({ onMobile }) {
   const tl = useRef(null);
 
   useEffect(() => {
@@ -22,7 +22,8 @@ function FinalFigure1() {
   return (
     <svg
       className={styles.svg}
-      onMouseEnter={handleMouseEnter}
+      onMouseEnter={onMobile ? null : handleMouseEnter}
+      onClick={onMobile ? handleMouseEnter : null}
       xmlns="http://www.w3.org/2000/svg"
       width="587"
       height="305"

@@ -1,7 +1,7 @@
 import styles from "./Final.module.scss";
 import { useEffect, useRef } from "react";
 
-function Final() {
+function Final({ onMobile, marginBottom }) {
   const tl = useRef(null);
 
   useEffect(() => {
@@ -54,8 +54,10 @@ function Final() {
   }
   return (
     <svg
+      style={marginBottom ? { marginBottom: marginBottom } : null}
       className={styles.svg}
-      onMouseEnter={handleMouseEnter}
+      onMouseEnter={onMobile ? null : handleMouseEnter}
+      onClick={onMobile ? handleMouseEnter : null}
       xmlns="http://www.w3.org/2000/svg"
       width="587"
       height="305"

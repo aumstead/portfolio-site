@@ -3,17 +3,20 @@ import styles from "./blogPostStyles.module.scss";
 import { useContext, useEffect } from "react";
 import Prism from "prismjs";
 import DarkModeContext from "../../contexts/darkMode/DarkModeContext";
+import MobileContext from '../../contexts/mobile/MobileContext'
 import Link from "next/link";
 import Final from "../../components/post/gsap-tweens-in-react/Final";
 import OwlFigure1 from "../../components/post/gsap-tweens-in-react/OwlFigure1";
 import OwlFigure2 from "../../components/post/gsap-tweens-in-react/OwlFigure2";
 import HTMLFigure1 from "../../components/post/gsap-tweens-in-react/HTMLFigure1";
 import AppFigure1 from "../../components/post/gsap-tweens-in-react/PhoneFigure1";
-import AppFigure2 from "../../components/post/gsap-tweens-in-react/PhoneFigure2";
+import PhoneFigure2 from "../../components/post/gsap-tweens-in-react/PhoneFigure2";
 
 export default () => {
   const darkModeContext = useContext(DarkModeContext);
   const { isDarkMode } = darkModeContext;
+  const mobileContext = useContext(MobileContext)
+  const { onMobile } = mobileContext
 
   useEffect(() => {
     Prism.highlightAll();
@@ -179,21 +182,25 @@ function ExampleTweenComponent() {
           >
             onMouseEnter
           </code>{" "}
-          event.
+          event (Or tap on mobile to trigger <code
+            className={
+              isDarkMode
+                ? `${styles.code} ${styles.code__dark}`
+                : `${styles.code} ${styles.code__light}`
+            }
+          >
+            onClick
+          </code>).
         </p>
 
-        <Final />
+        <Final onMobile={onMobile}/>
 
         <p className={styles.p}>
           By the end of{" "}
           <a
-            className={
-              isDarkMode
-                ? `${styles.linkAnchor} ${styles.linkAnchor__dark}`
-                : `${styles.linkAnchor} ${styles.linkAnchor__light}`
-            }
+            className={styles.internalLinkAnchor}
             target="_blank"
-            href="/gsap-times-in-react"
+            href="/post/gsap-timelines-in-react"
           >
             part 2
           </a>{" "}
@@ -264,9 +271,9 @@ function ExampleTweenComponent() {
 
         <p className={styles.p}>
           You might already be aware of some of the benefits of using SVGs, such
-          as their ability to scale without losing any quality or increasing in
-          file size. But, my other favorite thing about them, which I don't ever
-          really see mentioned, is that I can go into their code and manipulate
+          as their ability to scale without losing quality or increasing in
+          file size. But, my other favorite thing about them, which I don't recall
+          seeing mentioned, is that I can go into their code and manipulate
           the images. It's quite easy to change a color, remove part of the
           graphic I don't want, or add a class for some CSS styles.
         </p>
@@ -428,7 +435,7 @@ function ExampleTweenComponent() {
         </p>
 
         <p className={styles.p}>
-          Imagine an SVG with hundreds of lines, and you can see why visually
+          Imagine an SVG with hundreds of lines, and you can see why
           clicking on the element in Figma and adding an{" "}
           <code
             className={
@@ -531,8 +538,8 @@ function ExampleTweenComponent() {
           </pre>
         </div>
 
-        <p className={styles.p}>Hover to see the small animation.</p>
-        <AppFigure1 />
+        <p className={styles.p}>Hover or tap to see the small animation.</p>
+        <AppFigure1 onMobile={onMobile}/>
         <p className={styles.p}>
           If you need to learn about the basics of GSAP more in-depth, the docs
           page on{" "}
@@ -568,7 +575,7 @@ function ExampleTweenComponent() {
           >
             gsap.from()
           </code>
-          . The
+          . The{" "}
           <code
             className={
               isDarkMode
@@ -637,7 +644,7 @@ function ExampleTweenComponent() {
           happens. Here, you set key-value pairs to do things like animate CSS
           properties and set the animation's duration. I often use "onComplete",
           which you set to a callback function that will run when your animation
-          finishes. It's worth knowing there's a lot of cool things you can do
+          finishes. It's worth knowing that there are a lot of cool things you can do
           in the "vars" object, and that they're detailed in the documentation.
         </p>
         <h2 className={styles.h2}>
@@ -823,11 +830,19 @@ function ExampleTweenComponent() {
             }
           >
             onMouseEnter
-          </code>{" "}
+          </code>{" "}or <code
+            className={
+              isDarkMode
+                ? `${styles.code} ${styles.code__dark}`
+                : `${styles.code} ${styles.code__light}`
+            }
+          >
+            onClick
+          </code>{" "}(for mobile) 
           event is fired.
         </p>
 
-        <AppFigure2 />
+        <PhoneFigure2 onMobile={onMobile} />
 
         <p className={styles.p}>
           By storing the tween in the{" "}
@@ -903,8 +918,7 @@ function ExampleTweenComponent() {
         </p>
 
         <p className={styles.p}>
-          Manually changing the names is easy enough for smaller SVGs, but for
-          larger ones you'll want to use some sort of converter. I find{" "}
+          Manually changing the names is easy enough for smaller SVGs, and even larger ones using "search" and "replace" in VSCode. But, if you want, you can use a converter. I found{" "}
           <a
             className={
               isDarkMode
@@ -934,13 +948,9 @@ function ExampleTweenComponent() {
           And there you have it. The basics of how I use GSAP to animate SVGs in
           React. Continue with{" "}
           <a
-            className={
-              isDarkMode
-                ? `${styles.linkAnchor} ${styles.linkAnchor__dark}`
-                : `${styles.linkAnchor} ${styles.linkAnchor__light}`
-            }
+            className={styles.internalLinkAnchor}
             target="_blank"
-            href="https://svg2jsx.com/"
+            href="/post/gsap-timelines-in-react"
           >
             part 2
           </a>{" "}
@@ -961,13 +971,11 @@ function ExampleTweenComponent() {
       <div className={styles.nextPostFlexContainer}>
         <Link href="/post/gsap-timelines-in-react">
           <a
-            className={
-              isDarkMode
-                ? `${styles.nextPost} ${styles.nextPost__dark}`
-                : `${styles.nextPost} ${styles.nextPost__light}`
-            }
+            className={styles.nextPost}
           >
-            Next - GSAP in React: Timelines &rarr;
+            Next &rarr;
+            <br/>
+            GSAP in React: Timelines
           </a>
         </Link>
       </div>

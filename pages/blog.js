@@ -37,7 +37,7 @@ function Blog() {
       <section className={styles.postsSection}>
         <h2 className={styles.h2}>Posts</h2>
         {data.map((post) => (
-          <Post isDarkMode={isDarkMode} post={post} />
+          <Post isDarkMode={isDarkMode} post={post} key={post.id} />
         ))}
       </section>
     </Layout>

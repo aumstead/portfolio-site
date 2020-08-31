@@ -1,15 +1,15 @@
 import styles from "./PhoneFigure1.module.scss";
 
-function PhoneFigure1() {
+function PhoneFigure1({ onMobile }) {
   function handleMouseEnter() {
     gsap.to("#red-icon-group", 1, { x: 45 });
-
   }
 
   return (
     <svg
-    className={styles.svg}
-    onMouseEnter={handleMouseEnter}
+      className={styles.svg}
+      onMouseEnter={onMobile ? null : handleMouseEnter}
+      onClick={onMobile ? handleMouseEnter : null}
       xmlns="http://www.w3.org/2000/svg"
       width="217"
       height="304"

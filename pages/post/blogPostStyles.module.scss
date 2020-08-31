@@ -49,7 +49,8 @@
   margin: 3rem 0;
 }
 .linkAnchor {
-  text-decoration: underline;
+  font-size: var(--text-font-size);
+  border-bottom: 1px solid var(--light-text);
   &:hover {
     cursor: pointer;
   }
@@ -70,6 +71,14 @@
     }
   }
 }
+.internalLinkAnchor {
+  font-size: var(--text-font-size);
+  color: var(--link-blue);
+  &:hover {
+    cursor: pointer;
+    color: var(--hover-orange);
+  }
+}
 .code {
   font-size: 1.7rem;
   border-radius: 2px;
@@ -84,7 +93,6 @@
     color: var(--dark-text);
   }
 }
-
 .codeblock {
   font-size: 1.4rem;
   border-radius: 4px;
@@ -93,54 +101,38 @@
     box-shadow: 0 8px 30px rgba(0, 0, 0, 0.92);
   }
 }
-
+.caption {
+  font-size: 1.2rem;
+  &__light {
+    color: var(--light-text);
+  }
+  &__dark {
+    color: var(--dark-text);
+  }
+}
 .nextPostFlexContainer {
   display: flex;
   justify-content: center;
 }
 .nextPost {
   font-size: 1.8rem;
-  padding: 1rem 1.5rem;
-  transition: background-color var(--transition);
-
-  &__dark {
-    color: var(--dark-link-blue);
-    &:hover {
-      background-color: var(--dark-hover-background);
-    }
-  }
-  &__light {
-    color: var(--light-link-blue);
-    // color: var(--light-text);
-    &:hover {
-      background-color: var(--light-hover-background);
-    }
+  color: var(--link-blue);
+  text-align: center;
+  &:hover {
+    color: var(--hover-orange);
   }
 }
-
 .navPostFlexContainer {
   display: flex;
   justify-content: space-between;
 
   .navPost {
     font-size: 1.8rem;
-    padding: 1rem 1.5rem;
-    transition: background-color var(--transition);
     width: 20rem;
     text-align: center;
-
-    &__dark {
-      color: var(--dark-link-blue);
-      &:hover {
-        background-color: var(--dark-hover-background);
-      }
-    }
-    &__light {
-      color: var(--light-link-blue);
-      // color: var(--light-text);
-      &:hover {
-        background-color: var(--light-hover-background);
-      }
+    color: var(--link-blue);
+    &:hover {
+      color: var(--hover-orange);
     }
   }
 }

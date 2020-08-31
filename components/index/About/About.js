@@ -24,10 +24,10 @@ function About({ onMobile }) {
         .to("#emptyPolaroid", 0.5, { opacity: 0 }, "<1")
         .set("#emptyPolaroid", { backgroundColor: "#fff", opacity: 1 })
         .to("#emptyPolaroid", 1, { backgroundColor: "#e2e2db" })
-        .set("#photo", { filter: "grayscale(1) blur(3px)" })
+        .set("#photo", { filter: "grayscale(1) blur(1.5px)" })
         .to("#photo", 2, {
           opacity: 0.25,
-          filter: "grayscale(.75) blur(1.5px)",
+          filter: "grayscale(.75) blur(1px)",
         })
         .to("#photo", 5, { opacity: 1, filter: "grayscale(0) blur(0px)" });
     } else {
