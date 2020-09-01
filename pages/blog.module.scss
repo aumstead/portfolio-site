@@ -14,9 +14,12 @@
 }
 
 .heroSection {
-  margin-bottom: 6rem;
+  margin-bottom: 5rem;
 }
-
+.headingFlexContainer {
+  display: flex;
+  justify-content: space-between;
+}
 .h2 {
   font-size: 3.6rem;
 }

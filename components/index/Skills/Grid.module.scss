@@ -1,6 +1,6 @@
 .grid {
   display: grid;
-  grid-template-columns: 12rem 1fr 12rem;
+  grid-template-columns: 14rem 1fr 14rem;
 }
 
 .gridItem__core {
@@ -15,7 +15,6 @@
 .listHeading {
   font-size: 2rem;
 }
-
 .li {
   font-size: var(--text-font-size);
 }

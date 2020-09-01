@@ -1,7 +1,7 @@
 import styles from "./Projects.module.scss";
 import { useContext, useState } from "react";
 import DarkModeContext from "../../../contexts/darkMode/DarkModeContext";
-import Cards from "./svgs/Cards";
+import Cards from "./Cards";
 import Carousel from "./Carousel";
 
 function Projects({ onMobile }) {

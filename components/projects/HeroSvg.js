@@ -14,12 +14,12 @@ function HeroSvg({ onMobile }) {
     }
 
     tl.current
-      .to("#gear-group", 8, {
+      .to("#gear-group", 8.5, {
         rotate: 360 * 4,
         transformOrigin: "50% 50%",
         ease: "power3.out",
       })
-      .to("#blue-icon-group", 0.2, { y: 48 }, "<")
+      .to("#blue-icon-group", 0.2, { y: 48 }, "<.5")
       .to("#yellow-icon-group", 0.2, { y: -48 }, "<")
       .to("#green-icon-group", 0.2, { y: -96 }, "<.2")
       .to("#red-icon-group", 0.2, { y: -48 }, "<")

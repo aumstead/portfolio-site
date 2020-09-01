@@ -1,11 +1,12 @@
 import Layout from "../components/Layout/Layout";
 import styles from "./blog.module.scss";
 import DarkModeContext from "../contexts/darkMode/DarkModeContext";
-import MobileContext from '../contexts/mobile/MobileContext'
+import MobileContext from "../contexts/mobile/MobileContext";
 import { useContext } from "react";
 import Power from "../components/blog/Power";
 import data from "../data/posts.json";
 import Post from "../components/blog/Post";
+import Dog from '../components/blog/Dog'
 
 function Blog() {
   const darkModeContext = useContext(DarkModeContext);
@@ -27,15 +28,16 @@ function Blog() {
           Blog
         </h1>
         <p className={styles.text}>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Id, labore
-          aperiam quas sed consectetur mollitia harum molestias? Quisquam,
-          excepturi est reiciendis officia iusto ullam perspiciatis dignissimos
-          magni veritatis alias commodi?
+          If I ever solve some problem that I wasn't able to find any answers to
+          on the internet, I'll write about how I did it here.
         </p>
       </section>
 
       <section className={styles.postsSection}>
-        <h2 className={styles.h2}>Posts</h2>
+        <div className={styles.headingFlexContainer}>
+          <h2 className={styles.h2}>Posts</h2>
+          <Dog onMobile={onMobile} />
+        </div>
         {data.map((post) => (
           <Post isDarkMode={isDarkMode} post={post} key={post.id} />
         ))}

@@ -10,14 +10,21 @@ function CleanCodeSvg({ onMobile }) {
     "#219653",
     // red
     "#EB5757",
-    // purple
-    "#9B51E0",
+    // yellow
     "#fff48f",
-    "#fe91ca",
+    // logo orange
+    "#FCA417",
     "#2AA1FF"
   ];
 
   useEffect(() => {
+    const timeout = function() {
+      setTimeout(() => {
+        explosionTl.current.restart();
+        clientTl.current.restart();
+      }, 2000)
+    }
+
     clientTl.current = gsap.timeline();
     explosionTl.current = gsap.timeline();
 
@@ -37,13 +44,12 @@ function CleanCodeSvg({ onMobile }) {
         ".clientBackground",
         {
           duration: 1,
-          fill: colorsArr[Math.floor(Math.random() * 5)],
+          fill: colorsArr[Math.floor(Math.random() * 4)],
           opacity: 1,
         },
         "<3.5"
       );
 
-    clientTl.current.pause();
 
     explosionTl.current
       .addLabel("start", 0)
@@ -304,7 +310,18 @@ function CleanCodeSvg({ onMobile }) {
         document.querySelector(".code23").classList.add(`${styles.code23}`);
       });
 
-    explosionTl.current.pause();
+    if (onMobile) {
+      explosionTl.current.pause();
+      clientTl.current.pause();
+      timeout()
+    } else {
+      explosionTl.current.pause();
+      clientTl.current.pause();
+    }
+
+    return () => {
+      clearTimeout(timeout)
+    }
   }, []);
 
   function handleMouseEnter() {

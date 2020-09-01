@@ -20,6 +20,7 @@ function Camera({ isDarkMode, setShowPicture, onMobile }) {
       }
     shutterTl.current.pause();
   }, [isDarkMode]);
+  
   function handleMouseEnter() {
     shutterTl.current.restart();
     setShowPicture(prevState => !prevState)
