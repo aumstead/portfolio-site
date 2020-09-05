@@ -14,6 +14,14 @@ function Text({ mouseEnteredBook, isDarkMode }) {
     textAnimationTimeline.current = gsap.timeline();
     textAnimationTimeline.current.pause();
 
+    const path = document.getElementById("part-n2")
+    const length = path.getTotalLength()
+    console.log('length:', length)
+
+    const path1 = document.getElementById("letter-t1-part2")
+    const length1 = path1.getTotalLength()
+    console.log('length1:', length1)
+
     textAnimationTimeline.current
       .to("#letter-r", 0.5, { strokeDashoffset: 0 })
       .to("#part-r", 0.3, { strokeDashoffset: 0 }, ">-.1")
