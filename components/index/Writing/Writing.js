@@ -1,10 +1,10 @@
 import styles from "./Writing.module.scss";
-import { useContext, useState, useEffect } from "react";
+import { useContext, useState } from "react";
 import DarkModeContext from "../../../contexts/darkMode/DarkModeContext";
+import data from "../../../data/posts.json";
 import Post from "./Post";
 import Book from "./Book";
 import Text from "./Text";
-import data from "../../../data/posts.json";
 
 function Writing({ onMobile }) {
   const darkModeContext = useContext(DarkModeContext);
@@ -12,20 +12,18 @@ function Writing({ onMobile }) {
 
   const [mouseEnteredBook, setMouseEnteredBook] = useState(false);
 
-  return (
-    <section className={styles.section}>
-      {onMobile ? (
+  const stylesConfig = {
+    title: isDarkMode
+      ? `${styles.title} ${styles.title__dark}`
+      : `${styles.title} ${styles.title__light}`,
+  };
+
+  function renderHeadingLayout() {
+    if (onMobile) {
+      return (
         <div className={styles.headingGrid}>
           <div className={styles.column__left}>
-            <h2
-              className={
-                isDarkMode
-                  ? `${styles.title} ${styles.title__dark}`
-                  : `${styles.title} ${styles.title__light}`
-              }
-            >
-              Blog
-            </h2>
+            <h2 className={stylesConfig.title}>Blog</h2>
             <Text
               mouseEnteredBook={mouseEnteredBook}
               setMouseEnteredBook={setMouseEnteredBook}
@@ -34,27 +32,30 @@ function Writing({ onMobile }) {
           </div>
           <Book onMobile={onMobile} setMouseEnteredBook={setMouseEnteredBook} />
         </div>
-      ) : (
+      );
+    } else {
+      return (
         <div className={styles.headingFlexContainer}>
-          <h2
-            className={
-              isDarkMode
-                ? `${styles.title} ${styles.title__dark}`
-                : `${styles.title} ${styles.title__light}`
-            }
-          >
-            Blog
-          </h2>
+          <h2 className={stylesConfig.title}>Blog</h2>
           <div className={styles.flexItem__svgs}>
             <Text
               mouseEnteredBook={mouseEnteredBook}
               setMouseEnteredBook={setMouseEnteredBook}
               isDarkMode={isDarkMode}
             />
-            <Book onMobile={onMobile} setMouseEnteredBook={setMouseEnteredBook} />
+            <Book
+              onMobile={onMobile}
+              setMouseEnteredBook={setMouseEnteredBook}
+            />
           </div>
         </div>
-      )}
+      );
+    }
+  }
+
+  return (
+    <section className={styles.section}>
+      {renderHeadingLayout()}
       <Post isDarkMode={isDarkMode} post={data[0]} />
       <Post isDarkMode={isDarkMode} post={data[1]} />
       <Post isDarkMode={isDarkMode} post={data[2]} />

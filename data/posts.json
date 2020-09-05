@@ -1,9 +1,9 @@
 [
   {
-    "title": "GSAP in React - Part 3: MotionPath Plugin",
+    "title": "Passing Data from Child to Parent in React",
     "date":"August 14th, 2020",
     "description": "lorem ipsum",
-    "url": "/post/gsap-motion-path",
+    "url": "/post/react-pass-data-up",
     "id": "post3"
   },
   {

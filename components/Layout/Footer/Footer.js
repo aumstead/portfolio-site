@@ -4,10 +4,13 @@ import Pc from "./Pc";
 import Disk from "../Footer/Disk";
 import Screen from "../Footer/Screen";
 import DarkModeContext from "../../../contexts/darkMode/DarkModeContext";
+import MobileContext from '../../../contexts/mobile/MobileContext'
 
 function Footer() {
   const darkModeContext = useContext(DarkModeContext);
   const { isDarkMode } = darkModeContext;
+  const mobileContext = useContext(MobileContext)
+  const { onMobile } = mobileContext
 
   const [mouseEnteredDisk, setMouseEnteredDisk] = useState(false);
 
@@ -18,7 +21,7 @@ function Footer() {
           <img className={isDarkMode ? `${styles.arrow__dark} ${styles.arrow}` : styles.arrow} src="/images/arrow.png" alt="Arrow pointing to graphic."/>
         <Disk setMouseEnteredDisk={setMouseEnteredDisk} />
       </div>
-      <Pc mouseEnteredDisk={mouseEnteredDisk} isDarkMode={isDarkMode} />
+      <Pc onMobile={onMobile} mouseEnteredDisk={mouseEnteredDisk} isDarkMode={isDarkMode} />
       <Screen mouseEnteredDisk={mouseEnteredDisk} />
     </footer>
   );

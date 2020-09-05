@@ -1,9 +1,9 @@
-import Layout from "../../components/Layout/Layout";
 import styles from "./blogPostStyles.module.scss";
-import { useContext, useEffect } from "react";
-import DarkModeContext from "../../contexts/darkMode/DarkModeContext";
 import Prism from "prismjs";
 import Link from 'next/link'
+import { useContext, useEffect } from "react";
+import Layout from "../../components/Layout/Layout";
+import DarkModeContext from "../../contexts/darkMode/DarkModeContext";
 
 export default () => {
   const darkModeContext = useContext(DarkModeContext);
@@ -15,12 +15,12 @@ export default () => {
 
   return (
     <Layout>
-      <h1 className={styles.h1}>GSAP in React - Part 3: MotionPath Plugin</h1>
+      <h1 className={styles.h1}>Passing Data from Child to Parent in React</h1>
       <div className={styles.infoFlexContainer}>
         <div className={styles.infoFlexItem__author}>
           <img
             className={styles.profilePhoto}
-            src="/static/images/profilePhoto.jpg"
+            src="/images/profilePhoto.jpg"
             alt="Andrew Umstead"
           />
           <span className={styles.byLine}>Andrew Umstead</span>

@@ -22,6 +22,7 @@ function Dog({ onMobile }) {
     <svg
       className={styles.svg}
       onMouseEnter={handleMouseEntered}
+      onClick={onMobile ? handleMouseEntered : null}
       width="492"
       height="715"
       viewBox="0 0 492 715"
@@ -89,10 +90,10 @@ function Dog({ onMobile }) {
             id="XMLID 17"
             d="M466.7 567.052C466.9 569.752 467 572.452 467 575.152C467 631.052 422 676.452 366.5 676.452C319.9 676.452 280.7 644.452 269.3 601.052C273.4 653.152 316.7 694.252 369.5 694.252C425 694.252 470 648.952 470 592.952C470.1 583.952 468.9 575.352 466.7 567.052Z"
             stroke="#00354C"
-            stroke-width="6"
-            stroke-miterlimit="10"
-            stroke-linecap="round"
-            stroke-linejoin="round"
+            strokeWidth="6"
+            strokeMiterlimit="10"
+            strokeLinecap="round"
+            strokeLinejoin="round"
           />
           <path
             id="XMLID 28"
@@ -103,10 +104,10 @@ function Dog({ onMobile }) {
             id="XMLID 1"
             d="M291 476.051C274 468.451 244.4 524.451 237.5 566.051C231.8 600.151 233.7 631.451 242.4 651.351L291 476.051Z"
             stroke="#00354C"
-            stroke-width="6"
-            stroke-miterlimit="10"
-            stroke-linecap="round"
-            stroke-linejoin="round"
+            strokeWidth="6"
+            strokeMiterlimit="10"
+            strokeLinecap="round"
+            strokeLinejoin="round"
           />
           <path
             id="XMLID 68"
@@ -122,10 +123,10 @@ function Dog({ onMobile }) {
             id="XMLID 54"
             d="M343.4 476.051C360.4 468.451 390 524.451 396.9 566.051C402.6 600.151 400.7 631.451 392 651.351L343.4 476.051Z"
             stroke="#00354C"
-            stroke-width="6"
-            stroke-miterlimit="10"
-            stroke-linecap="round"
-            stroke-linejoin="round"
+            strokeWidth="6"
+            strokeMiterlimit="10"
+            strokeLinecap="round"
+            strokeLinejoin="round"
           />
           <path
             id="XMLID 18"
@@ -161,10 +162,10 @@ function Dog({ onMobile }) {
             id="XMLID 4"
             d="M395 658.852C393.9 642.252 350.7 462.052 339 453.052H317.9H296.2C284.5 462.052 241.2 642.152 240.2 658.852C238.9 679.552 232.1 711.052 271.4 711.052H317.9H363.9C403.1 711.052 396.3 679.552 395 658.852Z"
             stroke="#00354C"
-            stroke-width="6"
-            stroke-miterlimit="10"
-            stroke-linecap="round"
-            stroke-linejoin="round"
+            strokeWidth="6"
+            strokeMiterlimit="10"
+            strokeLinecap="round"
+            strokeLinejoin="round"
           />
           <path
             id="XMLID 9"
@@ -195,10 +196,10 @@ function Dog({ onMobile }) {
             id="XMLID 14"
             d="M373.8 413.952C362.6 430.252 338.1 441.252 312 441.252C287.8 441.252 273.3 427.052 264.8 409.352"
             stroke="#00354C"
-            stroke-width="6"
-            stroke-miterlimit="10"
-            stroke-linecap="round"
-            stroke-linejoin="round"
+            strokeWidth="6"
+            strokeMiterlimit="10"
+            strokeLinecap="round"
+            strokeLinejoin="round"
           />
           <path
             id="XMLID 7"
@@ -219,19 +220,19 @@ function Dog({ onMobile }) {
             id="XMLID 19"
             d="M447.6 704.752C432.4 690.452 403.2 683.352 374.7 685.552C350.3 687.352 332.2 695.652 325.1 706.652C323.9 708.552 325.4 711.052 327.7 711.052H443.2C447.7 711.052 450.4 707.352 447.6 704.752Z"
             stroke="#00354C"
-            stroke-width="6"
-            stroke-miterlimit="10"
-            stroke-linecap="round"
-            stroke-linejoin="round"
+            strokeWidth="6"
+            strokeMiterlimit="10"
+            strokeLinecap="round"
+            strokeLinejoin="round"
           />
           <path
             id="XMLID 8"
             d="M385.1 699.852V710.852"
             stroke="#00354C"
-            stroke-width="6"
-            stroke-miterlimit="10"
-            stroke-linecap="round"
-            stroke-linejoin="round"
+            strokeWidth="6"
+            strokeMiterlimit="10"
+            strokeLinecap="round"
+            strokeLinejoin="round"
           />
           <path
             id="XMLID 25"
@@ -247,19 +248,19 @@ function Dog({ onMobile }) {
             id="XMLID 24"
             d="M190.7 704.752C205.9 690.452 235.1 683.352 263.6 685.552C288 687.352 306.1 695.652 313.2 706.652C314.4 708.552 312.9 711.052 310.6 711.052H195.1C190.6 711.052 187.9 707.352 190.7 704.752Z"
             stroke="#00354C"
-            stroke-width="6"
-            stroke-miterlimit="10"
-            stroke-linecap="round"
-            stroke-linejoin="round"
+            strokeWidth="6"
+            strokeMiterlimit="10"
+            strokeLinecap="round"
+            strokeLinejoin="round"
           />
           <path
             id="XMLID 13"
             d="M392.7 381.052C390.8 361.552 381.2 312.252 370.4 277.752C353.2 222.652 333 208.252 321.3 206.752C320.1 206.552 317.5 206.552 317.5 206.552C317.5 206.552 315 206.552 313.7 206.752C302 208.152 281.9 222.452 264.6 277.652C253.8 312.152 244.3 361.552 242.3 381.152C238 425.152 259.1 449.452 286.5 452.952C294.3 453.952 309.7 453.952 317.5 453.952C325.2 453.952 340.6 453.952 348.5 452.952C375.8 449.352 397 425.052 392.7 381.052Z"
             stroke="#00354C"
-            stroke-width="6"
-            stroke-miterlimit="10"
-            stroke-linecap="round"
-            stroke-linejoin="round"
+            strokeWidth="6"
+            strokeMiterlimit="10"
+            strokeLinecap="round"
+            strokeLinejoin="round"
           />
           <path
             id="XMLID 29"
@@ -270,10 +271,10 @@ function Dog({ onMobile }) {
             id="XMLID 11"
             d="M319.5 206.352C319.5 206.352 354.4 198.952 364 203.452C373.9 208.052 391.8 243.152 384.4 256.852C373.1 277.852 339.9 201.852 319.5 206.352Z"
             stroke="#00354C"
-            stroke-width="6"
-            stroke-miterlimit="10"
-            stroke-linecap="round"
-            stroke-linejoin="round"
+            strokeWidth="6"
+            strokeMiterlimit="10"
+            strokeLinecap="round"
+            strokeLinejoin="round"
           />
           <path
             id="XMLID 27"
@@ -284,10 +285,10 @@ function Dog({ onMobile }) {
             id="XMLID 12"
             d="M254 212.651L302.3 211.251C302.3 211.251 257.5 259.451 236.8 269.851C216.1 280.251 237.3 212.551 254 212.651Z"
             stroke="#00354C"
-            stroke-width="6"
-            stroke-miterlimit="10"
-            stroke-linecap="round"
-            stroke-linejoin="round"
+            strokeWidth="6"
+            strokeMiterlimit="10"
+            strokeLinecap="round"
+            strokeLinejoin="round"
           />
           <path
             id="XMLID 3"
@@ -303,10 +304,10 @@ function Dog({ onMobile }) {
             id="XMLID 57"
             d="M142 711.052H488.7"
             stroke="#00354C"
-            stroke-width="6"
-            stroke-miterlimit="10"
-            stroke-linecap="round"
-            stroke-linejoin="round"
+            strokeWidth="6"
+            strokeMiterlimit="10"
+            strokeLinecap="round"
+            strokeLinejoin="round"
           />
         </g>
       </g>

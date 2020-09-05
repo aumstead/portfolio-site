@@ -1,10 +1,10 @@
-import Layout from "../../components/Layout/Layout";
 import styles from "./blogPostStyles.module.scss";
+import Link from "next/link";
+import Prism from "prismjs";
 import { useContext, useEffect } from "react";
+import Layout from "../../components/Layout/Layout";
 import DarkModeContext from "../../contexts/darkMode/DarkModeContext";
 import MobileContext from '../../contexts/mobile/MobileContext'
-import Prism from "prismjs";
-import Link from "next/link";
 import Final from "../../components/post/gsap-tweens-in-react/Final";
 import TimelineFigure1 from "../../components/post/gsap-timelines-in-react/TimelineFigure1";
 import TimelineFigure2 from "../../components/post/gsap-timelines-in-react/TimelineFigure2";
@@ -24,6 +24,7 @@ export default () => {
     Prism.highlightAll();
   });
 
+  // Weird indention is for formatting.
   const codeFigure1__component = `
   import styles from "./MyTimelineComponent.module.scss";
 import { useRef, useEffect } from "react";

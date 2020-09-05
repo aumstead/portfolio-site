@@ -1,18 +1,16 @@
 import styles from "./Pc.module.scss";
 import { useEffect, useRef } from "react";
 
-function Pc({ mouseEnteredDisk, isDarkMode }) {
+function Pc({ mouseEnteredDisk, isDarkMode, onMobile }) {
   // ref to know if it's the initial render
   const firstUpdate = useRef(true);
   const zoom = useRef(null);
 
-  const newView = "100 -10 171 240";
-  // const newMobileView = "50 -20 270 300";
-
   useEffect(() => {
-    zoom.current = gsap.to("#pc", 1, { attr: { viewBox: newView } });
+    const viewBox = onMobile ? "100 0 171 200" : "100 -10 171 240"
+    zoom.current = gsap.to("#pc", 1, { attr: { viewBox } });
     zoom.current.pause();
-  }, []);
+  }, [onMobile]);
 
   useEffect(() => {
     if (firstUpdate.current) {
