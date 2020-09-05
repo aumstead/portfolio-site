@@ -3,7 +3,7 @@ import styles from "./index.module.scss";
 import DarkModeContext from "../contexts/darkMode/DarkModeContext";
 import MobileContext from '../contexts/mobile/MobileContext'
 import { useContext } from "react";
-import CleanCodeSvg from '../components/index/CleanCodeSvg'
+import CleanCodeSvg from '../components/index/CleanCodeSvg/CleanCodeSvg'
 import Projects from '../components/index/Projects/Projects'
 import Writing from '../components/index/Writing/Writing'
 import Skills from '../components/index/Skills/Skills'

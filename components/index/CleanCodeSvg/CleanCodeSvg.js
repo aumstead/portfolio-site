@@ -3,7 +3,8 @@ import { useEffect, useRef } from "react";
 
 function CleanCodeSvg({ onMobile }) {
   const explosionTl = useRef(null);
-  const clientTl = useRef(null);
+  const clientFadeOutTl = useRef(null);
+  const clientFadeInTl = useRef(null);
 
   const colorsArr = [
     // green
@@ -14,42 +15,23 @@ function CleanCodeSvg({ onMobile }) {
     "#fff48f",
     // logo orange
     "#FCA417",
-    "#2AA1FF"
+    // logo blue
+    "#2AA1FF",
+    // purple
+    "#895ade",
+    "pink",
   ];
 
   useEffect(() => {
-    const timeout = function() {
-      setTimeout(() => {
-        explosionTl.current.restart();
-        clientTl.current.restart();
-      }, 2000)
-    }
-
-    clientTl.current = gsap.timeline();
+    // timeline initializations
+    clientFadeOutTl.current = gsap.timeline();
     explosionTl.current = gsap.timeline();
 
-    clientTl.current
-      .to(".clientBackground", { duration: 1, fill: "#fff" })
+    clientFadeOutTl.current
+      .set(".clientBackground", { fill: "#fff" })
       .to(".clientTop", { duration: 1, opacity: 0 }, "<")
       .to(".clientMiddle", { duration: 1, opacity: 0 }, "<")
-      .to(".clientBottom", { duration: 1, opacity: 0 }, "<")
-      .to(".clientTop", { duration: 1, stroke: "#000", opacity: 0.34 }, "<3.5")
-      .to(
-        ".clientMiddle",
-        { duration: 1, stroke: "#000", opacity: 0.34 },
-        "<2.5"
-      )
-      .to(".clientBottom", { duration: 1, stroke: "#000", opacity: 1 }, "<3")
-      .to(
-        ".clientBackground",
-        {
-          duration: 1,
-          fill: colorsArr[Math.floor(Math.random() * 4)],
-          opacity: 1,
-        },
-        "<3.5"
-      );
-
+      .to(".clientBottom", { duration: 1, opacity: 0 }, "<");
 
     explosionTl.current
       .addLabel("start", 0)
@@ -256,7 +238,7 @@ function CleanCodeSvg({ onMobile }) {
         "<"
       )
 
-      // fade out the code blocks
+      // fade out the flying code blocks
       .to(".code1", { duration: 1, opacity: 0 }, "<1")
       .to(".code2", { duration: 1, opacity: 0 }, "<")
       .to(".code3", { duration: 1, opacity: 0 }, "<")
@@ -281,79 +263,52 @@ function CleanCodeSvg({ onMobile }) {
       .to(".code22", { duration: 1, opacity: 0 }, "<")
       .to(".code23", { duration: 1, opacity: 0 }, "<")
 
-      // reverse the animation to start label. Add stroke animation classes.
       .eventCallback("onComplete", () => {
-        explosionTl.current.reverse("start");
-
-        document.querySelector(".code1").classList.add(`${styles.code1}`);
-        document.querySelector(".code2").classList.add(`${styles.code2}`);
-        document.querySelector(".code3").classList.add(`${styles.code3}`);
-        document.querySelector(".code4").classList.add(`${styles.code4}`);
-        document.querySelector(".code5").classList.add(`${styles.code5}`);
-        document.querySelector(".code6").classList.add(`${styles.code6}`);
-        document.querySelector(".code7").classList.add(`${styles.code7}`);
-        document.querySelector(".code8").classList.add(`${styles.code8}`);
-        document.querySelector(".code9").classList.add(`${styles.code9}`);
-        document.querySelector(".code10").classList.add(`${styles.code10}`);
-        document.querySelector(".code11").classList.add(`${styles.code11}`);
-        document.querySelector(".code12").classList.add(`${styles.code12}`);
-        document.querySelector(".code13").classList.add(`${styles.code13}`);
-        document.querySelector(".code14").classList.add(`${styles.code14}`);
-        document.querySelector(".code15").classList.add(`${styles.code15}`);
-        document.querySelector(".code16").classList.add(`${styles.code16}`);
-        document.querySelector(".code17").classList.add(`${styles.code17}`);
-        document.querySelector(".code18").classList.add(`${styles.code18}`);
-        document.querySelector(".code19").classList.add(`${styles.code19}`);
-        document.querySelector(".code20").classList.add(`${styles.code20}`);
-        document.querySelector(".code21").classList.add(`${styles.code21}`);
-        document.querySelector(".code22").classList.add(`${styles.code22}`);
-        document.querySelector(".code23").classList.add(`${styles.code23}`);
+        if (!explosionTl.current.reversed()) {
+          explosionTl.current.reversed(true).timeScale(2);
+        } else {
+          explosionTl.current.reversed(false).timeScale(1);
+        }
+        explosionTl.current.reverse();
+        clientFadeInTl.current.restart();
       });
 
-    if (onMobile) {
-      explosionTl.current.pause();
-      clientTl.current.pause();
-      timeout()
-    } else {
-      explosionTl.current.pause();
-      clientTl.current.pause();
-    }
-
-    return () => {
-      clearTimeout(timeout)
-    }
+    explosionTl.current.pause();
+    clientFadeOutTl.current.pause();
   }, []);
 
-  function handleMouseEnter() {
-    removeClassesForStrokeAnimation();
-    explosionTl.current.restart();
-    clientTl.current.restart();
+  function initClientFadeInTl() {
+    clientFadeInTl.current = gsap.timeline();
+    clientFadeInTl.current
+      .to(".clientTop", {
+        delay: 0.8,
+        duration: 0.3,
+        stroke: "#000",
+        opacity: 0.34,
+      })
+      .to(
+        ".clientMiddle",
+        { duration: 0.3, stroke: "#000", opacity: 0.34 },
+        "<"
+      )
+      .to(".clientBottom", { duration: 0.3, stroke: "#000", opacity: 1 }, "<")
+      .to(
+        ".clientBackground",
+        {
+          duration: 0.3,
+          fill: colorsArr[Math.floor(Math.random() * 7)],
+          opacity: 1,
+        },
+        "<"
+      );
+    clientFadeInTl.current.pause();
   }
-
-  function removeClassesForStrokeAnimation() {
-    document.getElementById("code1").classList.remove(`${styles.code1}`);
-    document.getElementById("code2").classList.remove(`${styles.code2}`);
-    document.getElementById("code3").classList.remove(`${styles.code3}`);
-    document.getElementById("code4").classList.remove(`${styles.code4}`);
-    document.getElementById("code5").classList.remove(`${styles.code5}`);
-    document.getElementById("code6").classList.remove(`${styles.code6}`);
-    document.getElementById("code7").classList.remove(`${styles.code7}`);
-    document.getElementById("code8").classList.remove(`${styles.code8}`);
-    document.getElementById("code9").classList.remove(`${styles.code9}`);
-    document.getElementById("code10").classList.remove(`${styles.code10}`);
-    document.getElementById("code11").classList.remove(`${styles.code11}`);
-    document.getElementById("code12").classList.remove(`${styles.code12}`);
-    document.getElementById("code13").classList.remove(`${styles.code13}`);
-    document.getElementById("code14").classList.remove(`${styles.code14}`);
-    document.getElementById("code15").classList.remove(`${styles.code15}`);
-    document.getElementById("code16").classList.remove(`${styles.code16}`);
-    document.getElementById("code17").classList.remove(`${styles.code17}`);
-    document.getElementById("code18").classList.remove(`${styles.code18}`);
-    document.getElementById("code19").classList.remove(`${styles.code19}`);
-    document.getElementById("code20").classList.remove(`${styles.code20}`);
-    document.getElementById("code21").classList.remove(`${styles.code21}`);
-    document.getElementById("code22").classList.remove(`${styles.code22}`);
-    document.getElementById("code23").classList.remove(`${styles.code23}`);
+  
+  function handleMouseEnter() {
+    // fadeIn timeline is initialized in handler in order to generate a random background color each time
+    initClientFadeInTl()
+    explosionTl.current.restart().timeScale(1);
+    clientFadeOutTl.current.restart();
   }
 
   return (
@@ -576,7 +531,7 @@ function CleanCodeSvg({ onMobile }) {
         className="clientBackground"
         id="clientBackground"
         d="M404.058 146.14h-87.58c-3.322 0-6.04-2.693-6.04-5.984v-91.93c0-3.29 2.718-5.984 6.04-5.984h87.58c3.322 0 6.04 2.693 6.04 5.984v91.93c0 3.366-2.718 5.984-6.04 5.984z"
-        fill="#2AA1FF"
+        fill={colorsArr[Math.floor(Math.random() * 7)]}
       />
       <path
         // client outline
@@ -592,7 +547,7 @@ function CleanCodeSvg({ onMobile }) {
         id="clientTop"
         opacity={0.34}
         d="M390.996 70.741h-61.608c-2.19 0-3.926-1.72-3.926-3.89v-5.834c0-2.169 1.736-3.89 3.926-3.89h61.608c2.189 0 3.926 1.721 3.926 3.89v5.835c0 2.169-1.737 3.89-3.926 3.89z"
-        stroke="#fff"
+        stroke="#000"
         strokeWidth={2}
         strokeMiterlimit={10}
         strokeLinecap="round"
@@ -609,6 +564,7 @@ function CleanCodeSvg({ onMobile }) {
         <path
           className="clientMiddle"
           id="clientMiddle"
+          stroke="#000"
           opacity={0.8}
           d="M363.967 92.658h-34.428c-2.189 0-3.926-1.72-3.926-3.89v-5.834c0-2.17 1.737-3.89 3.926-3.89h34.428c2.189 0 3.926 1.72 3.926 3.89v5.834c-.075 2.17-1.812 3.89-3.926 3.89zM391.071 92.658h-13.363c-2.19 0-3.926-1.72-3.926-3.89v-5.834c0-2.17 1.736-3.89 3.926-3.89h13.363c2.19 0 3.926 1.72 3.926 3.89v5.834c0 2.17-1.736 3.89-3.926 3.89z"
         />
@@ -617,7 +573,7 @@ function CleanCodeSvg({ onMobile }) {
         className="clientBottom"
         id="clientBottom"
         d="M325.537 115.397h69.385M325.537 123.475h69.385M325.537 131.554h42.28"
-        stroke="#fff"
+        stroke="#000"
         strokeWidth={2}
         strokeMiterlimit={10}
         strokeLinecap="round"
