@@ -8,7 +8,7 @@ function Disk({ setTriggerTimeline }) {
 
   const [animateHint, setAnimateHint] = useState(false)
   const [timerFunc, setTimerFunc] = useState(false)
-  const [cancelAnimation, setCancelAnimation] = useState(false)
+  const [cancelHintAnimation, setCancelHintAnimation] = useState(false)
 
   const disk = useRef(null)
 
@@ -33,7 +33,7 @@ function Disk({ setTriggerTimeline }) {
   }, []);
 
   useEffect(() => {
-    if (!cancelAnimation) {
+    if (!cancelHintAnimation) {
       firstTimeout = setTimeout(() => {
         setAnimateHint(true)
       }, 4000)
@@ -43,7 +43,7 @@ function Disk({ setTriggerTimeline }) {
   }, [timerFunc])
 
   useEffect(() => {
-    if (animateHint && !cancelAnimation) {
+    if (animateHint && !cancelHintAnimation) {
       disk.current.classList.add(`${styles.vibrate}`)
       secondTimeout = setTimeout(() => {
         disk.current.classList.remove(`${styles.vibrate}`)
@@ -54,19 +54,19 @@ function Disk({ setTriggerTimeline }) {
     return () => clearTimeout(secondTimeout)
   }, [animateHint])
 
-  function handleMouseEnterOrClick() {
+  function handleMouseEnter() {
     // this state triggers useEffect func which restarts gsap timeline
     setTriggerTimeline((prevState) => !prevState);
     clearTimeout(firstTimeout)
     clearTimeout(secondTimeout)
-    setCancelAnimation(true)
+    setCancelHintAnimation(true)
   }
 
   return (
     <svg
       ref={disk}
-      onMouseEnter={onMobile ? null : handleMouseEnterOrClick}
-      onClick={handleMouseEnterOrClick}
+      onMouseEnter={onMobile ? null : handleMouseEnter}
+      onClick={onMobile ? handleMouseEnter : null}
       className={styles.disk}
       xmlns="http://www.w3.org/2000/svg"
       width="307"

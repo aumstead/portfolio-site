@@ -4,3 +4,12 @@
   overflow: visible;
   margin-top: -3rem;
 }
+
+@media only screen and (max-width: 500px) {
+  .svg:active {
+    background-color: transparent;
+  }
+  .svg:focus {
+    background-color: transparent;
+  }
+}

@@ -72,4 +72,9 @@
     justify-self: end;
     margin-right: 1rem;
   }
+
+  .book:focus {
+    outline: none;
+    
+  }
 }
