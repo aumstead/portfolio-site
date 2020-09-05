@@ -19,11 +19,6 @@
   100% { opacity: 1; }
  }
 
-//  @keyframes flash {
-//   0%, 50%, 100% { opacity: 1; }
-//   25%, 75% { opacity: 0; }
-//  }
-
 /**
  * ----------------------------------------
  * animation vibrate-1
@@ -79,5 +74,11 @@
   100% {
     -webkit-transform: translate(0);
             transform: translate(0);
+  }
+}
+
+@media only screen and (max-width: 500px) {
+  .camera {
+    -webkit-tap-highlight-color: transparent;
   }
 }

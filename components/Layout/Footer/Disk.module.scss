@@ -71,9 +71,6 @@
     margin-top: unset;
     margin-right: 2rem;
     z-index: 5;
-  }
-
-  .disk:focus {
-    outline: none;
+    -webkit-tap-highlight-color: transparent;
   }
 }

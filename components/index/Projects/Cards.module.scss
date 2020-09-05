@@ -64,3 +64,9 @@
             transform: translate(0);
   }
 }
+
+@media only screen and (max-width: 500px) {
+  .cards {
+    -webkit-tap-highlight-color: transparent;
+  }
+}
