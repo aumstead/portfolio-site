@@ -1,14 +1,11 @@
 .header {
   width: 840px;
   margin: 0 auto;
-  // display: flex;
-  // justify-content: space-between;
   position: fixed;
   left: 50%;
   transform: translateX(-50%);
   height: 10rem;
   font-size: var(--text-font-size);
-  // align-items: center;
   z-index: 100;
   &__light {
     background-color: rgb(255, 255, 255, .7);
@@ -46,6 +43,9 @@
 .flexItem__left {
   display: flex;
   align-items: center;
+  &:hover .logoText {
+    color: var(--hover-blue);
+  }
 }
 .flexItem__right {
   display: flex;

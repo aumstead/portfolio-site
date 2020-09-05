@@ -2,7 +2,7 @@ import styles from "./Disk.module.scss";
 import { useEffect, useRef, useState, useContext } from "react";
 import MobileContext from '../../../contexts/mobile/MobileContext'
 
-function Disk({ setMouseEnteredDisk }) {
+function Disk({ setTriggerTimeline }) {
   const mobileContext = useContext(MobileContext);
   const { onMobile, setOnMobile } = mobileContext;
 
@@ -54,9 +54,9 @@ function Disk({ setMouseEnteredDisk }) {
     return () => clearTimeout(secondTimeout)
   }, [animateHint])
 
-  function handleMouseEnter() {
+  function handleMouseEnterOrClick() {
     // this state triggers useEffect func which restarts gsap timeline
-    setMouseEnteredDisk((prevState) => !prevState);
+    setTriggerTimeline((prevState) => !prevState);
     clearTimeout(firstTimeout)
     clearTimeout(secondTimeout)
     setCancelAnimation(true)
@@ -65,8 +65,8 @@ function Disk({ setMouseEnteredDisk }) {
   return (
     <svg
       ref={disk}
-      onMouseEnter={onMobile ? null : handleMouseEnter}
-      onClick={handleMouseEnter}
+      onMouseEnter={onMobile ? null : handleMouseEnterOrClick}
+      onClick={handleMouseEnterOrClick}
       className={styles.disk}
       xmlns="http://www.w3.org/2000/svg"
       width="307"

@@ -7,8 +7,7 @@ import WhiteSands from "../../projects/logos/WhiteSands";
 import GitHub from "../../projects/logos/GitHub";
 
 function Carousel({ mouseEnteredCards, isDarkMode, onMobile }) {
-  // ref to know if it's the initial render
-  const firstUpdate = useRef(true);
+  const isInitialRender = useRef(true);
   const slideRef = useRef(null);
 
   const [images, setImages] = useState([]);
@@ -37,8 +36,8 @@ function Carousel({ mouseEnteredCards, isDarkMode, onMobile }) {
   }, [count, clickNext]);
 
   useEffect(() => {
-    if (firstUpdate.current) {
-      firstUpdate.current = false;
+    if (isInitialRender.current) {
+      isInitialRender.current = false;
       return;
     }
 

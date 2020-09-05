@@ -12,17 +12,21 @@ function Dog({ onMobile }) {
       .to("#bubble-4", .2, { opacity: 1 }, "<.5")
 
     tl.current.pause()
-
   }, [])
 
-  function handleMouseEntered() {
+  function handleMouseEnter() {
     tl.current.restart()
   }
+
+  function handleClick() {
+    tl.current.restart()
+  }
+
   return (
     <svg
       className={styles.svg}
-      onMouseEnter={handleMouseEntered}
-      onClick={onMobile ? handleMouseEntered : null}
+      onMouseEnter={onMobile ? null : handleMouseEnter}
+      onClick={onMobile ? handleClick : null}
       width="492"
       height="715"
       viewBox="0 0 492 715"

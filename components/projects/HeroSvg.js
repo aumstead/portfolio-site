@@ -10,7 +10,7 @@ function HeroSvg({ onMobile }) {
     const timeout = function() {
       setTimeout(() => {
         tl.current.restart();
-      }, 2000)
+      }, 1000)
     }
 
     tl.current
@@ -52,11 +52,10 @@ function HeroSvg({ onMobile }) {
       .to("#red-icon-group", 0.8, { y: 96 }, "<.6")
       .to("#green-icon-group", 1, { y: 0 }, "<.8");
     
+    tl.current.pause();
+
     if (onMobile) {
-      tl.current.pause();
       timeout()
-    } else {
-      tl.current.pause();
     }
 
     return () => {

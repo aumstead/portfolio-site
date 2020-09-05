@@ -27,6 +27,14 @@ function CleanCodeSvg({ onMobile }) {
     clientFadeOutTl.current = gsap.timeline();
     explosionTl.current = gsap.timeline();
 
+    const timeout = function() {
+      setTimeout(() => {
+        initClientFadeInTl()
+        explosionTl.current.restart().timeScale(1);
+        clientFadeOutTl.current.restart();
+      }, 1000)
+    }
+
     clientFadeOutTl.current
       .set(".clientBackground", { fill: "#fff" })
       .to(".clientTop", { duration: 1, opacity: 0 }, "<")
@@ -275,6 +283,14 @@ function CleanCodeSvg({ onMobile }) {
 
     explosionTl.current.pause();
     clientFadeOutTl.current.pause();
+
+    if (onMobile) {
+      timeout()
+    }
+    
+    return () => {
+      clearTimeout(timeout)
+    }
   }, []);
 
   function initClientFadeInTl() {

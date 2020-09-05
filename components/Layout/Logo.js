@@ -3,8 +3,7 @@ import { useEffect, useRef } from "react";
 
 function Logo({ isDarkMode, enteredLogo }) {
   const tl = useRef(null);
-  // ref to know if it's the initial render
-  const firstUpdate = useRef(true);
+  const isInitialRender = useRef(true);
 
   useEffect(() => {
     tl.current = gsap.timeline();
@@ -15,8 +14,8 @@ function Logo({ isDarkMode, enteredLogo }) {
   }, []);
 
   useEffect(() => {
-    if (firstUpdate.current) {
-      firstUpdate.current = false;
+    if (isInitialRender.current) {
+      isInitialRender.current = false;
       return;
     }
     tl.current.restart();

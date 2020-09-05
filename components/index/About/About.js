@@ -8,13 +8,13 @@ function About({ onMobile }) {
   const { isDarkMode } = darkModeContext;
 
   const tl = useRef(null);
-  const firstUpdate = useRef(true);
+  const isInitialRender = useRef(true);
 
   const [showPicture, setShowPicture] = useState(false);
 
   useEffect(() => {
-    if (firstUpdate.current) {
-      firstUpdate.current = false;
+    if (isInitialRender.current) {
+      isInitialRender.current = false;
       return;
     }
 

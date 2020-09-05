@@ -12,17 +12,17 @@ function Footer() {
   const mobileContext = useContext(MobileContext)
   const { onMobile } = mobileContext
 
-  const [mouseEnteredDisk, setMouseEnteredDisk] = useState(false);
+  const [triggerTimeline, setTriggerTimeline] = useState(false);
 
   return (
     <footer id="contact" className={styles.footer}>
       <div className={styles.headingFlexContainer}>
       <span className={styles.hint}>Contact!</span>
           <img className={isDarkMode ? `${styles.arrow__dark} ${styles.arrow}` : styles.arrow} src="/images/arrow.png" alt="Arrow pointing to graphic."/>
-        <Disk setMouseEnteredDisk={setMouseEnteredDisk} />
+        <Disk setTriggerTimeline={setTriggerTimeline} />
       </div>
-      <Pc onMobile={onMobile} mouseEnteredDisk={mouseEnteredDisk} isDarkMode={isDarkMode} />
-      <Screen mouseEnteredDisk={mouseEnteredDisk} />
+      <Pc onMobile={onMobile} triggerTimeline={triggerTimeline} isDarkMode={isDarkMode} />
+      <Screen triggerTimeline={triggerTimeline} />
     </footer>
   );
 }

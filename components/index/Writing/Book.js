@@ -2,7 +2,6 @@ import styles from "./Book.module.scss";
 import { useEffect, useRef, useState } from 'react'
 
 function Book({ setMouseEnteredBook, onMobile }) {
-  
   const [animateHint, setAnimateHint] = useState(false)
   const [timerFunc, setTimerFunc] = useState(false)
   const [cancelAnimation, setCancelAnimation] = useState(false)

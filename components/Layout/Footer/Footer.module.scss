@@ -44,19 +44,15 @@
   .headingFlexContainer {
     width: 100vw;
   }
-  .footer {
-    // margin-top: unset;
-  }
   .hint {
-    transform: rotate(-15deg) translate(25px, -10px);
+    transform: rotate(-15deg) translate(55px, -18px);
   }
   .arrow {
-    transform: translate(-10px, -10px);
+    transform: translate(-5px, -10px) rotate(15deg);
   }
 }
 @media only screen and (max-width: 500px) {
   .footer {
     width: 100vw;
   }
-
 }

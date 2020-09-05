@@ -1,9 +1,9 @@
 import styles from "./Pc.module.scss";
 import { useEffect, useRef } from "react";
 
-function Pc({ mouseEnteredDisk, isDarkMode, onMobile }) {
+function Pc({ triggerTimeline, isDarkMode, onMobile }) {
   // ref to know if it's the initial render
-  const firstUpdate = useRef(true);
+  const isInitialRender = useRef(true);
   const zoom = useRef(null);
 
   useEffect(() => {
@@ -13,17 +13,17 @@ function Pc({ mouseEnteredDisk, isDarkMode, onMobile }) {
   }, [onMobile]);
 
   useEffect(() => {
-    if (firstUpdate.current) {
-      firstUpdate.current = false;
+    if (isInitialRender.current) {
+      isInitialRender.current = false;
       return;
     }
 
-    if (mouseEnteredDisk) {
+    if (triggerTimeline) {
       zoom.current.restart();
     } else {
       zoom.current.reverse();
     }
-  }, [mouseEnteredDisk]);
+  }, [triggerTimeline]);
 
   return (
     <svg

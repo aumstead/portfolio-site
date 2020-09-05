@@ -1,8 +1,9 @@
-import { useEffect, useRef } from "react";
 import styles from "./Power.module.scss";
+import { useEffect, useRef } from "react";
 
 function Power({ onMobile }) {
   const popUp = useRef(null);
+
   useEffect(() => {
     popUp.current = gsap.to("#hand", 1, {
       y: "0rem",
@@ -26,6 +27,7 @@ function Power({ onMobile }) {
   function handleMouseEnter() {
     popUp.current.restart();
   }
+  
   return (
     <svg
       className={styles.svg}

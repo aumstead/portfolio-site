@@ -1,8 +1,8 @@
-import Link from "next/link";
 import styles from "./Header.module.scss";
+import { useContext, useState, useRef, useEffect } from "react";
+import Link from "next/link";
 import DarkModeContext from "../../contexts/darkMode/DarkModeContext";
 import MobileContext from "../../contexts/mobile/MobileContext";
-import { useContext, useState, useRef, useEffect } from "react";
 import Vader from "./Vader";
 import Logo from "./Logo";
 import Hamburger from "./Hamburger";
@@ -17,7 +17,7 @@ export default function Header() {
   const [hamburgerClicked, setHamburgerClicked] = useState(false);
 
   const mobileHeaderTl = useRef(null);
-  const firstUpdate = useRef(true);
+  const isInitialRender = useRef(true);
 
   useEffect(() => {
     mobileHeaderTl.current = gsap.timeline();
@@ -30,8 +30,8 @@ export default function Header() {
   }, []);
 
   useEffect(() => {
-    if (firstUpdate.current) {
-      firstUpdate.current = false;
+    if (isInitialRender.current) {
+      isInitialRender.current = false;
       return;
     }
 

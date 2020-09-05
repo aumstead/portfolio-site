@@ -1,8 +1,8 @@
 import styles from './Screen.module.scss'
 import { useEffect, useRef } from 'react'
 
-function Screen({ mouseEnteredDisk }) {
-  const firstUpdate = useRef(true);
+function Screen({ triggerTimeline }) {
+  const isInitialRender = useRef(true);
   const tl = useRef(null)
 
   useEffect(() => {
@@ -16,19 +16,19 @@ function Screen({ mouseEnteredDisk }) {
   }, [])
 
   useEffect(() => {
-    if (firstUpdate.current) {
-      firstUpdate.current = false;
+    if (isInitialRender.current) {
+      isInitialRender.current = false;
       return
     }
 
-    if(mouseEnteredDisk) {
+    if(triggerTimeline) {
       tl.current.restart()
     } else {
       tl.current.seek(0)
       tl.current.pause()
     }
 
-  }, [mouseEnteredDisk])
+  }, [triggerTimeline])
   return (
     <div className={styles.container}>
       <p className={styles.text} id="line1"></p>
