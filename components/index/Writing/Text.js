@@ -14,37 +14,29 @@ function Text({ mouseEnteredBook, isDarkMode }) {
     textAnimationTimeline.current = gsap.timeline();
     textAnimationTimeline.current.pause();
 
-    const path = document.getElementById("part-n2")
-    const length = path.getTotalLength()
-    console.log('length:', length)
-
-    const path1 = document.getElementById("letter-t1-part2")
-    const length1 = path1.getTotalLength()
-    console.log('length1:', length1)
-
     textAnimationTimeline.current
-      .to("#letter-r", 0.5, { strokeDashoffset: 0 })
+      .to("#letter-r", 0.4, { strokeDashoffset: 0 })
       .to("#part-r", 0.3, { strokeDashoffset: 0 }, ">-.1")
-      .to("#letter-e1", 0.4, { strokeDashoffset: 0 }, ">-.1")
-      .to("#letter-c", 0.4, { strokeDashoffset: 0 }, ">-.1")
-      .to("#letter-e2", 0.4, { strokeDashoffset: 0 }, ">-.1")
-      .to("#part-n1", 0.3, { strokeDashoffset: 0 }, ">-.1")
-      .to("#part-n2", 0.4, { strokeDashoffset: 0 }, ">-.1")
-      .to("#letter-t1-part1", 0.4, { strokeDashoffset: 0 }, ">-.1")
-      .to("#letter-t1-part2", 0.2, { strokeDashoffset: 0 }, ">.1")
-      .to("#part-p1", 0.2, { strokeDashoffset: 0 }, ">.1")
-      .to("#part-p2", 0.2, { strokeDashoffset: 0 }, ">")
-      .to("#part-p3", 0.3, { strokeDashoffset: 0 }, ">.1")
-      .to("#part-p4", 0.2, { strokeDashoffset: 0 }, ">")
-      .to("#part-o1", 0.2, { strokeDashoffset: 0 }, ">-.1")
+      .to("#letter-e1", 0.3, { strokeDashoffset: 0 }, ">-.1")
+      .to("#letter-c", 0.3, { strokeDashoffset: 0 }, ">-.1")
+      .to("#letter-e2", 0.3, { strokeDashoffset: 0 }, ">-.1")
+      .to("#part-n1", 0.2, { strokeDashoffset: 0 }, ">-.1")
+      .to("#part-n2", 0.3, { strokeDashoffset: 0 }, ">-.1")
+      .to("#letter-t1-part1", 0.3, { strokeDashoffset: 0 }, ">-.1")
+      .to("#letter-t1-part2", 0.1, { strokeDashoffset: 0 }, ">.1")
+      .to("#part-p1", 0.1, { strokeDashoffset: 0 }, ">.1")
+      .to("#part-p2", 0.1, { strokeDashoffset: 0 }, ">")
+      .to("#part-p3", 0.2, { strokeDashoffset: 0 }, ">.1")
+      .to("#part-p4", 0.1, { strokeDashoffset: 0 }, ">")
+      .to("#part-o1", 0.1, { strokeDashoffset: 0 }, ">-.1")
       .to("#part-o2", 0.3, { strokeDashoffset: 0 }, ">")
-      .to("#part-o3", 0.2, { strokeDashoffset: 0 }, ">-.1")
-      .to("#letter-s1-part1", 0.3, { strokeDashoffset: 0 }, ">-.1")
-      .to("#letter-s1-part2", 0.2, { strokeDashoffset: 0 }, ">-.1")
+      .to("#part-o3", 0.1, { strokeDashoffset: 0 }, ">-.1")
+      .to("#letter-s1-part1", 0.5, { strokeDashoffset: 0 }, ">-.1")
+      .to("#letter-s1-part2", 0.4, { strokeDashoffset: 0 }, ">-.1")
       .to("#letter-t2-part1", 0.4, { strokeDashoffset: 0 }, ">-.1")
-      .to("#letter-s2-part1", 0.3, { strokeDashoffset: 0 }, ">-.1")
-      .to("#letter-s2-part2", 0.3, { strokeDashoffset: 0 }, ">-.1")
-      .to("#letter-t2-part2", 0.2, { strokeDashoffset: 0 }, ">.1");
+      .to("#letter-s2-part1", 0.5, { strokeDashoffset: 0 }, ">-.1")
+      .to("#letter-s2-part2", 0.5, { strokeDashoffset: 0 }, ">-.1")
+      .to("#letter-t2-part2", 0.1, { strokeDashoffset: 0 }, ">.1");
   }, []);
 
   useEffect(() => {

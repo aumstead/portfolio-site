@@ -79,7 +79,7 @@ function Carousel({ mouseEnteredCards, isDarkMode, onMobile }) {
                   ? `${styles.phoneMockup} ${styles.phoneMockup__dark}`
                   : `${styles.phoneMockup} ${styles.phoneMockup__light}`
               }
-              src="/images/mockups/dgifolios-phone2.png"
+              src="/images/mockups/dgifolios-phone.png"
               alt="dgifolios - phone mockup"
             />
           </div>
@@ -339,7 +339,7 @@ function Carousel({ mouseEnteredCards, isDarkMode, onMobile }) {
                   ? `${styles.phoneMockup} ${styles.phoneMockup__dark}`
                   : `${styles.phoneMockup} ${styles.phoneMockup__light}`
               }
-              src="/images/mockups/dgifolios-phone2.png"
+              src="/images/mockups/dgifolios-phone.png"
               alt="dgifolios - phone mockup"
             />
           </div>
