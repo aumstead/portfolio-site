@@ -27,6 +27,10 @@
 .column__left {
   text-align: left;
 }
+.column__right {
+  display: flex;
+  justify-content: space-between;
+}
 
 @media only screen and (max-width: 500px) {
   .section {

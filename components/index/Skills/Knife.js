@@ -16,7 +16,7 @@ function Knife({ setMouseEnteredKnife, onMobile }) {
       .to("#corkscrew", 1, { rotate: 50, transformOrigin: "-10% 100%" }, "<.2")
       .to("#can-opener", 1, { rotate: 70, transformOrigin: "40% 100%" }, "<.2")
       .to("#blade", 1, { rotate: 110, transformOrigin: "80% 99%" }, "<.2")
-      .to("#blade", 1, { rotate: 0, transformOrigin: "80% 99%" }, "<2")
+      .to("#blade", 1, { rotate: 0, transformOrigin: "80% 99%" }, "<11")
       .to("#can-opener", 1, { rotate: 0, transformOrigin: "40% 100%" }, "<.2")
       .to("#corkscrew", 1, { rotate: 0, transformOrigin: "-10% 100%" }, "<.2")
       .to("#filer", 1, { rotate: 0, transformOrigin: "-20% 110%" }, "<.2")

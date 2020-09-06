@@ -4,6 +4,7 @@ import Link from "next/link";
 import DarkModeContext from "../../contexts/darkMode/DarkModeContext";
 import MobileContext from "../../contexts/mobile/MobileContext";
 import Vader from "./Vader";
+import Yoda from './Yoda'
 import Logo from "./Logo";
 import Hamburger from "./Hamburger";
 
@@ -81,7 +82,7 @@ export default function Header() {
                     : `${styles.logoText} ${styles.logoText__light}`
                 }
               >
-                Andrew
+                Andrew Umstead
               </span>
             </div>
           </a>
@@ -132,7 +133,7 @@ export default function Header() {
             onClick={handleClick}
           >
             {isDarkMode ? (
-              <img className={styles.yoda} src="/images/yoda.png" alt="Yoda" />
+              <Yoda />
             ) : (
               <Vader />
             )}

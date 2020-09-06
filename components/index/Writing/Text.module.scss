@@ -95,6 +95,7 @@
 @media only screen and (max-width: 500px) {
   .text {
     margin-top: 1.5rem;
-    height: 3rem;
+    height: 2.5rem;
+    transform: rotate(-15deg) translate(20px, 0px);
   }
 }

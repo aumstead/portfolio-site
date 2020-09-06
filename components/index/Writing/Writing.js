@@ -24,13 +24,18 @@ function Writing({ onMobile }) {
         <div className={styles.headingGrid}>
           <div className={styles.column__left}>
             <h2 className={stylesConfig.title}>Blog</h2>
+          </div>
+          <div className={styles.column__right}>
             <Text
               mouseEnteredBook={mouseEnteredBook}
               setMouseEnteredBook={setMouseEnteredBook}
               isDarkMode={isDarkMode}
             />
+            <Book
+              onMobile={onMobile}
+              setMouseEnteredBook={setMouseEnteredBook}
+            />
           </div>
-          <Book onMobile={onMobile} setMouseEnteredBook={setMouseEnteredBook} />
         </div>
       );
     } else {
