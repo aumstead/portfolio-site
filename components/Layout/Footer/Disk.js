@@ -56,6 +56,7 @@ function Disk({ setTriggerTimeline }) {
     return () => clearTimeout(secondTimeout)
   }, [animateHint])
 
+  // function is used for both onMouseEnter and onClick events (desktop vs mobile)
   function handleMouseEnter() {
     // this state triggers useEffect func which restarts gsap timeline
     setTriggerTimeline((prevState) => !prevState);

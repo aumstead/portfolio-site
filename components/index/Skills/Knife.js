@@ -51,6 +51,7 @@ function Knife({ setMouseEnteredKnife, onMobile }) {
     return () => clearTimeout(secondTimeout);
   }, [animateHint]);
 
+  // function is used for both onMouseEnter and onClick events (desktop vs mobile)
   function handleMouseEnter() {
     setMouseEnteredKnife((prevState) => !prevState);
     clearTimeout(firstTimeout);

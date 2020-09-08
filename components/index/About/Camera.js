@@ -21,6 +21,7 @@ function Camera({ isDarkMode, setShowPicture, onMobile }) {
     shutterTl.current.pause();
   }, [isDarkMode]);
   
+  // function is used for both onMouseEnter and onClick events (desktop vs mobile)
   function handleMouseEnter() {
     shutterTl.current.restart();
     setShowPicture(prevState => !prevState)

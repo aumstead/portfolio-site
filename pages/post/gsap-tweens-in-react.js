@@ -9,7 +9,7 @@ import Final from "../../components/post/gsap-tweens-in-react/Final";
 import OwlFigure1 from "../../components/post/gsap-tweens-in-react/OwlFigure1";
 import OwlFigure2 from "../../components/post/gsap-tweens-in-react/OwlFigure2";
 import HTMLFigure1 from "../../components/post/gsap-tweens-in-react/HTMLFigure1";
-import AppFigure1 from "../../components/post/gsap-tweens-in-react/PhoneFigure1";
+import PhoneFigure1 from "../../components/post/gsap-tweens-in-react/PhoneFigure1";
 import PhoneFigure2 from "../../components/post/gsap-tweens-in-react/PhoneFigure2";
 
 export default () => {
@@ -539,7 +539,7 @@ function ExampleTweenComponent() {
         </div>
 
         <p className={styles.p}>Hover or tap to see the small animation.</p>
-        <AppFigure1 onMobile={onMobile}/>
+        <PhoneFigure1 onMobile={onMobile}/>
         <p className={styles.p}>
           If you need to learn about the basics of GSAP more in-depth, the docs
           page on{" "}

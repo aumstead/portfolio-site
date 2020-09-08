@@ -1,6 +1,7 @@
 import styles from "./PhoneFigure1.module.scss";
 
 function PhoneFigure1({ onMobile }) {
+  // function is used for both onMouseEnter and onClick events (desktop vs mobile)
   function handleMouseEnter() {
     gsap.to("#red-icon-group", 1, { x: 45 });
   }

@@ -320,6 +320,7 @@ function CleanCodeSvg({ onMobile }) {
     clientFadeInTl.current.pause();
   }
   
+  // function is used for both onMouseEnter and onClick events (desktop vs mobile)
   function handleMouseEnter() {
     // fadeIn timeline is initialized in handler in order to generate a random background color each time
     initClientFadeInTl()

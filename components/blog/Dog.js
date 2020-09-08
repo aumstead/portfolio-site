@@ -14,11 +14,8 @@ function Dog({ onMobile }) {
     tl.current.pause()
   }, [])
 
+  // function is used for both onMouseEnter and onClick events (desktop vs mobile)
   function handleMouseEnter() {
-    tl.current.restart()
-  }
-
-  function handleClick() {
     tl.current.restart()
   }
 
@@ -26,7 +23,7 @@ function Dog({ onMobile }) {
     <svg
       className={styles.svg}
       onMouseEnter={onMobile ? null : handleMouseEnter}
-      onClick={onMobile ? handleClick : null}
+      onClick={onMobile ? handleMouseEnter : null}
       width="492"
       height="715"
       viewBox="0 0 492 715"

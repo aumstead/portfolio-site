@@ -2,21 +2,21 @@ import styles from "./Power.module.scss";
 import { useEffect, useRef } from "react";
 
 function Power({ onMobile }) {
-  const popUp = useRef(null);
+  const popUpRef = useRef(null);
 
   useEffect(() => {
-    popUp.current = gsap.to("#hand", 1, {
+    popUpRef.current = gsap.to("#hand", 1, {
       y: "0rem",
       ease: "elastic.out(0.5, 0.4)",
     });
 
     const timeout = function () {
       setTimeout(() => {
-        popUp.current.restart();
+        popUpRef.current.restart();
       }, 1000);
     };
 
-    popUp.current.pause();
+    popUpRef.current.pause();
     timeout();
 
     return () => {
@@ -24,8 +24,9 @@ function Power({ onMobile }) {
     };
   }, []);
 
+  // function is used for both onMouseEnter and onClick events (desktop vs mobile)
   function handleMouseEnter() {
-    popUp.current.restart();
+    popUpRef.current.restart();
   }
   
   return (

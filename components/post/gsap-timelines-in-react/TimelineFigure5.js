@@ -20,6 +20,7 @@ function TimelineFigure5({ onMobile }) {
     myTimeline.current.pause();
   }, []);
 
+  // function is used for both onMouseEnter and onClick events (desktop vs mobile)
   function handleMouseEnter() {
     myTimeline.current.restart();
   }

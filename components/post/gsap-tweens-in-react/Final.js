@@ -49,6 +49,7 @@ function Final({ onMobile, marginBottom }) {
     tl.current.pause();
   }, []);
 
+  // function is used for both onMouseEnter and onClick events (desktop vs mobile)
   function handleMouseEnter() {
     tl.current.restart();
   }

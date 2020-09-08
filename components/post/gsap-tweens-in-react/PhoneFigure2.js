@@ -9,6 +9,7 @@ function PhoneFigure2({ onMobile }) {
     myTween.current.pause()
   }, [])
 
+  // function is used for both onMouseEnter and onClick events (desktop vs mobile)
   function handleMouseEnter() {
     myTween.current.restart()
   }
