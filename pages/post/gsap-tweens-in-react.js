@@ -3,7 +3,7 @@ import styles from "./blogPostStyles.module.scss";
 import { useContext, useEffect } from "react";
 import Prism from "prismjs";
 import DarkModeContext from "../../contexts/darkMode/DarkModeContext";
-import MobileContext from '../../contexts/mobile/MobileContext'
+import MobileContext from "../../contexts/mobile/MobileContext";
 import Link from "next/link";
 import Final from "../../components/post/gsap-tweens-in-react/Final";
 import OwlFigure1 from "../../components/post/gsap-tweens-in-react/OwlFigure1";
@@ -15,8 +15,8 @@ import PhoneFigure2 from "../../components/post/gsap-tweens-in-react/PhoneFigure
 export default () => {
   const darkModeContext = useContext(DarkModeContext);
   const { isDarkMode } = darkModeContext;
-  const mobileContext = useContext(MobileContext)
-  const { onMobile } = mobileContext
+  const mobileContext = useContext(MobileContext);
+  const { onMobile } = mobileContext;
 
   useEffect(() => {
     Prism.highlightAll();
@@ -126,6 +126,18 @@ function ExampleTweenComponent() {
       xmlns="http://www.w3.org/2000/svg"
       ...`.trim();
 
+  const stylesConfig = {
+    code: isDarkMode
+      ? `${styles.code} ${styles.code__dark}`
+      : `${styles.code} ${styles.code__light}`,
+    linkAnchor: isDarkMode
+      ? `${styles.linkAnchor} ${styles.linkAnchor__dark}`
+      : `${styles.linkAnchor} ${styles.linkAnchor__light}`,
+    codeblock: isDarkMode
+      ? `${styles.codeblock} ${styles.codeblock__dark}`
+      : `${styles.codeblock}`,
+  };
+
   return (
     <Layout>
       <section className={styles.heroSection}>
@@ -151,49 +163,18 @@ function ExampleTweenComponent() {
         <p className={styles.p}>
           This post is the first in a series about using GSAP in React. This
           first post will cover how I use GSAP with the{" "}
-          <code
-            className={
-              isDarkMode
-                ? `${styles.code} ${styles.code__dark}`
-                : `${styles.code} ${styles.code__light}`
-            }
-          >
-            useEffect
-          </code>{" "}
-          and{" "}
-          <code
-            className={
-              isDarkMode
-                ? `${styles.code} ${styles.code__dark}`
-                : `${styles.code} ${styles.code__light}`
-            }
-          >
-            useRef
-          </code>{" "}
-          hooks to create animations that start on events like click or hover.
-          As an example for us to walk through together, I'll use this animation
-          I made for my portfolio site. Hover over it to trigger the{" "}
-          <code
-            className={
-              isDarkMode
-                ? `${styles.code} ${styles.code__dark}`
-                : `${styles.code} ${styles.code__light}`
-            }
-          >
-            onMouseEnter
-          </code>{" "}
-          event (Or tap on mobile to trigger <code
-            className={
-              isDarkMode
-                ? `${styles.code} ${styles.code__dark}`
-                : `${styles.code} ${styles.code__light}`
-            }
-          >
-            onClick
-          </code>).
+          <code className={stylesConfig.code}>useEffect</code> and{" "}
+          <code className={stylesConfig.code}>useRef</code> hooks to create
+          animations that start on events like click or hover. As an example for
+          us to walk through together, I'll use this animation I made for my
+          portfolio site. Hover over it to trigger the{" "}
+          <code className={stylesConfig.code}>onMouseEnter</code> event (Or tap
+          on mobile to trigger{" "}
+          <code className={stylesConfig.code}>onClick</code>
+          ).
         </p>
 
-        <Final onMobile={onMobile}/>
+        <Final onMobile={onMobile} />
 
         <p className={styles.p}>
           By the end of{" "}
@@ -211,11 +192,7 @@ function ExampleTweenComponent() {
         <p className={styles.p}>
           If you don't have GSAP yet, you'll want to visit the{" "}
           <a
-            className={
-              isDarkMode
-                ? `${styles.linkAnchor} ${styles.linkAnchor__dark}`
-                : `${styles.linkAnchor} ${styles.linkAnchor__light}`
-            }
+            className={stylesConfig.linkAnchor}
             target="_blank"
             href="https://greensock.com/docs/"
           >
@@ -223,38 +200,18 @@ function ExampleTweenComponent() {
           </a>{" "}
           and follow the simple installation instructions. I used to just paste
           the CDN into the{" "}
-          <code
-            className={
-              isDarkMode
-                ? `${styles.code} ${styles.code__dark}`
-                : `${styles.code} ${styles.code__light}`
-            }
-          >
-            &lt;Head&gt;
-          </code>{" "}
-          component, but I've since opted to download the library and place it
-          at the bottom, near my closing{" "}
-          <code
-            className={
-              isDarkMode
-                ? `${styles.code} ${styles.code__dark}`
-                : `${styles.code} ${styles.code__light}`
-            }
-          >
-            &lt;/body&gt;
-          </code>{" "}
-          tag. Before, I'd occassionally have issues with the library not
-          loading when using the CDN.
+          <code className={stylesConfig.code}>&lt;Head&gt;</code> component, but
+          I've since opted to download the library and place it at the bottom,
+          near my closing{" "}
+          <code className={stylesConfig.code}>&lt;/body&gt;</code> tag. Before,
+          I'd occassionally have issues with the library not loading when using
+          the CDN.
         </p>
 
         <p className={styles.note}>
           *Note: All the SVG art I use is available for free at{" "}
           <a
-            className={
-              isDarkMode
-                ? `${styles.linkAnchor} ${styles.linkAnchor__dark}`
-                : `${styles.linkAnchor} ${styles.linkAnchor__light}`
-            }
+            className={stylesConfig.linkAnchor}
             target="_blank"
             href="https://illlustrations.co/"
           >
@@ -271,11 +228,11 @@ function ExampleTweenComponent() {
 
         <p className={styles.p}>
           You might already be aware of some of the benefits of using SVGs, such
-          as their ability to scale without losing quality or increasing in
-          file size. But, my other favorite thing about them, which I don't recall
-          seeing mentioned, is that I can go into their code and manipulate
-          the images. It's quite easy to change a color, remove part of the
-          graphic I don't want, or add a class for some CSS styles.
+          as their ability to scale without losing quality or increasing in file
+          size. But, my other favorite thing about them, which I don't recall
+          seeing mentioned, is that I can go into their code and manipulate the
+          images. It's quite easy to change a color, remove part of the graphic
+          I don't want, or add a class for some CSS styles.
         </p>
 
         <div style={{ display: "flex", justifyContent: "center" }}>
@@ -285,17 +242,9 @@ function ExampleTweenComponent() {
 
         <p className={styles.p}>
           Here, I've simply changed a few{" "}
-          <code
-            className={
-              isDarkMode
-                ? `${styles.code} ${styles.code__dark}`
-                : `${styles.code} ${styles.code__light}`
-            }
-          >
-            fill
-          </code>{" "}
-          properties to brown on certain vectors, moved the eye groups on the
-          x-axis, and deleted a few vectors at the top of the eyes.
+          <code className={stylesConfig.code}>fill</code> properties to brown on
+          certain vectors, moved the eye groups on the x-axis, and deleted a few
+          vectors at the top of the eyes.
         </p>
 
         <h2 className={styles.h2}>Working with SVGs and Figma</h2>
@@ -306,11 +255,7 @@ function ExampleTweenComponent() {
           the most powerful I've found. You can use it in the browser or
           download the desktop app{" "}
           <a
-            className={
-              isDarkMode
-                ? `${styles.linkAnchor} ${styles.linkAnchor__dark}`
-                : `${styles.linkAnchor} ${styles.linkAnchor__light}`
-            }
+            className={stylesConfig.linkAnchor}
             target="_blank"
             href="https://figma.com"
           >
@@ -323,21 +268,12 @@ function ExampleTweenComponent() {
           With Figma, it's easy to find the exact vector you want to work with
           by just clicking on it. On the left side of the Figma window, in the
           layer panel, you can rename the vector. This vector will then have an{" "}
-          <code
-            className={
-              isDarkMode
-                ? `${styles.code} ${styles.code__dark}`
-                : `${styles.code} ${styles.code__light}`
-            }
-          >
-            id
-          </code>{" "}
-          in the code when you export the SVG file. You can then grab it and
-          manipulate it with GSAP or CSS. In the layers panel you can also
-          create groups, ungroup, and layer your graphic. Groups are useful to
-          animate something in the image that is made up of multiple vectors,
-          like the owl's eyes and pupils above. You can have them all move
-          together as one.
+          <code className={stylesConfig.code}>id</code> in the code when you
+          export the SVG file. You can then grab it and manipulate it with GSAP
+          or CSS. In the layers panel you can also create groups, ungroup, and
+          layer your graphic. Groups are useful to animate something in the
+          image that is made up of multiple vectors, like the owl's eyes and
+          pupils above. You can have them all move together as one.
         </p>
 
         <p className={styles.p}>
@@ -345,15 +281,7 @@ function ExampleTweenComponent() {
           SVG, group, or single vector you want the code for, and then click
           export. There's an option to export as PNG, JPG, SVG, or PDF — choose
           SVG. And then if you want the{" "}
-          <code
-            className={
-              isDarkMode
-                ? `${styles.code} ${styles.code__dark}`
-                : `${styles.code} ${styles.code__light}`
-            }
-          >
-            id
-          </code>
+          <code className={stylesConfig.code}>id</code>
           's you've created to be in the XML, you'll need to click the ellipsis
           and select the "Include 'id' Attribute".
         </p>
@@ -364,89 +292,34 @@ function ExampleTweenComponent() {
 
         <p className={styles.p}>
           And here's the XML for it with{" "}
-          <code
-            className={
-              isDarkMode
-                ? `${styles.code} ${styles.code__dark}`
-                : `${styles.code} ${styles.code__light}`
-            }
-          >
-            id
-          </code>{" "}
-          attributes that I added through Figma and then exported.
+          <code className={stylesConfig.code}>id</code> attributes that I added
+          through Figma and then exported.
         </p>
-        <div
-          className={
-            isDarkMode
-              ? `${styles.codeblock} ${styles.codeblock__dark}`
-              : `${styles.codeblock}`
-          }
-        >
+        <div className={stylesConfig.codeblock}>
           <pre
             style={{ borderRadius: "5px", margin: "0 0", padding: "2.5rem" }}
           >
-            <code class="language-xml">{codeHTMLSVG}</code>
+            <code className="language-xml">{codeHTMLSVG}</code>
           </pre>
         </div>
 
         <p className={styles.p}>
-          Notice the{" "}
-          <code
-            className={
-              isDarkMode
-                ? `${styles.code} ${styles.code__dark}`
-                : `${styles.code} ${styles.code__light}`
-            }
-          >
-            id
-          </code>
-          's on each{" "}
-          <code
-            className={
-              isDarkMode
-                ? `${styles.code} ${styles.code__dark}`
-                : `${styles.code} ${styles.code__light}`
-            }
-          >
+          Notice the <code className={stylesConfig.code}>id</code>
+          's on each <code className={stylesConfig.code}>
             &lt;path&gt;
           </code>{" "}
           element, and even the group, or{" "}
-          <code
-            className={
-              isDarkMode
-                ? `${styles.code} ${styles.code__dark}`
-                : `${styles.code} ${styles.code__light}`
-            }
-          >
-            &lt;g&gt;
-          </code>{" "}
-          element. With GSAP, we'll be grabbing the parts we want to animate
-          with these{" "}
-          <code
-            className={
-              isDarkMode
-                ? `${styles.code} ${styles.code__dark}`
-                : `${styles.code} ${styles.code__light}`
-            }
-          >
-            id
-          </code>
+          <code className={stylesConfig.code}>&lt;g&gt;</code> element. With
+          GSAP, we'll be grabbing the parts we want to animate with these{" "}
+          <code className={stylesConfig.code}>id</code>
           's.
         </p>
 
         <p className={styles.p}>
-          Imagine an SVG with hundreds of lines, and you can see why
-          clicking on the element in Figma and adding an{" "}
-          <code
-            className={
-              isDarkMode
-                ? `${styles.code} ${styles.code__dark}`
-                : `${styles.code} ${styles.code__light}`
-            }
-          >
-            id
-          </code>{" "}
-          is appealing, rather than sifting through the code.
+          Imagine an SVG with hundreds of lines, and you can see why clicking on
+          the element in Figma and adding an{" "}
+          <code className={stylesConfig.code}>id</code> is appealing, rather
+          than sifting through the code.
         </p>
 
         <h2 className={styles.h2}>GSAP in React</h2>
@@ -454,18 +327,10 @@ function ExampleTweenComponent() {
           In order to avoid errors with GSAP and React, you'll want your
           animation code to run after the component has mounted. I'll be using
           functional components and the{" "}
-          <code
-            className={
-              isDarkMode
-                ? `${styles.code} ${styles.code__dark}`
-                : `${styles.code} ${styles.code__light}`
-            }
-          >
-            useEffect
-          </code>{" "}
-          hook. I also often use a handler function, which could be called on a
-          click event or something else. Here, I'll be using the mouse enter
-          event to simulate a hover effect.
+          <code className={stylesConfig.code}>useEffect</code> hook. I also
+          often use a handler function, which could be called on a click event
+          or something else. Here, I'll be using the mouse enter event to
+          simulate a hover effect.
         </p>
 
         <p className={styles.p}>
@@ -480,123 +345,54 @@ function ExampleTweenComponent() {
           specific, i.e. no React import, etc.
         </p>
 
-        <div
-          className={
-            isDarkMode
-              ? `${styles.codeblock} ${styles.codeblock__dark}`
-              : styles.codeblock
-          }
-        >
+        <div className={stylesConfig.codeblock}>
           <pre
             style={{ borderRadius: "5px", margin: "0 0", padding: "2.5rem" }}
           >
-            <code class="language-js">{codeReactSVG}</code>
+            <code className="language-js">{codeReactSVG}</code>
           </pre>
         </div>
 
         <p className={styles.p}>
           Depending on how and when you want the animation to run, you'd put
-          your code in the{" "}
-          <code
-            className={
-              isDarkMode
-                ? `${styles.code} ${styles.code__dark}`
-                : `${styles.code} ${styles.code__light}`
-            }
-          >
-            useEffect
-          </code>{" "}
+          your code in the <code className={stylesConfig.code}>useEffect</code>{" "}
           hook or a handler for a click, mouse enter, or scroll-related event,
           etc.
         </p>
 
         <p className={styles.p}>
-          This{" "}
-          <code
-            className={
-              isDarkMode
-                ? `${styles.code} ${styles.code__dark}`
-                : `${styles.code} ${styles.code__light}`
-            }
-          >
-            onMouseEnter
-          </code>{" "}
-          event handler creates the below animation.
+          This <code className={stylesConfig.code}>onMouseEnter</code> event
+          handler creates the below animation.
         </p>
 
-        <div
-          className={
-            isDarkMode
-              ? `${styles.codeblock} ${styles.codeblock__dark}`
-              : styles.codeblock
-          }
-        >
+        <div className={stylesConfig.codeblock}>
           <pre
             style={{ borderRadius: "5px", margin: "0 0", padding: "2.5rem" }}
           >
-            <code class="language-js">{codePhoneFigure1}</code>
+            <code className="language-js">{codePhoneFigure1}</code>
           </pre>
         </div>
 
         <p className={styles.p}>Hover or tap to see the small animation.</p>
-        <PhoneFigure1 onMobile={onMobile}/>
+        <PhoneFigure1 onMobile={onMobile} />
         <p className={styles.p}>
           If you need to learn about the basics of GSAP more in-depth, the docs
           page on{" "}
           <a
-            className={
-              isDarkMode
-                ? `${styles.linkAnchor} ${styles.linkAnchor__dark}`
-                : `${styles.linkAnchor} ${styles.linkAnchor__light}`
-            }
+            className={stylesConfig.linkAnchor}
             target="_blank"
             href="https://greensock.com/docs/v3/GSAP/Tween"
           >
             tweens
           </a>{" "}
           is the best place to go. But, in summary, there are a few methods you
-          can call, such as{" "}
-          <code
-            className={
-              isDarkMode
-                ? `${styles.code} ${styles.code__dark}`
-                : `${styles.code} ${styles.code__light}`
-            }
-          >
-            gsap.to()
-          </code>{" "}
-          and{" "}
-          <code
-            className={
-              isDarkMode
-                ? `${styles.code} ${styles.code__dark}`
-                : `${styles.code} ${styles.code__light}`
-            }
-          >
-            gsap.from()
-          </code>
-          . The{" "}
-          <code
-            className={
-              isDarkMode
-                ? `${styles.code} ${styles.code__dark}`
-                : `${styles.code} ${styles.code__light}`
-            }
-          >
-            .to()
-          </code>{" "}
-          method takes your image <em>to</em> the animation settings you provide
-          in the "vars" object (which we'll discuss below), and{" "}
-          <code
-            className={
-              isDarkMode
-                ? `${styles.code} ${styles.code__dark}`
-                : `${styles.code} ${styles.code__light}`
-            }
-          >
-            .from()
-          </code>{" "}
-          brings it <em>from</em> your provided settings.
+          can call, such as <code className={stylesConfig.code}>gsap.to()</code>{" "}
+          and <code className={stylesConfig.code}>gsap.from()</code>. The{" "}
+          <code className={stylesConfig.code}>.to()</code> method takes your
+          image <em>to</em> the animation settings you provide in the "vars"
+          object (which we'll discuss below), and{" "}
+          <code className={stylesConfig.code}>.from()</code> brings it{" "}
+          <em>from</em> your provided settings.
         </p>
 
         <p className={styles.note}>
@@ -606,37 +402,10 @@ function ExampleTweenComponent() {
 
         <p className={styles.p}>
           The methods' first parameter selects the target you want to animate.
-          It uses{" "}
-          <code
-            className={
-              isDarkMode
-                ? `${styles.code} ${styles.code__dark}`
-                : `${styles.code} ${styles.code__light}`
-            }
-          >
-            querySelectorAll()
-          </code>{" "}
+          It uses <code className={stylesConfig.code}>querySelectorAll()</code>{" "}
           under the hood, so you can use selectors like{" "}
-          <code
-            className={
-              isDarkMode
-                ? `${styles.code} ${styles.code__dark}`
-                : `${styles.code} ${styles.code__light}`
-            }
-          >
-            .class
-          </code>{" "}
-          or{" "}
-          <code
-            className={
-              isDarkMode
-                ? `${styles.code} ${styles.code__dark}`
-                : `${styles.code} ${styles.code__light}`
-            }
-          >
-            #id
-          </code>
-          .{" "}
+          <code className={stylesConfig.code}>.class</code> or{" "}
+          <code className={stylesConfig.code}>#id</code>.{" "}
         </p>
 
         <p className={styles.p}>
@@ -644,19 +413,13 @@ function ExampleTweenComponent() {
           happens. Here, you set key-value pairs to do things like animate CSS
           properties and set the animation's duration. I often use "onComplete",
           which you set to a callback function that will run when your animation
-          finishes. It's worth knowing that there are a lot of cool things you can do
-          in the "vars" object, and that they're detailed in the documentation.
+          finishes. It's worth knowing that there are a lot of cool things you
+          can do in the "vars" object, and that they're detailed in the
+          documentation.
         </p>
         <h2 className={styles.h2}>
           Using the{" "}
-          <code
-            style={{ fontSize: "3.6rem" }}
-            className={
-              isDarkMode
-                ? `${styles.code} ${styles.code__dark}`
-                : `${styles.code} ${styles.code__light}`
-            }
-          >
+          <code style={{ fontSize: "3.6rem" }} className={stylesConfig.code}>
             useRef
           </code>{" "}
           hook
@@ -666,246 +429,71 @@ function ExampleTweenComponent() {
           on every click or mouse enter event, rather than just a one-time
           fade-in or something, then you'll have to write more code. The way I
           made this work was by using the{" "}
-          <code
-            className={
-              isDarkMode
-                ? `${styles.code} ${styles.code__dark}`
-                : `${styles.code} ${styles.code__light}`
-            }
-          >
-            useRef
-          </code>{" "}
-          hook to use the{" "}
-          <code
-            className={
-              isDarkMode
-                ? `${styles.code} ${styles.code__dark}`
-                : `${styles.code} ${styles.code__light}`
-            }
-          >
-            .current
-          </code>{" "}
-          property it gives us. In the{" "}
-          <code
-            className={
-              isDarkMode
-                ? `${styles.code} ${styles.code__dark}`
-                : `${styles.code} ${styles.code__light}`
-            }
-          >
-            .current
-          </code>{" "}
+          <code className={stylesConfig.code}>useRef</code> hook to use the{" "}
+          <code className={stylesConfig.code}>.current</code> property it gives
+          us. In the <code className={stylesConfig.code}>.current</code>{" "}
           property we can store a mutable value, or our tween, and have access
           to it throughout the component's scope.
         </p>
 
         <p className={styles.p}>
           Here's a step-by-step look at how I use{" "}
-          <code
-            className={
-              isDarkMode
-                ? `${styles.code} ${styles.code__dark}`
-                : `${styles.code} ${styles.code__light}`
-            }
-          >
-            useRef
-          </code>{" "}
-          and GSAP together.
+          <code className={stylesConfig.code}>useRef</code> and GSAP together.
         </p>
 
-        <div
-          className={
-            isDarkMode
-              ? `${styles.codeblock} ${styles.codeblock__dark}`
-              : styles.codeblock
-          }
-        >
+        <div className={stylesConfig.codeblock}>
           <pre
             style={{ borderRadius: "5px", margin: "0 0", padding: "2.5rem" }}
           >
-            <code class="language-js">{codePhoneFigure2}</code>
+            <code className="language-js">{codePhoneFigure2}</code>
           </pre>
         </div>
 
         <p className={styles.p}>
           After importing styles, I import the{" "}
-          <code
-            className={
-              isDarkMode
-                ? `${styles.code} ${styles.code__dark}`
-                : `${styles.code} ${styles.code__light}`
-            }
-          >
-            useRef
-          </code>{" "}
-          hook. Within my component I call it and store its returned value into
-          a variable, here named{" "}
-          <code
-            className={
-              isDarkMode
-                ? `${styles.code} ${styles.code__dark}`
-                : `${styles.code} ${styles.code__light}`
-            }
-          >
-            myTween
-          </code>
-          . Now,{" "}
-          <code
-            className={
-              isDarkMode
-                ? `${styles.code} ${styles.code__dark}`
-                : `${styles.code} ${styles.code__light}`
-            }
-          >
-            myTween
-          </code>{" "}
-          has a{" "}
-          <code
-            className={
-              isDarkMode
-                ? `${styles.code} ${styles.code__dark}`
-                : `${styles.code} ${styles.code__light}`
-            }
-          >
-            .current
-          </code>{" "}
-          property that can be accessed in the scope of{" "}
-          <code
-            className={
-              isDarkMode
-                ? `${styles.code} ${styles.code__dark}`
-                : `${styles.code} ${styles.code__light}`
-            }
-          >
-            useEffect
-          </code>{" "}
-          and any handlers we create.
+          <code className={stylesConfig.code}>useRef</code> hook. Within my
+          component I call it and store its returned value into a variable, here
+          named <code className={stylesConfig.code}>myTween</code>. Now,{" "}
+          <code className={stylesConfig.code}>myTween</code> has a{" "}
+          <code className={stylesConfig.code}>.current</code> property that can
+          be accessed in the scope of{" "}
+          <code className={stylesConfig.code}>useEffect</code> and any handlers
+          we create.
         </p>
 
         <p className={styles.p}>
           Here's the built-out{" "}
-          <code
-            className={
-              isDarkMode
-                ? `${styles.code} ${styles.code__dark}`
-                : `${styles.code} ${styles.code__light}`
-            }
-          >
-            useEffect
-          </code>{" "}
-          and{" "}
-          <code
-            className={
-              isDarkMode
-                ? `${styles.code} ${styles.code__dark}`
-                : `${styles.code} ${styles.code__light}`
-            }
-          >
-            handleMouseEnter
-          </code>{" "}
-          functions using GSAP to create the animation.
+          <code className={stylesConfig.code}>useEffect</code> and{" "}
+          <code className={stylesConfig.code}>handleMouseEnter</code> functions
+          using GSAP to create the animation.
         </p>
 
-        <div
-          className={
-            isDarkMode
-              ? `${styles.codeblock} ${styles.codeblock__dark}`
-              : styles.codeblock
-          }
-        >
+        <div className={stylesConfig.codeblock}>
           <pre
             style={{ borderRadius: "5px", margin: "0 0", padding: "2.5rem" }}
           >
-            <code class="language-js">{codePhoneFigure3}</code>
+            <code className="language-js">{codePhoneFigure3}</code>
           </pre>
         </div>
 
         <p className={styles.p}>
           And here's the SVG with an animation that restarts every time the{" "}
-          <code
-            className={
-              isDarkMode
-                ? `${styles.code} ${styles.code__dark}`
-                : `${styles.code} ${styles.code__light}`
-            }
-          >
-            onMouseEnter
-          </code>{" "}or <code
-            className={
-              isDarkMode
-                ? `${styles.code} ${styles.code__dark}`
-                : `${styles.code} ${styles.code__light}`
-            }
-          >
-            onClick
-          </code>{" "}(for mobile) 
-          event is fired.
+          <code className={stylesConfig.code}>onMouseEnter</code> or{" "}
+          <code className={stylesConfig.code}>onClick</code> (for mobile) event
+          is fired.
         </p>
 
         <PhoneFigure2 onMobile={onMobile} />
 
         <p className={styles.p}>
           By storing the tween in the{" "}
-          <code
-            className={
-              isDarkMode
-                ? `${styles.code} ${styles.code__dark}`
-                : `${styles.code} ${styles.code__light}`
-            }
-          >
-            .current
-          </code>{" "}
-          property we can control it with its methods such as{" "}
-          <code
-            className={
-              isDarkMode
-                ? `${styles.code} ${styles.code__dark}`
-                : `${styles.code} ${styles.code__light}`
-            }
-          >
-            .play()
-          </code>
-          ,{" "}
-          <code
-            className={
-              isDarkMode
-                ? `${styles.code} ${styles.code__dark}`
-                : `${styles.code} ${styles.code__light}`
-            }
-          >
-            .pause()
-          </code>
-          ,{" "}
-          <code
-            className={
-              isDarkMode
-                ? `${styles.code} ${styles.code__dark}`
-                : `${styles.code} ${styles.code__light}`
-            }
-          >
-            .resume()
-          </code>
-          ,{" "}
-          <code
-            className={
-              isDarkMode
-                ? `${styles.code} ${styles.code__dark}`
-                : `${styles.code} ${styles.code__light}`
-            }
-          >
-            .reverse()
-          </code>
-          ,{" "}
-          <code
-            className={
-              isDarkMode
-                ? `${styles.code} ${styles.code__dark}`
-                : `${styles.code} ${styles.code__light}`
-            }
-          >
-            .restart()
-          </code>
-          , etc.
+          <code className={stylesConfig.code}>.current</code> property we can
+          control it with its methods such as{" "}
+          <code className={stylesConfig.code}>.play()</code>,{" "}
+          <code className={stylesConfig.code}>.pause()</code>,{" "}
+          <code className={stylesConfig.code}>.resume()</code>,{" "}
+          <code className={stylesConfig.code}>.reverse()</code>,{" "}
+          <code className={stylesConfig.code}>.restart()</code>, etc.
         </p>
 
         <h2 className={styles.h2}>SVG to JSX</h2>
@@ -918,30 +506,20 @@ function ExampleTweenComponent() {
         </p>
 
         <p className={styles.p}>
-          Manually changing the names is easy enough for smaller SVGs, and even larger ones using "search" and "replace" in VSCode. But, if you want, you can use a converter. I found{" "}
+          Manually changing the names is easy enough for smaller SVGs, and even
+          larger ones using "search" and "replace" in VSCode. But, if you want,
+          you can use a converter. I found{" "}
           <a
-            className={
-              isDarkMode
-                ? `${styles.linkAnchor} ${styles.linkAnchor__dark}`
-                : `${styles.linkAnchor} ${styles.linkAnchor__light}`
-            }
+            className={stylesConfig.linkAnchor}
             target="_blank"
             href="https://svg2jsx.com/"
           >
             svg2jsx.com
           </a>{" "}
           to be the best because it keeps the{" "}
-          <code
-            className={
-              isDarkMode
-                ? `${styles.code} ${styles.code__dark}`
-                : `${styles.code} ${styles.code__light}`
-            }
-          >
-            id
-          </code>{" "}
-          attributes we named in Figma. In the menu bar on the site there's a
-          "Remove IDs" option you'll want to have switched off.
+          <code className={stylesConfig.code}>id</code> attributes we named in
+          Figma. In the menu bar on the site there's a "Remove IDs" option
+          you'll want to have switched off.
         </p>
 
         <p className={styles.p}>
@@ -955,26 +533,15 @@ function ExampleTweenComponent() {
             part 2
           </a>{" "}
           to learn about making animations more complex with{" "}
-          <code
-            className={
-              isDarkMode
-                ? `${styles.code} ${styles.code__dark}`
-                : `${styles.code} ${styles.code__light}`
-            }
-          >
-            gsap.timeline()
-          </code>
-          .
+          <code className={stylesConfig.code}>gsap.timeline()</code>.
         </p>
       </article>
 
       <div className={styles.nextPostFlexContainer}>
         <Link href="/post/gsap-timelines-in-react">
-          <a
-            className={styles.nextPost}
-          >
+          <a className={styles.nextPost}>
             Next &rarr;
-            <br/>
+            <br />
             GSAP in React: Timelines
           </a>
         </Link>

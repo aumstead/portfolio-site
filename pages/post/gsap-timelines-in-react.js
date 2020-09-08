@@ -4,7 +4,7 @@ import Prism from "prismjs";
 import { useContext, useEffect } from "react";
 import Layout from "../../components/Layout/Layout";
 import DarkModeContext from "../../contexts/darkMode/DarkModeContext";
-import MobileContext from '../../contexts/mobile/MobileContext'
+import MobileContext from "../../contexts/mobile/MobileContext";
 import Final from "../../components/post/gsap-tweens-in-react/Final";
 import TimelineFigure1 from "../../components/post/gsap-timelines-in-react/TimelineFigure1";
 import TimelineFigure2 from "../../components/post/gsap-timelines-in-react/TimelineFigure2";
@@ -17,8 +17,8 @@ import FinalFigure1 from "../../components/post/gsap-timelines-in-react/FinalFig
 export default () => {
   const darkModeContext = useContext(DarkModeContext);
   const { isDarkMode } = darkModeContext;
-  const mobileContext = useContext(MobileContext)
-  const { onMobile } = mobileContext
+  const mobileContext = useContext(MobileContext);
+  const { onMobile } = mobileContext;
 
   useEffect(() => {
     Prism.highlightAll();
@@ -215,6 +215,24 @@ function Final() {
     >
     ...`.trim();
 
+  const stylesConfig = {
+    code: isDarkMode
+      ? `${styles.code} ${styles.code__dark}`
+      : `${styles.code} ${styles.code__light}`,
+    linkAnchor: isDarkMode
+      ? `${styles.linkAnchor} ${styles.linkAnchor__dark}`
+      : `${styles.linkAnchor} ${styles.linkAnchor__light}`,
+    codeblock: isDarkMode
+      ? `${styles.codeblock} ${styles.codeblock__dark}`
+      : `${styles.codeblock}`,
+    navPost: isDarkMode
+      ? `${styles.navPost} ${styles.navPost__dark}`
+      : `${styles.navPost} ${styles.navPost__light}`,
+    caption: isDarkMode
+      ? `${styles.caption} ${styles.caption__dark}`
+      : `${styles.caption} ${styles.caption__light}`,
+  };
+
   return (
     <Layout>
       <section className={styles.heroSection}>
@@ -244,53 +262,17 @@ function Final() {
           </a>{" "}
           of this guide if you want to learn more about the basics of GSAP,
           tweens, and how I use them in React with the{" "}
-          <code
-            className={
-              isDarkMode
-                ? `${styles.code} ${styles.code__dark}`
-                : `${styles.code} ${styles.code__light}`
-            }
-          >
-            useEffect
-          </code>{" "}
-          and{" "}
-          <code
-            className={
-              isDarkMode
-                ? `${styles.code} ${styles.code__dark}`
-                : `${styles.code} ${styles.code__light}`
-            }
-          >
-            useRef
-          </code>{" "}
-          hooks.
+          <code className={stylesConfig.code}>useEffect</code> and{" "}
+          <code className={stylesConfig.code}>useRef</code> hooks.
         </p>
         <p className={styles.p}>
           Timelines make sequenced or complex animations much easier. It's
-          possible to set a{" "}
-          <code
-            className={
-              isDarkMode
-                ? `${styles.code} ${styles.code__dark}`
-                : `${styles.code} ${styles.code__light}`
-            }
-          >
-            delay
-          </code>{" "}
-          for each individual tween, similar to what you might do in a sequenced
-          CSS animation. You might think, like I did, that if you already
-          know how to write simple animations, then maybe it's easier to just
-          use{" "}
-          <code
-            className={
-              isDarkMode
-                ? `${styles.code} ${styles.code__dark}`
-                : `${styles.code} ${styles.code__light}`
-            }
-          >
-            delay
-          </code>{" "}
-          to stagger them so that they run smoothly.
+          possible to set a <code className={stylesConfig.code}>delay</code> for
+          each individual tween, similar to what you might do in a sequenced CSS
+          animation. You might think, like I did, that if you already know how
+          to write simple animations, then maybe it's easier to just use{" "}
+          <code className={stylesConfig.code}>delay</code> to stagger them so
+          that they run smoothly.
         </p>
 
         <p className={styles.p}>
@@ -298,77 +280,35 @@ function Final() {
           ugly rather quickly.
         </p>
 
-        <Final onMobile={onMobile} marginBottom=".5rem"/>
+        <Final onMobile={onMobile} marginBottom=".5rem" />
 
-        <span className={isDarkMode ? `${styles.caption} ${styles.caption__dark}` : `${styles.caption} ${styles.caption__light}`}>Hover or tap to trigger animation.</span>
+        <span className={stylesConfig.caption}>
+          Hover or tap to trigger animation.
+        </span>
 
         <p className={styles.p}>
           With the icons sequence comprising of more than 30 tweens, any change
-          in{" "}
-          <code
-            className={
-              isDarkMode
-                ? `${styles.code} ${styles.code__dark}`
-                : `${styles.code} ${styles.code__light}`
-            }
-          >
-            duration
-          </code>{" "}
-          or{" "}
-          <code
-            className={
-              isDarkMode
-                ? `${styles.code} ${styles.code__dark}`
-                : `${styles.code} ${styles.code__light}`
-            }
-          >
-            delay
-          </code>{" "}
-          resulted in a change for every tween thereafter.
+          in <code className={stylesConfig.code}>duration</code> or{" "}
+          <code className={stylesConfig.code}>delay</code> resulted in a change
+          for every tween thereafter.
         </p>
 
         <p className={styles.p}>
           This is where the beauty of GSAP timelines comes in, as every
           individual tween takes a parameter that gives you a bunch of options
           about the tween's timing, rather than having to always{" "}
-          <code
-            className={
-              isDarkMode
-                ? `${styles.code} ${styles.code__dark}`
-                : `${styles.code} ${styles.code__light}`
-            }
-          >
-            delay
-          </code>{" "}
-          its runtime from the start. The position parameter, as it's called,
-          gives you an enormous amount of control over when a tween animates.
+          <code className={stylesConfig.code}>delay</code> its runtime from the
+          start. The position parameter, as it's called, gives you an enormous
+          amount of control over when a tween animates.
         </p>
 
         <p className={styles.p}>
           The result is that when you change the{" "}
-          <code
-            className={
-              isDarkMode
-                ? `${styles.code} ${styles.code__dark}`
-                : `${styles.code} ${styles.code__light}`
-            }
-          >
-            duration
-          </code>{" "}
-          or{" "}
-          <code
-            className={
-              isDarkMode
-                ? `${styles.code} ${styles.code__dark}`
-                : `${styles.code} ${styles.code__light}`
-            }
-          >
-            delay
-          </code>{" "}
-          of a tween, all the other tweens will fall in line with the sequence,
-          or timeline, as a whole. So, in the end, when you change an
-          animation's timing, you typically only have to change one or two
-          values.
+          <code className={stylesConfig.code}>duration</code> or{" "}
+          <code className={stylesConfig.code}>delay</code> of a tween, all the
+          other tweens will fall in line with the sequence, or timeline, as a
+          whole. So, in the end, when you change an animation's timing, you
+          typically only have to change one or two values.
         </p>
 
         <h2 className={styles.h2}>Creating a Timeline</h2>
@@ -383,36 +323,10 @@ function Final() {
             part 1
           </a>{" "}
           about basic tweens we covered how to take advantage of the{" "}
-          <code
-            className={
-              isDarkMode
-                ? `${styles.code} ${styles.code__dark}`
-                : `${styles.code} ${styles.code__light}`
-            }
-          >
-            useRef
-          </code>{" "}
-          hook and the{" "}
-          <code
-            className={
-              isDarkMode
-                ? `${styles.code} ${styles.code__dark}`
-                : `${styles.code} ${styles.code__light}`
-            }
-          >
-            .current
-          </code>{" "}
-          property it gives us. In{" "}
-          <code
-            className={
-              isDarkMode
-                ? `${styles.code} ${styles.code__dark}`
-                : `${styles.code} ${styles.code__light}`
-            }
-          >
-            myTween.current
-          </code>{" "}
-          we stored our tween instance and had access to it throughout the
+          <code className={stylesConfig.code}>useRef</code> hook and the{" "}
+          <code className={stylesConfig.code}>.current</code> property it gives
+          us. In <code className={stylesConfig.code}>myTween.current</code> we
+          stored our tween instance and had access to it throughout the
           component's scope.
         </p>
 
@@ -423,7 +337,8 @@ function Final() {
 
         <p className={styles.p}>
           We can begin by simply looking at an example animation made with a
-          GSAP timeline. Hover or tap and you'll see three tweens animate sequentially.
+          GSAP timeline. Hover or tap and you'll see three tweens animate
+          sequentially.
         </p>
 
         <TimelineFigure1 onMobile={onMobile} />
@@ -433,17 +348,11 @@ function Final() {
           renders the SVG.
         </p>
 
-        <div
-          className={
-            isDarkMode
-              ? `${styles.codeblock} ${styles.codeblock__dark}`
-              : `${styles.codeblock}`
-          }
-        >
+        <div className={stylesConfig.codeblock}>
           <pre
             style={{ borderRadius: "5px", margin: "0 0", padding: "2.5rem" }}
           >
-            <code class="language-js">{codeFigure1__component}</code>
+            <code className="language-js">{codeFigure1__component}</code>
           </pre>
         </div>
 
@@ -451,48 +360,19 @@ function Final() {
           All we're doing here is importing some styling and our hooks, and
           creating the component for the SVG and animation. The first line of
           non-boiler-plate code is when we use the{" "}
-          <code
-            className={
-              isDarkMode
-                ? `${styles.code} ${styles.code__dark}`
-                : `${styles.code} ${styles.code__light}`
-            }
-          >
-            useRef
-          </code>{" "}
-          hook and store its returned object into{" "}
-          <code
-            className={
-              isDarkMode
-                ? `${styles.code} ${styles.code__dark}`
-                : `${styles.code} ${styles.code__light}`
-            }
-          >
-            myTimeline
-          </code>
-          . Then,{" "}
-          <code
-            className={
-              isDarkMode
-                ? `${styles.code} ${styles.code__dark}`
-                : `${styles.code} ${styles.code__light}`
-            }
-          >
-            useEffect
-          </code>{" "}
-          will run after the component has mounted, and the handler runs on the
-          mouse enter event. The rest of the SVG code is absent, since it's
-          hundreds of lines.
+          <code className={stylesConfig.code}>useRef</code> hook and store its
+          returned object into{" "}
+          <code className={stylesConfig.code}>myTimeline</code>. Then,{" "}
+          <code className={stylesConfig.code}>useEffect</code> will run after
+          the component has mounted, and the handler runs on the mouse enter
+          event. The rest of the SVG code is absent, since it's hundreds of
+          lines.
         </p>
 
         <p className={styles.note}>
           *Note: This particular SVG can be downloaded for free at{" "}
           <a
-            className={
-              isDarkMode
-                ? `${styles.linkAnchor} ${styles.linkAnchor__dark}`
-                : `${styles.linkAnchor} ${styles.linkAnchor__light}`
-            }
+            className={stylesConfig.linkAnchor}
             target="_blank"
             href="https://illlustrations.co/"
           >
@@ -504,224 +384,78 @@ function Final() {
 
         <p className={styles.p}>
           For the next step, in the{" "}
-          <code
-            className={
-              isDarkMode
-                ? `${styles.code} ${styles.code__dark}`
-                : `${styles.code} ${styles.code__light}`
-            }
-          >
-            useEffect
-          </code>{" "}
-          hook, we'll instantiate our timeline and store it in{" "}
-          <code
-            className={
-              isDarkMode
-                ? `${styles.code} ${styles.code__dark}`
-                : `${styles.code} ${styles.code__light}`
-            }
-          >
-            myTimeline.current
-          </code>
-          .
+          <code className={stylesConfig.code}>useEffect</code> hook, we'll
+          instantiate our timeline and store it in{" "}
+          <code className={stylesConfig.code}>myTimeline.current</code>.
         </p>
 
-        <div
-          className={
-            isDarkMode
-              ? `${styles.codeblock} ${styles.codeblock__dark}`
-              : `${styles.codeblock}`
-          }
-        >
+        <div className={stylesConfig.codeblock}>
           <pre
             style={{ borderRadius: "5px", margin: "0 0", padding: "2.5rem" }}
           >
-            <code class="language-js">{codeFigure1__instantiation}</code>
+            <code className="language-js">{codeFigure1__instantiation}</code>
           </pre>
         </div>
 
         <p className={styles.p}>
           Easy enough. Now, we have a timeline stored in{" "}
-          <code
-            className={
-              isDarkMode
-                ? `${styles.code} ${styles.code__dark}`
-                : `${styles.code} ${styles.code__light}`
-            }
-          >
-            myTimeline.current
-          </code>
-          , to which we can attach any number of tweens. We can do this by
-          calling the{" "}
-          <code
-            className={
-              isDarkMode
-                ? `${styles.code} ${styles.code__dark}`
-                : `${styles.code} ${styles.code__light}`
-            }
-          >
-            .to()
-          </code>{" "}
-          method, similar to how we would create a tween. The difference is that
-          we're calling{" "}
-          <code
-            className={
-              isDarkMode
-                ? `${styles.code} ${styles.code__dark}`
-                : `${styles.code} ${styles.code__light}`
-            }
-          >
-            .to()
-          </code>{" "}
-          on the <em>timeline</em> instance, rather than the gsap object. We
-          already used the gsap object above to instantiate our timeline with
-          the{" "}
-          <code
-            className={
-              isDarkMode
-                ? `${styles.code} ${styles.code__dark}`
-                : `${styles.code} ${styles.code__light}`
-            }
-          >
-            .timeline()
-          </code>{" "}
-          method.
+          <code className={stylesConfig.code}>myTimeline.current</code>, to
+          which we can attach any number of tweens. We can do this by calling
+          the <code className={stylesConfig.code}>.to()</code> method, similar
+          to how we would create a tween. The difference is that we're calling{" "}
+          <code className={stylesConfig.code}>.to()</code> on the{" "}
+          <em>timeline</em> instance, rather than the gsap object. We already
+          used the gsap object above to instantiate our timeline with the{" "}
+          <code className={stylesConfig.code}>.timeline()</code> method.
         </p>
 
         <p className={styles.p}>
-          By calling{" "}
-          <code
-            className={
-              isDarkMode
-                ? `${styles.code} ${styles.code__dark}`
-                : `${styles.code} ${styles.code__light}`
-            }
-          >
-            .to()
-          </code>{" "}
-          on our timeline instance, each tween we create is run sequentially.
-          GSAP understands that they are meant to run one after the other. It
-          also allows us to chain our{" "}
-          <code
-            className={
-              isDarkMode
-                ? `${styles.code} ${styles.code__dark}`
-                : `${styles.code} ${styles.code__light}`
-            }
-          >
-            .to()
-          </code>{" "}
-          calls, rather than type out{" "}
-          <code
-            className={
-              isDarkMode
-                ? `${styles.code} ${styles.code__dark}`
-                : `${styles.code} ${styles.code__light}`
-            }
-          >
-            myTimeline.current.to()
-          </code>{" "}
+          By calling <code className={stylesConfig.code}>.to()</code> on our
+          timeline instance, each tween we create is run sequentially. GSAP
+          understands that they are meant to run one after the other. It also
+          allows us to chain our{" "}
+          <code className={stylesConfig.code}>.to()</code> calls, rather than
+          type out{" "}
+          <code className={stylesConfig.code}>myTimeline.current.to()</code>{" "}
           every time, although you could if you wanted.
         </p>
 
-        <div
-          className={
-            isDarkMode
-              ? `${styles.codeblock} ${styles.codeblock__dark}`
-              : `${styles.codeblock}`
-          }
-        >
+        <div className={stylesConfig.codeblock}>
           <pre
             style={{ borderRadius: "5px", margin: "0 0", padding: "2.5rem" }}
           >
-            <code class="language-js">{codeUseEffectTweens}</code>
+            <code className="language-js">{codeUseEffectTweens}</code>
           </pre>
         </div>
 
         <p className={styles.p}>
           Above you can see the creation of 3 tweens — one with each{" "}
-          <code
-            className={
-              isDarkMode
-                ? `${styles.code} ${styles.code__dark}`
-                : `${styles.code} ${styles.code__light}`
-            }
-          >
-            .to()
-          </code>{" "}
-          call. The first targets the gear and animates a couple CSS properties
-          to create a rotating effect. The second targets the red icon and moves
-          it to the right on its x-axis. And, the third moves the green icon
-          upwards on its y-axis. Each tween lasts for 1 second and the{" "}
-          <code
-            className={
-              isDarkMode
-                ? `${styles.code} ${styles.code__dark}`
-                : `${styles.code} ${styles.code__light}`
-            }
-          >
-            x
-          </code>{" "}
-          and{" "}
-          <code
-            className={
-              isDarkMode
-                ? `${styles.code} ${styles.code__dark}`
-                : `${styles.code} ${styles.code__light}`
-            }
-          >
-            y
-          </code>{" "}
-          values were chosen through experimentation.
+          <code className={stylesConfig.code}>.to()</code> call. The first
+          targets the gear and animates a couple CSS properties to create a
+          rotating effect. The second targets the red icon and moves it to the
+          right on its x-axis. And, the third moves the green icon upwards on
+          its y-axis. Each tween lasts for 1 second and the{" "}
+          <code className={stylesConfig.code}>x</code> and{" "}
+          <code className={stylesConfig.code}>y</code> values were chosen
+          through experimentation.
         </p>
 
         <p className={styles.p}>
           For a basic timeline, that's pretty much it. We can{" "}
-          <code
-            className={
-              isDarkMode
-                ? `${styles.code} ${styles.code__dark}`
-                : `${styles.code} ${styles.code__light}`
-            }
-          >
-            .pause()
-          </code>{" "}
-          it in the{" "}
-          <code
-            className={
-              isDarkMode
-                ? `${styles.code} ${styles.code__dark}`
-                : `${styles.code} ${styles.code__light}`
-            }
-          >
-            useEffect
-          </code>{" "}
-          hook before it has a chance to animate, and then{" "}
-          <code
-            className={
-              isDarkMode
-                ? `${styles.code} ${styles.code__dark}`
-                : `${styles.code} ${styles.code__light}`
-            }
-          >
-            .restart()
-          </code>{" "}
-          it when our event handler is triggered, thus running the animation.
+          <code className={stylesConfig.code}>.pause()</code> it in the{" "}
+          <code className={stylesConfig.code}>useEffect</code> hook before it
+          has a chance to animate, and then{" "}
+          <code className={stylesConfig.code}>.restart()</code> it when our
+          event handler is triggered, thus running the animation.
         </p>
 
         <p className={styles.p}>Here's the finished component.</p>
 
-        <div
-          className={
-            isDarkMode
-              ? `${styles.codeblock} ${styles.codeblock__dark}`
-              : `${styles.codeblock}`
-          }
-        >
+        <div className={stylesConfig.codeblock}>
           <pre
             style={{ borderRadius: "5px", margin: "0 0", padding: "2.5rem" }}
           >
-            <code class="language-js">{codeFigure1__completed}</code>
+            <code className="language-js">{codeFigure1__completed}</code>
           </pre>
         </div>
 
@@ -733,17 +467,11 @@ function Final() {
           animation.
         </p>
 
-        <div
-          className={
-            isDarkMode
-              ? `${styles.codeblock} ${styles.codeblock__dark}`
-              : `${styles.codeblock}`
-          }
-        >
+        <div className={stylesConfig.codeblock}>
           <pre
             style={{ borderRadius: "5px", margin: "0 0", padding: "2.5rem" }}
           >
-            <code class="language-js">{codeFigure2__moreTweens}</code>
+            <code className="language-js">{codeFigure2__moreTweens}</code>
           </pre>
         </div>
 
@@ -752,7 +480,7 @@ function Final() {
           timings.
         </p>
 
-        <TimelineFigure2 onMobile={onMobile}/>
+        <TimelineFigure2 onMobile={onMobile} />
 
         <p className={styles.p}>
           If these were all individual tweens, everything would animate together
@@ -767,23 +495,11 @@ function Final() {
 
         <p className={styles.p}>
           Well, to control when the{" "}
-          <code
-            className={
-              isDarkMode
-                ? `${styles.code} ${styles.code__dark}`
-                : `${styles.code} ${styles.code__light}`
-            }
-          >
-            #red-icon-group
-          </code>{" "}
-          tween begins, we can use the position parameter. I highly recommend
-          visiting the Greensock page on{" "}
+          <code className={stylesConfig.code}>#red-icon-group</code> tween
+          begins, we can use the position parameter. I highly recommend visiting
+          the Greensock page on{" "}
           <a
-            className={
-              isDarkMode
-                ? `${styles.linkAnchor} ${styles.linkAnchor__dark}`
-                : `${styles.linkAnchor} ${styles.linkAnchor__light}`
-            }
+            className={stylesConfig.linkAnchor}
             href="https://greensock.com/docs/v3/GSAP/Timeline"
           >
             timelines
@@ -797,44 +513,22 @@ function Final() {
           For our small animation, we'll only be using two kinds of values that
           control a tween's timing in relation to its{" "}
           <em>immediate predecessor</em>. Simply inserting{" "}
-          <code
-            className={
-              isDarkMode
-                ? `${styles.code} ${styles.code__dark}`
-                : `${styles.code} ${styles.code__light}`
-            }
-          >
-            "&lt;"
-          </code>{" "}
-          as the position parameter will make a tween start at the same time as
-          the one right before it.
+          <code className={stylesConfig.code}>"&lt;"</code> as the position
+          parameter will make a tween start at the same time as the one right
+          before it.
         </p>
 
         <p className={styles.p}>
           In the last line after the vars object,{" "}
-          <code
-            className={
-              isDarkMode
-                ? `${styles.code} ${styles.code__dark}`
-                : `${styles.code} ${styles.code__light}`
-            }
-          >
-            "&lt;"
-          </code>{" "}
-          is inserted as the position parameter.
+          <code className={stylesConfig.code}>"&lt;"</code> is inserted as the
+          position parameter.
         </p>
 
-        <div
-          className={
-            isDarkMode
-              ? `${styles.codeblock} ${styles.codeblock__dark}`
-              : `${styles.codeblock}`
-          }
-        >
+        <div className={stylesConfig.codeblock}>
           <pre
             style={{ borderRadius: "5px", margin: "0 0", padding: "2.5rem" }}
           >
-            <code class="language-js">{codeFigure3__redIcon}</code>
+            <code className="language-js">{codeFigure3__redIcon}</code>
           </pre>
         </div>
 
@@ -859,46 +553,22 @@ function Final() {
           However, in our final animation, each icon tween moves much faster at
           .2 seconds, rather than the 1 second they're currently set at. If we
           go ahead and change the{" "}
-          <code
-            className={
-              isDarkMode
-                ? `${styles.code} ${styles.code__dark}`
-                : `${styles.code} ${styles.code__light}`
-            }
-          >
-            duration
-          </code>{" "}
-          property in the vars object to{" "}
-          <code
-            className={
-              isDarkMode
-                ? `${styles.code} ${styles.code__dark}`
-                : `${styles.code} ${styles.code__light}`
-            }
-          >
-            {`{ duration: .2 }`}
-          </code>{" "}
-          — we get the following result.
+          <code className={stylesConfig.code}>duration</code> property in the
+          vars object to{" "}
+          <code className={stylesConfig.code}>{`{ duration: .2 }`}</code> — we
+          get the following result.
         </p>
 
-        <TimelineFigure4 onMobile={onMobile}/>
+        <TimelineFigure4 onMobile={onMobile} />
 
         <p className={styles.p}>
           What's happening is the other tweens are waiting for the gear tween to
           finish. If we were to set the gear{" "}
-          <code
-            className={
-              isDarkMode
-                ? `${styles.code} ${styles.code__dark}`
-                : `${styles.code} ${styles.code__light}`
-            }
-          >
-            duration
-          </code>{" "}
-          to 5 seconds, we'd have a five second delay before the green icon
-          started animating. Of course, this is because in a timeline everything
-          runs sequentially. GSAP can't know we want our gear to rotate
-          simultaneously with the icon animations running.
+          <code className={stylesConfig.code}>duration</code> to 5 seconds, we'd
+          have a five second delay before the green icon started animating. Of
+          course, this is because in a timeline everything runs sequentially.
+          GSAP can't know we want our gear to rotate simultaneously with the
+          icon animations running.
         </p>
 
         <p className={styles.p}>
@@ -913,41 +583,24 @@ function Final() {
 
         <p className={styles.p}>
           What we'll do is add{" "}
-          <code
-            className={
-              isDarkMode
-                ? `${styles.code} ${styles.code__dark}`
-                : `${styles.code} ${styles.code__light}`
-            }
-          >
-            "&lt;.2"
-          </code>{" "}
-          as the position parameter for the three remaining icon tweens. This
-          will delay the respective tween by .2 seconds in relation to the tween
-          directly before it.
+          <code className={stylesConfig.code}>"&lt;.2"</code> as the position
+          parameter for the three remaining icon tweens. This will delay the
+          respective tween by .2 seconds in relation to the tween directly
+          before it.
         </p>
 
         <p className={styles.p}>
           So, the red icon's duration is .2 seconds, and because the green icon
-          has{" "}
-          <code
-            className={
-              isDarkMode
-                ? `${styles.code} ${styles.code__dark}`
-                : `${styles.code} ${styles.code__light}`
-            }
-          >
-            "&lt;.2"
-          </code>{" "}
-          set as its position parameter, it will wait .2 seconds from the start
-          of the red icon.
+          has <code className={stylesConfig.code}>"&lt;.2"</code> set as its
+          position parameter, it will wait .2 seconds from the start of the red
+          icon.
         </p>
 
         <p className={styles.p}>
           The result is a smooth animation from one tween to the next.
         </p>
 
-        <TimelineFigure5 onMobile={onMobile}/>
+        <TimelineFigure5 onMobile={onMobile} />
 
         <p className={styles.p}>
           The green, blue, and yellow icon tweens are each waiting .2 seconds
@@ -955,17 +608,11 @@ function Final() {
           understand than a written explanation.
         </p>
 
-        <div
-          className={
-            isDarkMode
-              ? `${styles.codeblock} ${styles.codeblock__dark}`
-              : `${styles.codeblock}`
-          }
-        >
+        <div className={stylesConfig.codeblock}>
           <pre
             style={{ borderRadius: "5px", margin: "0 0", padding: "2.5rem" }}
           >
-            <code class="language-js">{codeFigure5}</code>
+            <code className="language-js">{codeFigure5}</code>
           </pre>
         </div>
 
@@ -977,45 +624,25 @@ function Final() {
 
         <p className={styles.p}>If the red icon tween looks like this:</p>
 
-        <div
-          className={
-            isDarkMode
-              ? `${styles.codeblock} ${styles.codeblock__dark}`
-              : `${styles.codeblock}`
-          }
-        >
+        <div className={stylesConfig.codeblock}>
           <pre
             style={{ borderRadius: "5px", margin: "0 0", padding: "2.5rem" }}
           >
-            <code class="language-js">{codeFigure6__redIcon}</code>
+            <code className="language-js">{codeFigure6__redIcon}</code>
           </pre>
         </div>
 
         <p className={styles.p}>
           ...then we'll want the green icon to animate with it, so it'll take{" "}
-          <code
-            className={
-              isDarkMode
-                ? `${styles.code} ${styles.code__dark}`
-                : `${styles.code} ${styles.code__light}`
-            }
-          >
-            "&lt;"
-          </code>{" "}
-          as its position parameter.
+          <code className={stylesConfig.code}>"&lt;"</code> as its position
+          parameter.
         </p>
 
-        <div
-          className={
-            isDarkMode
-              ? `${styles.codeblock} ${styles.codeblock__dark}`
-              : `${styles.codeblock}`
-          }
-        >
+        <div className={stylesConfig.codeblock}>
           <pre
             style={{ borderRadius: "5px", margin: "0 0", padding: "2.5rem" }}
           >
-            <code class="language-js">{codeFigure6__greenIcon}</code>
+            <code className="language-js">{codeFigure6__greenIcon}</code>
           </pre>
         </div>
 
@@ -1024,58 +651,29 @@ function Final() {
           starts. If we omitted the position parameter, the blue icon would wait
           for the gear to finish, which is not what we want. Instead, we want to
           control it relative to its immediate predecessor. So, we'll pass{" "}
-          <code
-            className={
-              isDarkMode
-                ? `${styles.code} ${styles.code__dark}`
-                : `${styles.code} ${styles.code__light}`
-            }
-          >
-            "&lt;.2"
-          </code>{" "}
-          to the position parameter.
+          <code className={stylesConfig.code}>"&lt;.2"</code> to the position
+          parameter.
         </p>
 
-        <div
-          className={
-            isDarkMode
-              ? `${styles.codeblock} ${styles.codeblock__dark}`
-              : `${styles.codeblock}`
-          }
-        >
+        <div className={stylesConfig.codeblock}>
           <pre
             style={{ borderRadius: "5px", margin: "0 0", padding: "2.5rem" }}
           >
-            <code class="language-js">{codeFigure6__blueIcon}</code>
+            <code className="language-js">{codeFigure6__blueIcon}</code>
           </pre>
         </div>
 
         <p className={styles.p}>
           Lastly, we're moving two icons together, so the yellow one will start
           with the blue. Therefore, it'll take{" "}
-          <code
-            className={
-              isDarkMode
-                ? `${styles.code} ${styles.code__dark}`
-                : `${styles.code} ${styles.code__light}`
-            }
-          >
-            "&lt;"
-          </code>
-          .
+          <code className={stylesConfig.code}>"&lt;"</code>.
         </p>
 
-        <div
-          className={
-            isDarkMode
-              ? `${styles.codeblock} ${styles.codeblock__dark}`
-              : `${styles.codeblock}`
-          }
-        >
+        <div className={stylesConfig.codeblock}>
           <pre
             style={{ borderRadius: "5px", margin: "0 0", padding: "2.5rem" }}
           >
-            <code class="language-js">{codeFigure6__yellowIcon}</code>
+            <code className="language-js">{codeFigure6__yellowIcon}</code>
           </pre>
         </div>
 
@@ -1097,145 +695,50 @@ function Final() {
 
         <p className={styles.p}>
           To do that, we'll just increase the{" "}
-          <code
-            className={
-              isDarkMode
-                ? `${styles.code} ${styles.code__dark}`
-                : `${styles.code} ${styles.code__light}`
-            }
-          >
-            duration
-          </code>
-          . Mine is set to 8 seconds. Now, 8 seconds to rotate 360 degrees makes
-          the gear move quite slowly, so you'll want to increase the{" "}
-          <code
-            className={
-              isDarkMode
-                ? `${styles.code} ${styles.code__dark}`
-                : `${styles.code} ${styles.code__light}`
-            }
-          >
-            rotate
-          </code>{" "}
-          value as well. I just multiplied mine by 4, which ensures a full
-          revolution made by the gear. If you don't use a multiple of 360, the
-          gear will finish in a different spot, and on{" "}
-          <code
-            className={
-              isDarkMode
-                ? `${styles.code} ${styles.code__dark}`
-                : `${styles.code} ${styles.code__light}`
-            }
-          >
-            .restart()
-          </code>{" "}
-          the animation will be jerky.
+          <code className={stylesConfig.code}>duration</code>. Mine is set to 8
+          seconds. Now, 8 seconds to rotate 360 degrees makes the gear move
+          quite slowly, so you'll want to increase the{" "}
+          <code className={stylesConfig.code}>rotate</code> value as well. I
+          just multiplied mine by 4, which ensures a full revolution made by the
+          gear. If you don't use a multiple of 360, the gear will finish in a
+          different spot, and on{" "}
+          <code className={stylesConfig.code}>.restart()</code> the animation
+          will be jerky.
         </p>
 
-        <div
-          className={
-            isDarkMode
-              ? `${styles.codeblock} ${styles.codeblock__dark}`
-              : `${styles.codeblock}`
-          }
-        >
+        <div className={stylesConfig.codeblock}>
           <pre
             style={{ borderRadius: "5px", margin: "0 0", padding: "2.5rem" }}
           >
-            <code class="language-js">{codeFinalFigure1__gear}</code>
+            <code className="language-js">{codeFinalFigure1__gear}</code>
           </pre>
         </div>
 
         <p className={styles.p}>
           Lastly, with the gear, you may recall the animation has the effect of
           slowing down as the gear loses steam. This is achieved with the{" "}
-          <code
-            className={
-              isDarkMode
-                ? `${styles.code} ${styles.code__dark}`
-                : `${styles.code} ${styles.code__light}`
-            }
-          >
-            ease
-          </code>{" "}
-          property seen in the vars object above.
+          <code className={stylesConfig.code}>ease</code> property seen in the
+          vars object above.
         </p>
 
         <p className={styles.p}>
-          The{" "}
-          <code
-            className={
-              isDarkMode
-                ? `${styles.code} ${styles.code__dark}`
-                : `${styles.code} ${styles.code__light}`
-            }
-          >
-            ease
-          </code>{" "}
-          property does the same thing as the CSS{" "}
-          <code
-            className={
-              isDarkMode
-                ? `${styles.code} ${styles.code__dark}`
-                : `${styles.code} ${styles.code__light}`
-            }
-          >
-            transition-timing-function
-          </code>{" "}
+          The <code className={stylesConfig.code}>ease</code> property does the
+          same thing as the CSS{" "}
+          <code className={stylesConfig.code}>transition-timing-function</code>{" "}
           one. Whereas CSS has built-in bezier curves like{" "}
-          <code
-            className={
-              isDarkMode
-                ? `${styles.code} ${styles.code__dark}`
-                : `${styles.code} ${styles.code__light}`
-            }
-          >
-            linear
-          </code>{" "}
-          and{" "}
-          <code
-            className={
-              isDarkMode
-                ? `${styles.code} ${styles.code__dark}`
-                : `${styles.code} ${styles.code__light}`
-            }
-          >
-            ease-in-out
-          </code>
-          , GSAP has its own set of built-in eases. The docs has a great
-          vizualizer{" "}
+          <code className={stylesConfig.code}>linear</code> and{" "}
+          <code className={stylesConfig.code}>ease-in-out</code>, GSAP has its
+          own set of built-in eases. The docs has a great vizualizer{" "}
           <a
-            className={
-              isDarkMode
-                ? `${styles.linkAnchor} ${styles.linkAnchor__dark}`
-                : `${styles.linkAnchor} ${styles.linkAnchor__light}`
-            }
+            className={stylesConfig.linkAnchor}
             target="_blank"
             href="/post/gsap-tweens-in-react"
           >
             here
           </a>
           , and you can play around with it and copy/paste the{" "}
-          <code
-            className={
-              isDarkMode
-                ? `${styles.code} ${styles.code__dark}`
-                : `${styles.code} ${styles.code__light}`
-            }
-          >
-            ease
-          </code>{" "}
-          you prefer. I used{" "}
-          <code
-            className={
-              isDarkMode
-                ? `${styles.code} ${styles.code__dark}`
-                : `${styles.code} ${styles.code__light}`
-            }
-          >
-            power3.out
-          </code>
-          .
+          <code className={stylesConfig.code}>ease</code> you prefer. I used{" "}
+          <code className={stylesConfig.code}>power3.out</code>.
         </p>
 
         <FinalFigure1 onMobile={onMobile} />
@@ -1260,15 +763,7 @@ function Final() {
         <p className={styles.p}>
           If you'd rather just use the animation I made, you can find my
           timeline code in the component below. You'll have to add the{" "}
-          <code
-            className={
-              isDarkMode
-                ? `${styles.code} ${styles.code__dark}`
-                : `${styles.code} ${styles.code__light}`
-            }
-          >
-            id
-          </code>
+          <code className={stylesConfig.code}>id</code>
           's to the SVG yourself, though. I use Figma, and I wrote about how I
           do it in{" "}
           <a
@@ -1281,17 +776,11 @@ function Final() {
           .
         </p>
 
-        <div
-          className={
-            isDarkMode
-              ? `${styles.codeblock} ${styles.codeblock__dark}`
-              : `${styles.codeblock}`
-          }
-        >
+        <div className={stylesConfig.codeblock}>
           <pre
             style={{ borderRadius: "5px", margin: "0 0", padding: "2.5rem" }}
           >
-            <code class="language-js">{codeFinal}</code>
+            <code className="language-js">{codeFinal}</code>
           </pre>
         </div>
 
@@ -1310,13 +799,7 @@ function Final() {
 
       <div className={styles.navPostFlexContainer}>
         <Link href="/post/gsap-tweens-in-react">
-          <a
-            className={
-              isDarkMode
-                ? `${styles.navPost} ${styles.navPost__dark}`
-                : `${styles.navPost} ${styles.navPost__light}`
-            }
-          >
+          <a className={stylesConfig.navPost}>
             &larr;
             <br />
             GSAP in React:
