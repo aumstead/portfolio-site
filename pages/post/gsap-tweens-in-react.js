@@ -1,10 +1,11 @@
-import Layout from "../../components/Layout/Layout";
 import styles from "./blogPostStyles.module.scss";
 import { useContext, useEffect } from "react";
 import Prism from "prismjs";
+import Link from "next/link";
+import Head from 'next/head'
 import DarkModeContext from "../../contexts/darkMode/DarkModeContext";
 import MobileContext from "../../contexts/mobile/MobileContext";
-import Link from "next/link";
+import Layout from "../../components/Layout/Layout";
 import Final from "../../components/post/gsap-tweens-in-react/Final";
 import OwlFigure1 from "../../components/post/gsap-tweens-in-react/OwlFigure1";
 import OwlFigure2 from "../../components/post/gsap-tweens-in-react/OwlFigure2";
@@ -140,6 +141,10 @@ function ExampleTweenComponent() {
 
   return (
     <Layout>
+      <Head>
+        <title>GSAP - Tweens in React | andrewumstead.dev</title>
+      </Head>
+      
       <section className={styles.heroSection}>
         <h1 className={styles.h1}>
           GSAP in React - Part 1:

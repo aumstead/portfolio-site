@@ -1,5 +1,6 @@
 import styles from "./projects.module.scss";
 import { useContext } from "react";
+import Head from 'next/head'
 import DarkModeContext from "../contexts/darkMode/DarkModeContext";
 import MobileContext from "../contexts/mobile/MobileContext";
 import Layout from "../components/Layout/Layout";
@@ -27,6 +28,10 @@ function Projects() {
 
   return (
     <Layout>
+      <Head>
+        <title>Projects | andrewumstead.dev</title>
+      </Head>
+      
       <section className={styles.heroSection}>
         <HeroSvg onMobile={onMobile} />
         <h1 className={styles.heroTitle}>Projects</h1>

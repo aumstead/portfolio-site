@@ -1,5 +1,6 @@
 import styles from "./blog.module.scss";
 import { useContext } from "react";
+import Head from 'next/head'
 import DarkModeContext from "../contexts/darkMode/DarkModeContext";
 import MobileContext from "../contexts/mobile/MobileContext";
 import Layout from "../components/Layout/Layout";
@@ -16,6 +17,10 @@ function Blog() {
 
   return (
     <Layout>
+      <Head>
+      <title>Blog | andrewumstead.dev</title> 
+      </Head>
+
       <section className={styles.heroSection}>
         <Power onMobile={onMobile} />
         <h1 className={styles.heroTitle}>Blog</h1>

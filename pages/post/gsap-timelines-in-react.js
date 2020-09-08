@@ -1,7 +1,8 @@
 import styles from "./blogPostStyles.module.scss";
-import Link from "next/link";
-import Prism from "prismjs";
 import { useContext, useEffect } from "react";
+import Link from "next/link";
+import Head from 'next/head'
+import Prism from "prismjs";
 import Layout from "../../components/Layout/Layout";
 import DarkModeContext from "../../contexts/darkMode/DarkModeContext";
 import MobileContext from "../../contexts/mobile/MobileContext";
@@ -235,6 +236,10 @@ function Final() {
 
   return (
     <Layout>
+      <Head>
+        <title>GSAP - Timelines in React | andrewumstead.dev</title>
+      </Head>
+      
       <section className={styles.heroSection}>
         <h1 className={styles.h1}>GSAP in React - Part 2: Timelines</h1>
         <div className={styles.infoFlexContainer}>

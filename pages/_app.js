@@ -6,7 +6,7 @@ import DarkModeState from "../contexts/darkMode/DarkModeState";
 import MobileState from "../contexts/mobile/MobileState";
 import "prismjs/themes/prism-tomorrow.css";
 
-function MyApp({ Component, pageProps }) {
+function MyApp({ Component }) {
   const router = useRouter()
   
   useEffect(() => {
@@ -22,7 +22,7 @@ function MyApp({ Component, pageProps }) {
   return (
     <DarkModeState>
       <MobileState>
-        <Component {...pageProps} />
+        <Component />
       </MobileState>
     </DarkModeState>
   );
