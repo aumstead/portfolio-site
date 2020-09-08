@@ -1,6 +1,8 @@
 import styles from "./Cards.module.scss";
 import { useEffect, useRef, useState } from "react";
 
+// Hint animation logic involving timeouts, state, and useEffects explained in ../Writing/Book.js
+
 function Cards({ setMouseEnteredCards, onMobile }) {
   const [animateHint, setAnimateHint] = useState(false);
   const [timerFunc, setTimerFunc] = useState(false);
@@ -8,7 +10,7 @@ function Cards({ setMouseEnteredCards, onMobile }) {
   const [count, setCount] = useState(1);
   const [disabled, setDisabled] = useState(false);
 
-  const cards = useRef(null);
+  const cardsRef = useRef(null);
   const massageFlukeTl = useRef(null);
   const recallChekTl = useRef(null);
   const whiteSandsTl = useRef(null);
@@ -60,9 +62,9 @@ function Cards({ setMouseEnteredCards, onMobile }) {
 
   useEffect(() => {
     if (animateHint && !cancelAnimation) {
-      cards.current.classList.add(`${styles.vibrate}`);
+      cardsRef.current.classList.add(`${styles.vibrate}`);
       secondTimeout = setTimeout(() => {
-        cards.current.classList.remove(`${styles.vibrate}`);
+        cardsRef.current.classList.remove(`${styles.vibrate}`);
         setTimerFunc((prevState) => !prevState);
         setAnimateHint(false);
       }, 12000);
@@ -100,7 +102,7 @@ function Cards({ setMouseEnteredCards, onMobile }) {
   return (
     <svg
       className={styles.cards}
-      ref={cards}
+      ref={cardsRef}
       onMouseEnter={disabled || onMobile ? null : handleMouseEnter}
       onClick={!disabled && onMobile ? handleMouseEnter : null}
       width="112"

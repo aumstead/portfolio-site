@@ -2,6 +2,8 @@ import styles from "./Disk.module.scss";
 import { useEffect, useRef, useState, useContext } from "react";
 import MobileContext from '../../../contexts/mobile/MobileContext'
 
+// Hint animation logic involving timeouts, state, and useEffects explained in ../../index/Writing/Book.js
+
 function Disk({ setTriggerTimeline }) {
   const mobileContext = useContext(MobileContext);
   const { onMobile, setOnMobile } = mobileContext;
@@ -10,7 +12,7 @@ function Disk({ setTriggerTimeline }) {
   const [timerFunc, setTimerFunc] = useState(false)
   const [cancelHintAnimation, setCancelHintAnimation] = useState(false)
 
-  const disk = useRef(null)
+  const diskRef = useRef(null)
 
   let firstTimeout;
   let secondTimeout;
@@ -44,9 +46,9 @@ function Disk({ setTriggerTimeline }) {
 
   useEffect(() => {
     if (animateHint && !cancelHintAnimation) {
-      disk.current.classList.add(`${styles.vibrate}`)
+      diskRef.current.classList.add(`${styles.vibrate}`)
       secondTimeout = setTimeout(() => {
-        disk.current.classList.remove(`${styles.vibrate}`)
+        diskRef.current.classList.remove(`${styles.vibrate}`)
         setTimerFunc(prevState => !prevState)
         setAnimateHint(false)
       }, 12000)
@@ -64,7 +66,7 @@ function Disk({ setTriggerTimeline }) {
 
   return (
     <svg
-      ref={disk}
+      ref={diskRef}
       onMouseEnter={onMobile ? null : handleMouseEnter}
       onClick={onMobile ? handleMouseEnter : null}
       className={styles.disk}

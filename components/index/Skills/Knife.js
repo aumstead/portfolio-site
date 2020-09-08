@@ -1,16 +1,18 @@
 import styles from "./Knife.module.scss";
 import { useEffect, useRef, useState } from "react";
 
+// Hint animation logic involving timeouts, state, and useEffects explained in ../Writing/Book.js
+
 function Knife({ setMouseEnteredKnife, onMobile }) {
   const [animateHint, setAnimateHint] = useState(false);
   const [timerFunc, setTimerFunc] = useState(false);
   const [cancelAnimation, setCancelAnimation] = useState(false);
 
-  const knife = useRef(null);
+  const knifeRef = useRef(null);
 
   useEffect(() => {
     // create tl property on current in order to not overwrite DOM element
-    knife.current.tl = gsap
+    knifeRef.current.tl = gsap
       .timeline()
       .to("#filer", 1, { rotate: 45, transformOrigin: "-20% 110%" })
       .to("#corkscrew", 1, { rotate: 50, transformOrigin: "-10% 100%" }, "<.2")
@@ -21,7 +23,7 @@ function Knife({ setMouseEnteredKnife, onMobile }) {
       .to("#corkscrew", 1, { rotate: 0, transformOrigin: "-10% 100%" }, "<.2")
       .to("#filer", 1, { rotate: 0, transformOrigin: "-20% 110%" }, "<.2")
 
-    knife.current.tl.pause();
+    knifeRef.current.tl.pause();
   }, []);
 
   let firstTimeout;
@@ -39,9 +41,9 @@ function Knife({ setMouseEnteredKnife, onMobile }) {
 
   useEffect(() => {
     if (animateHint && !cancelAnimation) {
-      knife.current.classList.add(`${styles.vibrate}`);
+      knifeRef.current.classList.add(`${styles.vibrate}`);
       secondTimeout = setTimeout(() => {
-        knife.current.classList.remove(`${styles.vibrate}`);
+        knifeRef.current.classList.remove(`${styles.vibrate}`);
         setTimerFunc((prevState) => !prevState);
         setAnimateHint(false);
       }, 6000);
@@ -54,11 +56,11 @@ function Knife({ setMouseEnteredKnife, onMobile }) {
     clearTimeout(firstTimeout);
     clearTimeout(secondTimeout);
     setCancelAnimation(true);
-    knife.current.tl.restart();
+    knifeRef.current.tl.restart();
   }
   return (
     <svg
-      ref={knife}
+      ref={knifeRef}
       onMouseEnter={onMobile ? null : handleMouseEnter}
       onClick={onMobile ? handleMouseEnter : null}
       className={styles.knife}

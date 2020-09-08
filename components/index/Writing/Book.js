@@ -1,12 +1,18 @@
 import styles from "./Book.module.scss";
 import { useEffect, useRef, useState } from 'react'
 
+// Explanation of hint animation for Cards.js, Knife.js, Book.js, and Disk.js
+
+// Essentially, an infinite loop of animation is created, unless the user makes the svg event fire. If event is fired, animation is cancelled by setting cancelAnimation state to false.
+
+// On initial render firstTimeout will be set. In the callback, setAnimateHint state is flipped to true, causing the second useEffect function to run. A class will be added and the svg will animate. Then, secondTimeout will be set. In the callback, the class will be removed, setTimerFunc will change state causing the first useEffect to run again, thus creating the loop. Also in the secondTimeout callback, setAnimateHint will flip to false, so that it may be flipped to true later in the loop.
+
 function Book({ setMouseEnteredBook, onMobile }) {
   const [animateHint, setAnimateHint] = useState(false)
   const [timerFunc, setTimerFunc] = useState(false)
   const [cancelAnimation, setCancelAnimation] = useState(false)
   
-  const book = useRef(null)
+  const bookRef = useRef(null)
 
   let firstTimeout;
   let secondTimeout;
@@ -23,9 +29,9 @@ function Book({ setMouseEnteredBook, onMobile }) {
   
   useEffect(() => {
     if (animateHint && !cancelAnimation) {
-      book.current.classList.add(`${styles.vibrate}`)
+      bookRef.current.classList.add(`${styles.vibrate}`)
       secondTimeout = setTimeout(() => {
-        book.current.classList.remove(`${styles.vibrate}`)
+        bookRef.current.classList.remove(`${styles.vibrate}`)
         setTimerFunc(prevState => !prevState)
         setAnimateHint(false)
       }, 9000)
@@ -43,7 +49,7 @@ function Book({ setMouseEnteredBook, onMobile }) {
 
   return (
     <svg
-      ref={book}
+      ref={bookRef}
       onMouseEnter={onMobile ? null : handleMouseEnter}
       onClick={onMobile ? handleMouseEnter : null}
       className={styles.book}
