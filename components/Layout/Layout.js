@@ -5,7 +5,7 @@ import DarkModeContext from "../../contexts/darkMode/DarkModeContext";
 import { useContext } from "react";
 import Footer from "./Footer/Footer";
 
-export default function Layout({ children, ...props }) {
+export default function Layout({ children }) {
   const darkModeContext = useContext(DarkModeContext);
   const { isDarkMode } = darkModeContext;
 
@@ -13,14 +13,13 @@ export default function Layout({ children, ...props }) {
     <>
       <Head>
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-        {/* <title>{pageTitle}</title> */}
+        <title>Andrew Umstead's Site</title>
 
         <link
           href="https://fonts.googleapis.com/css2?family=Source+Code+Pro&display=swap"
           rel="stylesheet"
         ></link>
 
-        {/* favicon */}
         <link
           rel="apple-touch-icon"
           sizes="180x180"
