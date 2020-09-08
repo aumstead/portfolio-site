@@ -14,11 +14,15 @@ function Footer() {
 
   const [triggerTimeline, setTriggerTimeline] = useState(false);
 
+  const stylesConfig = {
+    arrow: isDarkMode ? `${styles.arrow__dark} ${styles.arrow}` : styles.arrow
+  }
+
   return (
     <footer id="contact" className={styles.footer}>
       <div className={styles.headingFlexContainer}>
       <span className={styles.hint}>Contact!</span>
-          <img className={isDarkMode ? `${styles.arrow__dark} ${styles.arrow}` : styles.arrow} src="/images/arrow.png" alt="Arrow pointing to graphic."/>
+          <img className={stylesConfig.arrow} src="/images/arrow.png" alt="Arrow pointing to graphic."/>
         <Disk setTriggerTimeline={setTriggerTimeline} />
       </div>
       <Pc onMobile={onMobile} triggerTimeline={triggerTimeline} isDarkMode={isDarkMode} />

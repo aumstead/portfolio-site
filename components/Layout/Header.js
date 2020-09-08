@@ -4,7 +4,7 @@ import Link from "next/link";
 import DarkModeContext from "../../contexts/darkMode/DarkModeContext";
 import MobileContext from "../../contexts/mobile/MobileContext";
 import Vader from "./Vader";
-import Yoda from './Yoda'
+import Yoda from "./Yoda";
 import Logo from "./Logo";
 import Hamburger from "./Hamburger";
 
@@ -23,10 +23,10 @@ export default function Header() {
   useEffect(() => {
     mobileHeaderTl.current = gsap.timeline();
     mobileHeaderTl.current
-      .to("#header", .5, { height: "15rem" })
-      .to("#bottomHalf", .5, { top: "8rem" }, "<")
-      .to("#bottomHalf", .5, { display: "flex" }, "<")
-      .to("#mobileNav", .5, { opacity: 1 }, "<.25");
+      .to("#header", 0.5, { height: "15rem" })
+      .to("#bottomHalf", 0.5, { top: "8rem" }, "<")
+      .to("#bottomHalf", 0.5, { display: "flex" }, "<")
+      .to("#mobileNav", 0.5, { opacity: 1 }, "<.25");
     mobileHeaderTl.current.pause();
   }, []);
 
@@ -46,26 +46,44 @@ export default function Header() {
 
   useEffect(() => {
     // close mobile menu if not in mobile
-    setHamburgerClicked(false)
-  }, [onMobile])
+    setHamburgerClicked(false);
+  }, [onMobile]);
 
   function handleClick() {
     setIsDarkMode(() => !isDarkMode);
   }
 
+  // function is used for both onMouseEnter and onClick events (desktop vs mobile)
   function handleMouseEnter() {
     setEnteredLogo((prevState) => !prevState);
   }
 
+  const stylesConfig = {
+    header: isDarkMode
+      ? `${styles.header} ${styles.header__dark}`
+      : `${styles.header} ${styles.header__light}`,
+    logoText: isDarkMode
+      ? `${styles.logoText} ${styles.logoText__dark}`
+      : `${styles.logoText} ${styles.logoText__light}`,
+    projects: isDarkMode
+      ? `${styles.darkBtn} ${styles.projects}`
+      : `${styles.projects} ${styles.lightBtn}`,
+    blog: isDarkMode
+      ? `${styles.darkBtn} ${styles.blog}`
+      : `${styles.lightBtn} ${styles.blog}`,
+    home: isDarkMode
+      ? `${styles.darkBtn} ${styles.home}`
+      : `${styles.lightBtn} ${styles.home}`,
+    toggleDarkMode: isDarkMode
+      ? `${styles.darkToggle} ${styles.toggle}`
+      : `${styles.lightToggle} ${styles.toggle}`,
+    mobileBtn: isDarkMode
+      ? `${styles.darkBtn} ${styles.mobileBtn}`
+      : `${styles.mobileBtn} ${styles.lightBtn}`,
+  };
+
   return (
-    <header
-      id="header"
-      className={
-        isDarkMode
-          ? `${styles.header} ${styles.header__dark}`
-          : `${styles.header} ${styles.header__light}`
-      }
-    >
+    <header id="header" className={stylesConfig.header}>
       <div className={styles.topHalf}>
         <Link href="/">
           <a className={styles.logoAnchor}>
@@ -75,68 +93,25 @@ export default function Header() {
               className={styles.flexItem__left}
             >
               <Logo enteredLogo={enteredLogo} isDarkMode={isDarkMode} />
-              <span
-                className={
-                  isDarkMode
-                    ? `${styles.logoText} ${styles.logoText__dark}`
-                    : `${styles.logoText} ${styles.logoText__light}`
-                }
-              >
-                Andrew Umstead
-              </span>
+              <span className={stylesConfig.logoText}>Andrew Umstead</span>
             </div>
           </a>
         </Link>
         <div className={styles.flexItem__right}>
           <nav className={styles.nav}>
             <Link href="/projects">
-              <a
-                className={
-                  isDarkMode
-                    ? `${styles.darkBtn} ${styles.projects}`
-                    : `${styles.projects} ${styles.lightBtn}`
-                }
-              >
-                Projects
-              </a>
+              <a className={stylesConfig.projects}>Projects</a>
             </Link>
             <Link href="/blog">
-              <a
-                className={
-                  isDarkMode
-                    ? `${styles.darkBtn} ${styles.blog}`
-                    : `${styles.lightBtn} ${styles.blog}`
-                }
-              >
-                Blog
-              </a>
+              <a className={stylesConfig.blog}>Blog</a>
             </Link>
             <Link href="/">
-              <a
-                className={
-                  isDarkMode
-                    ? `${styles.darkBtn} ${styles.home}`
-                    : `${styles.lightBtn} ${styles.home}`
-                }
-              >
-                Home
-              </a>
+              <a className={stylesConfig.home}>Home</a>
             </Link>
           </nav>
 
-          <button
-            className={
-              isDarkMode
-                ? `${styles.darkToggle} ${styles.toggle}`
-                : `${styles.lightToggle} ${styles.toggle}`
-            }
-            onClick={handleClick}
-          >
-            {isDarkMode ? (
-              <Yoda />
-            ) : (
-              <Vader />
-            )}
+          <button className={stylesConfig.toggleDarkMode} onClick={handleClick}>
+            {isDarkMode ? <Yoda /> : <Vader />}
           </button>
           <div className={styles.hamburgerContainer}>
             <Hamburger
@@ -151,48 +126,16 @@ export default function Header() {
       <div id="bottomHalf" className={styles.bottomHalf}>
         <nav id="mobileNav" className={styles.mobileNav}>
           <Link href="/projects">
-            <a
-              className={
-                isDarkMode
-                  ? `${styles.darkBtn} ${styles.mobileBtn}`
-                  : `${styles.mobileBtn} ${styles.lightBtn}`
-              }
-            >
-              Projects
-            </a>
+            <a className={stylesConfig.mobileBtn}>Projects</a>
           </Link>
           <Link href="/blog">
-            <a
-              className={
-                isDarkMode
-                  ? `${styles.darkBtn} ${styles.mobileBtn}`
-                  : `${styles.lightBtn} ${styles.mobileBtn}`
-              }
-            >
-              Blog
-            </a>
+            <a className={stylesConfig.mobileBtn}>Blog</a>
           </Link>
           <Link href="/#contact">
-            <a
-              className={
-                isDarkMode
-                  ? `${styles.darkBtn} ${styles.mobileBtn}`
-                  : `${styles.lightBtn} ${styles.mobileBtn}`
-              }
-            >
-              Contact
-            </a>
+            <a className={stylesConfig.mobileBtn}>Contact</a>
           </Link>
           <Link href="/">
-            <a
-              className={
-                isDarkMode
-                  ? `${styles.darkBtn} ${styles.mobileBtn}`
-                  : `${styles.lightBtn} ${styles.mobileBtn}`
-              }
-            >
-              Home
-            </a>
+            <a className={stylesConfig.mobileBtn}>Home</a>
           </Link>
         </nav>
       </div>

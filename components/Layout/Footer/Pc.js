@@ -2,7 +2,6 @@ import styles from "./Pc.module.scss";
 import { useEffect, useRef } from "react";
 
 function Pc({ triggerTimeline, isDarkMode, onMobile }) {
-  // ref to know if it's the initial render
   const isInitialRender = useRef(true);
   const zoom = useRef(null);
 
