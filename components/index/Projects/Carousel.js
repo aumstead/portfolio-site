@@ -25,7 +25,7 @@ function Carousel({ mouseEnteredCards, isDarkMode, onMobile }) {
       slideWidth = -300 * count + "px";
     } else if (window.matchMedia("(max-width: 700px)").matches) {
       /* The viewport is less than, or equal to, 700 pixels wide */
-      slideWidth = -(window.innerWidth) * count + "px";
+      slideWidth = -window.innerWidth * count + "px";
     } else {
       /* The viewport is greater than 700 pixels wide */
       slideWidth = -70 * count + "rem";
@@ -54,6 +54,24 @@ function Carousel({ mouseEnteredCards, isDarkMode, onMobile }) {
     }
   };
 
+  const stylesConfig = {
+    browserMockup: isDarkMode
+      ? `${styles.browserMockup} ${styles.browserMockup__dark}`
+      : `${styles.browserMockup} ${styles.browserMockup__light}`,
+    phoneMockup: isDarkMode
+      ? `${styles.phoneMockup} ${styles.phoneMockup__dark}`
+      : `${styles.phoneMockup} ${styles.phoneMockup__light}`,
+    description: isDarkMode
+      ? `${styles.description} ${styles.description__dark}`
+      : `${styles.description} ${styles.description__light}`,
+    linkAnchor: isDarkMode
+      ? `${styles.linkAnchor} ${styles.linkAnchor__dark}`
+      : `${styles.linkAnchor} ${styles.linkAnchor__light}`,
+    login: isDarkMode
+      ? `${styles.login} ${styles.login__dark}`
+      : `${styles.login} ${styles.login__light}`,
+  };
+
   return (
     <div className={styles.carouselContainer}>
       <div
@@ -61,31 +79,22 @@ function Carousel({ mouseEnteredCards, isDarkMode, onMobile }) {
         ref={slideRef}
         onTransitionEnd={handleTransitionEnd}
       >
-
         <div className={onMobile ? styles.slideMobile : styles.slide}>
           <div className={styles.mockupContainer}>
             <img
-              className={
-                isDarkMode
-                  ? `${styles.browserMockup} ${styles.browserMockup__dark}`
-                  : `${styles.browserMockup} ${styles.browserMockup__light}`
-              }
+              className={stylesConfig.browserMockup}
               src="/images/mockups/dgifolios-screen.png"
               alt="dgifolios - browser mockup"
             />
             <img
-              className={
-                isDarkMode
-                  ? `${styles.phoneMockup} ${styles.phoneMockup__dark}`
-                  : `${styles.phoneMockup} ${styles.phoneMockup__light}`
-              }
+              className={stylesConfig.phoneMockup}
               src="/images/mockups/dgifolios-phone.png"
               alt="dgifolios - phone mockup"
             />
           </div>
           <div className={styles.infoContainer}>
-            <h3 className={isDarkMode ? `${styles.title} ${styles.title__dark}` : `${styles.title} ${styles.title__light}`}>dgifolios</h3>
-            <p className={isDarkMode ? `${styles.description} ${styles.description__dark}` : `${styles.description} ${styles.description__light}`}>
+            <h3 className={styles.title}>dgifolios</h3>
+            <p className={styles.description}>
               A web app that allows users to track and share their stock
               portfolios and dividends.{" "}
               <a
@@ -98,30 +107,18 @@ function Carousel({ mouseEnteredCards, isDarkMode, onMobile }) {
             <div className={styles.visitSiteContainer}>
               <DgiFoliosSvg />
               <a
-                className={
-                  isDarkMode
-                    ? `${styles.linkAnchor} ${styles.linkAnchor__dark}`
-                    : `${styles.linkAnchor} ${styles.linkAnchor__light}`
-                }
+                className={stylesConfig.linkAnchor}
                 href="https://dgifolios.com"
                 target="_blank"
               >
                 dgifolios.com
               </a>
-              <span className={isDarkMode ? `${styles.login} ${styles.login__dark}` : `${styles.login} ${styles.login__light}`}>
+              <span className={stylesConfig.login}>
                 (Demo login: dgifolios@gmail.com / Password1)
               </span>
               <br />
               <GitHub isDarkMode={isDarkMode} />
-              <a
-                className={
-                  isDarkMode
-                    ? `${styles.linkAnchor} ${styles.linkAnchor__dark}`
-                    : `${styles.linkAnchor} ${styles.linkAnchor__light}`
-                }
-                href="#"
-                target="_blank"
-              >
+              <a className={stylesConfig.linkAnchor} href="#" target="_blank">
                 GitHub
               </a>
             </div>
@@ -131,27 +128,19 @@ function Carousel({ mouseEnteredCards, isDarkMode, onMobile }) {
         <div className={onMobile ? styles.slideMobile : styles.slide}>
           <div className={styles.mockupContainer}>
             <img
-              className={
-                isDarkMode
-                  ? `${styles.browserMockup} ${styles.browserMockup__dark}`
-                  : `${styles.browserMockup} ${styles.browserMockup__light}`
-              }
+              className={stylesConfig.browserMockup}
               src="/images/mockups/massagefluke-browser.png"
               alt="Massage Fluke - browser mockup"
             />
             <img
-              className={
-                isDarkMode
-                  ? `${styles.phoneMockup} ${styles.phoneMockup__dark}`
-                  : `${styles.phoneMockup} ${styles.phoneMockup__light}`
-              }
+              className={stylesConfig.phoneMockup}
               src="/images/mockups/massagefluke-phone.png"
               alt="Massage Fluke - phone mockup"
             />
           </div>
           <div className={styles.infoContainer}>
-            <h3 className={isDarkMode ? `${styles.title} ${styles.title__dark}` : `${styles.title} ${styles.title__light}`}>Massage Fluke</h3>
-            <p className={isDarkMode ? `${styles.description} ${styles.description__dark}` : `${styles.description} ${styles.description__light}`}>
+            <h3 className={styles.title}>Massage Fluke</h3>
+            <p className={styles.description}>
               A website and blog for a small business owner.{" "}
               <a
                 href="/projects#massage-fluke"
@@ -163,30 +152,18 @@ function Carousel({ mouseEnteredCards, isDarkMode, onMobile }) {
             <div className={styles.visitSiteContainer}>
               <MassageFluke fill="#0F9A7A" />
               <a
-                className={
-                  isDarkMode
-                    ? `${styles.linkAnchor} ${styles.linkAnchor__dark}`
-                    : `${styles.linkAnchor} ${styles.linkAnchor__light}`
-                }
+                className={stylesConfig.linkAnchor}
                 href="https://massagefluke.now.sh"
                 target="_blank"
               >
                 massagefluke.now.sh
               </a>
-              <span className={isDarkMode ? `${styles.login} ${styles.login__dark}` : `${styles.login} ${styles.login__light}`}>
+              <span className={stylesConfig.login}>
                 (Demo login: demo@gmail.com / 123456)
               </span>
               <br />
               <GitHub isDarkMode={isDarkMode} />
-              <a
-                className={
-                  isDarkMode
-                    ? `${styles.linkAnchor} ${styles.linkAnchor__dark}`
-                    : `${styles.linkAnchor} ${styles.linkAnchor__light}`
-                }
-                href="#"
-                target="_blank"
-              >
+              <a className={stylesConfig.linkAnchor} href="#" target="_blank">
                 GitHub
               </a>
             </div>
@@ -196,27 +173,19 @@ function Carousel({ mouseEnteredCards, isDarkMode, onMobile }) {
         <div className={onMobile ? styles.slideMobile : styles.slide}>
           <div className={styles.mockupContainer}>
             <img
-              className={
-                isDarkMode
-                  ? `${styles.browserMockup} ${styles.browserMockup__dark}`
-                  : `${styles.browserMockup} ${styles.browserMockup__light}`
-              }
+              className={stylesConfig.browserMockup}
               src="/images/mockups/recallchek-browser.png"
               alt="Recall Chek - browser mockup"
             />
             <img
-              className={
-                isDarkMode
-                  ? `${styles.phoneMockup} ${styles.phoneMockup__dark}`
-                  : `${styles.phoneMockup} ${styles.phoneMockup__light}`
-              }
+              className={stylesConfig.phoneMockup}
               src="/images/mockups/recallchek-phone.png"
               alt="Recall Chek - phone mockup"
             />
           </div>
           <div className={styles.infoContainer}>
-            <h3 className={isDarkMode ? `${styles.title} ${styles.title__dark}` : `${styles.title} ${styles.title__light}`}>Recall Chek</h3>
-            <p className={isDarkMode ? `${styles.description} ${styles.description__dark}` : `${styles.description} ${styles.description__light}`}>
+            <h3 className={styles.title}>Recall Chek</h3>
+            <p className={styles.description}>
               A website for a service offered by Residential Warranty Services.
               <br />
               <a
@@ -229,11 +198,7 @@ function Carousel({ mouseEnteredCards, isDarkMode, onMobile }) {
             <div className={styles.visitSiteContainer}>
               <RecallChek />
               <a
-                className={
-                  isDarkMode
-                    ? `${styles.linkAnchor} ${styles.linkAnchor__dark}`
-                    : `${styles.linkAnchor} ${styles.linkAnchor__light}`
-                }
+                className={stylesConfig.linkAnchor}
                 href="https://recallchek.netlify.app"
                 target="_blank"
               >
@@ -241,15 +206,7 @@ function Carousel({ mouseEnteredCards, isDarkMode, onMobile }) {
               </a>
               <br />
               <GitHub isDarkMode={isDarkMode} />
-              <a
-                className={
-                  isDarkMode
-                    ? `${styles.linkAnchor} ${styles.linkAnchor__dark}`
-                    : `${styles.linkAnchor} ${styles.linkAnchor__light}`
-                }
-                href="#"
-                target="_blank"
-              >
+              <a className={stylesConfig.linkAnchor} href="#" target="_blank">
                 GitHub
               </a>
             </div>
@@ -259,27 +216,19 @@ function Carousel({ mouseEnteredCards, isDarkMode, onMobile }) {
         <div className={onMobile ? styles.slideMobile : styles.slide}>
           <div className={styles.mockupContainer}>
             <img
-              className={
-                isDarkMode
-                  ? `${styles.browserMockup} ${styles.browserMockup__dark}`
-                  : `${styles.browserMockup} ${styles.browserMockup__light}`
-              }
+              className={stylesConfig.browserMockup}
               src="/images/mockups/whitesands-browser.png"
               alt="White Sands - browser mockup"
             />
             <img
-              className={
-                isDarkMode
-                  ? `${styles.phoneMockup} ${styles.phoneMockup__dark}`
-                  : `${styles.phoneMockup} ${styles.phoneMockup__light}`
-              }
+              className={stylesConfig.phoneMockup}
               src="/images/mockups/whitesands-phone.png"
               alt="White Sands- phone mockup"
             />
           </div>
           <div className={styles.infoContainer}>
-            <h3 className={isDarkMode ? `${styles.title} ${styles.title__dark}` : `${styles.title} ${styles.title__light}`}>White Sands</h3>
-            <p className={isDarkMode ? `${styles.description} ${styles.description__dark}` : `${styles.description} ${styles.description__light}`}>
+            <h3 className={styles.title}>White Sands</h3>
+            <p className={styles.description}>
               A mock landing page for an island resort.{" "}
               <a
                 href="/projects#white-sands"
@@ -295,11 +244,7 @@ function Carousel({ mouseEnteredCards, isDarkMode, onMobile }) {
             <div className={styles.visitSiteContainer}>
               <WhiteSands isDarkMode={isDarkMode} />
               <a
-                className={
-                  isDarkMode
-                    ? `${styles.linkAnchor} ${styles.linkAnchor__dark}`
-                    : `${styles.linkAnchor} ${styles.linkAnchor__light}`
-                }
+                className={stylesConfig.linkAnchor}
                 href="https://white-sands-resort.netlify.app"
                 target="_blank"
               >
@@ -307,45 +252,32 @@ function Carousel({ mouseEnteredCards, isDarkMode, onMobile }) {
               </a>
               <br />
               <GitHub isDarkMode={isDarkMode} />
-              <a
-                className={
-                  isDarkMode
-                    ? `${styles.linkAnchor} ${styles.linkAnchor__dark}`
-                    : `${styles.linkAnchor} ${styles.linkAnchor__light}`
-                }
-                href="#"
-                target="_blank"
-              >
+              <a className={stylesConfig.linkAnchor} href="#" target="_blank">
                 GitHub
               </a>
             </div>
           </div>
         </div>
 
-        <div id="first-clone" className={onMobile ? styles.slideMobile : styles.slide}>
+        <div
+          id="first-clone"
+          className={onMobile ? styles.slideMobile : styles.slide}
+        >
           <div className={styles.mockupContainer}>
             <img
-              className={
-                isDarkMode
-                  ? `${styles.browserMockup} ${styles.browserMockup__dark}`
-                  : `${styles.browserMockup} ${styles.browserMockup__light}`
-              }
+              className={stylesConfig.browserMockup}
               src="/images/mockups/dgifolios-screen.png"
               alt="dgifolios - browser mockup"
             />
             <img
-              className={
-                isDarkMode
-                  ? `${styles.phoneMockup} ${styles.phoneMockup__dark}`
-                  : `${styles.phoneMockup} ${styles.phoneMockup__light}`
-              }
+              className={stylesConfig.phoneMockup}
               src="/images/mockups/dgifolios-phone.png"
               alt="dgifolios - phone mockup"
             />
           </div>
           <div className={styles.infoContainer}>
-            <h3 className={isDarkMode ? `${styles.title} ${styles.title__dark}` : `${styles.title} ${styles.title__light}`}>dgifolios</h3>
-            <p className={isDarkMode ? `${styles.description} ${styles.description__dark}` : `${styles.description} ${styles.description__light}`}>
+            <h3 className={styles.title}>dgifolios</h3>
+            <p className={styles.description}>
               A web app that allows users to track and share their stock
               portfolios and dividends.{" "}
               <a
@@ -358,30 +290,18 @@ function Carousel({ mouseEnteredCards, isDarkMode, onMobile }) {
             <div className={styles.visitSiteContainer}>
               <DgiFoliosSvg />
               <a
-                className={
-                  isDarkMode
-                    ? `${styles.linkAnchor} ${styles.linkAnchor__dark}`
-                    : `${styles.linkAnchor} ${styles.linkAnchor__light}`
-                }
+                className={stylesConfig.linkAnchor}
                 href="https://dgifolios.com"
                 target="_blank"
               >
                 dgifolios.com
               </a>
-              <span className={styles.login}>
+              <span className={stylesConfig.login}>
                 (Demo login: dgifolios@gmail.com / Password1)
               </span>
               <br />
               <GitHub isDarkMode={isDarkMode} />
-              <a
-                className={
-                  isDarkMode
-                    ? `${styles.linkAnchor} ${styles.linkAnchor__dark}`
-                    : `${styles.linkAnchor} ${styles.linkAnchor__light}`
-                }
-                href="#"
-                target="_blank"
-              >
+              <a className={stylesConfig.linkAnchor} href="#" target="_blank">
                 GitHub
               </a>
             </div>

@@ -37,27 +37,19 @@ function About({ onMobile }) {
     }
   }, [showPicture]);
 
+  const stylesConfig = {
+    arrow: isDarkMode ? `${styles.arrow__dark} ${styles.arrow}` : styles.arrow,
+  };
+
   return (
     <section className={styles.section}>
       <a className={styles.anchor} id="about" />
       <div className={styles.headingFlexContainer}>
-        <h2
-          className={
-            isDarkMode
-              ? `${styles.title} ${styles.title__dark}`
-              : `${styles.title} ${styles.title__light}`
-          }
-        >
-          About
-        </h2>
+        <h2 className={styles.title}>About</h2>
         <div className={styles.headingFlexItem__svgs}>
           <span className={styles.hint}>tap the graphics!</span>
           <img
-            className={
-              isDarkMode
-                ? `${styles.arrow__dark} ${styles.arrow}`
-                : styles.arrow
-            }
+            className={stylesConfig.arrow}
             src="/images/arrow.png"
             alt="Arrow pointing to graphic."
           />
@@ -88,17 +80,16 @@ function About({ onMobile }) {
           <br />
           <p className={styles.text}>
             I'm 100% ready to start my first job in web development. I can't
-            wait. I've been devouring resources for
-            two years, and now, I'm finally able to return home and start
-            applying for jobs.
+            wait. I've been devouring resources for two years, and now, I'm
+            finally able to return home and start applying for jobs.
           </p>
           <br />
           <p className={styles.text}>
             I've lived abroad for a while, and I suppose that's come to somewhat
             define a part of who I am. But, my wife and I have decided to move
             back to the states to be closer to family and settle down. My
-            long-term goals revolve around family, being part of a
-            community, and, of course, progressing in my career as a developer.
+            long-term goals revolve around family, being part of a community,
+            and, of course, progressing in my career as a developer.
           </p>
         </div>
       </div>
