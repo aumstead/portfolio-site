@@ -48,13 +48,13 @@
 }
 .linkAnchor {
   font-size: var(--text-font-size);
-  border-bottom: 1px solid var(--light-text);
   &:hover {
     cursor: pointer;
   }
 
   &__light {
     color: var(--light-text);
+    border-bottom: 1px solid var(--light-text);
     &:hover {
       background-color: var(--light-text);
       color: var(--dark-text);
@@ -63,6 +63,7 @@
 
   &__dark {
     color: var(--dark-text);
+    border-bottom: 1px solid var(--dark-text);
     &:hover {
       background-color: var(--dark-text);
       color: var(--light-text);

@@ -88,7 +88,7 @@ function About({ onMobile }) {
           <br />
           <p className={styles.text}>
             I'm 100% ready to start my first job in web development. I can't
-            wait. There's nothing I want more. I've been devouring resources for
+            wait. I've been devouring resources for
             two years, and now, I'm finally able to return home and start
             applying for jobs.
           </p>
@@ -97,8 +97,8 @@ function About({ onMobile }) {
             I've lived abroad for a while, and I suppose that's come to somewhat
             define a part of who I am. But, my wife and I have decided to move
             back to the states to be closer to family and settle down. My
-            long-term goals revolve around building a family, being part of a
-            community, and, of course, a career as a developer.
+            long-term goals revolve around family, being part of a
+            community, and, of course, progressing in my career as a developer.
           </p>
         </div>
       </div>
