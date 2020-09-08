@@ -65,7 +65,6 @@ function MyStack({ mouseEnteredKnife }) {
       fill="none"
     >
       <g opacity={0.49} fill="#fff"></g>
-      {/* js gear inner stuff */}
       <g opacity={0.39} fill={isDarkMode ? "#333" : "#fff"}>
         <path
           opacity={0.39}
