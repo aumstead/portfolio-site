@@ -118,7 +118,11 @@ function Carousel({ mouseEnteredCards, isDarkMode, onMobile }) {
               </span>
               <br />
               <GitHub isDarkMode={isDarkMode} />
-              <a className={stylesConfig.linkAnchor} href="#" target="_blank">
+              <a
+                className={stylesConfig.linkAnchor}
+                href="https://github.com/aumstead/dgifolios-backend"
+                target="_blank"
+              >
                 GitHub
               </a>
             </div>
@@ -163,7 +167,11 @@ function Carousel({ mouseEnteredCards, isDarkMode, onMobile }) {
               </span>
               <br />
               <GitHub isDarkMode={isDarkMode} />
-              <a className={stylesConfig.linkAnchor} href="#" target="_blank">
+              <a
+                className={stylesConfig.linkAnchor}
+                href="https://github.com/aumstead/massage-fluke"
+                target="_blank"
+              >
                 GitHub
               </a>
             </div>
@@ -206,7 +214,11 @@ function Carousel({ mouseEnteredCards, isDarkMode, onMobile }) {
               </a>
               <br />
               <GitHub isDarkMode={isDarkMode} />
-              <a className={stylesConfig.linkAnchor} href="#" target="_blank">
+              <a
+                className={stylesConfig.linkAnchor}
+                href="https://github.com/aumstead/recallcheck"
+                target="_blank"
+              >
                 GitHub
               </a>
             </div>
@@ -252,7 +264,11 @@ function Carousel({ mouseEnteredCards, isDarkMode, onMobile }) {
               </a>
               <br />
               <GitHub isDarkMode={isDarkMode} />
-              <a className={stylesConfig.linkAnchor} href="#" target="_blank">
+              <a
+                className={stylesConfig.linkAnchor}
+                href="https://github.com/aumstead/hotel-landing-page"
+                target="_blank"
+              >
                 GitHub
               </a>
             </div>
@@ -301,7 +317,11 @@ function Carousel({ mouseEnteredCards, isDarkMode, onMobile }) {
               </span>
               <br />
               <GitHub isDarkMode={isDarkMode} />
-              <a className={stylesConfig.linkAnchor} href="#" target="_blank">
+              <a
+                className={stylesConfig.linkAnchor}
+                href="https://github.com/aumstead/portfolio_v1"
+                target="_blank"
+              >
                 GitHub
               </a>
             </div>
