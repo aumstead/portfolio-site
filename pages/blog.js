@@ -1,12 +1,12 @@
-import Layout from "../components/Layout/Layout";
 import styles from "./blog.module.scss";
+import { useContext } from "react";
 import DarkModeContext from "../contexts/darkMode/DarkModeContext";
 import MobileContext from "../contexts/mobile/MobileContext";
-import { useContext } from "react";
+import Layout from "../components/Layout/Layout";
 import Power from "../components/blog/Power";
 import data from "../data/posts.json";
 import Post from "../components/blog/Post";
-import Dog from '../components/blog/Dog'
+import Dog from "../components/blog/Dog";
 
 function Blog() {
   const darkModeContext = useContext(DarkModeContext);
@@ -18,15 +18,7 @@ function Blog() {
     <Layout>
       <section className={styles.heroSection}>
         <Power onMobile={onMobile} />
-        <h1
-          className={
-            isDarkMode
-              ? `${styles.heroTitle__dark} ${styles.heroTitle}`
-              : `${styles.heroTitle} ${styles.heroTitle__light}`
-          }
-        >
-          Blog
-        </h1>
+        <h1 className={styles.heroTitle}>Blog</h1>
         <p className={styles.text}>
           If I ever solve some problem that I wasn't able to find any answers to
           on the internet, I'll write about how I did it here.

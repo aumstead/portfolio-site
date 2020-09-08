@@ -1,8 +1,8 @@
-import Layout from "../components/Layout/Layout";
 import styles from "./projects.module.scss";
 import { useContext } from "react";
 import DarkModeContext from "../contexts/darkMode/DarkModeContext";
-import MobileContext from '../contexts/mobile/MobileContext'
+import MobileContext from "../contexts/mobile/MobileContext";
+import Layout from "../components/Layout/Layout";
 import GitHub from "../components/projects/logos/GitHub";
 import DgiFoliosSvg from "../components/projects/logos/DgiFoliosSvg";
 import RecallChek from "../components/projects/logos/RecallChek";
@@ -16,19 +16,20 @@ function Projects() {
   const mobileContext = useContext(MobileContext);
   const { onMobile } = mobileContext;
 
+  const stylesConfig = {
+    thumbnail: isDarkMode
+      ? `${styles.thumbnail} ${styles.thumbnail__dark}`
+      : `${styles.thumbnail} ${styles.thumbnail__light}`,
+    linkAnchor: isDarkMode
+      ? `${styles.linkAnchor} ${styles.linkAnchor__dark}`
+      : `${styles.linkAnchor} ${styles.linkAnchor__light}`,
+  };
+
   return (
     <Layout>
       <section className={styles.heroSection}>
-        <HeroSvg onMobile={onMobile}/>
-        <h1
-          className={
-            isDarkMode
-              ? `${styles.heroTitle__dark} ${styles.heroTitle}`
-              : `${styles.heroTitle} ${styles.heroTitle__light}`
-          }
-        >
-          Projects
-        </h1>
+        <HeroSvg onMobile={onMobile} />
+        <h1 className={styles.heroTitle}>Projects</h1>
         <p className={styles.text}>
           See all the things I've learned to do with code here. Feel free to
           skip the blocks of text — they'll probably bore you. It is worth
@@ -39,11 +40,7 @@ function Projects() {
       <section className={styles.project}>
         <a className={styles.anchor} id="dgifolios" />
         <img
-          className={
-            isDarkMode
-              ? `${styles.thumbnail} ${styles.thumbnail__dark}`
-              : `${styles.thumbnail} ${styles.thumbnail__light}`
-          }
+          className={stylesConfig.thumbnail}
           src="/images/projects-dgifolios.png"
           alt="dgifolios project"
         />
@@ -63,11 +60,11 @@ function Projects() {
         <br />
         <h3 className={styles.subTitle}>How I improved as a developer:</h3>
         <p className={styles.description}>
-          In general, this project gave me a lot of confidence in
-          my ability to create a full-stack application. In the end, I had a
-          frontend that connects to a Node.js backend that essentially handles CRUD
-          operations and authentication. I spent many hours inside the documentation
-          of things like MongoDB, the Fuse.js search library, Nivo charts, and
+          In general, this project gave me a lot of confidence in my ability to
+          create a full-stack application. In the end, I had a frontend that
+          connects to a Node.js backend that essentially handles CRUD operations
+          and authentication. I spent many hours inside the documentation of
+          things like MongoDB, the Fuse.js search library, Nivo charts, and
           others. I also wrote some algorithms to calculate certain statistics
           on the stocks and dividends, which is really a core feature of the
           app.
@@ -76,11 +73,7 @@ function Projects() {
         <h3 className={styles.subTitle}>Visit:</h3>
         <DgiFoliosSvg />
         <a
-          className={
-            isDarkMode
-              ? `${styles.linkAnchor} ${styles.linkAnchor__dark}`
-              : `${styles.linkAnchor} ${styles.linkAnchor__light}`
-          }
+          className={stylesConfig.linkAnchor}
           href="https://dgifolios.com"
           target="_blank"
         >
@@ -92,12 +85,8 @@ function Projects() {
         <br />
         <GitHub isDarkMode={isDarkMode} />
         <a
-          className={
-            isDarkMode
-              ? `${styles.linkAnchor} ${styles.linkAnchor__dark}`
-              : `${styles.linkAnchor} ${styles.linkAnchor__light}`
-          }
-          href="#"
+          className={stylesConfig.linkAnchor}
+          href="https://github.com/aumstead/dgifolios-backend"
           target="_blank"
         >
           GitHub
@@ -107,11 +96,7 @@ function Projects() {
       <section className={styles.project}>
         <a className={styles.anchor} id="massage-fluke" />
         <img
-          className={
-            isDarkMode
-              ? `${styles.thumbnail} ${styles.thumbnail__dark}`
-              : `${styles.thumbnail} ${styles.thumbnail__light}`
-          }
+          className={stylesConfig.thumbnail}
           src="/images/projects-massage-fluke.png"
           alt="Massage Fluke project"
         />
@@ -140,11 +125,7 @@ function Projects() {
         <h3 className={styles.subTitle}>Visit:</h3>
         <MassageFluke />
         <a
-          className={
-            isDarkMode
-              ? `${styles.linkAnchor} ${styles.linkAnchor__dark}`
-              : `${styles.linkAnchor} ${styles.linkAnchor__light}`
-          }
+          className={stylesConfig.linkAnchor}
           href="https://massagefluke.now.sh"
           target="_blank"
         >
@@ -156,12 +137,8 @@ function Projects() {
         <br />
         <GitHub isDarkMode={isDarkMode} />
         <a
-          className={
-            isDarkMode
-              ? `${styles.linkAnchor} ${styles.linkAnchor__dark}`
-              : `${styles.linkAnchor} ${styles.linkAnchor__light}`
-          }
-          href="#"
+          className={stylesConfig.linkAnchor}
+          href="https://github.com/aumstead/massage-fluke"
           target="_blank"
         >
           GitHub
@@ -171,11 +148,7 @@ function Projects() {
       <section className={styles.project}>
         <a className={styles.anchor} id="recall-chek" />
         <img
-          className={
-            isDarkMode
-              ? `${styles.thumbnail} ${styles.thumbnail__dark}`
-              : `${styles.thumbnail} ${styles.thumbnail__light}`
-          }
+          className={stylesConfig.thumbnail}
           src="/images/projects-recall-chek.png"
           alt="RecallChek project"
         />
@@ -187,12 +160,12 @@ function Projects() {
         <h3 className={styles.subTitle}>Description:</h3>
         <p className={styles.description}>
           RecallChek is a real product offered by Residential Warranty Services,
-          an Indianapolis-based business which offers home warranties.
-          It's a service home inspectors can sell that checks to see if
-          any home appliances have been recalled over the years. An old friend
-          is CTO at the company and offered me this project. (As a sidenote, I
-          did the layout design, but not the site's routing structure, which is
-          unusual and can be confusing.)
+          an Indianapolis-based business which offers home warranties. It's a
+          service home inspectors can sell that checks to see if any home
+          appliances have been recalled over the years. An old friend is CTO at
+          the company and offered me this project. (As a sidenote, I did the
+          layout design, but not the site's routing structure, which is unusual
+          and can be confusing.)
         </p>
         <br />
         <h3 className={styles.subTitle}>How I improved as a developer:</h3>
@@ -205,11 +178,7 @@ function Projects() {
         <h3 className={styles.subTitle}>Visit:</h3>
         <RecallChek />
         <a
-          className={
-            isDarkMode
-              ? `${styles.linkAnchor} ${styles.linkAnchor__dark}`
-              : `${styles.linkAnchor} ${styles.linkAnchor__light}`
-          }
+          className={stylesConfig.linkAnchor}
           href="https://recallchek.netlify.app"
           target="_blank"
         >
@@ -218,12 +187,8 @@ function Projects() {
         <br />
         <GitHub isDarkMode={isDarkMode} />
         <a
-          className={
-            isDarkMode
-              ? `${styles.linkAnchor} ${styles.linkAnchor__dark}`
-              : `${styles.linkAnchor} ${styles.linkAnchor__light}`
-          }
-          href="#"
+          className={stylesConfig.linkAnchor}
+          href="https://github.com/aumstead/recallcheck"
           target="_blank"
         >
           GitHub
@@ -233,11 +198,7 @@ function Projects() {
       <section className={styles.project}>
         <a className={styles.anchor} id="white-sands" />
         <img
-          className={
-            isDarkMode
-              ? `${styles.thumbnail} ${styles.thumbnail__dark}`
-              : `${styles.thumbnail} ${styles.thumbnail__light}`
-          }
+          className={stylesConfig.thumbnail}
           src="/images/projects-white-sands.png"
           alt="White Sands Resort project"
         />
@@ -252,11 +213,7 @@ function Projects() {
           enough to put in my portfolio. It's simply a landing page for a fake
           hotel. Most of the design was taken from (or inspired by😎) the{" "}
           <a
-            className={
-              isDarkMode
-                ? `${styles.linkAnchor} ${styles.linkAnchor__dark}`
-                : `${styles.linkAnchor} ${styles.linkAnchor__light}`
-            }
+            className={stylesConfig.linkAnchor}
             href="https://fourseasons.com"
             target="_blank"
           >
@@ -267,22 +224,19 @@ function Projects() {
         <br />
         <h3 className={styles.subTitle}>How I improved as a developer:</h3>
         <p className={styles.description}>
-          This was the first time I used Sass, and now it's my preference.
-          The page is image heavy, so I had to learn about image optimization. All of the layouts were made with flexbox, and since then, it has really become my
-          "go-to" tool in CSS. I felt a lot of satisfaction when I completed
-          this project back in the first-half of 2019. Even though I'm a
-          mediocre designer, I realized I can make something look exactly how I want
-          it using CSS.
+          This was the first time I used Sass, and now it's my preference. The
+          page is image heavy, so I had to learn about image optimization. All
+          of the layouts were made with flexbox, and since then, it has really
+          become my "go-to" tool in CSS. I felt a lot of satisfaction when I
+          completed this project back in the first-half of 2019. Even though I'm
+          a mediocre designer, I realized I can make something look exactly how
+          I want it using CSS.
         </p>
         <br />
         <h3 className={styles.subTitle}>Visit:</h3>
         <WhiteSands isDarkMode={isDarkMode} />
         <a
-          className={
-            isDarkMode
-              ? `${styles.linkAnchor} ${styles.linkAnchor__dark}`
-              : `${styles.linkAnchor} ${styles.linkAnchor__light}`
-          }
+          className={stylesConfig.linkAnchor}
           href="https://white-sands-resort.netlify.com"
           target="_blank"
         >
@@ -291,12 +245,8 @@ function Projects() {
         <br />
         <GitHub isDarkMode={isDarkMode} />
         <a
-          className={
-            isDarkMode
-              ? `${styles.linkAnchor} ${styles.linkAnchor__dark}`
-              : `${styles.linkAnchor} ${styles.linkAnchor__light}`
-          }
-          href="#"
+          className={stylesConfig.linkAnchor}
+          href="https://github.com/aumstead/hotel-landing-page"
           target="_blank"
         >
           GitHub
@@ -305,11 +255,7 @@ function Projects() {
 
       <section className={styles.project}>
         <img
-          className={
-            isDarkMode
-              ? `${styles.thumbnail} ${styles.thumbnail__dark}`
-              : `${styles.thumbnail} ${styles.thumbnail__light}`
-          }
+          className={stylesConfig.thumbnail}
           src="/images/projects-portfolio-v1.png"
           alt="Portfolio v1.0 project"
         />
@@ -320,12 +266,26 @@ function Projects() {
         <br />
         <h3 className={styles.subTitle}>Description:</h3>
         <p className={styles.description}>
-          My first portfolio site, done only months before this current one. I suppose it's satisfactory, but there a few things about it that rubbed me the wrong way, and I wanted to be as confident as I could be with my portfolio site.
+          My first portfolio site, done only months before this current one. I
+          suppose it's satisfactory, but there a few things about it that rubbed
+          me the wrong way, and I wanted to be as confident as I could be with
+          my portfolio site.
         </p>
         <br />
         <h3 className={styles.subTitle}>How I improved as a developer:</h3>
         <p className={styles.description}>
-          This was my first project using Next.js, which you may have noticed, is my framework of choice. Like many of my projects, this one was just more React practice, more CSS practice, and maybe a new library or two (this time it was Framer Motion). If you're still reading down here, I'll assume you just scrolled and randomly started skimming the text. Since I still have you here, I might as well make my plea. Look, I can learn to do the job — whatever it may be. After all the studying I've done over the past two years, if I can get paid to learn a certain technology, I'll be thrilled. I'm motivated, I think I'm pretty mature and easy to get along with, and I'm ready to hunker down and work a ton to make it in this industry. I'll sweep floors if I have to! Contact me!
+          This was my first project using Next.js, which you may have noticed,
+          is my framework of choice. Like many of my projects, this one was just
+          more React practice, more CSS practice, and maybe a new library or two
+          (this time it was Framer Motion). If you're still reading down here,
+          I'll assume you just scrolled and randomly started skimming the text.
+          Since I still have you here, I might as well make my plea. Look, I can
+          learn to do the job — whatever it may be. After all the studying I've
+          done over the past two years, if I can get paid to learn a certain
+          technology, I'll be thrilled. I'm motivated, I think I'm pretty mature
+          and easy to get along with, and I'm ready to hunker down and work a
+          ton to make it in this industry. I'll sweep floors if I have to!
+          Contact me!
         </p>
         <br />
         <h3 className={styles.subTitle}>Visit:</h3>
@@ -335,11 +295,7 @@ function Projects() {
           alt="Portfolio 1.0 icon"
         />
         <a
-          className={
-            isDarkMode
-              ? `${styles.linkAnchor} ${styles.linkAnchor__dark}`
-              : `${styles.linkAnchor} ${styles.linkAnchor__light}`
-          }
+          className={stylesConfig.linkAnchor}
           href="https://andrewumstead.com"
           target="_blank"
         >
@@ -348,12 +304,8 @@ function Projects() {
         <br />
         <GitHub isDarkMode={isDarkMode} />
         <a
-          className={
-            isDarkMode
-              ? `${styles.linkAnchor} ${styles.linkAnchor__dark}`
-              : `${styles.linkAnchor} ${styles.linkAnchor__light}`
-          }
-          href="#"
+          className={stylesConfig.linkAnchor}
+          href="https://github.com/aumstead/portfolio_v1"
           target="_blank"
         >
           GitHub

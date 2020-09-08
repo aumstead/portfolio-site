@@ -12,18 +12,12 @@ function Writing({ onMobile }) {
 
   const [mouseEnteredBook, setMouseEnteredBook] = useState(false);
 
-  const stylesConfig = {
-    title: isDarkMode
-      ? `${styles.title} ${styles.title__dark}`
-      : `${styles.title} ${styles.title__light}`,
-  };
-
   function renderHeadingLayout() {
     if (onMobile) {
       return (
         <div className={styles.headingGrid}>
           <div className={styles.column__left}>
-            <h2 className={stylesConfig.title}>Blog</h2>
+            <h2 className={styles.title}>Blog</h2>
           </div>
           <div className={styles.column__right}>
             <Text
@@ -41,7 +35,7 @@ function Writing({ onMobile }) {
     } else {
       return (
         <div className={styles.headingFlexContainer}>
-          <h2 className={stylesConfig.title}>Blog</h2>
+          <h2 className={styles.title}>Blog</h2>
           <div className={styles.flexItem__svgs}>
             <Text
               mouseEnteredBook={mouseEnteredBook}

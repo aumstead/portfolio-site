@@ -10,13 +10,6 @@
 .title {
   font-size: 3.6rem;
   margin-top: 3.2rem;
-
-  &__dark {
-    color: #fff;
-  }
-  &__light {
-    color: black;
-  }
 }
 
 // not in media query because only rendered under 500px width
