@@ -1,5 +1,6 @@
 import styles from "./Carousel.module.scss";
 import { useEffect, useRef, useState } from "react";
+import Link from "next/link";
 import DgiFoliosSvg from "../../projects/logos/DgiFoliosSvg";
 import RecallChek from "../../projects/logos/RecallChek";
 import MassageFluke from "../../projects/logos/MassageFluke";
@@ -70,6 +71,9 @@ function Carousel({ mouseEnteredCards, isDarkMode, onMobile }) {
     login: isDarkMode
       ? `${styles.login} ${styles.login__dark}`
       : `${styles.login} ${styles.login__light}`,
+    whiteSandsReadMore: isDarkMode
+      ? `${styles.readMore} ${styles.readMore__whiteSands__dark}`
+      : `${styles.readMore} ${styles.readMore__whiteSands__light}`,
   };
 
   return (
@@ -97,12 +101,13 @@ function Carousel({ mouseEnteredCards, isDarkMode, onMobile }) {
             <p className={styles.description}>
               A web app that allows users to track and share their stock
               portfolios and dividends.{" "}
-              <a
-                href="/projects#dgifolios"
-                className={`${styles.readMore} ${styles.readMore__dgifolios}`}
-              >
-                Read more &rarr;
-              </a>
+              <Link href="/projects#dgifolios">
+                <a
+                  className={`${styles.readMore} ${styles.readMore__dgifolios}`}
+                >
+                  Read more &rarr;
+                </a>
+              </Link>
             </p>
             <div className={styles.visitSiteContainer}>
               <DgiFoliosSvg />
@@ -146,12 +151,13 @@ function Carousel({ mouseEnteredCards, isDarkMode, onMobile }) {
             <h3 className={styles.title}>Massage Fluke</h3>
             <p className={styles.description}>
               A website and blog for a small business owner.{" "}
-              <a
-                href="/projects#massage-fluke"
-                className={`${styles.readMore} ${styles.readMore__massageFluke}`}
-              >
-                Read more &rarr;
-              </a>
+              <Link href="/projects#massage-fluke">
+                <a
+                  className={`${styles.readMore} ${styles.readMore__massageFluke}`}
+                >
+                  Read more &rarr;
+                </a>
+              </Link>
             </p>
             <div className={styles.visitSiteContainer}>
               <MassageFluke fill="#0F9A7A" />
@@ -196,12 +202,13 @@ function Carousel({ mouseEnteredCards, isDarkMode, onMobile }) {
             <p className={styles.description}>
               A website for a service offered by Residential Warranty Services.
               <br />
-              <a
-                href="/projects#recall-chek"
-                className={`${styles.readMore} ${styles.readMore__recallChek}`}
-              >
-                Read more &rarr;
-              </a>
+              <Link href="/projects#recall-chek">
+                <a
+                  className={`${styles.readMore} ${styles.readMore__recallChek}`}
+                >
+                  Read more &rarr;
+                </a>
+              </Link>
             </p>
             <div className={styles.visitSiteContainer}>
               <RecallChek />
@@ -242,16 +249,11 @@ function Carousel({ mouseEnteredCards, isDarkMode, onMobile }) {
             <h3 className={styles.title}>White Sands</h3>
             <p className={styles.description}>
               A mock landing page for an island resort.{" "}
-              <a
-                href="/projects#white-sands"
-                className={
-                  isDarkMode
-                    ? `${styles.readMore} ${styles.readMore__whiteSands__dark}`
-                    : `${styles.readMore} ${styles.readMore__whiteSands__light}`
-                }
-              >
-                Read more &rarr;
-              </a>
+              <Link href="/projects#white-sands">
+                <a className={stylesConfig.whiteSandsReadMore}>
+                  Read more &rarr;
+                </a>
+              </Link>
             </p>
             <div className={styles.visitSiteContainer}>
               <WhiteSands isDarkMode={isDarkMode} />
@@ -296,12 +298,13 @@ function Carousel({ mouseEnteredCards, isDarkMode, onMobile }) {
             <p className={styles.description}>
               A web app that allows users to track and share their stock
               portfolios and dividends.{" "}
-              <a
-                href="/projects#dgifolios"
-                className={`${styles.readMore} ${styles.readMore__dgifolios}`}
-              >
-                Read more &rarr;
-              </a>
+              <Link href="/projects#dgifolios">
+                <a
+                  className={`${styles.readMore} ${styles.readMore__dgifolios}`}
+                >
+                  Read more &rarr;
+                </a>
+              </Link>
             </p>
             <div className={styles.visitSiteContainer}>
               <DgiFoliosSvg />
