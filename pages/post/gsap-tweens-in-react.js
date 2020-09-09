@@ -166,7 +166,7 @@ function ExampleTweenComponent() {
 
       <article className={styles.article}>
         <p className={styles.p}>
-          This post is the first in a series about using GSAP in React. This
+          This
           first post will cover how I use GSAP with the{" "}
           <code className={stylesConfig.code}>useEffect</code> and{" "}
           <code className={stylesConfig.code}>useRef</code> hooks to create
@@ -190,7 +190,7 @@ function ExampleTweenComponent() {
           >
             part 2
           </a>{" "}
-          in the series we will have covered everything needed to make this
+          we will have covered everything needed to make this
           animation.
         </p>
 
@@ -222,7 +222,7 @@ function ExampleTweenComponent() {
           >
             illlustrations.co
           </a>
-          , an awesome site by an awesome artist whose work I used throughout my
+          , a cool site by an artist whose work I used throughout my
           portfolio site.
         </p>
 
@@ -234,8 +234,8 @@ function ExampleTweenComponent() {
         <p className={styles.p}>
           You might already be aware of some of the benefits of using SVGs, such
           as their ability to scale without losing quality or increasing in file
-          size. But, my other favorite thing about them, which I don't recall
-          seeing mentioned, is that I can go into their code and manipulate the
+          size. But, my other favorite thing about them, which I don't see
+          mentioned very often, is that I can go into their code and manipulate the
           images. It's quite easy to change a color, remove part of the graphic
           I don't want, or add a class for some CSS styles.
         </p>
