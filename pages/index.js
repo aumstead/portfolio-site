@@ -25,7 +25,7 @@ function Index() {
   return (
     <Layout>
       <Head>
-        <title>Home | andrewumstead.dev</title>
+        <title>andrewumstead.dev | Home</title>
       </Head>
       
       <section className={styles.section}>

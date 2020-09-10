@@ -18,7 +18,7 @@ function Blog() {
   return (
     <Layout>
       <Head>
-      <title>Blog | andrewumstead.dev</title> 
+      <title>andrewumstead.dev | Blog</title> 
       </Head>
 
       <section className={styles.heroSection}>

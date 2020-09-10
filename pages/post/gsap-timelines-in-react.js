@@ -237,7 +237,7 @@ function Final() {
   return (
     <Layout>
       <Head>
-        <title>GSAP - Timelines in React | andrewumstead.dev</title>
+        <title>andrewumstead.dev | GSAP in React: Timelines</title>
       </Head>
       
       <section className={styles.heroSection}>

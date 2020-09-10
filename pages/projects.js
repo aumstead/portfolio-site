@@ -29,7 +29,7 @@ function Projects() {
   return (
     <Layout>
       <Head>
-        <title>Projects | andrewumstead.dev</title>
+        <title>andrewumstead.dev | Projects</title>
       </Head>
       
       <section className={styles.heroSection}>

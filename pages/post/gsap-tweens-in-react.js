@@ -142,7 +142,7 @@ function ExampleTweenComponent() {
   return (
     <Layout>
       <Head>
-        <title>GSAP - Tweens in React | andrewumstead.dev</title>
+        <title>andrewumstead.dev | GSAP in React: Basic Tweens</title>
       </Head>
       
       <section className={styles.heroSection}>
