@@ -50,6 +50,7 @@ export default function Header() {
   }, [onMobile]);
 
   function handleClick() {
+    localStorage.setItem('isDarkMode', !isDarkMode)
     setIsDarkMode(() => !isDarkMode);
   }
 

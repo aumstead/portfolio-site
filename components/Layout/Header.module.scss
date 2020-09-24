@@ -10,6 +10,7 @@
   &__light {
     background-color: rgb(255, 255, 255, .7);
     backdrop-filter: saturate(180%) blur(20px);
+    -webkit-backdrop-filter: saturate(180%) blur(20px);
   }
   &__dark {
     background-color: rgb(41, 41, 41, .7);
