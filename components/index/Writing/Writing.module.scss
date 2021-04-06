@@ -1,0 +1,36 @@
+.section {
+  margin-top: 3rem;
+}
+
+.headingFlexContainer {
+  display: flex;
+  justify-content: space-between;
+}
+
+.title {
+  font-size: 3.6rem;
+  margin-top: 3.2rem;
+}
+
+// not in media query because only rendered under 500px width
+.headingGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+.column__left {
+  text-align: left;
+}
+.column__right {
+  display: flex;
+  justify-content: space-between;
+}
+
+@media only screen and (max-width: 500px) {
+  .section {
+    margin: 0rem 1.5rem;
+    margin-top: 4rem;
+  }
+  .title {
+    margin-top: 0rem;
+  }
+}

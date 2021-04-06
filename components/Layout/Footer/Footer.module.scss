@@ -1,0 +1,58 @@
+.footer {
+  width: 70rem;
+  margin: 0 auto;
+  margin-top: 5rem;
+  position: relative;
+  display: flex;
+  height: 40rem;
+  font-size: 1.6rem;
+}
+
+.headingFlexContainer {
+  display: flex;
+  // justify-content: space-between;
+  justify-content: flex-end;
+  width: 70rem;
+  height: min-content;
+}
+
+.title {
+  font-size: 3.6rem;
+  margin-top: 3.2rem;
+
+  &__dark {
+    color: #fff;
+  }
+  &__light {
+    color: black;
+  }
+}
+.hint {
+  font-family: 'Nothing You Could Do', -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial,
+  sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  font-size: 1.8rem;
+  transform: rotate(-15deg) translate(25px, 20px);
+}
+.arrow {
+  height: 6rem;
+  transform: translate(-10px, 25px);
+  &__dark {
+    filter: invert(1);
+  }
+}
+@media only screen and (max-width: 700px) {
+  .headingFlexContainer {
+    width: 100vw;
+  }
+  .hint {
+    transform: rotate(-10deg) translate(20px, 5px);
+  }
+  .arrow {
+    transform: translate(-5px, 5px) rotate(-5deg);
+  }
+}
+@media only screen and (max-width: 500px) {
+  .footer {
+    width: 100vw;
+  }
+}

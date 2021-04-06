@@ -1,0 +1,27 @@
+.heroTitle {
+  font-size: 4.8rem;
+  text-align: center;
+  margin-bottom: 1rem;
+  margin-top: 2rem;
+
+  &__dark {
+    color: #fff;
+  }
+
+  &__light {
+    color: black;
+  }
+}
+
+.heroText {
+  font-size: var(--text-font-size);
+}
+
+@media only screen and (max-width: 500px) {
+  .section {
+    margin: 0rem 1.5rem;
+  }
+  .heroTitle {
+    line-height: 6.5rem;
+  }
+}

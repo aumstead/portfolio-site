@@ -1,0 +1,142 @@
+// in animation order
+.myStackSvg {
+  width: 100%;
+  display: block;
+  margin: 0 auto;
+}
+.htmlBubble {
+  opacity: 1;
+  transition: opacity 1s;
+}
+.htmlDash {
+  animation: dash 14.8s linear;
+}
+.clientTextTop {
+  opacity: .5;
+  transition: opacity 1s;
+  transition-delay: 1s;
+}
+.cssLine {
+  stroke-dasharray: 200;
+  stroke-dashoffset: -200;
+  animation: draw 1s linear forwards;
+  opacity: 1;
+}
+.jsLine {
+  stroke-dasharray: 225;
+  stroke-dashoffset: -225;
+  animation: draw 1s linear forwards;
+  opacity: 1;
+}
+.jsBubble {
+  opacity: 1;
+  transition: opacity 1s;
+  transition-delay: 3s;
+}
+.cssBubble {
+  opacity: 1;
+  transition: opacity 1s;
+  transition-delay: 3s;
+}
+.clientGraphic {
+  opacity: 1;
+  transition: opacity 1s;
+  transition-delay: 4s;
+}
+.reactBubble {
+  opacity: 1;
+  transition: opacity 1s;
+  transition-delay: 4s;
+}
+.nodeBubble {
+  opacity: 1;
+  transition: opacity 1s;
+  transition-delay: 4s;
+}
+.bigTextbox {
+  opacity: 1;
+  transition: opacity .5s;
+  transition-delay: 5s;
+}
+.smallTextbox {
+  opacity: 1;
+  transition: opacity .5s;
+  transition-delay: 5s;
+}
+.textboxText {
+  opacity: 1;
+  transition: opacity .5s;
+  transition-delay: 5s;
+}
+.reactDash {
+  animation: dash 9.3s linear;
+  opacity: 1;
+  transition: opacity 1s;
+  transition-delay: 5.5s;
+  animation-delay: 5.5s;
+}
+.nodeDash {
+  animation: reverseDash 9.3s linear;
+  opacity: 1;
+  transition: opacity 1s;
+  transition-delay: 5.5s;
+  animation-delay: 5.5s;
+}
+.clientBar {
+  opacity: 1;
+  transition: opacity 1s;
+  transition-delay: 6.5s;
+}
+.postgresLine {
+  stroke-dasharray: 190;
+  stroke-dashoffset: 190;
+  animation: draw 1s linear forwards;
+  opacity: 1;
+  animation-delay: 7.5s;
+}
+.mongoLine {
+  stroke-dasharray: 170;
+  stroke-dashoffset: -170;
+  animation: draw 1s linear forwards;
+  opacity: 1;
+  animation-delay: 7.5s;
+}
+.postgresBubble {
+  opacity: 1;
+  transition: opacity 1s;
+  transition-delay: 8.5s;
+}
+.mongoBubble {
+  opacity: 1;
+  transition: opacity 1s;
+  transition-delay: 8.5s;
+}
+.clientTextData {
+  opacity: .5;
+  transition: opacity 1s;
+  transition-delay: 8.5s;
+}
+
+@keyframes dash {
+  to {
+    stroke-dashoffset: -200;
+  }
+}
+
+@keyframes reverseDash {
+  to {
+    stroke-dashoffset: 200;
+  }
+}
+
+@keyframes draw {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+@media only screen and (max-width: 500px) {
+  .myStackSvg {
+    width: 85%;
+  }
+}

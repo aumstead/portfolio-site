@@ -1,0 +1,16 @@
+[
+  {
+    "title": "GSAP in React - Part 2: Timelines",
+    "date": "August 5th, 2020",
+    "description": "A tutorial for making a complex animation with a GSAP timeline in React.",
+    "url": "/post/gsap-timelines-in-react",
+    "id": "post2"
+  },
+  {
+    "title": "GSAP in React - Part 1: Basic Tweens",
+    "date": "August 4th, 2020",
+    "description": "Learn to use GSAP in React with functional components and the useEffect and useRef hooks.",
+    "url": "/post/gsap-tweens-in-react",
+    "id": "post1"
+  }
+]

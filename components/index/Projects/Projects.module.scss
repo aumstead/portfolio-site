@@ -1,0 +1,57 @@
+.section {
+  position: relative;
+  margin-top: 3rem;
+}
+
+.headingFlexContainer {
+  display: flex;
+  justify-content: space-between;
+}
+
+.headingFlexItem__svgs {
+  margin-top: 3.2rem;
+  display: flex;
+  align-items: center;
+}
+
+.title {
+  font-size: 3.6rem;
+  margin-top: 3.2rem;
+}
+
+.hint {
+  font-family: 'Nothing You Could Do', -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial,
+  sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  font-size: 1.8rem;
+  transform: rotate(-15deg) translate(10px, -20px);
+}
+.arrow {
+  height: 6rem;
+  transform: translateX(-3.5rem);
+  &__dark {
+    filter: invert(1);
+  }
+}
+@media only screen and (max-width: 700px) {
+  .hint {
+    display: none;
+  }
+  .arrow {
+    display: none;
+  }
+}
+@media only screen and (max-width: 500px) {
+  .headingFlexContainer {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    margin: 0 1.5rem;
+  }
+  .headingFlexItem__svgs {
+    justify-content: flex-end;
+    margin-right: 4rem;
+  }
+  
+  .title {
+    text-align: left;
+  }
+}

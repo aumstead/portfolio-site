@@ -1,0 +1,101 @@
+.text {
+  margin-right: 3rem;
+  height: 4rem;
+  width: auto;
+}
+.letter__r {
+  stroke-dasharray: 75.58;
+  stroke-dashoffset: 75.58;
+}
+.part__r {
+  stroke-dasharray: 18.83;
+  stroke-dashoffset: 18.83;
+}
+.letter__e1 {
+  stroke-dasharray: 41.82;
+  stroke-dashoffset: 41.82;
+}
+.letter__c {
+  stroke-dasharray: 25.65;
+  stroke-dashoffset: 25.65;
+}
+.letter__e2 {
+  stroke-dasharray: 31.8;
+  stroke-dashoffset: 31.8;
+}
+.part__n1 {
+  stroke-dasharray: 15.84;
+  stroke-dashoffset: 15.84;
+}
+.part__n2 {
+  stroke-dasharray: 32.61;
+  stroke-dashoffset: 32.61;
+}
+.letter__t1__part1 {
+  stroke-dasharray: 44.91;
+  stroke-dashoffset: 44.91;
+}
+.letter__t1__part2 {
+  stroke-dasharray: 11.1;
+  stroke-dashoffset: -11.1;
+}
+.part__p1 {
+  stroke-dasharray: 15;
+  stroke-dashoffset: -15;
+}
+.part__p2 {
+  stroke-dasharray: 35;
+  stroke-dashoffset: 35;
+}
+.part__p3 {
+  stroke-dasharray: 35;
+  stroke-dashoffset: 35;
+}
+.part__p4 {
+  stroke-dasharray: 15;
+  stroke-dashoffset: 15;
+}
+.part__o1 {
+  stroke-dasharray: 11;
+  stroke-dashoffset: 11;
+}
+.part__o2 {
+  stroke-dasharray: 20;
+  stroke-dashoffset: -20;
+}
+.part__o3 {
+  stroke-dasharray: 15;
+  stroke-dashoffset: 15;
+}
+.letter__s1__part1 {
+  stroke-dasharray: 23;
+  stroke-dashoffset: 23;
+}
+.letter__s1__part2 {
+  stroke-dasharray: 15;
+  stroke-dashoffset: 15;
+}
+.letter__t2__part1 {
+  stroke-dasharray: 45;
+  stroke-dashoffset: 45;
+}
+.letter__s2__part1 {
+  stroke-dasharray: 35;
+  stroke-dashoffset: -35;
+}
+.letter__s2__part2 {
+  stroke-dasharray: 15;
+  stroke-dashoffset: 15;
+}
+.letter__t2__part2 {
+  stroke-dasharray: 12;
+  stroke-dashoffset: -12;
+}
+
+@media only screen and (max-width: 500px) {
+  .text {
+    margin-top: 1.5rem;
+    height: 2.5rem;
+    transform: rotate(-15deg) translate(20px, 0px);
+  }
+}

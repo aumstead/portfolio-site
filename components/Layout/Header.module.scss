@@ -1,0 +1,160 @@
+.header {
+  width: 840px;
+  margin: 0 auto;
+  // position: fixed;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  height: 10rem;
+  font-size: var(--text-font-size);
+  z-index: 100;
+  &__light {
+    background-color: rgb(255, 255, 255, 0.7);
+    backdrop-filter: saturate(180%) blur(20px);
+    -webkit-backdrop-filter: saturate(180%) blur(20px);
+  }
+  &__dark {
+    background-color: rgb(41, 41, 41, 0.7);
+    backdrop-filter: saturate(180%) blur(20px);
+  }
+}
+.topHalf {
+  display: flex;
+  justify-content: space-between;
+  position: absolute;
+  height: 10rem;
+  width: 100%;
+  align-items: center;
+  left: 0;
+  top: 0;
+}
+.bottomHalf {
+  display: none;
+  justify-content: space-evenly;
+  position: absolute;
+  height: 5rem;
+  width: 100%;
+  align-items: center;
+  left: 0;
+  top: 0;
+  z-index: -20;
+}
+.mobileNav {
+  opacity: 0;
+}
+.flexItem__left {
+  display: flex;
+  align-items: center;
+  &:hover .logoText {
+    color: var(--hover-blue);
+  }
+}
+.flexItem__right {
+  display: flex;
+  align-items: center;
+}
+.logoAnchor {
+  &:hover {
+    cursor: pointer;
+  }
+}
+.logoText {
+  font-size: 2.2rem;
+  margin-left: 0.5rem;
+  font-family: "Nothing You Could Do", -apple-system, BlinkMacSystemFont,
+    "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji",
+    "Segoe UI Emoji", "Segoe UI Symbol";
+  &__light {
+    color: var(--light-text);
+  }
+  &__dark {
+    color: var(--dark-text);
+  }
+}
+.toggle {
+  margin-left: 1rem;
+}
+.lightToggle {
+  height: 5rem;
+  width: 5rem;
+  border-radius: 3px;
+  border: none;
+  background-color: transparent;
+  &:hover {
+    background-color: var(--light-hover-background);
+    cursor: pointer;
+  }
+  &:focus {
+    outline-style: none;
+  }
+}
+.darkToggle {
+  height: 5rem;
+  width: 5rem;
+  border-radius: 3px;
+  border: none;
+  background-color: transparent;
+  &:hover {
+    background-color: var(--dark-hover-background);
+    cursor: pointer;
+  }
+  &:focus {
+    outline-style: none;
+  }
+}
+.darkBtn {
+  margin: 0 1rem;
+  padding: 0.4rem 0.2rem;
+  color: var(--dark-text);
+}
+.lightBtn {
+  margin: 0 1rem;
+  padding: 0.4rem 0.2rem;
+  color: var(--light-text);
+}
+.projects {
+  &:hover {
+    color: #fc3a4d;
+    border-bottom: 2px solid #fc3a4d;
+  }
+}
+.blog {
+  &:hover {
+    color: #fca417;
+    border-bottom: 2px solid #fca417;
+  }
+}
+.home {
+  &:hover {
+    color: #2aa1ff;
+    border-bottom: 2px solid #2aa1ff;
+  }
+}
+.hamburgerContainer {
+  display: none;
+}
+.sideDrawer {
+  display: none;
+}
+@media only screen and (max-width: 500px) {
+  .header {
+    width: 100%;
+    left: 0;
+    transform: translateX(0%);
+  }
+  .nav {
+    display: none;
+  }
+  .hamburgerContainer {
+    display: block;
+    margin-top: 5px;
+    margin-right: 1rem;
+    margin-left: 1rem;
+  }
+  .flexItem__left {
+    margin-left: 1.5rem;
+  }
+  .flexItem__right {
+    margin-right: 1.5rem;
+  }
+}

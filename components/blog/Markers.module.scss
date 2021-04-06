@@ -1,0 +1,12 @@
+.svg {
+  height: 7rem;
+  width: auto;
+  overflow: visible;
+  margin-top: -1rem;
+}
+
+@media only screen and (max-width: 500px) {
+  .svg {
+    -webkit-tap-highlight-color: transparent;
+  }
+}
