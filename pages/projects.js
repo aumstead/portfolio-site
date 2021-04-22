@@ -1,6 +1,6 @@
 import styles from "./projects.module.scss";
 import { useContext } from "react";
-import Head from 'next/head'
+import Head from "next/head";
 import DarkModeContext from "../contexts/darkMode/DarkModeContext";
 import MobileContext from "../contexts/mobile/MobileContext";
 import Layout from "../components/Layout/Layout";
@@ -31,7 +31,7 @@ function Projects() {
       <Head>
         <title>andrewumstead.dev | Projects</title>
       </Head>
-      
+
       <section className={styles.heroSection}>
         <HeroSvg onMobile={onMobile} />
         <h1 className={styles.heroTitle}>Projects</h1>
@@ -63,7 +63,7 @@ function Projects() {
           shared and followed by other users of the site.
         </p>
         <br />
-        <h3 className={styles.subTitle}>How I improved as a developer:</h3>
+        <h3 className={styles.subTitle}>Lesson Learned:</h3>
         <p className={styles.description}>
           In general, this project gave me a lot of confidence in my ability to
           create a full-stack application. In the end, I had a frontend that
@@ -118,7 +118,7 @@ function Projects() {
           contribute blog articles.
         </p>
         <br />
-        <h3 className={styles.subTitle}>How I improved as a developer:</h3>
+        <h3 className={styles.subTitle}>Lesson Learned:</h3>
         <p className={styles.description}>
           This project gave me a taste of the full-stack as I used Firebase to
           handle authentication, authorization, and storing blog post text and
@@ -173,7 +173,7 @@ function Projects() {
           and can be confusing.)
         </p>
         <br />
-        <h3 className={styles.subTitle}>How I improved as a developer:</h3>
+        <h3 className={styles.subTitle}>Lesson Learned:</h3>
         <p className={styles.description}>
           The site is quite basic, but making it gave me more practice with
           grid, flexbox, and making layouts responsive. I also came away with a
@@ -227,7 +227,7 @@ function Projects() {
           website.
         </p>
         <br />
-        <h3 className={styles.subTitle}>How I improved as a developer:</h3>
+        <h3 className={styles.subTitle}>Lesson Learned:</h3>
         <p className={styles.description}>
           This was the first time I used Sass, and now it's my preference. The
           page is image heavy, so I had to learn about image optimization. All
@@ -277,7 +277,7 @@ function Projects() {
           my portfolio site.
         </p>
         <br />
-        <h3 className={styles.subTitle}>How I improved as a developer:</h3>
+        <h3 className={styles.subTitle}>Lesson Learned:</h3>
         <p className={styles.description}>
           This was my first project using Next.js, which you may have noticed,
           is my framework of choice. Like many of my projects, this one was just

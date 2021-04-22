@@ -72,24 +72,34 @@ function About({ onMobile }) {
             />
           </div>
           <p className={styles.text}>
-            I'm currently in Chongqing, China. As soon as my wife gets her green
-            card, we'll be moving to the states. Initially, we'll be in
-            Indianapolis, IN, but, we're willing to relocate pretty much
-            anywhere.
+            I've been studying web development for over 2 1/2 years now. After a
+            hectic 2020, I've finally returned to my hometown of Indianapolis,
+            and am looking for a developer position.
+          </p>
+          <br />
+          <h3 className={styles.listHeading}>A brief history of my studies</h3>
+          <p className={styles.text}>
+            I started out trying to master the core technologies of HTML, CSS,
+            and JS. I then focused on React for a while. Fast-forward past some
+            experimenting, I dove headfirst into C# and .NET Core. I also added
+            Angular to the mix, and now, after 2 1/2 years, my current stack of
+            preference is Angular, .NET 5 Web API, and Entity Framework.
+          </p>
+          <br />
+          <h3 className={styles.listHeading}>Personal Life</h3>
+          <p className={styles.text}>
+            My perennial hobbies are movies and TV shows. Gaming and reading
+            have taken a backseat to coding in recent years. I miss both and
+            hope to pick them back up soon. I'm not sure if I exercise or
+            participate in outdoor activities enough to call them hobbies per
+            se, but I'd like to change that.
           </p>
           <br />
           <p className={styles.text}>
-            I'm 100% ready to start my first job in web development. I can't
-            wait. I've been devouring resources for two years, and now, I'm
-            finally able to return home and start applying for jobs.
-          </p>
-          <br />
-          <p className={styles.text}>
-            I've lived abroad for a while, and I suppose that's come to somewhat
-            define a part of who I am. But, my wife and I have decided to move
-            back to the states to be closer to family and settle down. My
-            long-term goals revolve around family, being part of a community,
-            and, of course, progressing in my career as a developer.
+            I've lived abroad for quite some time now, and I suppose that's
+            become a unique aspect of my person. I hope some of that experience
+            might be seen as an asset by my future employer and coworkers. I
+            certainly feel it has shaped me in a number of positive ways.
           </p>
         </div>
       </div>
