@@ -1,5 +1,12 @@
 [
   {
+    "title": "Heroku and ASP.NET Core",
+    "date": "May 20th, 2021",
+    "description": "A tutorial for hosting an ASP.NET Core app on Heroku.",
+    "url": "/post/aspnet-on-heroku",
+    "id": "post3"
+  },
+  {
     "title": "GSAP in React - Part 2: Timelines",
     "date": "August 5th, 2020",
     "description": "A tutorial for making a complex animation with a GSAP timeline in React.",

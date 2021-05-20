@@ -72,34 +72,22 @@ function About({ onMobile }) {
             />
           </div>
           <p className={styles.text}>
-            I've been studying web development for over 2 1/2 years now. After a
-            hectic 2020, I've finally returned to my hometown of Indianapolis,
-            and am looking for a developer position.
-          </p>
-          <br />
-          <h3 className={styles.listHeading}>A brief history of my studies</h3>
-          <p className={styles.text}>
-            I started out trying to master the core technologies of HTML, CSS,
-            and JS. I then focused on React for a while. Fast-forward past some
-            experimenting, I dove headfirst into C# and .NET Core. I also added
-            Angular to the mix, and now, after 2 1/2 years, my current stack of
-            preference is Angular, .NET 5 Web API, and Entity Framework.
-          </p>
-          <br />
-          <h3 className={styles.listHeading}>Personal Life</h3>
-          <p className={styles.text}>
-            My perennial hobbies are movies and TV shows. Gaming and reading
-            have taken a backseat to coding in recent years. I miss both and
-            hope to pick them back up soon. I'm not sure if I exercise or
-            participate in outdoor activities enough to call them hobbies per
-            se, but I'd like to change that.
+            Right now, my fastest development stack would be ASP.NET Core Razor
+            Pages (or MVC) with Entity Framework Core and Bootstrap. I'm also
+            proficient in Angular with ASP.NET Core Web Api and EF Core.
           </p>
           <br />
           <p className={styles.text}>
-            I've lived abroad for quite some time now, and I suppose that's
-            become a unique aspect of my person. I hope some of that experience
-            might be seen as an asset by my future employer and coworkers. I
-            certainly feel it has shaped me in a number of positive ways.
+            I'm self-taught and a career-changer. I've gone all-in on this, and
+            devoted 2 1/2 years of my life to it. I hope my dedication and work
+            can be seen through my projects.
+          </p>
+          <br />
+          <p className={styles.text}>
+            I'm very excited to start looking for jobs. For all that I've
+            learned, there's just a lot that requires mentorship and a
+            professional setting. I look forward to being a solid member of the
+            team that decides to give me a chance.
           </p>
         </div>
       </div>

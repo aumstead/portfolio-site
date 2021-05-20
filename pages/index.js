@@ -1,6 +1,6 @@
 import styles from "./index.module.scss";
 import { useContext } from "react";
-import Head from 'next/head'
+import Head from "next/head";
 import DarkModeContext from "../contexts/darkMode/DarkModeContext";
 import MobileContext from "../contexts/mobile/MobileContext";
 import Layout from "../components/Layout/Layout";
@@ -27,7 +27,7 @@ function Index() {
       <Head>
         <title>andrewumstead.dev | Home</title>
       </Head>
-      
+
       <section className={styles.section}>
         <CleanCodeSvg onMobile={onMobile} />
         <h1 className={stylesConfig.heroTitle}>Andrew Umstead</h1>
@@ -44,8 +44,8 @@ function Index() {
 
       <Projects onMobile={onMobile} />
       <Writing onMobile={onMobile} />
-      <About onMobile={onMobile} />
       <Skills onMobile={onMobile} />
+      <About onMobile={onMobile} />
     </Layout>
   );
 }

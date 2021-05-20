@@ -11,6 +11,7 @@ function Grid({ mouseEnteredKnife }) {
           <li className={styles.li}>JavaScript</li>
           <li className={styles.li}>Angular</li>
           <li className={styles.li}>React</li>
+          <li className={styles.li}>Bootstrap</li>
         </ul>
       </div>
 
@@ -22,9 +23,10 @@ function Grid({ mouseEnteredKnife }) {
         <h3 className={styles.listHeading}>Server-side:</h3>
         <ul className={styles.ul}>
           <li className={styles.li}>C#</li>
-          <li className={styles.li}>ASP.NET 5 MVC</li>
-          <li className={styles.li}>ASP.NET 5 Web API</li>
-          <li className={styles.li}>Entity Framework</li>
+          <li className={styles.li}>
+            ASP.NET Core/5 Razor Pages, MVC, Web API
+          </li>
+          <li className={styles.li}>Entity Framework Core</li>
         </ul>
       </div>
     </div>

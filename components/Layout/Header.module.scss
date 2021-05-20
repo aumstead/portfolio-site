@@ -9,13 +9,13 @@
   font-size: var(--text-font-size);
   z-index: 100;
   &__light {
-    background-color: rgb(255, 255, 255, 0.7);
-    backdrop-filter: saturate(180%) blur(20px);
-    -webkit-backdrop-filter: saturate(180%) blur(20px);
+    background-color: rgb(255, 255, 255);
+    // backdrop-filter: saturate(180%) blur(20px);
+    // -webkit-backdrop-filter: saturate(180%) blur(20px);
   }
   &__dark {
-    background-color: rgb(41, 41, 41, 0.7);
-    backdrop-filter: saturate(180%) blur(20px);
+    background-color: rgb(41, 41, 41);
+    // backdrop-filter: saturate(180%) blur(20px);
   }
 }
 .topHalf {
