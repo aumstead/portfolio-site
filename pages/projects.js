@@ -5,7 +5,6 @@ import DarkModeContext from "../contexts/darkMode/DarkModeContext";
 import MobileContext from "../contexts/mobile/MobileContext";
 import Layout from "../components/Layout/Layout";
 import GitHub from "../components/projects/logos/GitHub";
-import DgiFoliosSvg from "../components/projects/logos/DgiFoliosSvg";
 import RecallChek from "../components/projects/logos/RecallChek";
 import MassageFluke from "../components/projects/logos/MassageFluke";
 import WhiteSands from "../components/projects/logos/WhiteSands";
@@ -76,7 +75,6 @@ function Projects() {
         </p>
         <br />
         <h3 className={styles.subTitle}>Visit:</h3>
-        <DgiFoliosSvg />
         <a
           className={stylesConfig.linkAnchor}
           href="https://dgifolios.com"
