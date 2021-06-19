@@ -80,7 +80,7 @@ function About({ onMobile }) {
           <p className={styles.text}>
             I'm self-taught and a career-changer. I've gone all in on this path,
             and devoted over 2 1/2 years of my life to it. I hope my dedication
-            and work can be seen through my projects.
+            and work can be seen in my projects.
           </p>
           <br />
           <p className={styles.text}>

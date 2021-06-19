@@ -200,16 +200,16 @@ function Carousel({ mouseEnteredCards, isDarkMode, onMobile }) {
               <WhiteSands isDarkMode={isDarkMode} />
               <a
                 className={stylesConfig.linkAnchor}
-                href="https://dgifolios.com"
+                href="https://white-sands.herokuapp.com/"
                 target="_blank"
               >
-                whitesands.herokuapp.com
+                white-sands.herokuapp.com
               </a>
               <br />
               <GitHub isDarkMode={isDarkMode} />
               <a
                 className={stylesConfig.linkAnchor}
-                href="https://github.com/aumstead/dgifolios-backend"
+                href="https://github.com/aumstead/WhiteSandsMVC"
                 target="_blank"
               >
                 GitHub

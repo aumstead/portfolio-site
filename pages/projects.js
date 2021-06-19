@@ -8,6 +8,7 @@ import GitHub from "../components/projects/logos/GitHub";
 import RecallChek from "../components/projects/logos/RecallChek";
 import MassageFluke from "../components/projects/logos/MassageFluke";
 import WhiteSands from "../components/projects/logos/WhiteSands";
+import FastFlashCardsSvg from "../components/projects/logos/FastFlashCardsSvg";
 import HeroSvg from "../components/projects/HeroSvg";
 
 function Projects() {
@@ -28,68 +29,144 @@ function Projects() {
   return (
     <Layout>
       <Head>
-        <title>andrewumstead.dev | Projects</title>
+        <title>andrewumstead.com | Projects</title>
       </Head>
 
       <section className={styles.heroSection}>
         <HeroSvg onMobile={onMobile} />
         <h1 className={styles.heroTitle}>Projects</h1>
         <p className={styles.text}>
-          See all the things I've learned to do with code here. Feel free to
-          skip the blocks of text — they'll probably bore you. It is worth
-          noting, however, that dgifolios is my best work.
+          Here's a selection of my best projects. They're listed from newest to
+          oldest.
         </p>
       </section>
 
       <section className={styles.project}>
-        <a className={styles.anchor} id="dgifolios" />
+        <a className={styles.anchor} id="fast-flash-cards" />
+        <img
+          className={stylesConfig.thumbnail}
+          src="/images/projects-fastflashcards.png"
+          alt="Fast Flash Cards project"
+        />
+        <h2 className={styles.title}>Fast Flash Cards</h2>
+
+        <h3 className={styles.subTitle}>Stack:</h3>
+        <p className={styles.stack}>
+          ASP.NET 5, Angular, Entity Framework Core, PostGreSQL, Bootstrap
+        </p>
+        <br />
+        <h3 className={styles.subTitle}>Description:</h3>
+        <p className={styles.description}>
+          The idea was simple: a web app for flash cards. Users can create
+          decks, populate those decks with cards, and study them. I had Google
+          social login implemented but took it out because it seems not worth
+          going through their lengthy approval process.
+        </p>
+        <br />
+        <h3 className={styles.subTitle}>Visit:</h3>
+        <FastFlashCardsSvg />
+        <a
+          className={stylesConfig.linkAnchor}
+          href="https://fastflashcards.com"
+          target="_blank"
+        >
+          fastflashcards.com
+        </a>
+        <br />
+        <GitHub isDarkMode={isDarkMode} />
+        <a
+          className={stylesConfig.linkAnchor}
+          href="https://github.com/aumstead/fastflashcards"
+          target="_blank"
+        >
+          GitHub
+        </a>
+      </section>
+
+      <section className={styles.project}>
+        <a className={styles.anchor} id="portfolio-sharer" />
         <img
           className={stylesConfig.thumbnail}
           src="/images/projects-dgifolios.png"
           alt="dgifolios project"
         />
-        <h2 className={styles.title}>dgifolios</h2>
+        <h2 className={styles.title}>Portfolio Sharer</h2>
 
         <h3 className={styles.subTitle}>Stack:</h3>
-        <p className={styles.stack}>Next.js, SCSS, Node.js, MongoDB</p>
+        <p className={styles.stack}>
+          ASP.NET Core, Angular, Entity Framework Core, PostGreSQL, Bootstrap
+        </p>
         <br />
         <h3 className={styles.subTitle}>Description:</h3>
         <p className={styles.description}>
-          This full-stack app takes user-entered data about their stock
-          portfolio to provide a number of features. A few of them are:
-          statistics about the user's portfolio and dividends, a number of
-          charts, and a public profile page about their investments that can be
-          shared and followed by other users of the site.
-        </p>
-        <br />
-        <h3 className={styles.subTitle}>Lesson Learned:</h3>
-        <p className={styles.description}>
-          In general, this project gave me a lot of confidence in my ability to
-          create a full-stack application. In the end, I had a frontend that
-          connects to a Node.js backend that essentially handles CRUD operations
-          and authentication. I spent many hours inside the documentation of
-          things like MongoDB, the Fuse.js search library, Nivo charts, and
-          others. I also wrote some algorithms to calculate certain statistics
-          on the stocks and dividends, which is really a core feature of the
-          app.
+          I'm currently reworking this project. I want it to be a social media
+          site for people who focus on investing for dividends and the income
+          they provide.
         </p>
         <br />
         <h3 className={styles.subTitle}>Visit:</h3>
         <a
           className={stylesConfig.linkAnchor}
-          href="https://dgifolios.com"
+          href="https://portfolio-sharer.herokuapp.com/"
           target="_blank"
         >
-          dgifolios.com
+          portfolio-sharer.herokuapp.com
         </a>
-        <span className={styles.login}>
-          (Demo login: dgifolios@gmail.com / Password1)
-        </span>
         <br />
         <GitHub isDarkMode={isDarkMode} />
         <a
           className={stylesConfig.linkAnchor}
-          href="https://github.com/aumstead/dgifolios-backend"
+          href="https://github.com/aumstead/portfolio-sharer"
+          target="_blank"
+        >
+          GitHub
+        </a>
+      </section>
+
+      <section className={styles.project}>
+        <a className={styles.anchor} id="white-sands" />
+        <img
+          className={stylesConfig.thumbnail}
+          src="/images/projects-white-sands.png"
+          alt="White Sands Resort project"
+        />
+        <h2 className={styles.title}>White Sands Resort</h2>
+
+        <h3 className={styles.subTitle}>Stack:</h3>
+        <p className={styles.stack}>
+          ASP.NET Core MVC and Razor Pages, Entity Framework Core, CSS
+        </p>
+        <br />
+        <h3 className={styles.subTitle}>Description:</h3>
+        <p className={styles.description}>
+          This was one of my very first projects while learning SCSS and
+          Flexbox. It was originally just a landing page, but I added more
+          pages, and a hotel booking management system. Most of the design was
+          taken from (or inspired by😎) the{" "}
+          <a
+            className={stylesConfig.linkAnchor}
+            href="https://fourseasons.com"
+            target="_blank"
+          >
+            Four Seasons
+          </a>{" "}
+          website.
+        </p>
+        <br />
+        <h3 className={styles.subTitle}>Visit:</h3>
+        <WhiteSands isDarkMode={isDarkMode} />
+        <a
+          className={stylesConfig.linkAnchor}
+          href="https://white-sands.herokuapp.com/"
+          target="_blank"
+        >
+          white-sands.herokuapp.com
+        </a>
+        <br />
+        <GitHub isDarkMode={isDarkMode} />
+        <a
+          className={stylesConfig.linkAnchor}
+          href="https://github.com/aumstead/WhiteSandsMVC"
           target="_blank"
         >
           GitHub
@@ -114,15 +191,6 @@ function Projects() {
           pages, plus a blog where she could write articles, customers could
           share their experiences, etc. Users can create an account and login to
           contribute blog articles.
-        </p>
-        <br />
-        <h3 className={styles.subTitle}>Lesson Learned:</h3>
-        <p className={styles.description}>
-          This project gave me a taste of the full-stack as I used Firebase to
-          handle authentication, authorization, and storing blog post text and
-          images. It served as a nice stepping-stone before trying to write a
-          backend myself. I also used the Google Maps API to embed a
-          nice-looking map.
         </p>
         <br />
         <h3 className={styles.subTitle}>Visit:</h3>
@@ -162,20 +230,10 @@ function Projects() {
         <br />
         <h3 className={styles.subTitle}>Description:</h3>
         <p className={styles.description}>
-          RecallChek is a real product offered by Residential Warranty Services,
-          an Indianapolis-based business which offers home warranties. It's a
-          service home inspectors can sell that checks to see if any home
-          appliances have been recalled over the years. An old friend is CTO at
-          the company and offered me this project. (As a sidenote, I did the
-          layout design, but not the site's routing structure, which is unusual
-          and can be confusing.)
-        </p>
-        <br />
-        <h3 className={styles.subTitle}>Lesson Learned:</h3>
-        <p className={styles.description}>
-          The site is quite basic, but making it gave me more practice with
-          grid, flexbox, and making layouts responsive. I also came away with a
-          greater appreciation for things like components and modularized CSS.
+          This was a project I started for a friend who is CTO at a small
+          business based in Indianapolis. It never took off for reasons I don't
+          know about. Nevertheless, I was paid for making these HTML and CSS web
+          pages.
         </p>
         <br />
         <h3 className={styles.subTitle}>Visit:</h3>
@@ -198,65 +256,7 @@ function Projects() {
         </a>
       </section>
 
-      <section className={styles.project}>
-        <a className={styles.anchor} id="white-sands" />
-        <img
-          className={stylesConfig.thumbnail}
-          src="/images/projects-white-sands.png"
-          alt="White Sands Resort project"
-        />
-        <h2 className={styles.title}>White Sands Resort</h2>
-
-        <h3 className={styles.subTitle}>Stack:</h3>
-        <p className={styles.stack}>HTML, SCSS, JavaScript</p>
-        <br />
-        <h3 className={styles.subTitle}>Description:</h3>
-        <p className={styles.description}>
-          This was one of my very first projects, and I still think it's good
-          enough to put in my portfolio. It's simply a landing page for a fake
-          hotel. Most of the design was taken from (or inspired by😎) the{" "}
-          <a
-            className={stylesConfig.linkAnchor}
-            href="https://fourseasons.com"
-            target="_blank"
-          >
-            Four Seasons
-          </a>{" "}
-          website.
-        </p>
-        <br />
-        <h3 className={styles.subTitle}>Lesson Learned:</h3>
-        <p className={styles.description}>
-          This was the first time I used Sass, and now it's my preference. The
-          page is image heavy, so I had to learn about image optimization. All
-          of the layouts were made with flexbox, and since then, it has really
-          become my "go-to" tool in CSS. I felt a lot of satisfaction when I
-          completed this project back in the first-half of 2019. Even though I'm
-          a mediocre designer, I realized I can make something look exactly how
-          I want it using CSS.
-        </p>
-        <br />
-        <h3 className={styles.subTitle}>Visit:</h3>
-        <WhiteSands isDarkMode={isDarkMode} />
-        <a
-          className={stylesConfig.linkAnchor}
-          href="https://white-sands-resort.netlify.com"
-          target="_blank"
-        >
-          white-sands-resort.netlify.com
-        </a>
-        <br />
-        <GitHub isDarkMode={isDarkMode} />
-        <a
-          className={stylesConfig.linkAnchor}
-          href="https://github.com/aumstead/hotel-landing-page"
-          target="_blank"
-        >
-          GitHub
-        </a>
-      </section>
-
-      <section className={styles.project}>
+      {/* <section className={styles.project}>
         <img
           className={stylesConfig.thumbnail}
           src="/images/projects-portfolio-v1.png"
@@ -269,26 +269,9 @@ function Projects() {
         <br />
         <h3 className={styles.subTitle}>Description:</h3>
         <p className={styles.description}>
-          My first portfolio site, done only months before this current one. I
-          suppose it's satisfactory, but there a few things about it that rubbed
-          me the wrong way, and I wanted to be as confident as I could be with
-          my portfolio site.
-        </p>
-        <br />
-        <h3 className={styles.subTitle}>Lesson Learned:</h3>
-        <p className={styles.description}>
-          This was my first project using Next.js, which you may have noticed,
-          is my framework of choice. Like many of my projects, this one was just
-          more React practice, more CSS practice, and maybe a new library or two
-          (this time it was Framer Motion). If you're still reading down here,
-          I'll assume you just scrolled and randomly started skimming the text.
-          Since I still have you here, I might as well make my plea. Look, I can
-          learn to do the job — whatever it may be. After all the studying I've
-          done over the past two years, if I can get paid to learn a certain
-          technology, I'll be thrilled. I'm motivated, I think I'm pretty mature
-          and easy to get along with, and I'm ready to hunker down and work a
-          ton to make it in this industry. I'll sweep floors if I have to!
-          Contact me!
+          My first portfolio site, done in early 2020. There a few things about
+          it that rubbed me the wrong way, and I wanted my personal site to be
+          the best it could be, so I made this one.
         </p>
         <br />
         <h3 className={styles.subTitle}>Visit:</h3>
@@ -313,7 +296,7 @@ function Projects() {
         >
           GitHub
         </a>
-      </section>
+      </section> */}
     </Layout>
   );
 }
