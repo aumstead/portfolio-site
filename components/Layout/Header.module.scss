@@ -1,7 +1,6 @@
 .header {
   width: 840px;
   margin: 0 auto;
-  // position: fixed;
   position: absolute;
   left: 50%;
   transform: translateX(-50%);
@@ -10,12 +9,9 @@
   z-index: 100;
   &__light {
     background-color: rgb(255, 255, 255);
-    // backdrop-filter: saturate(180%) blur(20px);
-    // -webkit-backdrop-filter: saturate(180%) blur(20px);
   }
   &__dark {
     background-color: rgb(41, 41, 41);
-    // backdrop-filter: saturate(180%) blur(20px);
   }
 }
 .topHalf {
@@ -136,7 +132,7 @@
 .sideDrawer {
   display: none;
 }
-@media only screen and (max-width: 500px) {
+@media only screen and (max-width: 875px) {
   .header {
     width: 100%;
     left: 0;

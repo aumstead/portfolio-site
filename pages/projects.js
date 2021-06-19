@@ -57,10 +57,8 @@ function Projects() {
         <br />
         <h3 className={styles.subTitle}>Description:</h3>
         <p className={styles.description}>
-          The idea was simple: a web app for flash cards. Users can create
-          decks, populate those decks with cards, and study them. I had Google
-          social login implemented but took it out because it seems not worth
-          going through their lengthy approval process.
+          Simply a web app for flash cards. Users can create and save decks,
+          populate those decks with cards, and study them.
         </p>
         <br />
         <h3 className={styles.subTitle}>Visit:</h3>
@@ -140,17 +138,13 @@ function Projects() {
         <h3 className={styles.subTitle}>Description:</h3>
         <p className={styles.description}>
           This was one of my very first projects while learning SCSS and
-          Flexbox. It was originally just a landing page, but I added more
-          pages, and a hotel booking management system. Most of the design was
-          taken from (or inspired by😎) the{" "}
-          <a
-            className={stylesConfig.linkAnchor}
-            href="https://fourseasons.com"
-            target="_blank"
-          >
-            Four Seasons
-          </a>{" "}
-          website.
+          Flexbox. It was originally just a landing page, but I added more pages
+          and a hotel booking management system.
+        </p>
+        <br />
+        <p className={styles.description}>
+          Guests can choose the dates of their stay and book a room. Employees
+          can manage all bookings and handle check-in/check-out procedures.
         </p>
         <br />
         <h3 className={styles.subTitle}>Visit:</h3>
@@ -231,9 +225,9 @@ function Projects() {
         <h3 className={styles.subTitle}>Description:</h3>
         <p className={styles.description}>
           This was a project I started for a friend who is CTO at a small
-          business based in Indianapolis. It never took off for reasons I don't
-          know about. Nevertheless, I was paid for making these HTML and CSS web
-          pages.
+          business based in Indianapolis. It never took off for reasons I'm
+          unsure about. Nevertheless, I was paid for making these HTML and CSS
+          web pages.
         </p>
         <br />
         <h3 className={styles.subTitle}>Visit:</h3>
