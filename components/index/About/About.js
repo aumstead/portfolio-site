@@ -72,22 +72,22 @@ function About({ onMobile }) {
             />
           </div>
           <p className={styles.text}>
-            Right now, my fastest development stack would be ASP.NET Core Razor
-            Pages (or MVC) with Entity Framework Core and Bootstrap. I'm also
-            proficient in Angular with ASP.NET Core Web Api and EF Core.
+            Right now, my fastest development stack would be ASP.NET Core Web
+            Api with Entity Framework Core, Angular, and Bootstrap. ASP.NET Core
+            Razor Pages (or MVC) would be a close second.
           </p>
           <br />
           <p className={styles.text}>
-            I'm self-taught and a career-changer. I've gone all-in on this, and
-            devoted 2 1/2 years of my life to it. I hope my dedication and work
-            can be seen through my projects.
+            I'm self-taught and a career-changer. I've gone all in on this path,
+            and devoted over 2 1/2 years of my life to it. I hope my dedication
+            and work can be seen through my projects.
           </p>
           <br />
           <p className={styles.text}>
             I'm very excited to start looking for jobs. For all that I've
-            learned, there's just a lot that requires mentorship and a
-            professional setting. I look forward to being a solid member of the
-            team that decides to give me a chance.
+            learned, there's just a lot more that requires a professional
+            setting and mentorship. I look forward to being a solid member of
+            the team that decides to give me a chance.
           </p>
         </div>
       </div>

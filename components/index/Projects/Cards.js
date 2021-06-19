@@ -11,7 +11,7 @@ function Cards({ setMouseEnteredCards, onMobile }) {
   const [disabled, setDisabled] = useState(false);
 
   const cardsRef = useRef(null);
-  const massageFlukeTl = useRef(null);
+  const twoTl = useRef(null);
   const recallChekTl = useRef(null);
   const whiteSandsTl = useRef(null);
   const dgifoliosTl = useRef(null);
@@ -20,33 +20,33 @@ function Cards({ setMouseEnteredCards, onMobile }) {
   let secondTimeout;
 
   useEffect(() => {
-    gsap.set("#dgifolios", { rotate: -45, transformOrigin: "45% 85%" } )
-    gsap.set("#massage-fluke", { rotate: 15, transformOrigin: "55% 85%" } )
-    gsap.set("#recall-chek", { rotate: 35, transformOrigin: "55% 85%" } )
-    gsap.set("#white-sands", { rotate: 55, transformOrigin: "55% 85%" } )
+    gsap.set("#one", { rotate: -45, transformOrigin: "45% 85%" });
+    gsap.set("#two", { rotate: 15, transformOrigin: "55% 85%" });
+    gsap.set("#recall-chek", { rotate: 35, transformOrigin: "55% 85%" });
+    gsap.set("#four", { rotate: 55, transformOrigin: "55% 85%" });
 
-    massageFlukeTl.current = gsap.timeline();
-    massageFlukeTl.current
-      .to("#dgifolios", 1, { rotate: -5, transformOrigin: "45% 85%" })
-      .to("#massage-fluke", 1, { rotate: -45, transformOrigin: "45% 85%" }, "<")
-    massageFlukeTl.current.pause();
+    twoTl.current = gsap.timeline();
+    twoTl.current
+      .to("#one", 1, { rotate: -5, transformOrigin: "45% 85%" })
+      .to("#two", 1, { rotate: -45, transformOrigin: "45% 85%" }, "<");
+    twoTl.current.pause();
 
     recallChekTl.current = gsap.timeline();
     recallChekTl.current
-      .to("#massage-fluke", 1, { rotate: 15, transformOrigin: "45% 85%" })
+      .to("#two", 1, { rotate: 15, transformOrigin: "45% 85%" })
       .to("#recall-chek", 1, { rotate: -45, transformOrigin: "45% 85%" }, "<");
     recallChekTl.current.pause();
 
     whiteSandsTl.current = gsap.timeline();
     whiteSandsTl.current
       .to("#recall-chek", 1, { rotate: 35, transformOrigin: "45% 85%" })
-      .to("#white-sands", 1, { rotate: -45, transformOrigin: "45% 85%" }, "<");
+      .to("#four", 1, { rotate: -45, transformOrigin: "45% 85%" }, "<");
     whiteSandsTl.current.pause();
 
     dgifoliosTl.current = gsap.timeline();
     dgifoliosTl.current
-      .to("#white-sands", 1, { rotate: 55, transformOrigin: "45% 85%" })
-      .to("#dgifolios", 1, { rotate: -45, transformOrigin: "45% 85%" }, "<");
+      .to("#four", 1, { rotate: 55, transformOrigin: "45% 85%" })
+      .to("#one", 1, { rotate: -45, transformOrigin: "45% 85%" }, "<");
     dgifoliosTl.current.pause();
   }, []);
 
@@ -81,7 +81,7 @@ function Cards({ setMouseEnteredCards, onMobile }) {
     setCancelAnimation(true);
 
     if (count === 1) {
-      massageFlukeTl.current.restart();
+      twoTl.current.restart();
       setCount(2);
     } else if (count === 2) {
       recallChekTl.current.restart();
@@ -113,7 +113,8 @@ function Cards({ setMouseEnteredCards, onMobile }) {
       xmlns="http://www.w3.org/2000/svg"
     >
       <g id="newCards">
-        <g id="white-sands" className={styles.whiteSands}>
+        {/* recall check */}
+        <g id="four">
           <path
             id="XMLID 54"
             d="M82 312H22C12.1 312 4 303.9 4 294V22C4 12.1 12.1 4 22 4H82C91.9 4 100 12.1 100 22V294C100 304 92 312 82 312Z"
@@ -140,7 +141,8 @@ function Cards({ setMouseEnteredCards, onMobile }) {
           <path
             id="XMLID 59"
             d="M100 70H4V22C4 12.1 12.1 4 22 4H82C91.9 4 100 12.1 100 22V70Z"
-            fill="#31B9F4"
+            // four top
+            fill="#B53B4D"
           />
           <path
             id="XMLID 5"
@@ -155,7 +157,8 @@ function Cards({ setMouseEnteredCards, onMobile }) {
           <path
             id="XMLID 7"
             d="M100 70H4V136H100V70Z"
-            fill="black"
+            // four middle
+            fill="#8AB53B"
             stroke="#330E00"
             strokeWidth="8"
             strokeMiterlimit="10"
@@ -165,6 +168,8 @@ function Cards({ setMouseEnteredCards, onMobile }) {
           <path id="XMLID 56" d="M100 136H4V202H100V136Z" fill="white" />
           <path
             id="XMLID 8"
+            // four bottom
+            fill="#AFAFAF"
             d="M100 136H4V202H100V136Z"
             stroke="#330E00"
             strokeWidth="8"
@@ -231,7 +236,8 @@ function Cards({ setMouseEnteredCards, onMobile }) {
             />
           </g>
         </g>
-        <g id="recall-chek" className={styles.recallChek}>
+        {/* white sands */}
+        <g id="recall-chek">
           <path
             id="XMLID 54_2"
             d="M82 312H22C12.1 312 4 303.9 4 294V22C4 12.1 12.1 4 22 4H82C91.9 4 100 12.1 100 22V294C100 304 92 312 82 312Z"
@@ -258,7 +264,8 @@ function Cards({ setMouseEnteredCards, onMobile }) {
           <path
             id="XMLID 59_2"
             d="M100 70H4V22C4 12.1 12.1 4 22 4H82C91.9 4 100 12.1 100 22V70Z"
-            fill="#B53B4D"
+            // 3 top
+            fill="#31B9F4"
           />
           <path
             id="XMLID 5_2"
@@ -273,7 +280,8 @@ function Cards({ setMouseEnteredCards, onMobile }) {
           <path
             id="XMLID 7_2"
             d="M100 70H4V136H100V70Z"
-            fill="#AFAFAF"
+            fill="black"
+            // 3 middle
             stroke="#330E00"
             strokeWidth="8"
             strokeMiterlimit="10"
@@ -284,6 +292,8 @@ function Cards({ setMouseEnteredCards, onMobile }) {
           <path
             id="XMLID 8_2"
             d="M100 136H4V202H100V136Z"
+            // three bottom
+            fill="white"
             stroke="#330E00"
             strokeWidth="8"
             strokeMiterlimit="10"
@@ -349,7 +359,7 @@ function Cards({ setMouseEnteredCards, onMobile }) {
             />
           </g>
         </g>
-        <g id="massage-fluke" className={styles.massageFluke}>
+        <g id="two" className={styles.portfolioSharer}>
           <path
             id="XMLID 108"
             opacity="0.3"
@@ -386,9 +396,10 @@ function Cards({ setMouseEnteredCards, onMobile }) {
               strokeLinejoin="round"
             />
             <path
+              // two - top
               id="XMLID 59_3"
               d="M100 70H4V22C4 12.1 12.1 4 22 4H82C91.9 4 100 12.1 100 22V70Z"
-              fill="#2C786C"
+              fill="#325D88"
             />
             <path
               id="XMLID 5_3"
@@ -401,9 +412,10 @@ function Cards({ setMouseEnteredCards, onMobile }) {
             />
             <path id="XMLID 58_3" d="M100 70H4V136H100V70Z" fill="#FF0000" />
             <path
+              // two - middle
               id="XMLID 7_3"
               d="M100 70H4V136H100V70Z"
-              fill="#F75F00"
+              fill="white"
               stroke="#330E00"
               strokeWidth="8"
               strokeMiterlimit="10"
@@ -412,9 +424,11 @@ function Cards({ setMouseEnteredCards, onMobile }) {
             />
             <path id="XMLID 56_3" d="M100 136H4V202H100V136Z" fill="white" />
             <path
+              // two - bottom
               id="XMLID 8_3"
               d="M100 136H4V202H100V136Z"
               stroke="#330E00"
+              fill="#A8385D"
               strokeWidth="8"
               strokeMiterlimit="10"
               strokeLinecap="round"
@@ -480,7 +494,7 @@ function Cards({ setMouseEnteredCards, onMobile }) {
             </g>
           </g>
         </g>
-        <g id="dgifolios" className={styles.dgifolios}>
+        <g id="one" className={styles.whiteSands}>
           <path
             id="XMLID 54_4"
             d="M82 312H22C12.1 312 4 303.9 4 294V22C4 12.1 12.1 4 22 4H82C91.9 4 100 12.1 100 22V294C100 304 92 312 82 312Z"
@@ -505,9 +519,10 @@ function Cards({ setMouseEnteredCards, onMobile }) {
             strokeLinejoin="round"
           />
           <path
+            // one - top
             id="XMLID 59_4"
             d="M100 70H4V22C4 12.1 12.1 4 22 4H82C91.9 4 100 12.1 100 22V70Z"
-            fill="#E0E0E0"
+            fill="#212529"
           />
           <path
             id="XMLID 5_4"
@@ -520,20 +535,23 @@ function Cards({ setMouseEnteredCards, onMobile }) {
           />
           <path id="XMLID 58_4" d="M100 70H4V136H100V70Z" fill="#FF0000" />
           <path
+            // one - middle
             id="XMLID 7_4"
             d="M100 70H4V136H100V70Z"
-            fill="#61CDBB"
+            fill="#18bc9c"
             stroke="#330E00"
             strokeWidth="8"
             strokeMiterlimit="10"
             strokeLinecap="round"
             strokeLinejoin="round"
           />
-          <path id="XMLID 56_4" d="M100 136H4V202H100V136Z" fill="#100303" />
+          <path id="XMLID 56_4" d="M100 136H4V202H100V136Z" fill="white" />
           <path
+            // one - bottom
             id="XMLID 8_4"
             d="M100 136H4V202H100V136Z"
             stroke="#330E00"
+            fill="#fefefe"
             strokeWidth="8"
             strokeMiterlimit="10"
             strokeLinecap="round"

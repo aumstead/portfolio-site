@@ -1,7 +1,7 @@
 import styles from "./blogPostStyles.module.scss";
 import { useContext, useEffect } from "react";
 import Link from "next/link";
-import Head from 'next/head'
+import Head from "next/head";
 import Prism from "prismjs";
 import Layout from "../../components/Layout/Layout";
 import DarkModeContext from "../../contexts/darkMode/DarkModeContext";
@@ -239,7 +239,7 @@ function Final() {
       <Head>
         <title>andrewumstead.dev | GSAP in React: Timelines</title>
       </Head>
-      
+
       <section className={styles.heroSection}>
         <h1 className={styles.h1}>GSAP in React - Part 2: Timelines</h1>
         <div className={styles.infoFlexContainer}>
@@ -813,13 +813,11 @@ function Final() {
           </a>
         </Link>
 
-        <Link href="/post/gsap-motion-path">
+        <Link href="/post/aspnet-on-heroku">
           <a className={styles.navPost}>
             &rarr;
             <br />
-            GSAP in React:
-            <br />
-            MotionPath Plugin
+            Heroku and ASP.NET Core
           </a>
         </Link>
       </div>

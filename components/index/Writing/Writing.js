@@ -57,6 +57,7 @@ function Writing({ onMobile }) {
       {renderHeadingLayout()}
       <Post isDarkMode={isDarkMode} post={data[0]} />
       <Post isDarkMode={isDarkMode} post={data[1]} />
+      <Post isDarkMode={isDarkMode} post={data[2]} />
     </section>
   );
 }

@@ -37,7 +37,7 @@
   height: 19rem;
   width: 16rem;
   transform: rotate(5deg) translateX(-1rem);
-  margin-left: 1.5rem;
+  margin-left: 2.5rem;
   background-color: #fff;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.26);
 }
@@ -69,8 +69,6 @@
   align-items: center;
   position: relative;
 }
-
-
 
 @media only screen and (max-width: 500px) {
   .hint {
