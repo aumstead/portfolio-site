@@ -137,14 +137,15 @@ function Projects() {
         <br />
         <h3 className={styles.subTitle}>Description:</h3>
         <p className={styles.description}>
-          This was one of my very first projects while learning SCSS and
-          Flexbox. It was originally just a landing page, but I added more pages
-          and a hotel booking management system.
+          This was one of my very first projects I did a couple years ago while
+          learning SCSS and Flexbox. Originally, it was just a landing page, but
+          more recently I added a few pages and a hotel room/booking management
+          system.
         </p>
         <br />
         <p className={styles.description}>
           Guests can choose the dates of their stay and book a room. Employees
-          can manage all bookings and handle check-in/check-out procedures.
+          can manage bookings and handle check-in/check-out procedures.
         </p>
         <br />
         <h3 className={styles.subTitle}>Visit:</h3>
@@ -225,9 +226,9 @@ function Projects() {
         <h3 className={styles.subTitle}>Description:</h3>
         <p className={styles.description}>
           This was a project I started for a friend who is CTO at a small
-          business based in Indianapolis. It never took off for reasons I'm
-          unsure about. Nevertheless, I was paid for making these HTML and CSS
-          web pages.
+          business based in Indianapolis. The project never took off for reasons
+          I'm unsure about. Recall Check is a small slice of their business.
+          Nevertheless, I was paid for making these HTML and CSS web pages.
         </p>
         <br />
         <h3 className={styles.subTitle}>Visit:</h3>
