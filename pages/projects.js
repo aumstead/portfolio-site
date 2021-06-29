@@ -8,6 +8,7 @@ import GitHub from "../components/projects/logos/GitHub";
 import RecallChek from "../components/projects/logos/RecallChek";
 import MassageFluke from "../components/projects/logos/MassageFluke";
 import WhiteSands from "../components/projects/logos/WhiteSands";
+import PortfolioSvg from "../components/projects/logos/PortfolioSvg";
 import FastFlashCardsSvg from "../components/projects/logos/FastFlashCardsSvg";
 import HeroSvg from "../components/projects/HeroSvg";
 
@@ -57,7 +58,7 @@ function Projects() {
         <br />
         <h3 className={styles.subTitle}>Description:</h3>
         <p className={styles.description}>
-          Simply a web app for flash cards. Users can create and save decks,
+          A web app for making flash cards. Users can create and save decks,
           populate those decks with cards, and study them.
         </p>
         <br />
@@ -85,8 +86,8 @@ function Projects() {
         <a className={styles.anchor} id="portfolio-sharer" />
         <img
           className={stylesConfig.thumbnail}
-          src="/images/projects-dgifolios.png"
-          alt="dgifolios project"
+          src="/images/portfolio-sharer-browser2.png"
+          alt="portfolio-sharer project"
         />
         <h2 className={styles.title}>Portfolio Sharer</h2>
 
@@ -103,6 +104,7 @@ function Projects() {
         </p>
         <br />
         <h3 className={styles.subTitle}>Visit:</h3>
+        <PortfolioSvg />
         <a
           className={stylesConfig.linkAnchor}
           href="https://portfolio-sharer.herokuapp.com/"
