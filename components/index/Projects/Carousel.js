@@ -136,49 +136,6 @@ function Carousel({ mouseEnteredCards, isDarkMode, onMobile }) {
           <div className={styles.mockupContainer}>
             <img
               className={stylesConfig.browserMockup}
-              src="/images/mockups/portfolio-sharer-browser.png"
-              alt="Portfolio Sharer - browser mockup"
-            />
-            <img
-              className={stylesConfig.phoneMockup}
-              src="/images/mockups/portfolio-sharer-phone.png"
-              alt="Portfolio Sharer - mobile mockup"
-            />
-          </div>
-          <div className={styles.infoContainer}>
-            <h3 className={styles.title}>Portfolio Sharer</h3>
-            <p className={styles.description}>
-              A portfolio tracking/social media site for investment portfolios.{" "}
-              <Link href="/projects#portfolio-sharer">
-                <a className={stylesConfig.readMore}>Read more &rarr;</a>
-              </Link>
-            </p>
-            <div className={styles.visitSiteContainer}>
-              <PortfolioSvg fill="#330E00" />
-              <a
-                className={stylesConfig.linkAnchor}
-                href="https://portfolio-sharer.herokuapp.com/"
-                target="_blank"
-              >
-                portfolio-sharer.herokuapp.com
-              </a>
-              <br />
-              <GitHub isDarkMode={isDarkMode} />
-              <a
-                className={stylesConfig.linkAnchor}
-                href="https://github.com/aumstead/portfolio-sharer"
-                target="_blank"
-              >
-                GitHub
-              </a>
-            </div>
-          </div>
-        </div>
-
-        <div className={onMobile ? styles.slideMobile : styles.slide}>
-          <div className={styles.mockupContainer}>
-            <img
-              className={stylesConfig.browserMockup}
               src="/images/mockups/whitesands-browser.png"
               alt="White Sands - browser mockup"
             />
@@ -210,6 +167,49 @@ function Carousel({ mouseEnteredCards, isDarkMode, onMobile }) {
               <a
                 className={stylesConfig.linkAnchor}
                 href="https://github.com/aumstead/WhiteSandsMVC"
+                target="_blank"
+              >
+                GitHub
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <div className={onMobile ? styles.slideMobile : styles.slide}>
+          <div className={styles.mockupContainer}>
+            <img
+              className={stylesConfig.browserMockup}
+              src="/images/mockups/portfolio-sharer-browser.png"
+              alt="Portfolio Sharer - browser mockup"
+            />
+            <img
+              className={stylesConfig.phoneMockup}
+              src="/images/mockups/portfolio-sharer-phone.png"
+              alt="Portfolio Sharer - mobile mockup"
+            />
+          </div>
+          <div className={styles.infoContainer}>
+            <h3 className={styles.title}>Portfolio Sharer</h3>
+            <p className={styles.description}>
+              A portfolio tracking/social media site for investment portfolios.{" "}
+              <Link href="/projects#portfolio-sharer">
+                <a className={stylesConfig.readMore}>Read more &rarr;</a>
+              </Link>
+            </p>
+            <div className={styles.visitSiteContainer}>
+              <PortfolioSvg fill="#330E00" />
+              <a
+                className={stylesConfig.linkAnchor}
+                href="https://portfolio-sharer.herokuapp.com/"
+                target="_blank"
+              >
+                portfolio-sharer.herokuapp.com
+              </a>
+              <br />
+              <GitHub isDarkMode={isDarkMode} />
+              <a
+                className={stylesConfig.linkAnchor}
+                href="https://github.com/aumstead/portfolio-sharer"
                 target="_blank"
               >
                 GitHub

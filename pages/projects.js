@@ -83,47 +83,6 @@ function Projects() {
       </section>
 
       <section className={styles.project}>
-        <a className={styles.anchor} id="portfolio-sharer" />
-        <img
-          className={stylesConfig.thumbnail}
-          src="/images/portfolio-sharer-browser2.png"
-          alt="portfolio-sharer project"
-        />
-        <h2 className={styles.title}>Portfolio Sharer</h2>
-
-        <h3 className={styles.subTitle}>Stack:</h3>
-        <p className={styles.stack}>
-          ASP.NET Core, Angular, Entity Framework Core, PostGreSQL, Bootstrap
-        </p>
-        <br />
-        <h3 className={styles.subTitle}>Description:</h3>
-        <p className={styles.description}>
-          I'm currently reworking this project. I want it to be a social media
-          site for people who focus on investing for dividends and the income
-          they provide.
-        </p>
-        <br />
-        <h3 className={styles.subTitle}>Visit:</h3>
-        <PortfolioSvg />
-        <a
-          className={stylesConfig.linkAnchor}
-          href="https://portfolio-sharer.herokuapp.com/"
-          target="_blank"
-        >
-          portfolio-sharer.herokuapp.com
-        </a>
-        <br />
-        <GitHub isDarkMode={isDarkMode} />
-        <a
-          className={stylesConfig.linkAnchor}
-          href="https://github.com/aumstead/portfolio-sharer"
-          target="_blank"
-        >
-          GitHub
-        </a>
-      </section>
-
-      <section className={styles.project}>
         <a className={styles.anchor} id="white-sands" />
         <img
           className={stylesConfig.thumbnail}
@@ -164,6 +123,47 @@ function Projects() {
         <a
           className={stylesConfig.linkAnchor}
           href="https://github.com/aumstead/WhiteSandsMVC"
+          target="_blank"
+        >
+          GitHub
+        </a>
+      </section>
+
+      <section className={styles.project}>
+        <a className={styles.anchor} id="portfolio-sharer" />
+        <img
+          className={stylesConfig.thumbnail}
+          src="/images/portfolio-sharer-browser2.png"
+          alt="portfolio-sharer project"
+        />
+        <h2 className={styles.title}>Portfolio Sharer</h2>
+
+        <h3 className={styles.subTitle}>Stack:</h3>
+        <p className={styles.stack}>
+          ASP.NET Core, Angular, Entity Framework Core, PostGreSQL, Bootstrap
+        </p>
+        <br />
+        <h3 className={styles.subTitle}>Description:</h3>
+        <p className={styles.description}>
+          I'm currently reworking this project. I want it to be a social media
+          site for people who focus on investing for dividends and the income
+          they provide.
+        </p>
+        <br />
+        <h3 className={styles.subTitle}>Visit:</h3>
+        <PortfolioSvg />
+        <a
+          className={stylesConfig.linkAnchor}
+          href="https://portfolio-sharer.herokuapp.com/"
+          target="_blank"
+        >
+          portfolio-sharer.herokuapp.com
+        </a>
+        <br />
+        <GitHub isDarkMode={isDarkMode} />
+        <a
+          className={stylesConfig.linkAnchor}
+          href="https://github.com/aumstead/portfolio-sharer"
           target="_blank"
         >
           GitHub

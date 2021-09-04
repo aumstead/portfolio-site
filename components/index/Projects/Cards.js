@@ -236,7 +236,8 @@ function Cards({ setMouseEnteredCards, onMobile }) {
             />
           </g>
         </g>
-        {/* white sands */}
+
+        {/* id is recall-chek only for animation purposes */}
         <g id="recall-chek">
           <path
             id="XMLID 54_2"
@@ -265,7 +266,7 @@ function Cards({ setMouseEnteredCards, onMobile }) {
             id="XMLID 59_2"
             d="M100 70H4V22C4 12.1 12.1 4 22 4H82C91.9 4 100 12.1 100 22V70Z"
             // 3 top
-            fill="#31B9F4"
+            fill="#325D88"
           />
           <path
             id="XMLID 5_2"
@@ -280,7 +281,7 @@ function Cards({ setMouseEnteredCards, onMobile }) {
           <path
             id="XMLID 7_2"
             d="M100 70H4V136H100V70Z"
-            fill="black"
+            fill="white"
             // 3 middle
             stroke="#330E00"
             strokeWidth="8"
@@ -293,7 +294,7 @@ function Cards({ setMouseEnteredCards, onMobile }) {
             id="XMLID 8_2"
             d="M100 136H4V202H100V136Z"
             // three bottom
-            fill="white"
+            fill="#A8385D"
             stroke="#330E00"
             strokeWidth="8"
             strokeMiterlimit="10"
@@ -399,7 +400,8 @@ function Cards({ setMouseEnteredCards, onMobile }) {
               // two - top
               id="XMLID 59_3"
               d="M100 70H4V22C4 12.1 12.1 4 22 4H82C91.9 4 100 12.1 100 22V70Z"
-              fill="#325D88"
+              // fill="#325D88"
+              fill="#31B9F4"
             />
             <path
               id="XMLID 5_3"
@@ -415,7 +417,8 @@ function Cards({ setMouseEnteredCards, onMobile }) {
               // two - middle
               id="XMLID 7_3"
               d="M100 70H4V136H100V70Z"
-              fill="white"
+              // fill="white"
+              fill="black"
               stroke="#330E00"
               strokeWidth="8"
               strokeMiterlimit="10"
@@ -428,7 +431,7 @@ function Cards({ setMouseEnteredCards, onMobile }) {
               id="XMLID 8_3"
               d="M100 136H4V202H100V136Z"
               stroke="#330E00"
-              fill="#A8385D"
+              fill="white"
               strokeWidth="8"
               strokeMiterlimit="10"
               strokeLinecap="round"
@@ -494,7 +497,7 @@ function Cards({ setMouseEnteredCards, onMobile }) {
             </g>
           </g>
         </g>
-        <g id="one" className={styles.whiteSands}>
+        <g id="one">
           <path
             id="XMLID 54_4"
             d="M82 312H22C12.1 312 4 303.9 4 294V22C4 12.1 12.1 4 22 4H82C91.9 4 100 12.1 100 22V294C100 304 92 312 82 312Z"
