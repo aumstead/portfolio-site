@@ -66,7 +66,7 @@ function Screen({ triggerTimeline }) {
       <a
         className={`${styles.text} ${styles.underline}`}
         id="resume"
-        href="/resume.pdf"
+        href="/Andrew-Umstead-Resume.pdf"
         target="_blank"
       ></a>
     </div>
