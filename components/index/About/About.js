@@ -72,22 +72,25 @@ function About({ onMobile }) {
             />
           </div>
           <p className={styles.text}>
-            Right now, my fastest development stack would be ASP.NET Core Web
-            Api with Entity Framework Core, Angular, and Bootstrap. ASP.NET Core
-            Razor Pages (or MVC) would be a close second.
+            At the moment, my daily work consists of using ASP.NET, Oracle,
+            Telerik UI, and Azure DevOps to develop and maintain applications. I
+            very much enjoy working with these technologies.
           </p>
           <br />
           <p className={styles.text}>
-            I'm self-taught and a career-changer. I've gone all-in on this path,
-            and devoted over 2 1/2 years of my life to it. I hope my dedication
-            and work can be seen in my projects.
+            I've also studied React and Angular extensively, and used them both
+            for personal projects. I believe with a short refresher, I could
+            start using these tools professionally. I'm confident that I could
+            ramp up quite quickly.
           </p>
           <br />
           <p className={styles.text}>
-            I'm very excited to start looking for jobs. For all that I've
-            learned, there's just a lot more that requires a professional
-            setting and mentorship. I look forward to being a solid member of
-            the team that decides to give me a chance.
+            I'm a self-taught developer and career-changer. I feel incredibly
+            fortunate to have made the transition professionally into software
+            development. It took a lot of hard work and dedication, and it was
+            worth every minute. While I'm happy with my current position, I'm
+            always open to opportunities that might offer me the chance to grow
+            as a developer and team member in new and wonderful ways.
           </p>
         </div>
       </div>

@@ -12,6 +12,7 @@ function Grid({ mouseEnteredKnife }) {
           <li className={styles.li}>Angular</li>
           <li className={styles.li}>React</li>
           <li className={styles.li}>Bootstrap</li>
+          <li className={styles.li}>jQuery</li>
         </ul>
       </div>
 
@@ -27,6 +28,7 @@ function Grid({ mouseEnteredKnife }) {
             ASP.NET Core/5 Razor Pages, MVC, Web API
           </li>
           <li className={styles.li}>Entity Framework Core</li>
+          <li className={styles.li}>SQL</li>
         </ul>
       </div>
     </div>
