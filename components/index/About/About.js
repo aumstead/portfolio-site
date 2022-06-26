@@ -88,9 +88,8 @@ function About({ onMobile }) {
             I'm a self-taught developer and career-changer. I feel incredibly
             fortunate to have made the transition professionally into software
             development. It took a lot of hard work and dedication, and it was
-            worth every minute. While I'm happy with my current position, I'm
-            always open to opportunities that might offer me the chance to grow
-            as a developer and team member in new and wonderful ways.
+            worth every minute. While I'm very happy with my current position,
+            I'm always open to new and exciting opportunities.
           </p>
         </div>
       </div>
