@@ -66,10 +66,10 @@ function Projects() {
         <FastFlashCardsSvg />
         <a
           className={stylesConfig.linkAnchor}
-          href="https://fastflashcards.com"
+          href="https://myfastflashcards.herokuapp.com/"
           target="_blank"
         >
-          fastflashcards.com
+          myfastflashcards.herokuapp.com
         </a>
         <br />
         <GitHub isDarkMode={isDarkMode} />
