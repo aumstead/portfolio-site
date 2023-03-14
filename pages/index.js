@@ -43,7 +43,7 @@ function Index() {
       </section>
 
       <Projects onMobile={onMobile} />
-      <Writing onMobile={onMobile} />
+      {/* <Writing onMobile={onMobile} /> */}
       <Skills onMobile={onMobile} />
       <About onMobile={onMobile} />
     </Layout>

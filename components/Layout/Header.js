@@ -103,9 +103,9 @@ export default function Header() {
             <Link href="/projects">
               <a className={stylesConfig.projects}>Projects</a>
             </Link>
-            <Link href="/blog">
+            {/* <Link href="/blog">
               <a className={stylesConfig.blog}>Blog</a>
-            </Link>
+            </Link> */}
             <Link href="/">
               <a className={stylesConfig.home}>Home</a>
             </Link>
@@ -129,9 +129,9 @@ export default function Header() {
           <Link href="/projects">
             <a className={stylesConfig.mobileBtn}>Projects</a>
           </Link>
-          <Link href="/blog">
+          {/* <Link href="/blog">
             <a className={stylesConfig.mobileBtn}>Blog</a>
-          </Link>
+          </Link> */}
           <Link href="/#contact">
             <a className={stylesConfig.mobileBtn}>Contact</a>
           </Link>
