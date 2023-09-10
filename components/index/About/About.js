@@ -72,7 +72,7 @@ function About({ onMobile }) {
             />
           </div>
           <p className={styles.text}>
-            At the moment, my daily work consists of using ASP.NET, Oracle,
+            At the moment, my daily work consists of using ASP.NET, MSSQL,
             Telerik UI, and Azure DevOps to develop and maintain applications. I
             very much enjoy working with these technologies.
           </p>
@@ -88,7 +88,7 @@ function About({ onMobile }) {
             I'm a self-taught developer and career-changer. I feel incredibly
             fortunate to have made the transition professionally into software
             development. It took a lot of hard work and dedication, and it was
-            worth every minute. While I'm very happy with my current position,
+            entirely worth it. While I'm very happy with my current position,
             I'm always open to new and exciting opportunities.
           </p>
         </div>
