@@ -87,7 +87,7 @@ export default function Header() {
     <header id="header" className={stylesConfig.header}>
       <div className={styles.topHalf}>
         <Link href="/">
-          <a className={styles.logoAnchor}>
+          <span className={styles.logoAnchor}>
             <div
               onMouseEnter={onMobile ? null : handleMouseEnter}
               onClick={onMobile ? handleMouseEnter : null}
@@ -96,18 +96,18 @@ export default function Header() {
               <Logo enteredLogo={enteredLogo} isDarkMode={isDarkMode} />
               <span className={stylesConfig.logoText}>Andrew Umstead</span>
             </div>
-          </a>
+          </span>
         </Link>
         <div className={styles.flexItem__right}>
           <nav className={styles.nav}>
             <Link href="/projects">
-              <a className={stylesConfig.projects}>Projects</a>
+              <span className={stylesConfig.projects}>Projects</span>
             </Link>
             {/* <Link href="/blog">
               <a className={stylesConfig.blog}>Blog</a>
             </Link> */}
             <Link href="/">
-              <a className={stylesConfig.home}>Home</a>
+              <span className={stylesConfig.home}>Home</span>
             </Link>
           </nav>
 
@@ -127,16 +127,16 @@ export default function Header() {
       <div id="bottomHalf" className={styles.bottomHalf}>
         <nav id="mobileNav" className={styles.mobileNav}>
           <Link href="/projects">
-            <a className={stylesConfig.mobileBtn}>Projects</a>
+            <span className={stylesConfig.mobileBtn}>Projects</span>
           </Link>
           {/* <Link href="/blog">
             <a className={stylesConfig.mobileBtn}>Blog</a>
           </Link> */}
           <Link href="/#contact">
-            <a className={stylesConfig.mobileBtn}>Contact</a>
+            <span className={stylesConfig.mobileBtn}>Contact</span>
           </Link>
           <Link href="/">
-            <a className={stylesConfig.mobileBtn}>Home</a>
+            <span className={stylesConfig.mobileBtn}>Home</span>
           </Link>
         </nav>
       </div>

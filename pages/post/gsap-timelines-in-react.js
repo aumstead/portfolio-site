@@ -804,21 +804,21 @@ function Final() {
 
       <div className={styles.navPostFlexContainer}>
         <Link href="/post/gsap-tweens-in-react">
-          <a className={stylesConfig.navPost}>
+          <span className={stylesConfig.navPost}>
             &larr;
             <br />
             GSAP in React:
             <br />
             Basic Tweens
-          </a>
+          </span>
         </Link>
 
         <Link href="/post/aspnet-on-heroku">
-          <a className={styles.navPost}>
+          <span className={styles.navPost}>
             &rarr;
             <br />
             Heroku and ASP.NET Core
-          </a>
+          </span>
         </Link>
       </div>
     </Layout>

@@ -2,7 +2,7 @@ import styles from "./blogPostStyles.module.scss";
 import { useContext, useEffect } from "react";
 import Prism from "prismjs";
 import Link from "next/link";
-import Head from 'next/head'
+import Head from "next/head";
 import DarkModeContext from "../../contexts/darkMode/DarkModeContext";
 import MobileContext from "../../contexts/mobile/MobileContext";
 import Layout from "../../components/Layout/Layout";
@@ -22,7 +22,8 @@ export default () => {
   useEffect(() => {
     Prism.highlightAll();
   });
-  const codeHTMLSVG = `<svg width="40" height="32" viewBox="0 0 40 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+  const codeHTMLSVG =
+    `<svg width="40" height="32" viewBox="0 0 40 32" fill="none" xmlns="http://www.w3.org/2000/svg">
   <g id="my-svg-group">
     <path
       id="greater-than"
@@ -144,7 +145,7 @@ function ExampleTweenComponent() {
       <Head>
         <title>andrewumstead.dev | GSAP in React: Basic Tweens</title>
       </Head>
-      
+
       <section className={styles.heroSection}>
         <h1 className={styles.h1}>
           GSAP in React - Part 1:
@@ -166,8 +167,7 @@ function ExampleTweenComponent() {
 
       <article className={styles.article}>
         <p className={styles.p}>
-          This
-          first post will cover how I use GSAP with the{" "}
+          This first post will cover how I use GSAP with the{" "}
           <code className={stylesConfig.code}>useEffect</code> and{" "}
           <code className={stylesConfig.code}>useRef</code> hooks to create
           animations that start on events like click or hover. As an example for
@@ -190,8 +190,7 @@ function ExampleTweenComponent() {
           >
             part 2
           </a>{" "}
-          we will have covered everything needed to make this
-          animation.
+          we will have covered everything needed to make this animation.
         </p>
 
         <p className={styles.p}>
@@ -222,8 +221,8 @@ function ExampleTweenComponent() {
           >
             illlustrations.co
           </a>
-          , a cool site by an artist whose work I used throughout my
-          portfolio site.
+          , a cool site by an artist whose work I used throughout my portfolio
+          site.
         </p>
 
         <p className={styles.p}>
@@ -235,9 +234,9 @@ function ExampleTweenComponent() {
           You might already be aware of some of the benefits of using SVGs, such
           as their ability to scale without losing quality or increasing in file
           size. But, my other favorite thing about them, which I don't see
-          mentioned very often, is that I can go into their code and manipulate the
-          images. It's quite easy to change a color, remove part of the graphic
-          I don't want, or add a class for some CSS styles.
+          mentioned very often, is that I can go into their code and manipulate
+          the images. It's quite easy to change a color, remove part of the
+          graphic I don't want, or add a class for some CSS styles.
         </p>
 
         <div style={{ display: "flex", justifyContent: "center" }}>
@@ -544,11 +543,11 @@ function ExampleTweenComponent() {
 
       <div className={styles.nextPostFlexContainer}>
         <Link href="/post/gsap-timelines-in-react">
-          <a className={styles.nextPost}>
+          <span className={styles.nextPost}>
             Next &rarr;
             <br />
             GSAP in React: Timelines
-          </a>
+          </span>
         </Link>
       </div>
     </Layout>

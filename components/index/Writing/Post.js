@@ -17,9 +17,9 @@ function Post({ post, isDarkMode }) {
     <div className={styles.post}>
       <div className={styles.titleFlexContainer}>
         <Link href={`${post.url}`}>
-          <a className={stylesConfig.postAnchor}>
+          <span className={stylesConfig.postAnchor}>
             <h3 className={styles.title}>{post.title}</h3>
-          </a>
+          </span>
         </Link>
         <span className={stylesConfig.date}>{post.date}</span>
       </div>

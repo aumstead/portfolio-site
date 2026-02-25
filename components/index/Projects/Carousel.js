@@ -107,7 +107,7 @@ function Carousel({ mouseEnteredCards, isDarkMode, onMobile }) {
             <p className={styles.description}>
               A web app for making and studying flash cards.{" "}
               <Link href="/projects#fast-flash-cards">
-                <a className={stylesConfig.readMore}>Read more &rarr;</a>
+                <span className={stylesConfig.readMore}>Read more &rarr;</span>
               </Link>
             </p>
             <div className={styles.visitSiteContainer}>
@@ -150,7 +150,7 @@ function Carousel({ mouseEnteredCards, isDarkMode, onMobile }) {
             <p className={styles.description}>
               A booking system and landing page for a mock hotel.{" "}
               <Link href="/projects#whitesands">
-                <a className={stylesConfig.readMore}>Read more &rarr;</a>
+                <span className={stylesConfig.readMore}>Read more &rarr;</span>
               </Link>
             </p>
             <div className={styles.visitSiteContainer}>
@@ -283,7 +283,7 @@ function Carousel({ mouseEnteredCards, isDarkMode, onMobile }) {
             <p className={styles.description}>
               A web app for making and studying flash cards.{" "}
               <Link href="/projects#fast-flash-cards">
-                <a className={stylesConfig.readMore}>Read more &rarr;</a>
+                <span className={stylesConfig.readMore}>Read more &rarr;</span>
               </Link>
             </p>
             <div className={styles.visitSiteContainer}>

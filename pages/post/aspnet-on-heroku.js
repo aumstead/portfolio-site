@@ -415,13 +415,13 @@ export default () => {
 
       <div className={styles.navPostFlexContainer}>
         <Link href="/post/gsap-timelines-in-react">
-          <a className={stylesConfig.navPost}>
+          <span className={stylesConfig.navPost}>
             &larr;
             <br />
             Previous
             <br />
             GSAP in React: Timelines
-          </a>
+          </span>
         </Link>
       </div>
     </Layout>
