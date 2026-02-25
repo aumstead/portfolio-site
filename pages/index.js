@@ -29,23 +29,23 @@ function Index() {
       </Head>
 
       <section className={styles.section}>
-        <CleanCodeSvg onMobile={onMobile} />
+        {/* <CleanCodeSvg onMobile={onMobile} /> */}
         <h1 className={stylesConfig.heroTitle}>Andrew Umstead</h1>
         <p className={styles.heroText}>
           Welcome to my site — the place where I try to persuade you to hire me.
-          Well, then, this site better impress, right?
+          Here, you'll find a few more details beyond my resume.
         </p>
         <br />
         <p className={styles.heroText}>
-          Have a look around — skim, scroll, and try hovering over the little
-          graphics (or tapping them) to see an animation!
+          Skim, scroll, and try hovering over the little graphics (or tapping
+          them) to see an animation!
         </p>
       </section>
 
-      <Projects onMobile={onMobile} />
       {/* <Writing onMobile={onMobile} /> */}
-      <Skills onMobile={onMobile} />
       <About onMobile={onMobile} />
+      <Skills onMobile={onMobile} />
+      <Projects onMobile={onMobile} />
     </Layout>
   );
 }

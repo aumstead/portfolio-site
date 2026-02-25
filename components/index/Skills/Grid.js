@@ -5,23 +5,20 @@ function Grid({ mouseEnteredKnife }) {
   return (
     <div className={styles.grid}>
       <div className={styles.gridItem__core}>
-        <h3 className={styles.listHeading}>Client-side:</h3>
+        <h3 className={styles.listHeading}>Frontend:</h3>
         <ul className={styles.ul}>
-          <li className={styles.li}>HTML, CSS, SCSS</li>
-          <li className={styles.li}>JavaScript</li>
-          <li className={styles.li}>Angular</li>
-          <li className={styles.li}>React</li>
-          <li className={styles.li}>Bootstrap</li>
-          <li className={styles.li}>jQuery</li>
+          <li className={styles.li}>HTML, CSS, and JavaScript</li>
+          <li className={styles.li}>Can work with any JS framework</li>
+          <li className={styles.li}>Enjoy frontend work</li>
         </ul>
       </div>
 
-      <div className={styles.gridItem__animation}>
+      {/* <div className={styles.gridItem__animation}>
         <MyStack mouseEnteredKnife={mouseEnteredKnife} />
-      </div>
+      </div> */}
 
       <div className={styles.gridItem__secondary}>
-        <h3 className={styles.listHeading}>Server-side:</h3>
+        <h3 className={styles.listHeading}>Backend:</h3>
         <ul className={styles.ul}>
           <li className={styles.li}>C#</li>
           <li className={styles.li}>

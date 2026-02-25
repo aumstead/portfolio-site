@@ -6,7 +6,6 @@ import MobileContext from "../contexts/mobile/MobileContext";
 import Layout from "../components/Layout/Layout";
 import GitHub from "../components/projects/logos/GitHub";
 import RecallChek from "../components/projects/logos/RecallChek";
-import MassageFluke from "../components/projects/logos/MassageFluke";
 import WhiteSands from "../components/projects/logos/WhiteSands";
 import PortfolioSvg from "../components/projects/logos/PortfolioSvg";
 import FastFlashCardsSvg from "../components/projects/logos/FastFlashCardsSvg";
@@ -37,8 +36,10 @@ function Projects() {
         <HeroSvg onMobile={onMobile} />
         <h1 className={styles.heroTitle}>Projects</h1>
         <p className={styles.text}>
-          Here's a selection of my best projects. They're listed from newest to
-          oldest.
+          Here are a couple projects that helped me get my first developer job.
+          I used to have more listed, but now would prefer people not see
+          them😂. These are the two I migrated to my free-tier on Azure, so
+          hopefully they stay up for a while.
         </p>
       </section>
 
@@ -53,7 +54,8 @@ function Projects() {
 
         <h3 className={styles.subTitle}>Stack:</h3>
         <p className={styles.stack}>
-          ASP.NET 5, Angular, Entity Framework Core, PostGreSQL, Bootstrap
+          ASP.NET Web API, Angular, Entity Framework Core, SQLite, Azure App
+          Service
         </p>
         <br />
         <h3 className={styles.subTitle}>Description:</h3>
@@ -66,10 +68,10 @@ function Projects() {
         <FastFlashCardsSvg />
         <a
           className={stylesConfig.linkAnchor}
-          href="https://myfastflashcards.herokuapp.com/"
+          href="https://fastflashcards.azurewebsites.net"
           target="_blank"
         >
-          myfastflashcards.herokuapp.com
+          fastflashcards.azurewebsites.net
         </a>
         <br />
         <GitHub isDarkMode={isDarkMode} />
@@ -93,7 +95,8 @@ function Projects() {
 
         <h3 className={styles.subTitle}>Stack:</h3>
         <p className={styles.stack}>
-          ASP.NET Core MVC and Razor Pages, Entity Framework Core, CSS
+          ASP.NET MVC and Razor Pages, Entity Framework Core, Custom CSS, SQLite
+          Azure App Service
         </p>
         <br />
         <h3 className={styles.subTitle}>Description:</h3>
@@ -113,10 +116,10 @@ function Projects() {
         <WhiteSands isDarkMode={isDarkMode} />
         <a
           className={stylesConfig.linkAnchor}
-          href="https://white-sands.herokuapp.com/"
+          href="https://whitesands.azurewebsites.net"
           target="_blank"
         >
-          white-sands.herokuapp.com
+          whitesands.azurewebsites.net
         </a>
         <br />
         <GitHub isDarkMode={isDarkMode} />
@@ -129,7 +132,7 @@ function Projects() {
         </a>
       </section>
 
-      <section className={styles.project}>
+      {/* <section className={styles.project}>
         <a className={styles.anchor} id="portfolio-sharer" />
         <img
           className={stylesConfig.thumbnail}
@@ -168,9 +171,9 @@ function Projects() {
         >
           GitHub
         </a>
-      </section>
+      </section> */}
 
-      <section className={styles.project}>
+      {/* <section className={styles.project}>
         <a className={styles.anchor} id="massage-fluke" />
         <img
           className={stylesConfig.thumbnail}
@@ -211,9 +214,9 @@ function Projects() {
         >
           GitHub
         </a>
-      </section>
+      </section> */}
 
-      <section className={styles.project}>
+      {/* <section className={styles.project}>
         <a className={styles.anchor} id="recall-chek" />
         <img
           className={stylesConfig.thumbnail}
@@ -251,7 +254,7 @@ function Projects() {
         >
           GitHub
         </a>
-      </section>
+      </section> */}
 
       {/* <section className={styles.project}>
         <img

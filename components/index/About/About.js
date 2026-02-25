@@ -15,6 +15,9 @@ function About({ onMobile }) {
   useEffect(() => {
     if (isInitialRender.current) {
       isInitialRender.current = false;
+      setTimeout(function () {
+        setShowPicture((prevState) => !prevState);
+      }, 2000);
       return;
     }
 
@@ -45,7 +48,7 @@ function About({ onMobile }) {
     <section className={styles.section}>
       <a className={styles.anchor} id="about" />
       <div className={styles.headingFlexContainer}>
-        <h2 className={styles.title}>About</h2>
+        <h2 className={styles.title}>Bio</h2>
         <div className={styles.headingFlexItem__svgs}>
           <span className={styles.hint}>tap the graphics!</span>
           <img
@@ -72,24 +75,15 @@ function About({ onMobile }) {
             />
           </div>
           <p className={styles.text}>
-            At the moment, my daily work consists of using ASP.NET, MSSQL,
-            Telerik UI, and Azure DevOps to develop and maintain applications. I
-            very much enjoy working with these technologies.
+            After graduating I joined the Peace Corps in Ukraine and then spent
+            years working in South Korea and China. I got married, had a child,
+            and now live in Fishers, Indiana working as a software developer.
           </p>
           <br />
           <p className={styles.text}>
-            I've also studied React and Angular extensively, and used them both
-            for personal projects. I believe with a short refresher, I could
-            start using these tools professionally. I'm confident that I could
-            ramp up quite quickly.
-          </p>
-          <br />
-          <p className={styles.text}>
-            I'm a self-taught developer and career-changer. I feel incredibly
-            fortunate to have made the transition professionally into software
-            development. It took a lot of hard work and dedication, and it was
-            entirely worth it. While I'm very happy with my current position,
-            I'm always open to new and exciting opportunities.
+            Right now my free time is usually spent with family. When I get the
+            chance I might watch some sports highlights or squeeze in a couple
+            rounds of a video game.
           </p>
         </div>
       </div>

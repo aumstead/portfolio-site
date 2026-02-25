@@ -17,14 +17,14 @@ function Projects({ onMobile }) {
   return (
     <section className={styles.section}>
       <div className={styles.headingFlexContainer}>
-        <h2 className={styles.title}>Featured Project</h2>
+        <h2 className={styles.title}>Demo Projects</h2>
         <div className={styles.headingFlexItem__svgs}>
-          <span className={styles.hint}>hover me!</span>
+          {/* <span className={styles.hint}>hover me!</span>
           <img
             className={stylesConfig.arrow}
             src="/images/arrow.png"
             alt="Arrow pointing to graphic."
-          />
+          /> */}
           <Cards
             onMobile={onMobile}
             setMouseEnteredCards={setMouseEnteredCards}

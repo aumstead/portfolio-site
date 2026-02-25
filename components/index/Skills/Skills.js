@@ -1,6 +1,7 @@
 import styles from "./Skills.module.scss";
 import { useState } from "react";
 import Grid from "./Grid";
+import List from "./List";
 import Knife from "./Knife";
 
 function Skills({ onMobile }) {
@@ -9,14 +10,15 @@ function Skills({ onMobile }) {
   return (
     <section className={styles.section}>
       <div className={styles.headingFlexContainer}>
-        <h2 className={styles.title}>Skills</h2>
+        <h2 className={styles.title}>Experience</h2>
 
-        <Knife
+        {/* <Knife
           onMobile={onMobile}
           setMouseEnteredKnife={setMouseEnteredKnife}
-        />
+        /> */}
       </div>
-      <Grid mouseEnteredKnife={mouseEnteredKnife} />
+      {/* <Grid mouseEnteredKnife={mouseEnteredKnife} /> */}
+      <List />
     </section>
   );
 }

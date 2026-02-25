@@ -114,10 +114,10 @@ function Carousel({ mouseEnteredCards, isDarkMode, onMobile }) {
               <FastFlashCardsSvg isDarkMode={isDarkMode} />
               <a
                 className={stylesConfig.linkAnchor}
-                href="https://myfastflashcards.herokuapp.com/"
+                href="https://fastflashcards.azurewebsites.net"
                 target="_blank"
               >
-                myfastflashcards.herokuapp.com
+                fastflashcards.azurewebsites.net
               </a>
               <br />
               <GitHub isDarkMode={isDarkMode} />
@@ -157,10 +157,10 @@ function Carousel({ mouseEnteredCards, isDarkMode, onMobile }) {
               <WhiteSands isDarkMode={isDarkMode} />
               <a
                 className={stylesConfig.linkAnchor}
-                href="https://white-sands.herokuapp.com/"
+                href="https://whitesands.azurewebsites.net"
                 target="_blank"
               >
-                white-sands.herokuapp.com
+                whitesands.azurewebsites.net
               </a>
               <br />
               <GitHub isDarkMode={isDarkMode} />
@@ -175,7 +175,7 @@ function Carousel({ mouseEnteredCards, isDarkMode, onMobile }) {
           </div>
         </div>
 
-        <div className={onMobile ? styles.slideMobile : styles.slide}>
+        {/* <div className={onMobile ? styles.slideMobile : styles.slide}>
           <div className={styles.mockupContainer}>
             <img
               className={stylesConfig.browserMockup}
@@ -216,9 +216,9 @@ function Carousel({ mouseEnteredCards, isDarkMode, onMobile }) {
               </a>
             </div>
           </div>
-        </div>
+        </div> */}
 
-        <div className={onMobile ? styles.slideMobile : styles.slide}>
+        {/* <div className={onMobile ? styles.slideMobile : styles.slide}>
           <div className={styles.mockupContainer}>
             <img
               className={stylesConfig.browserMockup}
@@ -260,7 +260,7 @@ function Carousel({ mouseEnteredCards, isDarkMode, onMobile }) {
               </a>
             </div>
           </div>
-        </div>
+        </div> */}
 
         <div
           id="first-clone"
@@ -290,10 +290,10 @@ function Carousel({ mouseEnteredCards, isDarkMode, onMobile }) {
               <FastFlashCardsSvg isDarkMode={isDarkMode} />
               <a
                 className={stylesConfig.linkAnchor}
-                href="https://myfastflashcards.herokuapp.com/"
+                href="https://fastflashcards.azurewebsites.net"
                 target="_blank"
               >
-                myfastflashcards.herokuapp.com/
+                fastflashcards.azurewebsites.net
               </a>
               <br />
               <GitHub isDarkMode={isDarkMode} />

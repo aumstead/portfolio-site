@@ -360,6 +360,7 @@ function Cards({ setMouseEnteredCards, onMobile }) {
             />
           </g>
         </g>
+
         <g id="two" className={styles.portfolioSharer}>
           <path
             id="XMLID 108"
